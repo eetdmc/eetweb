@@ -126,7 +126,7 @@ export default function HorizontalGallery() {
             >
               {/* Main Image Area - Takes most of the left space */}
               <div className="flex-1 relative">
-                <img
+                <Image width={1700} height={700}
                   src={destination.mainImage}
                   alt={destination.country}
                   className="w-full h-full object-cover"
@@ -191,9 +191,11 @@ export default function HorizontalGallery() {
 
                 {/* Preview Image - Bottom part of sidebar */}
                 <div className="flex-1 mt-24 relative">
-                  <img
+                  <Image 
                     src={destination.previewImage}
                     alt={`${destination.previewCountry} preview`}
+                    width={1700}
+                    height={700}
                     className="w-full h-full object-cover"
                   />
 

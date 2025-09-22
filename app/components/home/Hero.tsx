@@ -9,7 +9,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/effect-cube";
 import "swiper/css/effect-coverflow";
 
-import { Pagination, Navigation, EffectFade, EffectCoverflow, EffectCube, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, EffectFade, Autoplay } from "swiper/modules";
 import { homeData } from "./data";
 import Image from "next/image";
 import { assets } from "@/public/assets";
