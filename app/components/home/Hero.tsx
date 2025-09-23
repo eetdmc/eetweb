@@ -126,7 +126,7 @@ const Hero = () => {
                     <div className="flex flex-col justify-end h-full pb-10 xl:pb-30">
                       <div className="flex justify-between items-end">
                         <div className="w-full h-full xl:max-w-[30%] flex flex-col justify-end  ">
-                          <h2 className="text-80 leading-[1] text-black font-[300] mb-5 xl:mb-22">{item.title}</h2>
+                          <h2 className="text-60 3xl:text-80 leading-[1] text-black font-[300] mb-5 xl:mb-22">{item.title}</h2>
                           <div className="flex items-center ">
                             <button className="border text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl">
                               <span>Explore Destinations</span>

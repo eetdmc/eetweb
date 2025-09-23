@@ -16,10 +16,11 @@ const Footer   = () => {
             <div className="absolute top-0  bg-black/60 w-full h-full z-10"></div>
             <div className="relative z-20 px-8 xl:px-[142px] py-30 xl:py-[145px]">
               <div className="flex items-center justify-between">
-                <h2 className="max-w-4xl text-70 font-[200] text-white leading-[1]">Start Your Destination Experience Today</h2>
-                <button className="rounded-full font-inter border border-white px-4 py-3 xl:px-[65px] xl:py-[49.5px] flex items-center gap-5 text-30 font-light leading-lhtext-30 ">
+                <h2 className="3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-[200] text-white leading-[1]">
+                  Start Your Destination Experience Today</h2>
+                <button className="rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-8 xl:py-3 3xl:px-[65px] 3xl:py-[49.5px] flex items-center gap-5 text-lg xl:text-30 font-light leading-lhtext-30 ">
                   <span className="text-white">Let&apos;s Connect</span>
-                  <Image src={assets.arrowPrimary} alt="" width={50} height={50} className="w-8 xl:w-10 h-auto" />
+                  <Image src={assets.arrowPrimary} alt="" width={50} height={50} className="w-5 xl:w-5 3xl:w-10 h-auto" />
                 </button>
               </div>
             </div>
@@ -108,8 +109,8 @@ const Footer   = () => {
        
         </div>
       </div>
-      <div className="w-full h-[1px] bg-gradient-to-r from-0% from-white/10 via-52% via-white/100 to-100% to-white/10 mt-5 xl:mt-[68px] mb-5 xl:mb-[50px]"></div>
-      <div className="bg-[#191919] py-5 xl:py-[17px]">
+      
+      <div className="bg-[#191919] py-5 xl:py-[17px] mt-5 xl:mt-[74px]">
         <div className="container">
           <p className="text-14 leading-[2.857142857142857] font-light text-white font-inter">Copyright {new Date().getFullYear()}© East Europe Travel & Tourism LLC. All rights reserved.</p>
         </div>
