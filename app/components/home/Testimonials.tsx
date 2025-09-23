@@ -27,7 +27,7 @@ const Testimonials = () => {
           }}>
             {homeData.testimonials.items.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-[598px_512px_auto]">
+                <div className="grid grid-cols-1 xl:grid-cols-3 2xl:grid-cols-[1.5fr_1.8fr_2fr] 3xl:grid-cols-[598px_512px_auto]">
                   <div className="pt-15 xl:pt-[112px]  ">
                     <h3 className="text-30 leading-lhtext-30 font-light text-black border-b border-[#5C8898] pb-5 xl:pb-[39px]">{item.name}</h3>
                   </div>

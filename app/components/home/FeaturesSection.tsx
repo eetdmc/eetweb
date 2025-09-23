@@ -1,14 +1,14 @@
 import Image from "next/image";
 const FeaturesSection = () => {
   return (
-    <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 ">
+    <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 overflow-hidden">
       <div className="container">
-        <div className="grid grid-cols-[1fr_2fr] xl:grid-cols-[408px_auto] gap-20 xl:gap-[235px]">
+        <div className="grid grid-cols-[1fr_2fr] xl:grid-cols-[408px_auto] gap-20 3xl:gap-[235px]">
           <div>
             <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} />
           </div>
           <div className="pr-20 xl:pr-[146px] pt-7 xl:pt-[38px]">
-            <div className="grid grid-cols-2 xl:grid-cols-[455px_auto]">
+            <div className="grid grid-cols-2 3xl:grid-cols-[455px_auto]">
               <div className="border-r border-black/20">
                 <div className="flex flex-col gap-5 pb-8 xl:pb-[49px] border-b border-black/20">
                   <Image src="/assets/images/home/features-section/icons/icon-1.svg" alt="World Class Service" width={60} height={60} className="w-12 h-13 xl:w-[50px] xl:h-[60px] object-contain" />

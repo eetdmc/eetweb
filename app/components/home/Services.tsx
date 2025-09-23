@@ -74,9 +74,9 @@ const Services = () => {
   const currentService = servicesData.items[displayedService];
 
   return (
-    <section className="pt-25 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise">
+    <section className="pt-25 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden">
       <div className="container">
-        <div className="grid grid-cols-2 2xl:grid-cols-[1282px_auto]">
+        <div className="grid grid-cols-2 xl:grid-cols-[1020px_auto] 3xl:grid-cols-[1282px_auto]">
           <h2 className="text-70 leading-[1] font-light max-w-2xl text-black">
             {servicesData.title}
           </h2>
@@ -85,7 +85,7 @@ const Services = () => {
           </h3>
         </div>
         <div className="mt-18 xl:mt-[120px]">
-          <div className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-[544px_631px_auto]">
+          <div className="grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-[544px_631px_auto]">
             {/* Services List */}
             <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px]">
               <ul>
@@ -107,8 +107,8 @@ const Services = () => {
                       width={26}
                       height={26}
                       className={`w-4 h-4 xl:w-6 xl:h-6 transition-all duration-300 ${activeService === index
-                          ? 'opacity-100 translate-x-1'
-                          : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
+                        ? 'opacity-100 translate-x-1'
+                        : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
                         }`}
                     />
                   </li>
@@ -125,8 +125,8 @@ const Services = () => {
                   width={631}
                   height={681}
                   className={`absolute inset-0 w-full h-full object-cover transition-all duration-500  ${isTransitioning
-                      ? 'opacity-100 blur-[5px]'
-                      : 'opacity-100 blur-0'
+                    ? 'opacity-100 blur-[5px]'
+                    : 'opacity-100 blur-0'
                     }`}
                 />
               </div>
@@ -141,16 +141,16 @@ const Services = () => {
                       : 'opacity-100 translate-y-0'
                     }`}
                 > */}
-                  <h3 className={`text-30 leading-[1] font-light text-black mb-4 xl:mb-[35px] transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-            
-                    {currentService.title}
-                  </h3>
-                  <p className={`text-19 leading-[1.526315789473684] font-light text-[#484848] font-inter max-w-[36ch] mb-12 xl:mb-[63px] transition-all duration-700 ease-in-out   ${isTransitioning ? 'opacity-0 translate-y-6' : 'opacity-100 translate-y-0'}`}>
-                    {currentService.description}
-                  </p>
-                  <div className={`transition-all duration-500 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
+                <h3 className={`text-30 leading-[1] font-light text-black mb-4 xl:mb-[35px] transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
+
+                  {currentService.title}
+                </h3>
+                <p className={`text-19 leading-[1.526315789473684] font-light text-[#484848] font-inter max-w-[36ch] mb-12 xl:mb-[63px] transition-all duration-700 ease-in-out   ${isTransitioning ? 'opacity-0 translate-y-6' : 'opacity-100 translate-y-0'}`}>
+                  {currentService.description}
+                </p>
+                <div className={`transition-all duration-500 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
                   <PrimaryBtn text="Read More" />
-                  </div>
+                </div>
                 {/* </div> */}
               </div>
             </div>
