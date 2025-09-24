@@ -21,7 +21,8 @@ const Header = () => {
             </nav>
           </div>
           <div>
-            <button className="font-inter bg-primary-color bg-white px-5 py-2 flex items-center gap-2 uppercase rounded-full">Partner Login <span><Image src={assets.user} alt="User" width={20} height={20} /></span></button>
+            <button className="font-inter bg-primary-color bg-white px-5 py-2 flex items-center gap-2 uppercase rounded-full">
+              Partner Login <span><Image src={assets.user} alt="User" width={20} height={20} /></span></button>
           </div>
         </div>
       </div>
