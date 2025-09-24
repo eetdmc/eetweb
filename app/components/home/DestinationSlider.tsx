@@ -95,7 +95,7 @@ const DestinationSlider: React.FC = () => {
 
         for (let i = 0; i < slides.length; i++) {
           const slideThreshold = i / (slides.length - 1);
-          if (progress >= slideThreshold - 0.1 && progress <= slideThreshold + 0.1) {
+          if (progress >= slideThreshold - 0.8 && progress <= slideThreshold + 0.8) {
             newSlideIndex = i;
             break;
           } else if (progress >= slideThreshold) {
@@ -104,7 +104,7 @@ const DestinationSlider: React.FC = () => {
         }
 
         // Only update if slide is fully positioned (not mid-transition)
-        const isAtStablePosition = Math.abs(slideProgress - Math.round(slideProgress)) < 0.1;
+        const isAtStablePosition = Math.abs(slideProgress - Math.round(slideProgress)) < 0.5;
 
         if (isAtStablePosition) {
           const slideIndex = Math.round(slideProgress);
@@ -134,7 +134,7 @@ const DestinationSlider: React.FC = () => {
             {destinations.map((destination, index) => (
               <div key={destination.id} className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px]  ${index === currentSlide ? '' : 'mt-auto '}`} style={{ width: '80vw' }}>
                 {/* Background Image */}
-                <div className={`relative  flex flex-col items-end justify-end pb-5 pr-5 mr-25 3xl:mr-[205px] transition-all duration-700 ${index === currentSlide ? 'h-[441px] 3xl:h-[620px] order-1  ml-5 ' : 'h-[300px] 3xl:h-[441px] order-2'}`}>
+                <div className={`relative  flex flex-col items-end justify-end pb-5 pr-5 mr-25 3xl:mr-[205px] transition-all duration-700 ${index === currentSlide ? 'h-[441px] 3xl:h-[620px] order-1  ml-5 ' : 'h-[400px] 3xl:h-[441px] order-2'}`}>
                   <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${destination.image})` }}> </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
                   <div className="flex gap-6 relative z-40">
@@ -165,13 +165,11 @@ const DestinationSlider: React.FC = () => {
 
                     <div className={`mb-12 space-y-1 ${index === currentSlide ? 'block ' : 'hidden '}`}>
                       {destination.highlights.map((highlight, idx) => (
-                        <ul key={idx} className="text-lggray text-lg columns-2 font-inter">
+                        <ul key={idx} className="text-lggray text-lg columns-2xl font-inter">
                           <li className='text-19 font-light leading-[1.526315789473684]'>{highlight}</li>
                         </ul>
                       ))}
                     </div>
-
-
                   </div>
                 </div>
               </div>
@@ -198,8 +196,6 @@ const DestinationSlider: React.FC = () => {
           </div>
         </div>
       </div>
-
-
     </section>
   );
 };

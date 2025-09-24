@@ -118,7 +118,7 @@ const Services = () => {
 
             {/* Service Image */}
             <div className="relative overflow-hidden">
-              <div className="relative h-[400px] xl:h-[681px]">
+              <div className="relative h-[400px] xl:h-[581px] 3xl:h-[681px]">
                 <Image
                   src={currentService.image}
                   alt={currentService.title}
@@ -149,7 +149,7 @@ const Services = () => {
                   {currentService.description}
                 </p>
                 <div className={`transition-all duration-500 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-                  <PrimaryBtn text="Read More" />
+                  <PrimaryBtn link="#" text="Read More" />
                 </div>
                 {/* </div> */}
               </div>
