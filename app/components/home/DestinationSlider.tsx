@@ -104,7 +104,7 @@ const DestinationSlider: React.FC = () => {
         }
 
         // Only update if slide is fully positioned (not mid-transition)
-        const isAtStablePosition = Math.abs(slideProgress - Math.round(slideProgress)) < 0.5;
+        const isAtStablePosition = Math.abs(slideProgress - Math.round(slideProgress)) < 0.9;
 
         if (isAtStablePosition) {
           const slideIndex = Math.round(slideProgress);
@@ -132,10 +132,26 @@ const DestinationSlider: React.FC = () => {
         <div className=" w-full ml-16 overflow-hidden" ref={containerRef}>
           <div ref={slidesContainerRef} className="flex h-full">
             {destinations.map((destination, index) => (
-              <div key={destination.id} className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px]  ${index === currentSlide ? '' : 'mt-auto '}`} style={{ width: '80vw' }}>
+              <div key={destination.id} className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px]  ${index === currentSlide ? 'mt-0' : 'mt-44 xl:mt-[250px]'}`} style={{ width: '80vw' }}>
+                {/* top title */}
+                <div className={`flex items-center mr-25 xl:mr-[205px] ${index === currentSlide ? 'absolute text-white bottom-0 z-0 opacity-0' : 'relative opacity-100'}`}>
+                  <div className=" flex gap-5 xl:gap-10 border-b border-black/30 w-full">
+                    <div className="pr-8 xl:pr-[212px]">
+                      <h2 className="text-50 uppercase font-light text-black mb-6 xl:mb-8 leading-tight">
+                        {destination.country}
+                      </h2>
+                    </div>
+                  </div> 
+                </div>
+                {/* top title end */}
                 {/* Background Image */}
-                <div className={`relative  flex flex-col items-end justify-end pb-5 pr-5 mr-25 3xl:mr-[205px] transition-all duration-700 ${index === currentSlide ? 'h-[441px] 3xl:h-[620px] order-1  ml-5 ' : 'h-[400px] 3xl:h-[441px] order-2'}`}>
-                  <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${destination.image})` }}> </div>
+                {/* <div className={`relative z-20 flex flex-col items-end justify-end pb-5 pr-5 mr-25 3xl:mr-[205px] transition-height duration-700 
+                  ${index === currentSlide ? 'h-[441px] 3xl:h-[620px] ml-5 ' : ' h-[400px] 3xl:h-[441px]'}`}> */}
+                <div className={`relative z-20 flex flex-col items-end justify-end pb-5 pr-5 mr-25 3xl:mr-[205px] transition-all duration-700 
+                  ${index === currentSlide ? ' ml-5 scale-y-100 h-[441px] 3xl:h-[620px]' : ' scale-y-100 h-[400px] 3xl:h-[441px]'}`}>
+                  <div className={`transition-all duration-700 ${index === currentSlide ? ' pt-0' : ' pt-25'}`}>
+                    <div className="absolute inset-0 bg-cover bg-center bg-no-repeat h-full w-full" style={{ backgroundImage: `url(${destination.image})` }}> </div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
                   <div className="flex gap-6 relative z-40">
                     <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border border-primary text-white rounded-3xl hover:bg-primary transition-colors font-light font-funnel-display">
@@ -148,8 +164,8 @@ const DestinationSlider: React.FC = () => {
                 </div>
 
                 {/* Content positioned on left side */}
-                <div className={`relative z-10  flex items-center mr-25 xl:mr-[205px] ${index === currentSlide ? 'order-2 ml-5 mt-6 xl:mt-[44px]' : 'order-1 mt-auto pt-6 xl:pt-30'}`}>
-                  <div className=" flex gap-5 xl:gap-10 border-b border-black/30 w-full">
+                <div className={` flex items-center mr-25 xl:mr-[205px]  ${index === currentSlide ? 'relative z-10 ml-5 mt-6 xl:mt-[44px]' : 'absolute top-0 z-0 opacity-0'}`}>
+                  <div className={`flex gap-5 xl:gap-10  w-full ${index === currentSlide ? 'border-b border-black/30' : ''}`}>
                     <div className="pr-8 xl:pr-[212px]">
                       <h2 className="text-50 uppercase font-light text-black mb-6 xl:mb-8 leading-tight">
                         {destination.country}

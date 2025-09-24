@@ -1,10 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { assets } from "../../../public/assets";
 import PrimaryBtn from "../common/PrimaryBtn";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"; 
 
+gsap.registerPlugin(ScrollTrigger);
 interface ServiceItem {
   title: string;
   description: string;
@@ -73,8 +76,119 @@ const Services = () => {
 
   const currentService = servicesData.items[displayedService];
 
+  /* gsap effect */
+  const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const buttonRef = useRef<HTMLDivElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // Split text into words and wrap each word in a span
+      const splitText = () => {
+        if (!textRef.current) return;
+
+        const text = textRef.current.textContent || "";
+        const words = text.split(" ");
+
+        textRef.current.innerHTML = words
+          .map(word => `<span class="inline-block overflow-hidden"><span class="inline-block word-span">${word}</span></span>`)
+          .join(" ");
+      };
+
+      splitText();
+
+      // Get all word spans
+      const wordSpans = textRef.current?.querySelectorAll(".word-span");
+
+      // Create timeline for text animation
+      const textTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Animate words with stagger effect
+      if (wordSpans) {
+        textTimeline.fromTo(
+          wordSpans,
+          {
+            y: "100%",
+            opacity: 0
+          },
+          {
+            y: "0%",
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            stagger: 0.03
+          }
+        );
+      }
+
+      // Animate button
+      textTimeline.fromTo(
+        buttonRef.current,
+        {
+          y: 30,
+          opacity: 0
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out"
+        },
+        "-=0.3"
+      );
+
+      // Image reveal animation
+      const imageTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: imageContainerRef.current,
+          start: "top 90%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        }
+      });
+
+      // Create mask effect for image reveal
+      imageTimeline
+        .set(imageContainerRef.current, {
+          clipPath: "inset(0 100% 0 0)"
+        })
+        .to(imageContainerRef.current, {
+          clipPath: "inset(0 0% 0 0)",
+          duration: 1.2,
+          ease: "power2.out"
+        })
+        .fromTo(
+          imageRef.current,
+          {
+            scale: 1.3,
+            rotation: 2
+          },
+          {
+            scale: 1,
+            rotation: 0,
+            duration: 1.2,
+            ease: "power2.out"
+          },
+          0
+        );
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+  /* gsap effect end */
+
   return (
-    <section className="pt-25 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden">
+    <section ref={sectionRef} className="pt-25 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden">
       <div className="container">
         <div className="grid grid-cols-2 xl:grid-cols-[1020px_auto] 3xl:grid-cols-[1282px_auto]">
           <h2 className="text-70 leading-[1] font-light max-w-2xl text-black">
@@ -87,10 +201,10 @@ const Services = () => {
         <div className="mt-18 xl:mt-[120px]">
           <div className="grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-[544px_631px_auto]">
             {/* Services List */}
-            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px]">
+            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px]" >
               <ul>
                 {servicesData.items.map((service, index) => (
-                  <li key={index} className="flex items-center gap-3 xl:gap-4 group">
+                  <li key={index} className="flex items-center gap-3 xl:gap-4 group" >
                     <button
                       className={`text-30 leading-[2] font-light text-left transition-all duration-300 ${activeService === index
                         ? 'text-black'
@@ -101,24 +215,25 @@ const Services = () => {
                     >
                       {service.title}
                     </button>
-                    <Image
-                      src={assets.arrowPrimary}
-                      alt="Arrow"
-                      width={26}
-                      height={26}
-                      className={`w-4 h-4 xl:w-6 xl:h-6 transition-all duration-300 ${activeService === index
-                        ? 'opacity-100 translate-x-1'
-                        : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
-                        }`}
-                    />
+                      <Image  
+                        src={assets.arrowPrimary}
+                        alt="Arrow"
+                        width={26}
+                        height={26}
+                        className={`w-4 h-4 xl:w-6 xl:h-6 transition-all duration-300 ${activeService === index
+                          ? 'opacity-100 translate-x-1'
+                          : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
+                          }`}
+                      />
+                  
                   </li>
                 ))}
               </ul>
             </div>
 
             {/* Service Image */}
-            <div className="relative overflow-hidden">
-              <div className="relative h-[400px] xl:h-[581px] 3xl:h-[681px]">
+            <div ref={imageContainerRef} className="relative overflow-hidden">
+              <div className="relative h-[400px] xl:h-[581px] 3xl:h-[681px]" ref={imageRef}>
                 <Image
                   src={currentService.image}
                   alt={currentService.title}
@@ -141,7 +256,7 @@ const Services = () => {
                       : 'opacity-100 translate-y-0'
                     }`}
                 > */}
-                <h3 className={`text-30 leading-[1] font-light text-black mb-4 xl:mb-[35px] transition-all duration-300 ease-in-out ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
+                <h3 className={`text-30 leading-[1] font-light text-black mb-4 xl:mb-[35px] transition-all duration-300 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
 
                   {currentService.title}
                 </h3>

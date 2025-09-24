@@ -42,7 +42,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${manrope.variable} ${sourceSerif.variable} ${funnelDisplay.variable} antialiased`}>
         <Header />
-        {children}
+        <main className="min-h-screen">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
