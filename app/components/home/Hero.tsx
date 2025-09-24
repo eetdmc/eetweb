@@ -1,4 +1,7 @@
 "use client"
+import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Swiper as SwiperType } from "swiper";
 import "swiper/css";
@@ -86,6 +89,28 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
 const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
+
+  const imageRefs = useRef<HTMLImageElement[]>([]);
+
+  useEffect(() => {
+    imageRefs.current.forEach((img) => {
+      gsap.fromTo(
+        img,
+        { scale: 1, x: "0%", y: "0%" },
+        {
+          scale: 1.2,
+          x: "-4%",
+          y: "-4%",
+          duration: 20,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        }
+      );
+    });
+  }, []);
+
+
   const handleSlideChange = (index: number) => {
     setActiveIndex(index);
     if (swiperRef.current) {
@@ -98,22 +123,28 @@ const Hero = () => {
   };
   return (
     <section className="w-full h-screen xl:h-[calc(100vh-130px)] pm-noise relative">
-      <Image src={homeData.heroData[activeIndex].image} alt={homeData.heroData[activeIndex].title} width={1000} height={1000} className="w-[66%] h-full object-cover absolute right-0 top-0 z-0" />
+      {homeData.heroData.map((item, i) => (
+        <div className="w-[66%] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
+          <Image src={item.image} alt={item.title} width={1920} height={1080}
+            ref={(el) => { if (el) imageRefs.current[i] = el; }}
+            className={` object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${activeIndex === i ? "opacity-100 " : "opacity-0"}`} />
+        </div>
+      ))}
       <div className="w-[66%] h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-transparent to-black/70"></div>
       <div className="container h-full">
         <Swiper className="w-full h-full hero-slider"
           pagination={false}
           // loop={false}
           rewind={true}
-          modules={[Pagination, Navigation,EffectFade,Autoplay]}
+          modules={[Pagination, Navigation, EffectFade, Autoplay]}
           effect="fade"
           fadeEffect={{
             crossFade: true,
           }}
           slidesPerView={1}
-          speed={800}
+          speed={1800}
           // cssMode={true}
-          autoplay={{ delay: 6000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
