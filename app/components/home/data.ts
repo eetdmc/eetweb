@@ -1,4 +1,4 @@
-import Testimonials from "./TestimonialsDemo";
+
 
 export const homeData = {
   heroData: [

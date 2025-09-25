@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { assets } from "@/public/assets";
 import Link from "next/link";
-import { h3 } from "motion/react-client";
 
 const Footer   = () => {
   return ( 

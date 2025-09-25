@@ -15,8 +15,8 @@ import "swiper/css/effect-coverflow";
 import { Pagination, Navigation, EffectFade, Autoplay } from "swiper/modules";
 import { homeData } from "./data";
 import Image from "next/image";
-import { assets } from "@/public/assets";
 import { useState, useRef } from "react";
+import PrimaryBtn from "../common/PrimaryBtn";
 
 // Custom Pagination Component matching the exact design
 interface CustomPaginationProps {
@@ -91,7 +91,8 @@ const Hero = () => {
   const swiperRef = useRef<SwiperType | null>(null);
 
   const imageRefs = useRef<HTMLImageElement[]>([]);
-
+  const titleRefs = useRef<HTMLHeadingElement[]>([]);
+  titleRefs.current = [];
   useEffect(() => {
     imageRefs.current.forEach((img) => {
       gsap.fromTo(
@@ -108,7 +109,29 @@ const Hero = () => {
         }
       );
     });
+    
   }, []);
+
+  useEffect(() => {
+    titleRefs.current.forEach((title) => {
+      gsap.fromTo(
+        title,
+        { opacity: 0, y: "20%" },
+        {
+          opacity: 1,
+          y: "0%",
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: title,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
 
 
   const handleSlideChange = (index: number) => {
@@ -120,6 +143,7 @@ const Hero = () => {
 
   const handleSwiperSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.realIndex);
+    
   };
   return (
     <section className="w-full h-screen xl:h-[calc(100vh-130px)] pm-noise relative">
@@ -148,7 +172,22 @@ const Hero = () => {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          onSlideChange={handleSwiperSlideChange}>
+          onSlideChange={handleSwiperSlideChange}
+          // onSlideChangeTransitionEnd={(swiper) => {
+          //   const activeSlide = swiper.slides[swiper.activeIndex] as HTMLElement;
+          //   const title = activeSlide.querySelector<HTMLElement>(".slide-title");
+          //   const subtitle = activeSlide.querySelector<HTMLElement>(".slide-subtitle");
+
+          //   if (title) {
+          //     gsap.fromTo(title, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
+          //   }
+
+          //   if (subtitle) {
+          //     gsap.fromTo(subtitle, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.2 });
+          //   }
+          // }}
+          
+          >
           {
             homeData.heroData.map((item, index) => {
               return (
@@ -157,14 +196,15 @@ const Hero = () => {
                     <div className="flex flex-col justify-end h-full pb-10 xl:pb-30">
                       <div className="flex justify-between items-end">
                         <div className="w-full h-full xl:max-w-[30%] flex flex-col justify-end  ">
-                          <h2 className="text-60 3xl:text-80 leading-[1] text-black font-[300] mb-5 xl:mb-22">{item.title}</h2>
-                          <div className="flex items-center ">
+                          <h2 className="text-60 3xl:text-80 leading-[1] text-black font-[300] mb-5 xl:mb-22 slide-title " >{item.title}</h2>
+                          {/* <div className="flex items-center ">
                             <button className="border text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl">
                               <span>Explore Destinations</span>
                             </button>
                             <div className="bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px] flex items-center justify-center">
                               <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20} className="w-4 h-4 xl:w-[13.79px] xl:h-[13.85px] object-contain " /></div>
-                          </div>
+                          </div> */}
+                          <PrimaryBtn text="Explore Destinations" link="#" />
                         </div>
                         <div className="relative z-10">
                           <h3 className="text-90 leading-[1] text-white font-[300] mb-5 xl:mb-[23px] text-right">{item.location}</h3>

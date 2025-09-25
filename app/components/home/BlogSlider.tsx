@@ -1,9 +1,8 @@
 'use client';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, EffectCards, EffectCreative } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/effect-creative";
 import { homeData } from "./data";
 import Image from "next/image";
 import { assets } from "@/public/assets";
