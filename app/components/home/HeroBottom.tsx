@@ -122,7 +122,7 @@ const HeroBottom = () => {
     <section ref={sectionRef} className="pt-25 xl:pt-50 pb-15 xl:pb-25 pm-noise">
       <div className="container relative">
         <div className="xl:pl-30 2xl:pl-[392px]">
-          <p ref={textRef} className="text-30 leading-[1.333333333333333] font-light mb-10 xl:mb-20 max-w-[70ch]">
+          <p ref={textRef} className="text-30 text-lggray leading-[1.333333333333333] font-light mb-10 xl:mb-20 max-w-[70ch]">
             EET Destination Management is a leading inbound tour operator and travel management company serving the Arabian Gulf, with extensive expertise in tourism, tours, and MICE services across the UAE, Oman, Bahrain, Qatar, Kuwait, and Saudi Arabia.
           </p>
           <div ref={buttonRef}>
