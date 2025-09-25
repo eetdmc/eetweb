@@ -27,14 +27,19 @@ const Footer   = () => {
             </div>
           </div>
           <div className="xl:pt-[291px] 3xl:pt-[391px]">
-            <div className="w-full h-[1px] bg-gradient-to-r from-0% from-white/10 via-52% via-white/100 to-100% to-white/10 mb-5 xl:mb-[50px]"></div>
+            <div className="hidden xl:grid grid-cols-3">
+              <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Follow Us</h3>
+              <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Contact</h3>
+              <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Address</h3>
+            </div>
+            <div className="w-full h-[1px] bg-gradient-to-r from-0% from-white/10 via-52% via-white/100 to-100% to-white/10 mb-5 xl:mb-[50px] "></div>
             <div className="grid grid-cols-2 xl:grid-cols-3">
               <div>
-                <h3 className="text-19 leading-lhtext-19 font-light text-white font-inter pb-3 xl:pb-[24px]">Follow Us</h3>
+                <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden">Follow Us</h3>
                 <div>
                   <ul>
                     <li className="text-30 leading-lhtext-30 font-light text-white">
-                      <Link href={"#"}>Instegram</Link>
+                      <Link href={"#"}>Instagram</Link>
                     </li>
                     <li className="text-30 leading-lhtext-30 font-light text-white">
                       <Link href={"#"}>Linkedin</Link>
@@ -49,7 +54,7 @@ const Footer   = () => {
                 </div>
               </div>
               <div>
-                <h3 className="text-19 leading-lhtext-19 font-light text-white font-inter pb-3 xl:pb-[24px]">Contact</h3>
+                <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden">Contact</h3>
                 <ul>
                   <li className="text-50 leading-[1.34] font-light text-white">
                     <Link href={"tel:+97144229563"}>+971 4 422 9563</Link>
@@ -60,7 +65,7 @@ const Footer   = () => {
                 </ul>
               </div>
               <div>
-                <h3 className="text-19 leading-lhtext-19 font-light text-white font-inter pb-3 xl:pb-[24px]">Address</h3>
+                <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden">Address</h3>
                 <p className="text-19 leading-lhtext-19 font-light text-white font-inter xl:max-w-[28ch]">East Europe Travel & Tourism LLC
                   PO Box 212371| Suite 12AE02 | iRise Tower
                   Barsha Heights (Tecom)
