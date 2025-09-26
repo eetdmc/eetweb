@@ -12,7 +12,7 @@ const BlogSlider = () => {
     <section className="pt-25 xl:py-30 min-h-screen pm-noise overflow-hidden">
       <div className="container relative">
         <div className="relative h-full">
-          <div className="flex justify-between max-w-[66%] relative">
+          <div className="flex justify-between max-w-[66%] absolute w-[66%] top-0">
             <div>
               <h2 className="text-70 leading-[1] font-light mg-8 xl:mb-[50px] max-w-3xl text-black">Inspiring Stories</h2>
               <h3 className="text-34 leading-[1.235294117647059] font-light text-black">Blogs</h3>

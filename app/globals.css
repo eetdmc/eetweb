@@ -73,6 +73,8 @@
   --font-manrope: var(--font-manrope);
   --font-funnel-display: var(--font-funnel-display);
 
+  --fw-200: 200;
+
   /* line-height */
   --lhtext-19: var(--title-line-height);
   --lhtext-30: var(--lhtext-30);
@@ -88,9 +90,9 @@
 
   --breakpoint-xl: 77.5rem;
   --breakpoint-2xl: 87.5rem;
-  --breakpoint-3xl: 107.5rem;
+  --breakpoint-3xl: 109.375rem;
 
-  --container-max-3xl: 107.5rem;
+  /* --container-max-3xl: 107.5rem; */
 
 }
 
@@ -195,7 +197,7 @@ body {
 
 .blog-slider-pagination .swiper-button-prev-custom,
 .blog-slider-pagination .swiper-button-next-custom {
-  top:unset;
+  top:20%;
   bottom:-5%;
 }
 .blog-slider-pagination .swiper-button-prev-custom{

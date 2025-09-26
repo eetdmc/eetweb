@@ -23,7 +23,7 @@ interface ServicesData {
 
 const servicesData: ServicesData = {
   title: "Expertise Behind Every Experience",
-  subtitle: "Services",
+  subtitle: "Our Services",
   items: [
     {
       title: "Hotel & Leisure Services",
@@ -194,7 +194,7 @@ const Services = () => {
           <h2 className="text-70 leading-[1] font-light max-w-2xl text-black">
             {servicesData.title}
           </h2>
-          <h3 className="text-30 leading-[1] font-light text-black">
+          <h3 className="text-30 leading-[1.4] font-light text-black">
             {servicesData.subtitle}
           </h3>
         </div>
