@@ -1,3 +1,4 @@
+
 const SocialFeeds = () => {
   return ( 
     <section className="pt-25 pb-30 xl:pt-30 xl:pb-[415px] sec-noise">

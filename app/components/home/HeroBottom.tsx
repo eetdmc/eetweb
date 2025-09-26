@@ -119,7 +119,7 @@ const HeroBottom = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="pt-25 xl:pt-50 pb-15 xl:pb-25 pm-noise">
+    <section ref={sectionRef} className="pt-10 xl:pt-50 pb-15 xl:pb-25 pm-noise">
       <div className="container relative">
         <div className="xl:pl-30 flex flex-col items-center">
           <div>
@@ -131,7 +131,7 @@ const HeroBottom = () => {
             </div>
           </div>
         </div>
-        <div ref={imageContainerRef} className="absolute bottom-[-80%] right-0 w-40 h-28 xl:w-[699px] xl:h-[279px] overflow-hidden">
+        <div ref={imageContainerRef} className="absolute xl:bottom-[-80%] right-5 xl:right-0 w-40 h-20 xl:w-[699px] xl:h-[279px] overflow-hidden">
           <div ref={imageRef} className="w-full h-full">
             <Image src="/assets/images/home/hero/bottom-img.jpg" alt="Arrow" width={1000} height={1000} className="w-full h-full object-cover" />
           </div>

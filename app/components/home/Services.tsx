@@ -256,8 +256,7 @@ const Services = () => {
                       : 'opacity-100 translate-y-0'
                     }`}
                 > */}
-                <h3 className={`text-30 leading-[1] font-light text-black mb-4 xl:mb-[35px] transition-all duration-300 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-
+                <h3 className={`text-30 xl:text-50 leading-[1] font-light text-black mb-4 xl:mb-[35px] transition-all duration-300 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
                   {currentService.title}
                 </h3>
                 <p className={`text-19 leading-[1.526315789473684] font-light text-[#484848] font-inter max-w-[36ch] mb-12 xl:mb-[63px] transition-all duration-700 ease-in-out   ${isTransitioning ? 'opacity-0 translate-y-6' : 'opacity-100 translate-y-0'}`}>
