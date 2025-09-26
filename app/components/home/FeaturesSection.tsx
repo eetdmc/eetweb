@@ -43,19 +43,18 @@ const FeaturesSection = () => {
     <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 overflow-hidden" ref={containerRef}>
       <div className="container">
         <div className="grid grid-cols-[1fr_2fr] xl:grid-cols-[408px_auto] gap-20 3xl:gap-[235px]">
-        
           <div className="w-full h-full "> 
               <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="w-full h-full object-cover" />
             </div>
-          <div className="pr-20 xl:pr-[146px] pt-7 xl:pt-[38px]">
+          <div className=" 3xl:pr-[146px] pt-7 xl:pt-[38px]">
             <div className="grid grid-cols-2 3xl:grid-cols-[455px_auto]">
               <div className="border-r border-black/20">
-                <div className="flex flex-col gap-5 pb-8 xl:pb-[49px] border-b border-black/20" >
+                <div className="flex flex-col gap-5 pb-8 xl:pb-[49px] border-b border-black/20 pr-2" >
                   <Image src="/assets/images/home/features-section/icons/icon-1.svg" alt="World Class Service" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
                   <h3 className="text-30 leading-[1.466666666666667] text-black font-light typewriter-text" >World Class Service</h3>
                   <p className="text-19 leading-[1.526315789473684] font-light font-inter text-[#484848] max-w-[36ch] slideInLeft-text">Our world-class service ensures a seamless and unforgettable experience.</p>
                 </div>
-                <div className="flex flex-col gap-5 pt-10 xl:pt-[51px] pb-20 xl:pb-[130px]">
+                <div className="flex flex-col gap-5 pt-10 xl:pt-[51px] pb-20 xl:pb-[130px] pr-2">
                   <Image src="/assets/images/home/features-section/icons/icon-2.svg" alt="Excellence" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
                   <h3 className="text-30 leading-[1.466666666666667] text-black font-light typewriter-text">Excellence</h3>
                   <p className="text-19 leading-[1.526315789473684] font-light font-inter text-[#484848] max-w-[36ch] slideInLeft-text">Driven by precision, defined by quality—excellence is our standard.</p>

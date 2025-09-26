@@ -47,7 +47,7 @@ const BlogSlider = () => {
             >
               {homeData.blog.items.map((item, i) => (
                 <SwiperSlide key={i} className="overflow-hidden ">
-                  <div className="group xl:h-[750px] 3xl:h-[1020px]" >
+                  <div className="group h-[800px] 2xl:h-[750px] 3xl:h-[1020px]" >
                     <div className="w-full h-full overflow-hidden blog-img relative flex flex-col justify-end">
                       <div className="relative w-full h-full z-0 bg-gray-300">
                         <Image src={item.image} alt="" width={700} height={700} className="blog-mainimg w-full h-full object-cover" />
