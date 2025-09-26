@@ -132,7 +132,7 @@ const DestinationSlider: React.FC = () => {
         <div className=" w-full xl:ml-6 3xl:ml-16 overflow-hidden" ref={containerRef}>
           <div ref={slidesContainerRef} className="flex h-full">
             {destinations.map((destination, index) => (
-              <div key={destination.id} className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px]  ${index === currentSlide ? 'mt-0' : 'mt-44 xl:mt-[250px]'}`} style={{ width: '80vw' }}>
+              <div key={destination.id} className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px]   ${index === currentSlide ? 'mt-0' : 'mt-44 xl:mt-[250px]'}`} style={{ width: '80vw' }}>
                 {/* top title */}
                 <div className={`flex items-center mr-25 xl:mr-[205px] ${index === currentSlide ? 'absolute text-white bottom-0 z-0 opacity-0' : 'relative opacity-100'}`}>
                   <div className=" flex gap-5 xl:gap-10 border-b border-black/30 w-full">
@@ -164,8 +164,8 @@ const DestinationSlider: React.FC = () => {
                 </div>
 
                 {/* Content positioned on left side */}
-                <div className={` flex items-center 3xl:mr-25 xl:mr-[205px]  ${index === currentSlide ? 'relative z-10 ml-5 mt-6 xl:mt-[44px]' : 'absolute top-0 z-0 opacity-0'}`}>
-                  <div className={`flex gap-5 3xl:gap-10 justify-between  w-full ${index === currentSlide ? 'border-b border-black/30' : ''}`}>
+                <div className={` flex items-center xl:mr-25 3xl:mr-[205px]  ${index === currentSlide ? 'relative z-10 ml-5 mt-6 xl:mt-[44px]' : ' top-0 z-0 opacity-0'}`}>
+                  <div className={`flex gap-5 3xl:gap-10  w-full ${index === currentSlide ? 'border-b border-black/30' : ''}`}>
                     <div className="pr-8 xl:pr-20 3xl:pr-[212px]">
                       <h2 className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight">
                         {destination.country}
@@ -180,7 +180,7 @@ const DestinationSlider: React.FC = () => {
                     </div>
 
                     <div className={`mb-12 space-y-1 ${index === currentSlide ? 'block ' : 'hidden '}`}>
-                      <ul className="text-lggray text-lg xl:columns-2 xl:[column-width:180px] 3xl:[column-width:260px] xl:gap-4 3xl:gap-[83px] font-inter">
+                      <ul className="text-lggray text-lg xl:columns-2 xl:[column-width:180px] 3xl:[column-width:250px] xl:gap-4 3xl:gap-[83px] font-inter">
                       {destination.highlights.map((highlight, idx) => (
                         <li className='text-base 3xl:text-19 font-light leading-[1.526315789473684]' key={idx}>{highlight}</li>
                         ))}
