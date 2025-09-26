@@ -27,27 +27,37 @@ const Footer   = () => {
             </div>
           </div>
           <div className="xl:pt-[291px] 3xl:pt-[391px]">
-            <div className="hidden xl:grid grid-cols-3">
-              <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Follow Us</h3>
-              <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Contact</h3>
-              <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Address</h3>
+            <div className="hidden xl:grid grid-cols-[1fr_1fr_auto] 3xl:grid-cols-[583px_1fr_auto]">
+              <div>
+                <h3 className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Follow Us</h3>
+              </div>
+              <div>
+                <h3 className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Contact</h3>
+              </div>
+              <div>
+                <h3 className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter pb-3 xl:pb-[24px] hidden xl:block">Address</h3>
+                <p className="text-19 leading-lhtext-19 font-extralight text-white font-inter xl:h-0 opacity-0">East Europe Travel & Tourism LLC<br />
+                  PO Box 212371| Suite 12AE02 | iRise Tower<br />
+                  Barsha Heights (Tecom)<br />
+                  Dubai, UAE</p>
+              </div>
             </div>
-            <div className="w-full h-[1px] bg-gradient-to-r from-0% from-white/10 via-52% via-white/100 to-100% to-white/10 mb-5 xl:mb-[50px] "></div>
-            <div className="grid grid-cols-2 xl:grid-cols-3">
+            <div className="w-full h-[1px] bg-gradient-to-r from-0% from-white/10 via-52% via-white/100 to-100% to-white/10 mb-5 xl:mb-[36px] "></div>
+            <div className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-[1fr_1fr_auto] 3xl:grid-cols-[583px_1fr_auto]">
               <div>
                 <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden">Follow Us</h3>
                 <div>
                   <ul>
-                    <li className="text-30 leading-lhtext-30 font-light text-white">
+                    <li className="text-30 leading-lhtext-30 font-extralight text-white">
                       <Link href={"#"}>Instagram</Link>
                     </li>
-                    <li className="text-30 leading-lhtext-30 font-light text-white">
+                    <li className="text-30 leading-lhtext-30 font-extralight text-white">
                       <Link href={"#"}>Linkedin</Link>
                     </li>
-                    <li className="text-30 leading-lhtext-30 font-light text-white">
+                    <li className="text-30 leading-lhtext-30 font-extralight text-white">
                       <Link href={"#"}>Facebook</Link>
                     </li>
-                    <li className="text-30 leading-lhtext-30 font-light text-white">
+                    <li className="text-30 leading-lhtext-30 font-extralight text-white">
                       <Link href={"#"}>X</Link>
                     </li>
                   </ul>
@@ -56,57 +66,57 @@ const Footer   = () => {
               <div>
                 <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden">Contact</h3>
                 <ul>
-                  <li className="text-50 leading-[1.34] font-light text-white">
+                  <li className="text-50 leading-[1.34] font-extralight text-white">
                     <Link href={"tel:+97144229563"}>+971 4 422 9563</Link>
                   </li>
-                  <li className="text-50 leading-[1.34] font-light text-white">
+                  <li className="text-50 leading-[1.34] font-extralight text-white">
                     <Link href={"mailto:info@eet.ae"}>info@eet.ae</Link>
                   </li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden">Address</h3>
-                <p className="text-19 leading-lhtext-19 font-light text-white font-inter xl:max-w-[28ch]">East Europe Travel & Tourism LLC
-                  PO Box 212371| Suite 12AE02 | iRise Tower
-                  Barsha Heights (Tecom)
+                <p className="text-19 leading-lhtext-19 font-extralight text-white font-inter ">East Europe Travel & Tourism LLC<br/> 
+                  PO Box 212371| Suite 12AE02 | iRise Tower<br/>
+                  Barsha Heights (Tecom)<br/>
                   Dubai, UAE</p>
               </div>
             </div>
           </div>
           <div className="w-full h-[1px] bg-gradient-to-r from-0% from-white/10 via-52% via-white/100 to-100% to-white/10 mt-5 xl:mt-[68px] mb-5 xl:mb-[50px]"></div>
-          <div className="grid grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-[1fr_1fr_auto] 3xl:grid-cols-[583px_1fr_auto]">
             <div>
-              <h3 className="text-19 leading-lhtext-19 font-light text-white font-inter pb-3 xl:pb-[24px]">Destinations</h3>
+              <h3 className="text-30 leading-[1.03448275862069] font-extralight text-white pb-3 xl:pb-[24px]">Destinations</h3>
               <div>
                 <ul>
-                  <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                  <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                     UAE
                   </li>
-                  <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                  <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                     Oman
                   </li>
-                  <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                  <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                     Qatar
                   </li>
-                  <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                  <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                     Saudi Arabia
                   </li>
                 </ul>
               </div>
             </div>
             <div>
-              <h3 className="text-19 leading-lhtext-19 font-light text-white font-inter pb-3 xl:pb-[24px]">Services</h3>
+              <h3 className="text-30 leading-[1.03448275862069] font-extralight text-white pb-3 xl:pb-[24px]">Services</h3>
               <ul>
-                <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                   <Link href={"#"}>Hotel & Leisure Services</Link>
                 </li>
-                <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                   <Link href={"#"}>MICE</Link>
                 </li>
-                <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                   <Link href={"#"}>Cruise Liners</Link>
                 </li>
-                <li className="text-19 leading-lhtext-19 font-light text-white/70 font-inter hover:text-white transition-all duration-300">
+                <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
                   <Link href={"#"}>Experiences</Link>
                 </li>
               </ul>

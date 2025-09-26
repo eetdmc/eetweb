@@ -16,7 +16,9 @@ import { Pagination, Navigation, EffectFade, Autoplay } from "swiper/modules";
 import { homeData } from "./data";
 import Image from "next/image";
 import { useState, useRef } from "react";
-import PrimaryBtn from "../common/PrimaryBtn";
+// import PrimaryBtn from "../common/PrimaryBtn";
+import Link from "next/link";
+import { assets } from "@/public/assets";
 
 // Custom Pagination Component matching the exact design
 interface CustomPaginationProps {
@@ -37,12 +39,12 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
       {/* Progress Line with Counter */}
       <div className="relative flex items-center">
         {/* Counter Badge */}
-        <div className="inline-flex items-center bg-white/10 backdrop-blur-[7px] border border-white/20 rounded-full px-4 py-2 ">
-          <span className="text-white leading-[1.8125] font-inter font-light">
+        <div className="inline-flex items-center backdrop-blur-[7px] border border-white/20 rounded-full px-2 xl:px-[14px]">
+          <span className="text-white font-base leading-[1.8125] font-inter font-light">
             {currentSlide + 1}
           </span>
           <span className="text-mdgray mx-2">-</span>
-          <span className="text-mdgray leading-[1.8125] font-inter">
+          <span className="text-mdgray font-base leading-[1.8125] font-inter">
             {String(totalSlides).padStart(2, '0')}
           </span>
         </div>
@@ -53,7 +55,7 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
             <button
               key={index}
               onClick={() => onSlideChange(index)}
-              className={`w-12 h-[1px] transition-all duration-300 ${index === currentSlide
+              className={`w-12 xl:w-[67px] h-[1px] transition-all duration-300 ${index === currentSlide
                 ? 'bg-primary'
                 : 'bg-white/30 hover:bg-white/50'
                 }`}
@@ -109,7 +111,7 @@ const Hero = () => {
         }
       );
     });
-    
+
   }, []);
 
   useEffect(() => {
@@ -132,8 +134,6 @@ const Hero = () => {
     });
   }, []);
 
-
-
   const handleSlideChange = (index: number) => {
     setActiveIndex(index);
     if (swiperRef.current) {
@@ -143,18 +143,18 @@ const Hero = () => {
 
   const handleSwiperSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.realIndex);
-    
+
   };
   return (
     <section className="w-full h-screen xl:h-[calc(100vh-130px)] pm-noise relative">
       {homeData.heroData.map((item, i) => (
-        <div className="w-[66%] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
+        <div className="w-[66%] xl:w-[1294px] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
           <Image src={item.image} alt={item.title} width={1920} height={1080}
             ref={(el) => { if (el) imageRefs.current[i] = el; }}
-            className={` object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${activeIndex === i ? "opacity-100 " : "opacity-0"}`} />
+            className={`max-w-[1294px] object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${activeIndex === i ? "opacity-100 " : "opacity-0"}`} />
         </div>
       ))}
-      <div className="w-[66%] h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-transparent to-black/70"></div>
+      <div className="w-[66%] xl:w-[1294px] h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-transparent to-black/70"></div>
       <div className="container h-full">
         <Swiper className="w-full h-full hero-slider"
           pagination={false}
@@ -173,48 +173,51 @@ const Hero = () => {
             swiperRef.current = swiper;
           }}
           onSlideChange={handleSwiperSlideChange}
-          // onSlideChangeTransitionEnd={(swiper) => {
-          //   const activeSlide = swiper.slides[swiper.activeIndex] as HTMLElement;
-          //   const title = activeSlide.querySelector<HTMLElement>(".slide-title");
-          //   const subtitle = activeSlide.querySelector<HTMLElement>(".slide-subtitle");
+        // onSlideChangeTransitionEnd={(swiper) => {
+        //   const activeSlide = swiper.slides[swiper.activeIndex] as HTMLElement;
+        //   const title = activeSlide.querySelector<HTMLElement>(".slide-title");
+        //   const subtitle = activeSlide.querySelector<HTMLElement>(".slide-subtitle");
 
-          //   if (title) {
-          //     gsap.fromTo(title, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
-          //   }
+        //   if (title) {
+        //     gsap.fromTo(title, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out" });
+        //   }
 
-          //   if (subtitle) {
-          //     gsap.fromTo(subtitle, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.2 });
-          //   }
-          // }}
-          
-          >
+        //   if (subtitle) {
+        //     gsap.fromTo(subtitle, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: "power2.out", delay: 0.2 });
+        //   }
+        // }}
+
+        >
           {
             homeData.heroData.map((item, index) => {
               return (
                 <SwiperSlide key={index} className="w-full h-full relative ">
-                  <div className="container h-full z-10 relative">
+                  <div className="h-full z-10 relative">
                     <div className="flex flex-col justify-end h-full pb-10 xl:pb-30">
                       <div className="flex justify-between items-end">
                         <div className="w-full h-full xl:max-w-[30%] flex flex-col justify-end  ">
                           <h2 className="text-60 3xl:text-80 leading-[1] text-black font-[300] mb-5 xl:mb-22 slide-title " >{item.title}</h2>
-                          {/* <div className="flex items-center ">
-                            <button className="border text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl">
-                              <span>Explore Destinations</span>
-                            </button>
-                            <div className="bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px] flex items-center justify-center">
-                              <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20} className="w-4 h-4 xl:w-[13.79px] xl:h-[13.85px] object-contain " /></div>
-                          </div> */}
-                          <PrimaryBtn text="Explore Destinations" link="#" />
+                          <div className="flex items-center relative group/main overflow-hidden w-fit">
+                            <Link href={item.slug} className="border border-black text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >
+                              <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
+                              <span className="relative z-10">{item.btnText}</span>
+                            </Link>
+                            {/* Arrow container */}
+                            <div className="bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px] flex items-center justify-center relative overflow-hidden">
+                              {/* First arrow (default) */}
+                              <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20}
+                                className="w-4 h-4 xl:w-[16px] xl:h-[16px] object-contain  absolute transition-all duration-400 ease-in-out group-hover/main:translate-x-2 group-hover/main:-translate-y-2 opacity-100 group-hover/main:opacity-0" />
+
+                              {/* Second arrow (enters on hover) */}
+                              <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20}
+                                className="w-4 h-4 xl:w-[16px] xl:h-[16px] object-contain absolute translate-x-[-1rem] translate-y-[1rem] opacity-0 transition-all duration-400 ease-in-out group-hover/main:translate-x-0 group-hover/main:translate-y-0 group-hover/main:opacity-100" />
+                            </div>
+                          </div>
                         </div>
                         <div className="relative z-10">
-                          <h3 className="text-90 leading-[1] text-white font-[300] mb-5 xl:mb-[23px] text-right">{item.location}</h3>
+                          <h3 className="text-90 leading-[1] text-white font-[200] mb-5 xl:mb-[23px] text-right">{item.location}</h3>
                           <div>
-                            <CustomPagination
-                              currentSlide={activeIndex}
-                              totalSlides={homeData.heroData.length}
-                              onSlideChange={handleSlideChange}
-                              locations={homeData.heroData.map((item) => item.location)}
-                            />
+                            <CustomPagination currentSlide={activeIndex} totalSlides={homeData.heroData.length} onSlideChange={handleSlideChange} locations={homeData.heroData.map((item) => item.location)} />
                           </div>
                         </div>
                       </div>
