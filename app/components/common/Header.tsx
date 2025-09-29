@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full py-3 xl:py-7 bg-cover pm-noise transition-all duration-300 ${isSticky ? "fixed top-0 left-0 right-0 shadow-lg bg-white z-50" : "relative"
+      className={`w-full py-3 xl:py-7 bg-cover pm-noise transition-all duration-300 ${isSticky ? "" : "relative"
         }`}
     >
       <div className="container">
