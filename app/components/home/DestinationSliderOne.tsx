@@ -3,7 +3,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { Swiper, SwiperSlide } from "swiper/react";
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { assets} from '@/public/assets';
+import { Navigation} from 'swiper/modules';
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -13,7 +18,7 @@ interface Destination {
   id: number;
   country: string;
   destinationCount: string;
-  image: string;
+  image: string ;
   highlights: string[];
 }
 
@@ -36,14 +41,14 @@ const destinations: Destination[] = [
     id: 3,
     country: 'Saudi Arabia',
     destinationCount: '12+',
-    image: '/assets/images/home/hero/slide-3.jpg ',
+    image: '/assets/images/home/hero/slide-4.jpg ',
     highlights: ['Al-Masjid an-Nabawi', 'Kingdom Centre', 'Edge of the World']
   },
   {
     id: 4,
     country: 'Oman',
     destinationCount: '6+',
-    image: '/assets/images/home/hero/slide-4.jpg',
+    image: '/assets/images/home/hero/slide-1.jpg',
     highlights: ['Mountain Landscapes', 'Desert Adventures', 'Historic Forts']
   }
 ];
@@ -115,15 +120,15 @@ const DestinationSliderOne: React.FC = () => {
   }, [currentSlide]);
 
   return (
-    <section className="py-25 xl:py-30 overflow-hidden">
+    <section className="py-10 xl:pt-30 xl:pb-5 overflow-hidden">
       <div className="container">
-        <div className="3xl:pl-[573px] " >
-          <h2 className="text-70 leading-[1] font-light mg-8 xl:mb-[50px] max-w-4xl text-black">Expertise Behind Every Experience</h2>
+        <div className="3xl:pl-[573px] mb-5 xl:mb-0" >
+          <h2 className="text-70 leading-[1] font-light mb-4 xl:mb-[50px] max-w-4xl text-black">Expertise Behind Every Experience</h2>
           <h3 className="text-34 leading-[1.235294117647059] font-light text-black">Destinations</h3>
         </div>
       </div>
       {/* Main slider section - FULL WIDTH */}
-      <div className="relative pt-5 xl:pt-10" ref={triggerRef}>
+      <div className="relative pt-5 xl:pt-10 hidden xl:block " ref={triggerRef}>
         <div className="w-full xl:ml-6 3xl:ml-16 overflow-hidden" ref={containerRef}>
           <div ref={slidesContainerRef} className="flex h-full">
             {destinations.map((destination, index) => (
@@ -157,8 +162,8 @@ const DestinationSliderOne: React.FC = () => {
                 </div>
 
                 {/* Content positioned on left side */}
-                <div className={` flex items-center xl:mr-25 3xl:mr-[205px]  ${index === currentSlide ? 'relative z-10 ml-5 mt-6 xl:mt-[44px]' : ' top-0 z-0 opacity-0'}`}>
-                  <div className={`flex gap-5 3xl:gap-10  w-full ${index === currentSlide ? 'border-b border-black/30' : ''}`}>
+                <div className={` flex flex-wrap items-center xl:mr-25 3xl:mr-[205px]  ${index === currentSlide ? 'relative z-10 ml-5 mt-6 xl:mt-[44px]' : ' top-0 z-0 opacity-0'}`}>
+                  <div className={`flex flex-wrap xl:flex-nowrap gap-5 3xl:gap-10  w-full ${index === currentSlide ? 'border-b border-black/30' : ''}`}>
                     <div className="pr-8 xl:pr-20 3xl:pr-[212px]">
                       <h2 className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight">
                         {destination.country}
@@ -205,6 +210,63 @@ const DestinationSliderOne: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      {/* mobile slider */}
+        <div className='xl:hidden'>
+          <div className="container">
+            <div className="navigaion flex gap-5 mb-4 w-fit ml-auto">
+              <button className="prev"><Image src={assets.pmArrowLeft} width={26} height={26} alt="Arrow" /></button>
+              <button className="next"><Image src={assets.pmArrowRight} width={26} height={26} alt="Arrow" /></button>
+            </div>
+          </div>
+          <Swiper
+          className="destinations-slider"
+          modules={[Navigation]}
+          slidesPerView={1}
+          spaceBetween={30}
+          pagination={{ clickable: true }}
+          navigation={{ prevEl: '.prev', nextEl: '.next' }}
+        >
+          {destinations.map((destination, index) => (
+            <SwiperSlide key={index}>
+              <div className="h-full">
+               <div className="relative">
+                  <Image src={destination.image.trimEnd()} width={1000} height={500} alt={destination.country} className="w-full h-full object-cover" />
+                  <div className="flex gap-6 z-40 absolute left-5 bottom-5">
+                    <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border border-primary text-white rounded-3xl hover:bg-primary transition-colors font-light font-funnel-display">
+                      Know More
+                    </button>
+                    <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border-1 border-primary text-white rounded-3xl hover:bg-white hover:text-gray-900 transition-colors font-light font-funnel-display">
+                      Enquire Now
+                    </button>
+                  </div>
+               </div>
+              <div className="container">
+                  <div className='flex flex-wrap py-5 gap-5 '>
+                    <h2 className="text-50 font-light text-black leading-tight">
+                      {destination.country}
+                    </h2>
+                    <h3 className="text-50 font-light text-black leading-[1]">
+                      {destination.destinationCount}
+                    </h3>
+                   <div>
+                      <h4 className="text-lggray text-20 font-medium leading-[1.526315789473684] mb-3 font-inter"> Destinations </h4>
+                      <ul className='flex flex-wrap'>
+                        {destination.highlights.map((highlight, idx) => (
+                          <li className='text-base  font-light leading-[1.526315789473684] group mr-2 w-[25%] min-w-max' key={idx}>{highlight} <span className="group-last:hidden">,</span></li>
+                        ))}
+                      </ul>
+                   </div>
+                  </div>
+                
+              </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        </div>
+      
+
     </section>
   );
 };

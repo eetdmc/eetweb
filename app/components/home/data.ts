@@ -1,3 +1,4 @@
+import { features } from "process";
 
 
 export const homeData = {
@@ -60,6 +61,40 @@ export const homeData = {
         slug: "#",
       },
     ],
+  },
+  destinationsData:{
+    title:"Expertise Behind Every Experience",
+    subtitle:"Destinations",
+    items:[
+      {
+        image:"/assets/images/destinations/img-1.jpg",
+        title:"UAE",
+        destinationCount:"15+",
+        highlights:["Nizwa Fort and Souk", "Al Hoota Cave", "Sultan Qaboos Grand Mosque", "Wahiba Sands", "Wadi Shab"],
+        slug:"#"
+      },
+      {
+        image:"/assets/images/destinations/img-2.jpg",
+        title:"Qatar",
+        destinationCount:"8+",
+        highlights:["Wahiba Sands", "Wadi Shab", "Traditional Souks"],
+        slug:"#"
+      },
+      {
+        image:"/assets/images/destinations/img-3.jpg",
+        title:"Saudi Arabia",
+        destinationCount:"12+",
+        highlights:["Al-Masjid an-Nabawi", "Kingdom Centre", "Edge of the World"],
+        slug:"#"
+      },
+      {
+        image:"/assets/images/destinations/img-4.jpg",
+        title:"Oman",
+        destinationCount:"6+",
+        highlights:["Mountain Landscapes", "Desert Adventures", "Historic Forts"],
+        slug:"#"
+      }
+    ]
   },
   blog: {
     title: "Inspiring Stories",

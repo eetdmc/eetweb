@@ -42,9 +42,9 @@ const FeaturesSection = () => {
   return (
     <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 overflow-hidden" ref={containerRef}>
       <div className="container">
-        <div className="grid grid-cols-[1fr_2fr] xl:grid-cols-[408px_auto] gap-20 3xl:gap-[235px]">
+        <div className="grid grid-cols-1 xl:grid-cols-[408px_auto] gap-10 xl:gap-20 3xl:gap-[235px]">
           <div className="w-full h-full "> 
-              <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="w-full h-full object-cover" />
+              <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="h-40 w-full xl:h-full object-cover object-bottom xl:object-center" />
             </div>
           <div className=" 3xl:pr-[146px] pt-7 xl:pt-[38px]">
             <div className="grid grid-cols-2 3xl:grid-cols-[455px_auto]">

@@ -5,7 +5,8 @@ import Image from "next/image";
 import { assets } from "../../../public/assets";
 import PrimaryBtn from "../common/PrimaryBtn";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Accordion from "../common/Accordion";
 
 gsap.registerPlugin(ScrollTrigger);
 interface ServiceItem {
@@ -188,9 +189,9 @@ const Services = () => {
   /* gsap effect end */
 
   return (
-    <section ref={sectionRef} className="pt-25 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden">
+    <section ref={sectionRef} className="pt-10 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden">
       <div className="container">
-        <div className="grid grid-cols-2 xl:grid-cols-[1020px_auto] 3xl:grid-cols-[1282px_auto]">
+        <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1020px_auto] 3xl:grid-cols-[1282px_auto]">
           <h2 className="text-70 leading-[1] font-light max-w-2xl text-black">
             {servicesData.title}
           </h2>
@@ -198,7 +199,7 @@ const Services = () => {
             {servicesData.subtitle}
           </h3>
         </div>
-        <div className="mt-18 xl:mt-[120px]">
+        <div className="mt-18 xl:mt-[120px] hidden xl:block">
           <div className="grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-[544px_631px_auto]">
             {/* Services List */}
             <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px]" >
@@ -215,17 +216,17 @@ const Services = () => {
                     >
                       {service.title}
                     </button>
-                      <Image  
-                        src={assets.arrowPrimary}
-                        alt="Arrow"
-                        width={26}
-                        height={26}
-                        className={`w-4 h-4 xl:w-6 xl:h-6 transition-all duration-300 ${activeService === index
-                          ? 'opacity-100 translate-x-1'
-                          : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
-                          }`}
-                      />
-                  
+                    <Image
+                      src={assets.arrowPrimary}
+                      alt="Arrow"
+                      width={26}
+                      height={26}
+                      className={`w-4 h-4 xl:w-6 xl:h-6 transition-all duration-300 ${activeService === index
+                        ? 'opacity-100 translate-x-1'
+                        : 'opacity-0 group-hover:opacity-100 group-hover:translate-x-1'
+                        }`}
+                    />
+
                   </li>
                 ))}
               </ul>
@@ -269,6 +270,12 @@ const Services = () => {
               </div>
             </div>
           </div>
+        </div>
+        {/* Accordion */}
+        <div className="mt-10 xl:hidden">
+          {servicesData.items.map((service, index) => (
+            <Accordion key={index} title={service.title} content={service.description} image={service.image} />
+          ))}
         </div>
       </div>
     </section>
