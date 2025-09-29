@@ -46,7 +46,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, image }) => {
   }, [isOpen]);
 
   return (
-    <div className="border-b border-gray-300 pm-noise mb-1 px-2">
+    <div className="border-b border-gray-300 bg-white/70 mb-1 px-2">
       <button onClick={() => setIsOpen(!isOpen)} className="w-full flex justify-between items-center py-4 text-left">
         <span className="text-lg font-medium">{title}</span>
         <ChevronDown ref={iconRef} className="w-5 h-5 transform" />
