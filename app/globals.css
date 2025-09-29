@@ -30,10 +30,10 @@
   --text-60: clamp(1.8rem, 6vw + 0.1em, 60px);
   --text-50: clamp(1.6rem, 5vw + 0.1em, 50px);
   --text-40: clamp(1.5rem, 5vw + 0.1em, 40px);
-  --text-30: clamp(1.5rem, 4vw + 0.1em, 30px);
+  --text-30: clamp(1.2rem, 4vw + 0.1em, 30px);
   --text-34: clamp(1.4rem, 4vw + 0.1em, 34px);
-  --text-19: clamp(1rem, 2vw + 0.1em, 19px);
-  --text-14: clamp(1rem, 2vw + 0.1em, 14px);
+  --text-19: clamp(0.9rem, 2vw + 0.1em, 19px);
+  --text-14: clamp(0.7rem, 2vw + 0.1em, 14px);
 
   --lhtext-19: 1.526315789473684;
   --lhtext-30: 1.2;
@@ -190,25 +190,30 @@ body {
   @apply  transition-all duration-300 opacity-0 translate-y-full ;
 }
 .blog-img{
-  @apply xl:max-h-[401px] 3xl:max-h-[674px] 3xl:min-h-[568px];
+  @apply   xl:max-h-[401px] 3xl:max-h-[674px] 3xl:min-h-[568px];
+  
 }
 
 .blog-slider .swiper-slide-next>div .blog-img {
-  @apply xl:h-[400px] 3xl:h-[568px] opacity-100 translate-y-0;
+  @apply h-auto xl:h-[400px] 3xl:h-[568px] opacity-100 translate-y-0;
 }
 
 .blog-slider .swiper-slide-active>div .blog-img {
-  @apply xl:h-[400px] 3xl:h-[568px] opacity-100 translate-y-0;
+  @apply h-auto xl:h-[400px] 3xl:h-[568px] opacity-100 translate-y-0;
 }
 
 .blog-slider .swiper-slide-next+.swiper-slide>div .blog-img {
-  @apply xl:h-[541px] 3xl:h-[674px] opacity-100 translate-y-0;
+  @apply h-auto xl:h-[541px] 3xl:h-[674px] opacity-100 translate-y-0;
 }
 
 .blog-slider-pagination .swiper-button-prev-custom,
 .blog-slider-pagination .swiper-button-next-custom {
   top:20%;
   bottom:-5%;
+  @media screen and (max-width: 768px) {
+    top:10%;
+    bottom:unset;
+  }
 }
 .blog-slider-pagination .swiper-button-prev-custom{
   /* @apply left-auto; */
@@ -224,11 +229,19 @@ body {
 .testimonials-slider-pagination .swiper-button-prev-testimonials{
   /* @apply left-auto; */
   @apply left-8 xl:left-[113px];
+  @media screen and (max-width: 768px) {
+    left:20px;
+    
+  }
 }
 .testimonials-slider-pagination .swiper-button-next-testimonials{
   /* @apply left-auto; */
   right:unset;
   left:200px;
+  @media screen and (max-width: 768px) {
+    left:unset;
+    right:20px;
+  }
 }
 
 .word-span {

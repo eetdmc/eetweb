@@ -146,7 +146,7 @@ const Hero = () => {
 
   };
   return (
-    <section className="w-full h-screen xl:h-[calc(100vh-130px)] pm-noise relative">
+    <section className="w-full h-[calc(100vh-100px)] xl:h-[calc(100vh-130px)] pm-noise relative">
       {homeData.heroData.map((item, i) => (
         <div className="xl:w-[66%] 3xl:w-[1294px] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
           <Image src={item.image} alt={item.title} width={1920} height={1080}
@@ -196,7 +196,7 @@ const Hero = () => {
                     <div className="flex flex-col justify-end h-full pb-10 xl:pb-30 pt-25 xl:pt-0 ">
                       <div className="flex flex-wrap justify-between items-end">
                         <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[30%] flex flex-col justify-end  pb-10 xl:pb-0">
-                          <h2 className="text-[3rem] xl:text-60 3xl:text-80 leading-[1] text-white xl:text-black font-[300] mb-5 xl:mb-22 slide-title " >{item.title}</h2>
+                          <h2 className="text-[3rem] xl:text-60 3xl:text-80 leading-[1] text-white xl:text-black font-[300] mb-0 xl:mb-22 slide-title " >{item.title}</h2>
                           <div className="flex items-center relative group/main overflow-hidden w-fit">
                             <Link href={item.slug} className="border border-white xl:border-black text-white xl:text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >
                               <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>

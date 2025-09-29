@@ -2,8 +2,7 @@ import Hero from "./Hero";
 import HeroBottom from "./HeroBottom";
 import FeaturesSection from "./FeaturesSection";
 import Services from "./Services";
-// import DestinationSlider from "./DestinationSlider";
-// import HorizontalGallery from "./HorizontalGallery";
+// import DestinationSliderOne from "./DestinationSliderOne";
 import DestinationSlider from "./DestinationSlider";
 import BlogSlider from "./BlogSlider";
 import Testimonials from "./Testimonials";
@@ -15,8 +14,7 @@ const Index = () => {
       <HeroBottom />
       <FeaturesSection />
       <Services />
-      {/* <DestinationSlider /> */}
-      {/* <HorizontalGallery /> */}
+      {/* <DestinationSliderOne /> */}
       <DestinationSlider />
       <BlogSlider />
       <Testimonials />
