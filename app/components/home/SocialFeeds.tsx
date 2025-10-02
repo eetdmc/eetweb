@@ -1,7 +1,7 @@
 
 const SocialFeeds = () => {
   return ( 
-    <section className="pt-10 pb-15 xl:pt-30 xl:pb-[200px] sec-noise">
+    <section className="pt-10 pb-15 xl:pt-30 xl:pb-[300px] sec-noise">
       <div className="container">
         <div>
           <h2 className="text-70 leading-[1] font-light text-black mb-8 xl:mb-[78px]">Social Feeds</h2>

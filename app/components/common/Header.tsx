@@ -5,7 +5,8 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { gsap } from "gsap";
 import { assets } from "@/public/assets";
-
+import Link from "next/link";
+import { commonData } from "./data";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -40,18 +41,18 @@ const Header = () => {
       <div className="container">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <div className="flex items-center">
-            <Image src={assets.logo} alt="Logo" width={200} height={200} className="w-20 xl:w-[105px] h-auto object-contain"/>
-          </div>
+          <Link href="/" className="flex items-center">
+            <Image src={commonData.headerData.logo} alt="Logo" width={200} height={200} className="w-20 xl:w-[105px] h-auto object-contain"/>
+          </Link>
 
           {/* Desktop Nav */}
           <div className="w-fit rounded-3xl bg-white overflow-hidden hidden xl:block">
             <nav>
               <ul className="flex font-manrope">
-                {["About", "Services", "Destinations", "Partners", "Blogs", "Contact"].map(
+                {commonData.headerData.menuItems.map(
                   (item, i) => (
-                    <li key={i} className="group hover:bg-primary transition-all duration-300 ease-in-out px-[17.5px] py-2 xl:py-[12.5px]">
-                      <a href="#" className="uppercase font-light leading-[1] text-base font-manrope text-black group-hover:text-white group-hover:scale-110 transition-all duration-300 ease-in-out">{item}</a>
+                    <li key={i} className="group hover:bg-primary transition-all duration-300 ease-in-out px-[17.5px] py-2 xl:py-[12.5px] first:pl-30px last:pr-30px">
+                      <a href={item.href} className="uppercase font-light w-full h-full leading-[1] text-base font-manrope text-black group-hover:text-white group-hover:scale-110 transition-all duration-300 ease-in-out">{item.label}</a>
                     </li>
                   )
                 )}
