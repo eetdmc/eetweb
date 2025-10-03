@@ -13,11 +13,10 @@ const Main = () => {
       </div>
       <div className="mb-15 xl:mb-25">
         {/* <Image src="/assets/images/services/details/main.jpg" alt="" width={1920} height={1080} className="w-full h-full max-h-[750px] object-cover" /> */}
-        <video src="/assets/videos/main.mp4" className="w-full h-[750px] object-cover" autoPlay={true} muted={true}
-          loop={true} playsInline />
+        <video src="/assets/videos/mice.mp4" className="w-full h-[750px] object-cover" autoPlay={true} muted={false} loop={true} playsInline />
       </div>
       <div className="container">
-        <div className="xl:max-w-[1080px] ml-auto mb-15 xl:mb-25 2xl:mb-[208px] xl:mr-[292px]">
+        <div className="xl:max-w-[1080px] ml-auto">
           <div className="">
             <h2 className="text-30 leading-[1.333333333333333] font-light mb-8 xl:mb-50px max-w-[70ch]">From corporate meetings to world-class exhibitions, we design and deliver experiences that inspire, connect, and impress.</h2>
             <p className="text-19 leading-lhtext-19 font-light font-inter max-w-[70ch]">At EET DMC, we bring creativity, precision, and logistical excellence to the world of MICE — Meetings, Incentives, Conferences, and Exhibitions. With strong regional knowledge and a trusted partner network, we ensure every detail of your event is flawlessly executed, from concept to curtain call.</p>
