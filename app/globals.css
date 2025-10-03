@@ -402,3 +402,8 @@ label {
   @apply h-[325px] object-contain;
 }
 
+
+
+.ml-container{
+  @apply 2xl:max-w-[1432px] ml-auto;
+}
