@@ -409,6 +409,9 @@ label {
 .ml-container{
   @apply 2xl:max-w-[1432px] ml-auto;
 }
+.ml-container-big{
+  @apply 2xl:max-w-[1574px] ml-auto;
+}
 
 .crd-index{
   /* @apply pt-[44px]; */
@@ -495,4 +498,8 @@ label {
 .process-grid>div:last-child{
  grid-column: span 3;
 @apply border-l border-primary-light;
+}
+
+.experiences-slider .swiper-slide-next{
+  @apply pt-20;
 }

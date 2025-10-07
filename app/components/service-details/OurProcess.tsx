@@ -2,7 +2,7 @@ const OurProcess = () => {
   return ( 
     <section className="py-15 xl:py-25 2xl:pt-30 2xl:pb-[400px] pm-noise">
       <div className="container">
-       <div className="ml-container">
+       <div className="ml-container-big">
           <h2 className="text-50 xl:text-70  font-light leading-[1] mb-10 xl:mb-15 2xl:mb-25 text-black xl:max-w-[15ch]">Our Process</h2>
           <div className="process-grid">
             <div className="">

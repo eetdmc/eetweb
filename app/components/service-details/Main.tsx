@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { assets } from "@/public/assets";
+
 const Main = () => {
   return ( 
     <section className=" pb-15  xl:pb-[114px] ">
