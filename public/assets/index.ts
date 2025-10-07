@@ -6,4 +6,5 @@ import arrowPrimary from "./images/icons/tr-arrow-primary.svg";
 import pmArrowLeft from "./images/icons/pm-arrow-left.svg";
 import pmArrowRight from "./images/icons/pm-arrow-right.svg";
 import footerImg from "./images/footer.jpg";
-export const assets = { logo, user, pattern1, arrowTopRight, arrowPrimary, pmArrowLeft, pmArrowRight, footerImg };
+import arrowDown from "./images/icons/arrow-down.svg";
+export const assets = { logo, user, pattern1, arrowTopRight, arrowPrimary, pmArrowLeft, pmArrowRight, footerImg, arrowDown };
