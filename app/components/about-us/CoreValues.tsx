@@ -21,7 +21,8 @@ const CoreValues = ({ title, data }: CoreValuesProps) => {
           <div>
             {data.map((item, index) => (
                 // <AccordionStyleTwo key={index} title={item.title} content={item.content} image={item.icon} isOpen={openIndex === index} onToggle={() => setOpenIndex(index)} />
-              <AccordionStyleTwo key={index} title={item.title} content={item.content} image={item.icon} isOpen={openIndex === index} onToggle={() => setOpenIndex(openIndex === index ? null : index)} />
+              <AccordionStyleTwo key={index} title={item.title} content={item.content} image={item.icon}
+               isOpen={openIndex === index} onToggle={() => setOpenIndex(openIndex === index ? null : index)} />
             ))}
           </div>
         </div>
