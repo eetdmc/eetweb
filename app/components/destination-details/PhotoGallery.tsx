@@ -58,15 +58,15 @@ const PhotoGallery = () => {
 
     gsap.fromTo(
       activeSlide.querySelector('img'),
-      { scale: 0.8 },
-      { scale:2, duration: 0.6, ease: 'power2.out' }
+      { scale: 0.5 },
+      { scale:1, duration: 0.6, ease: 'power2.out' }
     );
   };
   return (
     <section className="py-10 xl:py-20 2xl:pt-30 2xl:pb-[266.06px]">
       <div className="container">
         <div className="max-w-[1318px] flex items-center justify-between">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">Photo Gallery</h2>
+          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-20 text-black">Photo Gallery</h2>
           <div className="flex gap-5 w-fit">
             <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={30} height={30} className="" /></button>
             <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={30} height={30} className="" /></button>
@@ -79,7 +79,7 @@ const PhotoGallery = () => {
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={3}
-            spaceBetween={0}
+            spaceBetween={50}
             speed={700}
             loop={true}
             autoplay={{
@@ -88,7 +88,7 @@ const PhotoGallery = () => {
             }}
             coverflowEffect={{
               rotate: 0,
-              stretch: 0,
+              stretch: 1,
               depth: 200,
               modifier: 1,
               slideShadows: false,
@@ -121,13 +121,13 @@ const PhotoGallery = () => {
             className="w-full h-full !py-12 md:!py-16 lg:!py-20"
           >
             {slides.map((slide) => (
-              <SwiperSlide   key={slide.id} className=" flex items-center justify-center" >
+              <SwiperSlide   key={slide.id} className="flex items-center justify-center !h-auto" >
                 {({ isActive }) => (
-                  <div className={`relative w-full h-full overflow-hidden  transition-all duration-700 ${isActive ? 'scale-130' : 'scale-100 opacity-100'
+                  <div className={`relative w-full h-full  overflow-hidden transition-all duration-700 ${isActive ? 'scale-200' : 'scale-100 opacity-100'
                       }`}
                   >
                     {/* Image */}
-                    <Image width={1920} height={1280} src={slide.image}  alt={`Slide ${slide.id}`} className="w-full h-full object-cover"
+                    <Image width={1920} height={1280} src={slide.image}  alt={`Slide ${slide.id}`} className="w-full h-full object-contain"
                     />
                   </div>
                 )}

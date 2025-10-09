@@ -203,7 +203,7 @@ const Hero = () => {
                               <span className="relative z-10">{item.btnText}</span>
                             </Link>
                             {/* Arrow container */}
-                            <div className="bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px] flex items-center justify-center relative overflow-hidden">
+                            <div className="hidden bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px]  items-center justify-center relative overflow-hidden">
                               {/* First arrow (default) */}
                               <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20}
                                 className="w-4 h-4 xl:w-[16px] xl:h-[16px] object-contain  absolute transition-all duration-400 ease-in-out group-hover/main:translate-x-2 group-hover/main:-translate-y-2 opacity-100 group-hover/main:opacity-0" />

@@ -16,14 +16,6 @@ export const commonData = {
                 href: "/destinations"
             },
             {
-                label: "Partners",
-                href: "/partners"
-            },
-            {
-                label: "Blogs",
-                href: "/blogs"
-            },
-            {
                 label: "Contact",
                 href: "/contact"
             }
