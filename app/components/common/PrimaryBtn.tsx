@@ -10,7 +10,7 @@ const PrimaryBtn = ({ text, link }: { text: string, link?: string }) => {
       </Link>
 
       {/* Arrow container */}
-      <div className="bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px] flex items-center justify-center relative overflow-hidden">
+      <div className="bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px] flex items-center justify-center relative overflow-hidden hidden">
         {/* First arrow (default) */}
         <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20}
           className="w-4 h-4 xl:w-[13.79px] xl:h-[13.85px] object-contain brightness-0 invert absolute

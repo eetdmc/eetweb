@@ -1,4 +1,5 @@
-import PhotoGallery from "./PhotoGallery";
+import { title } from "process";
+
 
 export const destinationsData = {
   experiences:{
@@ -33,6 +34,33 @@ export const destinationsData = {
     title:"Photo Gallery",
     items:[
       // image:"/assets/images/destinations/details/photo-gallery/"
+    ]
+  },
+  WhyExplore:{
+    title:"",
+    items:[
+      {
+        icon:"/assets/images/destinations/details/why-explore/icon-1.svg",
+        title:"Access to exclusive venues and experiences",
+      },
+      {
+        icon:"/assets/images/destinations/details/why-explore/icon-2.svg",
+        title:"On-ground support in all 7 Emirates"
+      },
+      {
+        icon:"/assets/images/destinations/details/why-explore/icon-3.svg",
+        title:"Multilingual expert guides"
+      },
+      {
+        icon:"/assets/images/destinations/details/why-explore/icon-4.svg",
+        title:"Custom group packages and corporate rates"
+      },
+      {
+        icon:"/assets/images/destinations/details/why-explore/icon-5.svg",
+        title:"Round-the-clock assistance"
+      }
+      
+
     ]
   }
 }
