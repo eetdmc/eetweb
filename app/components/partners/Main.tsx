@@ -5,7 +5,7 @@ const Main = () => {
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
             <h3 className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">About EET</h3>
-            <h1 className="text-80 leading-[1.25] font-[200] text-black max-w-7xl mx-auto">Crafting Exceptional Journeys Across the Gulf</h1>
+            <h1 className="text-80 leading-[1.25] font-light text-black max-w-7xl mx-auto">Crafting Exceptional Journeys Across the Gulf</h1>
           </div>
         </div>
       </div>

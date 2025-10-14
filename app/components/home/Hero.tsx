@@ -215,7 +215,7 @@ const Hero = () => {
                           </div>
                         </div>
                         <div className="relative z-10 ml-auto xl:ml-0">
-                          <h3 className="text-[1.5rem] xl:text-90 leading-[1] text-white font-[200] mb-5 xl:mb-[23px] text-right">{item.location}</h3>
+                          <h3 className="text-[1.5rem] xl:text-90 leading-[1] text-white font-light mb-5 xl:mb-[23px] text-right">{item.location}</h3>
                           <div>
                             <CustomPagination currentSlide={activeIndex} totalSlides={homeData.heroData.length} onSlideChange={handleSlideChange} locations={homeData.heroData.map((item) => item.location)} />
                           </div>
