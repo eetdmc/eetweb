@@ -118,6 +118,7 @@ const DestinationSlider: React.FC = () => {
         <div className="3xl:pl-[573px] " >
           <h2 className="text-70 leading-[1] font-light mb-4 xl:mb-[50px] max-w-4xl text-black">Expertise Behind Every Experience</h2>
           <h3 className="text-34 leading-[1.235294117647059] font-light text-black">Destinations</h3>
+         
         </div>
       </div>
       {/* Main slider section - FULL WIDTH */}
@@ -185,7 +186,7 @@ const DestinationSlider: React.FC = () => {
         </div>
 
         {/* Pagination - OVERLAID on top right */}
-        <div className="absolute right-0 top-10 3xl:top-[74px]  transform z-50 pr-11 bg-white">
+        <div className="absolute right-0 top-10 3xl:top-[74px]  z-50 pr-11 bg-white pb-15">
           {/* Progress lines */}
           <div className="flex mb-6">
             {destinations.map((_, index) => (
@@ -202,23 +203,19 @@ const DestinationSlider: React.FC = () => {
                 <span>{String(destinations.length).padStart(2, '0')}</span>
               </h4>
             </div>
-          </div>
-            <div className="flex gap-5 relative z-30">
-              <button
-                className={`prev ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-                onClick={handlePrev}
-                disabled={currentSlide === 0}
-              >
+            <div className="flex gap-5 ml-auto w-fit pt-10">
+              <button className={`prev ${currentSlide === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
+                onClick={handlePrev} disabled={currentSlide === 0} >
                 <Image src={assets.pmArrowLeft} width={26} height={26} alt="Arrow" />
               </button>
               <button
                 className={`next ${currentSlide === destinations.length - 1 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
-                onClick={handleNext}
-                disabled={currentSlide === destinations.length - 1}
-              >
+                onClick={handleNext} disabled={currentSlide === destinations.length - 1}  >
                 <Image src={assets.pmArrowRight} width={26} height={26} alt="Arrow" />
               </button>
             </div>
+          </div>
+
         </div>
       </div>
 
@@ -236,7 +233,7 @@ const DestinationSlider: React.FC = () => {
           slidesPerView={1}
           spaceBetween={30}
           pagination={{ clickable: true }}
-          navigation={{ prevEl: '.prev', nextEl: '.next' }}
+          navigation={{ prevEl: '.prev', nextEl: '.next', disabledClass: 'swiper-button-lock-custom' }}
         >
           {destinations.map((destination, index) => (
             <SwiperSlide key={index}>

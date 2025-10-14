@@ -615,3 +615,8 @@ body {
 .team-tilecard:hover .team-overlay {
   @apply h-full;
 }
+
+.swiper-button-lock-custom  {
+  display: block!important;
+  pointer-events: auto !important;
+}

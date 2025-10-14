@@ -28,7 +28,7 @@ const TeamSlider = () => {
     <section className="">
       <div className="container">
         <div className="xl:max-w-[1136px] ml-auto">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-[200] leading-[1] mb-5 xl:mb-[30px] text-black">Meet Our Team</h2>
+          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">Meet Our Team</h2>
         </div>
       </div>
       <div className="sec-noise relative">

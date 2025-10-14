@@ -3,8 +3,8 @@ import Image from "next/image";
 import { assets } from "@/public/assets";
 import Link from "next/link";
 
-const Footer   = () => {
-  return ( 
+const Footer = () => {
+  return (
     <footer className="">
       <div className="bg-black ">
         <div className="container">
@@ -16,7 +16,7 @@ const Footer   = () => {
               <div className="absolute top-0 bg-black/60 w-full h-full z-10"></div>
               <div className="relative z-20 px-8 xl:px-[142px] py-5 xl:py-20 3xl:py-[145px]">
                 <div className="flex items-center justify-between flex-wrap gap-5">
-                  <h2 className="3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-[200] text-white leading-[1]">
+                  <h2 className="3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-light text-white leading-[1]">
                     Start Your Destination Experience Today</h2>
                   <button className="rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-8 xl:py-3 3xl:px-[65px] 3xl:py-[49.5px] flex items-center gap-5 text-base xl:text-30 font-light leading-lhtext-30 ">
                     <span className="text-white">Let&apos; Connect</span>
@@ -76,9 +76,9 @@ const Footer   = () => {
               </div>
               <div>
                 <h3 className="text-19 leading-lhtext-19 font-light text-white/70 font-inter pb-3 xl:pb-[24px] xl:hidden underline xl:underline-none underline-offset-8">Address</h3>
-                <p className="text-19 leading-lhtext-19 font-extralight text-white font-inter ">East Europe Travel & Tourism LLC<br/> 
-                  PO Box 212371| Suite 12AE02 | iRise Tower<br/>
-                  Barsha Heights (Tecom)<br/>
+                <p className="text-19 leading-lhtext-19 font-extralight text-white font-inter ">East Europe Travel & Tourism LLC<br />
+                  PO Box 212371| Suite 12AE02 | iRise Tower<br />
+                  Barsha Heights (Tecom)<br />
                   Dubai, UAE</p>
               </div>
             </div>
@@ -132,7 +132,7 @@ const Footer   = () => {
         </div>
       </div>
     </footer>
-   );
+  );
 }
- 
-export default Footer ;
+
+export default Footer;
