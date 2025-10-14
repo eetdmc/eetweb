@@ -1,0 +1,34 @@
+import { assets } from "@/public/assets";
+import { awardsData } from "./darta";
+import Image from "next/image";
+import Link from "next/link";
+const AwardsList = () => {
+  return (
+    <section className="pb-15 xl:pb-[300px] 2xl:pb-[400px]">
+      <div className="container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3 xl:gap-x-8 xl:gap-y-5 2xl:gap-x-[104px] 2xl:gap-y-[84px]">
+          {awardsData.items.map((item, index) => (
+            <div key={index} className="group overflow-hidden hover:overflow-visible">
+              <div className="pb-8 xl:pb-[23px] border-b border-black/10">
+                <div className="flex items-center justify-between text-center relative">
+                  <h4 className="text-19 leading-lhtext-19 font-light font-inter text-center w-fit mx-auto group-hover:mx-0 transition-all duration-300">{item.year}</h4>
+                  <Link href={item.link} className="bg-primary rounded-full flex items-center justify-center absolute top-[-50%] -right-20 group-hover:right-0  w-8 h-8 xl:w-[44px] xl:h-[44px]  transition-all duration-300">
+                    <Image src={assets.arrowTopRight} alt={item.name} width={30} height={30} className="w-25 xl:w-auto max-w-[100%] h-auto object-contain cursor-pointer brightness-0 invert" />
+                  </Link>
+                </div>
+              </div>
+              <div className="flex flex-col items-center pb-8 lg:pb-10 xl:pb-[66px] group-hover:bg-[#f8f8f8] transition-all duration-300">
+                <div className="flex flex-col items-center justify-center xl:min-h-[247px]">
+                  <Image src={item.image} alt={item.name} width={229} height={200} className="w-25 max-w-[100%] h-auto xl:w-auto object-contain" />
+                </div>
+                <h3 className="text-34 leading-[1.294117647058824] font-light font-inter text-center text-black w-fit mx-auto group-hover:mx-0 transition-all duration-300">{item.name}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default AwardsList;
