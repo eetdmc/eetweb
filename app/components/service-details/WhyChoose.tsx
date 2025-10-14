@@ -2,7 +2,7 @@ import { serviceDetailsData } from "./data";
 import Image from "next/image";
   const WhyChoose = () => {
   return ( 
-    <section className="py-15 xl:py-25 2xl:pt-30 2xl:pb-[269px]">
+    <section className="py-15 xl:py-25 2xl:pt-50 2xl:pb-[269px]">
       <div className="container">
           <h2 className="text-50 xl:text-70  font-light leading-[1] mb-5 xl:mb-[30px] text-black xl:max-w-[15ch]">Why Choose EET for MICE?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 why-choose-wrap">

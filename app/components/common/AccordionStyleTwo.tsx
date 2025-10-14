@@ -34,10 +34,10 @@ const AccordionStyleTwo: React.FC<AccordionProps> = ({ title, content, image, is
   }, [isOpen]);
 
   return (
-    <div className="border-b border-gray-300 bg-white/70 mb-1 px-2">
+    <div className="border-b border-primary-light bg-white/70 mb-1 ">
       <button onClick={onToggle} onMouseEnter={onToggle} onMouseLeave={onToggle} className="w-full flex justify-between items-center py-4 text-left">
         <h3 className="text-30 leading-[1.2] font-light text-black">{title}</h3>
-        <Image src={image} alt="Arrow" width={20} height={20} className="w-auto h-auto object-cover mb-5" />
+        <Image src={image} alt="Arrow" width={20} height={20} className="w-auto h-auto object-cover mb-5 mr-10 xl:mr-[54px]" />
       </button>
 
       <div ref={contentRef} className="overflow-hidden h-0 text-gray-600">
