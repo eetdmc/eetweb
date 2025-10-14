@@ -4,7 +4,7 @@ const BehindTheScene = () => {
     <section className="pt-10 xl:pt-30 pb-15 xl:pb-[130px] 2xl:pb-[350px]">
       <div className="container">
         <div className="xl:max-w-[1285px] 2xl:max-w-[1400px] ml-auto mb-15 xl:mb-25 2xl:mb-[132px]">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black/50 xl:max-w-[23ch]">We’re your team behind the scenes.</h2>
+          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black xl:max-w-[23ch]">We’re your team behind the scenes.</h2>
         </div>
         <div className="flex justify-between">
           <div>

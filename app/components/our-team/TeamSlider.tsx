@@ -27,8 +27,8 @@ const TeamSlider = () => {
   return (
     <section className="">
       <div className="container">
-        <div className="xl:max-w-[1136px] ml-auto">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">Meet Our Team</h2>
+        <div className="xl:max-w-[1283px] ml-auto">
+          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-15 2xl:mb-20 text-black">Meet Our Team</h2>
         </div>
       </div>
       <div className="sec-noise relative">
@@ -51,7 +51,7 @@ const TeamSlider = () => {
           <div className={`absolute bottom-20 transition-opacity duration-300 ease-in-out ${isTileView ? "opacity-0" : "opacity-100"}`}>
             <div className="pagination">
               {/* Progress Bar */}
-              <div className="w-32 h-[0.5px] bg-black/20 mb-3 overflow-hidden">
+              <div className="w-32 xl:w-[264px] h-[0.5px] bg-black/20 mb-3 overflow-hidden">
                 <div className="h-full bg-primary transition-all duration-300" style={{ width: `${progress}%` }} />
               </div>
               {/* Slide Counter */}
@@ -150,8 +150,8 @@ const TeamSlider = () => {
                               <Image src={item.image} alt={item.name} width={513} height={531} />
                             </motion.div>
 
-                            <h3 className="text-30 font-light mb-[10px]">{item.name}</h3>
-                            <p className="text-19 font-light font-inter">{item.position}</p>
+                            <h3 className="text-30 leading-lhtext-30 font-light mb-[10px]">{item.name}</h3>
+                            <p className="text-19 leading-lhtext-19 font-light font-inter">{item.position}</p>
                             <div>
                               <Link href={"#"} className="slide-link">
                                 <Image src={assets.arrowTopRight} alt={item.name} width={30} height={30} />

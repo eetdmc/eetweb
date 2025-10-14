@@ -356,7 +356,7 @@ body {
   justify-content: center;
   align-items: center;
   height: auto !important;
-  @apply 3xl:min-h-[916px] opacity-0;
+  @apply 3xl:min-h-[890px] opacity-0;
 }
 
 .team-slider .swiper-slide-active {
@@ -376,7 +376,7 @@ body {
 }
 
 .team-slider .swiper-slide .staff-img {
-  @apply mb-4 xl:mb-[52px];
+  @apply mb-4 xl:mb-[75px];
 }
 
 .team-slider .swiper-slide-next>div .staff-img {
@@ -384,14 +384,20 @@ body {
 }
 
 .team-slider .swiper-slide .team-item {
-  @apply h-full flex flex-col items-center justify-center text-center relative;
+  @apply h-full flex flex-col items-center justify-center pb-10 xl:pb-15 text-center relative;
+}
+.team-slider .swiper-slide-next .team-item {
+  @apply h-full flex flex-col items-center justify-end pb-10 xl:pb-15 text-center relative;
 }
 
-.team-slider .swiper-slide .team-item {
+.team-slider .swiper-slide .team-item p {
+  @apply text-foreground;
+}
+.team-slider .swiper-slide .team-item h3 {
   @apply text-black;
 }
 
-.team-slider .swiper-slide-next>div .team-item {
+.team-slider .swiper-slide-next>div .team-item h3, .team-slider .swiper-slide-next>div .team-item p {
   @apply text-white;
 }
 
@@ -614,9 +620,4 @@ body {
 
 .team-tilecard:hover .team-overlay {
   @apply h-full;
-}
-
-.swiper-button-lock-custom  {
-  display: block!important;
-  pointer-events: auto !important;
 }

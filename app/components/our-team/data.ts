@@ -7,27 +7,27 @@ export const teamData = {
     },
     {
       name: "Name Dummy Text",
-      position: "Position Dummy Text",
+      position: "Designation",
       image: "/assets/images/team/emp-2.png",
     },
     {
       name: "Name Dummy Text",
-      position: "Position Dummy Text",
+      position: "Designation",
       image: "/assets/images/team/emp-3.png",
     },
     {
       name: "Name Dummy Text",
-      position: "COO",
+      position: "Designation",
       image: "/assets/images/team/emp-1.png",
     },
     {
       name: "Name Dummy Text",
-      position: "Position Dummy Text",
+      position: "Designation",
       image: "/assets/images/team/emp-2.png",
     },
     {
       name: "Name Dummy Text",
-      position: "Position Dummy Text",
+      position: "Designation",
       image: "/assets/images/team/emp-3.png",
     },
   ],

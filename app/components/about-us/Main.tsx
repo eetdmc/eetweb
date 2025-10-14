@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { assets } from "@/public/assets";
-const Main = () => {
+const Main = () => { 
   return ( 
-    <section className=" pb-15  xl:pb-[114px] ">
+    <section className="pb-15 xl:pb-[114px] ">
       <div className="pm-noise pt-15 xl:pt-[130px]">
       <div className="container">
         <div className="text-center pb-10 xl:pb-[114px]">
@@ -16,7 +15,7 @@ const Main = () => {
       </div>
       <div className="container">
         <div className="xl:max-w-[1136px] mx-auto">
-          <div className="border-b border-primary-light pt-15 pb-15 xl:pt-25 xl:pb-30">
+          <div className="border-b border-primary-light pb-15  xl:pb-30">
             <p className="text-30 leading-[1.333333333333333] font-light ">EET DMC is a destination management company built on a foundation of excellence, innovation, and deep regional expertise. Headquartered in the UAE and operating across the GCC, we specialize in delivering seamless travel, MICE, and leisure experiences.</p>
           </div>
           <div className="pt-10 xl:pt-[68px] pb-15 xl:pb-30">
