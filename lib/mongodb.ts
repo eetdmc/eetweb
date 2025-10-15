@@ -10,7 +10,7 @@ declare global {
     | undefined;
 }
 
-const MONGODB_URI = "mongodb+srv://eetdmc_db_user:rrpqasNZvdnzxOny@cluster0.wqa32ol.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const MONGODB_URI = process.env.MONGODB_URI || "";
 
 
 if (!MONGODB_URI) {
