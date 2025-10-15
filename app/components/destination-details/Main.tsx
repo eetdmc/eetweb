@@ -2,20 +2,20 @@ import Image from "next/image";
 const Main = () => {
   return (
     <section className="pb-15 xl:pb-50 ">
-      <div className="pm-noise pt-15 xl:pt-25">
+      <div className="pm-noise pt-10 xl:pt-25">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
             <h3 className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">UAE</h3>
-            <h1 className="text-80 leading-[1.25] font-light text-black max-w-7xl mx-auto">Explore the UAE with EET – Where Luxury Meets Tradition</h1>
+            <h1 className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-7xl mx-auto">Explore the UAE with EET – Where Luxury Meets Tradition</h1>
           </div>
         </div>
       </div>
-      <div className="mb-15 xl:mb-25 ">
+      <div className="mb-10 xl:mb-25 ">
         <Image src="/assets/images/destinations/details/uae-bnr.jpg" alt="" width={1920} height={1080} className="w-full h-full max-h-[750px] object-cover" />
       </div>
       <div className="container">
         <div className="xl:max-w-[1135px] mx-auto mr-10 xl:mr-[107px] 2xl:mr-[147px]">
-          <div className="border-b border-primary-light xl:pb-[150px]">
+          <div className="border-b border-primary-light pb-10 xl:pb-[150px]">
             <p className="text-30 leading-[1.333333333333333] font-light ">From iconic skylines to golden deserts, the UAE offers experiences that are both inspiring and unforgettable.</p>
           </div>
           <div className="pt-10 xl:pt-[50px] ">

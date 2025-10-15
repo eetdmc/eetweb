@@ -1,16 +1,16 @@
 import Image from "next/image"
 const Main = () => {
   return ( 
-    <section className=" pb-15  ">
+    <section className="pb-15">
       <div className="pm-noise pt-15 xl:pt-25">
       <div className="container">
         <div className="text-center pb-10 xl:pb-[104px]">
             <h3 className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">Contact</h3>
-            <h1 className="text-80 leading-[1.25] font-light text-black max-w-7xl mx-auto">Just Say Hello!</h1>
+            <h1 className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Just Say Hello!</h1>
         </div>
       </div>
       </div>
-      <div className="mb-15 xl:mb-25 min-h-[40vh] xl:h-[750px] relative overflow-hidden bg-amber-100">
+      <div className="mb-0 xl:mb-25 min-h-[40vh] xl:h-[750px] relative overflow-hidden bg-amber-100">
         <div className="absolute w-full h-full inset-0 bg-gradient-to-b from-0 from-transparent to-100 to-black/80 z-10" />
          <Image src="/assets/images/contact/main.jpg" alt="" width={1920} height={1080}  className="w-full h-full object-cover absolute top-0 left-0 z-0" />
          <div className="container relative z-20 h-full">

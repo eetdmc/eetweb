@@ -26,14 +26,14 @@ const TeamSlider = () => {
   };
   return (
     <section className="">
-      <div className="container">
+      <div className="container ">
         <div className="xl:max-w-[1283px] ml-auto">
           <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-15 2xl:mb-20 text-black">Meet Our Team</h2>
         </div>
       </div>
       <div className="sec-noise relative">
-        <div className="container relative">
-          <div className={`w-full flex justify-between items-center absolute px-4 left-0 z-50 transition-all duration-300 ease-in-out ${isTileView ? "top-10" : "top-20"}`}>
+        <div className="container relative !px-0">
+          <div className={`w-full flex justify-between items-center absolute px-4 left-0 z-50 transition-all duration-300 ease-in-out ${isTileView ? "top-10" : "top-5 xl:top-20"}`}>
             <div className="flex gap-[14px] items-center">
               <button onClick={handleTileView} className={`w-[29px] gap-[3px] group transition-all duration-300 ease-in-out ${isTileView ? "flex" : "grid grid-cols-2"}`}>
                 <span className="w-[13px] h-[13px] bg-lggray hover:bg-primary transition-all duration-300 ease-in-out"></span>
@@ -48,14 +48,14 @@ const TeamSlider = () => {
               <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={30} height={30} className="" /></button>
             </div>
           </div>
-          <div className={`absolute bottom-20 transition-opacity duration-300 ease-in-out ${isTileView ? "opacity-0" : "opacity-100"}`}>
+          <div className={`absolute bottom-5 left-4 md:left-0 z-50 xl:bottom-20 transition-opacity duration-300 ease-in-out ${isTileView ? "opacity-0" : "opacity-100"}`}>
             <div className="pagination">
               {/* Progress Bar */}
-              <div className="w-32 xl:w-[264px] h-[0.5px] bg-black/20 mb-3 overflow-hidden">
-                <div className="h-full bg-primary transition-all duration-300" style={{ width: `${progress}%` }} />
+              <div className="w-32 xl:w-[264px] h-[0.5px] bg-white md:bg-black/20 mb-3 overflow-hidden">
+                <div className="h-full bg-black md:bg-primary transition-all duration-300" style={{ width: `${progress}%` }} />
               </div>
               {/* Slide Counter */}
-              <h3 className="flex items-center text-55 font-light leading-[1.181818181818182] text-black/30">
+              <h3 className="flex items-center text-55 font-light leading-[1.181818181818182] text-white md:text-black/30">
                 <span className="">{formatNumber(currentSlide)}</span>
                 <span className=""> / </span>
                 <span className="">{formatNumber(totalSlides)}</span>
@@ -92,7 +92,7 @@ const TeamSlider = () => {
                 //  centeredSlides={true}
                 speed={1000}
                 autoplay={{
-                  delay: 2500,
+                  delay: 3500,
                   disableOnInteraction: false,
                 }}
                 onSwiper={(swiper) => {
@@ -154,7 +154,7 @@ const TeamSlider = () => {
                             <p className="text-19 leading-lhtext-19 font-light font-inter">{item.position}</p>
                             <div>
                               <Link href={"#"} className="slide-link">
-                                <Image src={assets.arrowTopRight} alt={item.name} width={30} height={30} />
+                                <Image src={assets.arrowTopRight} alt={item.name} width={30} height={30} className="w-5 h-5 xl:w-[30px] xl:h-[30px]" />
                               </Link>
                             </div>
                           </div>
