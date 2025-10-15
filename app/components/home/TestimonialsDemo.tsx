@@ -19,7 +19,8 @@ const TestimonialsDemo = () => {
           <h2 className="text-70 text-center font-light text-black">Client Testimonials</h2>
         </div>
         <div>
-          <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30} onSlideChange={(swiper) => setCurrent(swiper.activeIndex + 1)}
+          <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30}
+           onSlideChange={(swiper) => setCurrent(swiper.activeIndex + 1)}
             effect="fade"
             fadeEffect={{
               crossFade: true,
