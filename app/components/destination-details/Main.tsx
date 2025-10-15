@@ -11,7 +11,11 @@ const Main = () => {
         </div>
       </div>
       <div className="mb-10 xl:mb-25 ">
-        <Image src="/assets/images/destinations/details/uae-bnr.jpg" alt="" width={1920} height={1080} className="w-full h-full max-h-[750px] object-cover" />
+        {/* <Image src="/assets/images/destinations/details/uae-bnr.jpg" alt="" width={1920} height={1080} className="w-full h-full max-h-[750px] object-cover" /> */}
+        <div className="grid grid-cols-[4fr_1.5fr]">
+          <video src="/assets/videos/uae-1.mp4" autoPlay loop muted className="h-full w-full object-cover max-h-[750px]"></video>
+          <video src="/assets/videos/uae-2.mp4" autoPlay loop muted className="h-full w-full object-cover max-h-[750px]"></video>
+        </div>
       </div>
       <div className="container">
         <div className="xl:max-w-[1135px] mx-auto mr-10 xl:mr-[107px] 2xl:mr-[147px]">
