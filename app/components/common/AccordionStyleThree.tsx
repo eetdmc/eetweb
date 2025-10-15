@@ -49,18 +49,18 @@ const AccordionStyleThree: React.FC<AccordionProps> = ({ title, content, image, 
 
   return (
     <div className="border-b border-primary-light mb-1 px-2 xl:pl-[38px] xl:pr-[40.38px] first:border-t">
-      <button onClick={onToggle} onMouseEnter={onToggle}  className="w-full flex justify-between items-center py-4 2xl:py-10 text-left relative">
+      <button onClick={onToggle} onMouseEnter={onToggle}  className="w-full flex gap-4 justify-between items-center py-4 2xl:py-10 text-left relative">
         <h4 className="text-30 leading-[1.466666666666667] font-light text-black absolute left-0">{(index + 1).toString().padStart(2, "0")}</h4>
-        <div className="ml-container w-full pl-[15px]">
+        <div className="ml-container w-full pl-10 xl:pl-[15px]">
           <h3 className="text-30 leading-[1.466666666666667] font-light text-black">{title}</h3>
         </div>
         {/* <ArrowDown ref={iconRef} className="xl:w-10 xl:h-[24.6px] text-primary transform absolute right-0" /> */}
-        <Image src={assets.arrowDown} ref={iconRef} alt="arrow-down" className="xl:w-[40px] xl:h-[40px] object-contain text-primary transform absolute right-0" />
+        <Image src={assets.arrowDown} ref={iconRef} alt="arrow-down" className="w-5 h-5 xl:w-[40px] xl:h-[40px] object-contain text-primary transform absolute right-0" />
       </button>
       <div ref={contentRef} className="overflow-hidden h-0 text-gray-600">
         <div className="pb-4 ml-container pl-[15px]">
-          <div className="flex xl:gap-10 2xl:gap-20 overflow-hidden">
-            <Image src={image} alt={title} width={533} height={390} className="w-[533px] h-[390px] object-contain flex" />
+          <div className="flex flex-col gap-y-5 lg:flex-row xl:gap-10 2xl:gap-20 overflow-hidden">
+            <Image src={image} alt={title} width={533} height={390} className="h-[250px] w-full object-cover xl:w-[533px] xl:h-[390px] xl:object-contain flex" />
             <p className="text-19 leading-lhtext-19 font-light max-w-[40ch] font-inter">{content}</p>
           </div>
         </div>
