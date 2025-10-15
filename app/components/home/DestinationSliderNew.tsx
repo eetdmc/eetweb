@@ -53,9 +53,12 @@ const destinations: Destination[] = [
 const DestinationSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const slidesContainerRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
+  const dragStartRef = useRef({ x: 0, startX: 0 });
+  const dragOffsetRef = useRef(0);
 
   // Fix hydration - only run on client
   useEffect(() => {
@@ -66,28 +69,6 @@ const DestinationSlider: React.FC = () => {
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     }
   }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const container = slidesContainerRef.current;
-    const trigger = triggerRef.current;
-
-    if (!container || !trigger) return;
-
-    // Simple pin
-    const scrollTrigger = ScrollTrigger.create({
-      trigger: trigger,
-      start: 'top top',
-      end: () => `+=${window.innerHeight * 2}`,
-      pin: true,
-      pinSpacing: true,
-    });
-
-    return () => {
-      scrollTrigger.kill();
-    };
-  }, [isMounted]);
 
   // Handle arrow navigation
   const goToSlide = (slideIndex: number) => {
@@ -112,16 +93,81 @@ const DestinationSlider: React.FC = () => {
   };
 
   const handlePrev = () => {
-    console.log('Prev clicked');
     if (currentSlide > 0) {
       goToSlide(currentSlide - 1);
     }
   };
 
   const handleNext = () => {
-    console.log('Next clicked');
     if (currentSlide < destinations.length - 1) {
       goToSlide(currentSlide + 1);
+    }
+  };
+
+  // Touch and Mouse drag handlers
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    setIsDragging(true);
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const container = slidesContainerRef.current;
+    if (!container) return;
+
+    const currentX = gsap.getProperty(container, 'x') as number;
+    dragStartRef.current = { x: clientX, startX: currentX };
+    dragOffsetRef.current = 0;
+
+    // Add cursor style
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grabbing';
+    }
+  };
+
+  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!isDragging) return;
+
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+    const container = slidesContainerRef.current;
+    if (!container) return;
+
+    const diff = clientX - dragStartRef.current.x;
+    dragOffsetRef.current = diff;
+    const newX = dragStartRef.current.startX + diff;
+
+    gsap.set(container, { x: newX });
+  };
+
+  const handleDragEnd = () => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    const slideWidth = window.innerWidth * 0.8;
+    const threshold = slideWidth * 0.2; // 20% of slide width
+
+    let newSlide = currentSlide;
+
+    // Determine direction and if threshold is met
+    if (Math.abs(dragOffsetRef.current) > threshold) {
+      if (dragOffsetRef.current > 0 && currentSlide > 0) {
+        // Dragged right, go to previous slide
+        newSlide = currentSlide - 1;
+      } else if (dragOffsetRef.current < 0 && currentSlide < destinations.length - 1) {
+        // Dragged left, go to next slide
+        newSlide = currentSlide + 1;
+      }
+    }
+
+    // Snap to the slide
+    goToSlide(newSlide);
+
+    // Reset cursor style
+    if (containerRef.current) {
+      containerRef.current.style.cursor = 'grab';
+    }
+  };
+
+  // Add mouse leave handler to handle edge case
+  const handleMouseLeave = () => {
+    if (isDragging) {
+      handleDragEnd();
     }
   };
 
@@ -139,9 +185,19 @@ const DestinationSlider: React.FC = () => {
         </div>
       </div>
 
-      {/* Main slider section - FULL WIDTH */}
+      {/* Main slider section - FULL WIDTH with touch control */}
       <div className="relative pt-10 3xl:pt-[74px] hidden xl:block" ref={triggerRef}>
-        <div className="w-full xl:ml-6 3xl:ml-16 overflow-hidden" ref={containerRef}>
+        <div
+          className="w-full xl:ml-6 3xl:ml-16 overflow-hidden cursor-grab active:cursor-grabbing"
+          ref={containerRef}
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleDragStart}
+          onTouchMove={handleDragMove}
+          onTouchEnd={handleDragEnd}
+        >
           <div ref={slidesContainerRef} className="flex h-full">
             {destinations.map((destination, index) => (
               <div key={destination.id} className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px] ${index === currentSlide ? 'mt-0' : 'mt-44 xl:mt-[250px]'}`} style={{ width: '80vw' }}>
