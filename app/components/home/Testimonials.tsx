@@ -10,8 +10,8 @@ import { homeData } from "./data";
 import { assets } from "@/public/assets";
 import Image from "next/image";
 const Testimonials = () => {
-  const [current, setCurrent] = useState(1);
-  const totalSlides = homeData.testimonials.items.length;
+  const [current, setCurrent] = useState(0);
+  const totalSlides = homeData.testimonials.items.length ;
   return (
     <section className="py-10 xl:py-30 pm-noise">
       <div className="container">
@@ -19,7 +19,8 @@ const Testimonials = () => {
           <h2 className="text-70 text-center font-light text-black">Client Testimonials</h2>
         </div>
         <div className="">
-          <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30} onSlideChange={(swiper) => setCurrent(swiper.activeIndex + 1)}
+          <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30}
+            onSlideChange={(swiper) => setCurrent(swiper.activeIndex)}
             effect="fade"
             fadeEffect={{
               crossFade: true,
@@ -36,33 +37,34 @@ const Testimonials = () => {
                   </div>
                   <div className="pt-10 xl:pt-15 flex justify-between">
                     <div>
-                      <Image src={assets.quoteUp} alt="quote-up" width={227} height={205.2} />
+                      <Image src={assets.quoteUp} alt="quote-up" width={227} height={205.2} className="w-8 xl:w-[227px] h-auto" />
                     </div>
                     <div>
-                      <p className="text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch]">{item.quote}</p>
+                      <p className="text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch] mb-4 xl:mb-0">{item.quote}</p>
                     </div>
                     <div>
-                      <Image src={assets.quoteDown} alt="quote-down" width={227} height={205.2} />
+                      <Image src={assets.quoteDown} alt="quote-down" width={227} height={205.2} className="w-8 xl:w-[227px] h-auto" />
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="flex flex-col justify-center items-center max-w-[1428px] mx-auto">
-            <div className="testimonials-slider-navigation flex justify-center items-center gap-6">
-              <button className="swiper-button-prev-testimonials" onClick={() => setCurrent(current - 1)}>
-                {/* Your custom SVG */}
+          <div className="flex flex-col justify-center items-center max-w-[1428px] mx-auto gap-y-5 xl:gap-y-0">
+            <div className="testimonials-slider-navigation flex justify-center items-center gap-6 ">
+              <button  className="swiper-button-prev-testimonials">
                 <Image src={assets.pmArrowLeft} alt="" width={52} height={32} className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]" />
               </button>
 
-              <button className="swiper-button-next-testimonials" onClick={() => setCurrent(current + 1)}>
-                {/* Your custom SVG */}
+              <button className="swiper-button-next-testimonials">
                 <Image src={assets.pmArrowRight} alt="" width={52} height={32} className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]" />
               </button>
             </div>
             <div className="pt-0 xl:pt-10">
-              <h4 className="text-50 leading-[0.8] font-light text-black/30"> {String(current).padStart(2, "0")}/{String(totalSlides).padStart(2, "0")}</h4>
+              <h4 className="text-50 leading-[0.8] font-light text-black/30">
+               {/* {String(current).padStart(2, "0")}/{String(totalSlides).padStart(2, "0")} */}
+                {String(current + 1).padStart(2, "0")}/{String(totalSlides).padStart(2, "0")}
+               </h4>
             </div>
           </div>
         </div>
