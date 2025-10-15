@@ -19,9 +19,9 @@ const AwardsList = () => {
               </div>
               <div className="flex flex-col items-center pb-8 lg:pb-10 xl:pb-[66px] group-hover:bg-[#f8f8f8] transition-all duration-300">
                 <div className="flex flex-col items-center justify-center xl:min-h-[247px]">
-                  <Image src={item.image} alt={item.name} width={229} height={200} className="w-25 max-w-[100%] h-auto xl:w-auto object-contain" />
+                  <Image src={item.image} alt={item.name} width={229} height={200} className="w-25 max-w-[100%] h-auto xl:w-auto object-contain group-hover:scale-110 transition-all duration-300" />
                 </div>
-                <h3 className="text-34 leading-[1.294117647058824] font-light font-inter text-center text-black w-fit mx-auto group-hover:mx-0 transition-all duration-300">{item.name}</h3>
+                <h3 className="text-34 leading-[1.294117647058824] font-light text-center text-black w-fit mx-auto group-hover:mx-0 transition-all duration-300">{item.name}</h3>
               </div>
             </div>
           ))}
