@@ -1,12 +1,12 @@
 import Image from "next/image";
 const Main = () => { 
   return ( 
-    <section className="pb-15 xl:pb-[114px] ">
-      <div className="pm-noise pt-15 xl:pt-[130px]">
+    <section className="pb-15 xl:pb-[114px] 2xl:pb-50">
+      <div className="pm-noise pt-15 xl:pt-25">
       <div className="container">
         <div className="text-center pb-10 xl:pb-[114px]">
           <h3 className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">About EET</h3>
-          <h1 className="text-80 leading-[1.25] font-light text-black max-w-7xl mx-auto">Crafting Exceptional Journeys Across the Gulf</h1>
+          <h1 className="text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Crafting Exceptional Journeys Across the Gulf</h1>
         </div>
       </div>
       </div>
@@ -15,10 +15,10 @@ const Main = () => {
       </div>
       <div className="container">
         <div className="xl:max-w-[1136px] mx-auto">
-          <div className="border-b border-primary-light pb-15  xl:pb-30">
+          <div className="border-b border-primary-light pb-15 xl:pb-30 2xl:pb-50">
             <p className="text-30 leading-[1.333333333333333] font-light ">EET DMC is a destination management company built on a foundation of excellence, innovation, and deep regional expertise. Headquartered in the UAE and operating across the GCC, we specialize in delivering seamless travel, MICE, and leisure experiences.</p>
           </div>
-          <div className="pt-10 xl:pt-[68px] pb-15 xl:pb-30">
+          <div className="pt-10 xl:pt-[68px]">
             <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">Our Legacy</h2>
             <p className="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]">With years of experience in hospitality and event logistics, EET has grown from a small team into a recognized regional leader in DMC services. Our legacy is built on trust, creativity, and an unwavering commitment to service excellence.</p>
           </div>
