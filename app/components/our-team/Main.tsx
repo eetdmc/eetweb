@@ -1,4 +1,4 @@
-const Main = () => {
+const Main = () => { 
   return ( 
     <section className="pb-15 xl:pb-[114px] ">
       <div className="pm-noise pt-15 xl:pt-25">

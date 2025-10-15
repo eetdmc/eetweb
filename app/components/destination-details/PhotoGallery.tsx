@@ -63,13 +63,13 @@ const PhotoGallery = () => {
     );
   };
   return (
-    <section className="py-10 xl:py-20 2xl:pt-30 2xl:pb-[266.06px]">
+    <section className="py-10 xl:py-20 2xl:pt-50 2xl:pb-[266.06px]">
       <div className="container">
-        <div className="max-w-[1318px] flex items-center justify-between">
+        <div className="max-w-[1417.9px] flex items-center justify-between">
           <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-20 text-black">Photo Gallery</h2>
           <div className="flex gap-5 w-fit">
-            <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={30} height={30} className="" /></button>
-            <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={30} height={30} className="" /></button>
+            <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="" /></button>
+            <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="" /></button>
           </div>
         </div>
         <div>
@@ -80,7 +80,7 @@ const PhotoGallery = () => {
             centeredSlides={true}
             slidesPerView={3}
             spaceBetween={50}
-            speed={700}
+            speed={1000}
             loop={true}
             autoplay={{
               delay: 3500,
@@ -88,8 +88,8 @@ const PhotoGallery = () => {
             }}
             coverflowEffect={{
               rotate: 0,
-              stretch: 1,
-              depth: 200,
+              stretch: 0,
+              depth: 300,
               modifier: 1,
               slideShadows: false,
             }}
@@ -109,7 +109,7 @@ const PhotoGallery = () => {
                 }
               },
               1024: {
-                slidesPerView: 2.8,
+                slidesPerView: 2.7,
                 coverflowEffect: {
                   depth: 100,
                   modifier: 1,
@@ -118,7 +118,7 @@ const PhotoGallery = () => {
             }}
             modules={[Navigation, Autoplay, EffectCoverflow]}
             onSlideChange={handleSlideChange}
-            className="w-full h-full !py-12 md:!py-16 lg:!py-20"
+            className="w-full h-full !py-12 md:!py-16 lg:!py-20 2xl:h-[629.94px]"
           >
             {slides.map((slide) => (
               <SwiperSlide   key={slide.id} className="flex items-center justify-center !h-auto" >

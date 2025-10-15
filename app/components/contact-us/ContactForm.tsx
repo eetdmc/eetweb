@@ -73,7 +73,7 @@ export default function ContactForm() {
                         message: 'Name must be at least 2 characters',
                       },
                     })}
-                    className={`w-full border-b ${errors.name ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full border-b ${errors.name ? 'border-red-500' : 'border-primary-light'
                       } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors peer`}
                   />
                   <label htmlFor="name"
@@ -100,7 +100,7 @@ export default function ContactForm() {
                         message: 'Please enter a valid phone number',
                       },
                     })}
-                    className={`w-full border-b ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full border-b ${errors.phone ? 'border-red-500' : 'border-primary-light'
                       } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors peer`}
                   />
                   <label
@@ -131,7 +131,7 @@ export default function ContactForm() {
                         message: 'Please enter a valid email address',
                       },
                     })}
-                    className={`w-full border-b ${errors.email ? 'border-red-500' : 'border-gray-300'
+                    className={`w-full border-b ${errors.email ? 'border-red-500' : 'border-primary-light'
                       } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors peer`}
                   />
                   <label
@@ -155,7 +155,7 @@ export default function ContactForm() {
                         required: 'Please select an option',
                         onChange: (e) => setEnquireValue(e.target.value),
                       })}
-                      className={`w-full border-b ${errors.enquireAbout ? 'border-red-500' : 'border-gray-300'
+                      className={`w-full border-b ${errors.enquireAbout ? 'border-red-500' : 'border-primary-light'
                         } bg-transparent pb-6 px-0 pr-8 appearance-none focus:outline-none focus:border-blue-500 transition-colors cursor-pointer peer`}
                     >
                       <option value=""></option>
@@ -205,7 +205,7 @@ export default function ContactForm() {
                       message: 'Message must be at least 10 characters',
                     },
                   })}
-                  className={`w-full border-b ${errors.message ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full border-b ${errors.message ? 'border-red-500' : 'border-primary-light'
                     } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors resize-none peer`}
                 />
                 <label
