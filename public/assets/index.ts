@@ -7,4 +7,6 @@ import pmArrowLeft from "./images/icons/pm-arrow-left.svg";
 import pmArrowRight from "./images/icons/pm-arrow-right.svg";
 import footerImg from "./images/footer.jpg";
 import arrowDown from "./images/icons/arrow-down.svg";
-export const assets = { logo, user, pattern1, arrowTopRight, arrowPrimary, pmArrowLeft, pmArrowRight, footerImg, arrowDown };
+import quoteUp from "./images/home/testimonials/quote-up.svg";
+import quoteDown from "./images/home/testimonials/quote-down.svg";
+export const assets = { logo, user, pattern1, arrowTopRight, arrowPrimary, pmArrowLeft, pmArrowRight, footerImg, arrowDown, quoteUp, quoteDown };

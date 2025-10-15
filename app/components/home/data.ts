@@ -142,22 +142,22 @@ export const homeData = {
     title: "Client Testimonials",
     items: [
       {
-        name: "John Doe",
+        name: "Client Name Dummy1",
         quote: "We were welcomed by a friendly representative who presented us with a lovely welcome kit and plenty of suggestions and clean information about do’s and don’ts. The drivers and guides on our holiday were exceptional and professional.",
         image: "/assets/images/home/testimonials/img-1.jpg",
       },
       {
-        name: "Danial Ali",
+        name: "Client Name Dummy2",
         quote: "We were welcomed by a friendly representative who presented us with a lovely welcome kit and plenty of suggestions and clean information about do’s and don’ts. The drivers and guides on our holiday were exceptional and professional.",
         image: "/assets/images/home/testimonials/img-1.jpg",
       },
       {
-        name: "James Smith",
+        name: "Client Name Dummy3",
         quote: "We were welcomed by a friendly representative who presented us with a lovely welcome kit and plenty of suggestions and clean information about do’s and don’ts. The drivers and guides on our holiday were exceptional and professional.",
         image: "/assets/images/home/testimonials/img-1.jpg",
       },
       {
-        name: "John Doe",
+        name: "Client Name Dummy4",
         quote: "We were welcomed by a friendly representative who presented us with a lovely welcome kit and plenty of suggestions and clean information about do’s and don’ts. The drivers and guides on our holiday were exceptional and professional.",
         image: "/assets/images/home/testimonials/img-1.jpg",
       },

@@ -11,57 +11,60 @@ import { assets } from "@/public/assets";
 import Image from "next/image";
 const Testimonials = () => {
   const [current, setCurrent] = useState(1);
-  const totalSlides = 4; 
+  const totalSlides = homeData.testimonials.items.length;
   return (
-    <section className="py-10 xl:py-30">
+    <section className="py-10 xl:py-30 pm-noise">
       <div className="container">
-        <div className="mb-5 xl:mb-[95px]">
+        <div className="mb-5 xl:mb-[78px]">
           <h2 className="text-70 text-center font-light text-black">Client Testimonials</h2>
         </div>
-        <div>
+        <div className="">
           <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30} onSlideChange={(swiper) => setCurrent(swiper.activeIndex + 1)}
-           effect="fade"
-           fadeEffect={{
-            crossFade: true,
-           }}
-          navigation={{
-            prevEl: ".swiper-button-prev-testimonials",
-            nextEl: ".swiper-button-next-testimonials",
-          }}>
+            effect="fade"
+            fadeEffect={{
+              crossFade: true,
+            }}
+            navigation={{
+              prevEl: ".swiper-button-prev-testimonials",
+              nextEl: ".swiper-button-next-testimonials",
+            }}>
             {homeData.testimonials.items.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="grid grid-cols-1 gap-4 xl:gap-0 xl:grid-cols-3 2xl:grid-cols-[1.5fr_1.8fr_2fr] 3xl:grid-cols-[598px_512px_auto]">
-                  <div className="xl:pt-[112px] pb-5 xl:pb-0 flex xl:block items-center justify-between border-b border-[#5C8898] xl:border-0">
-                    <h3 className="text-30 leading-lhtext-30 font-light text-black xl:border-b border-[#5C8898] pb-0 xl:pb-[39px]">{item.name}</h3>
-                    <div className="pt-0 xl:pt-[56px]">
-                      <h4 className="text-50 leading-[0.8] font-light text-black/30"> {String(current).padStart(2, "0")}/{String(totalSlides).padStart(2, "0")}</h4>
-                    </div>
+                <div className="max-w-[1428px] mx-auto">
+                  <div className="border-b border-primary-light pb-5 xl:pb-12 text-center">
+                    <h3 className="text-30 leading-[1.2] font-light text-black">{item.name}</h3>
                   </div>
-                  <div>
-                    <Image src={item.image} alt="" width={512} height={566} className="w-full h-[300px] xl:h-full object-cover rounded-3xl" />
-                  </div>
-                  <div >
-                    <div className="relative pt-5 xl:pt-[95px] ">
-                      <div className="testimonials-slider-pagination xl:h-30 pl-15 xl:pl-[113px] xl:border-b border-[#5C8898] pb-5 xl:pb-[39px]">
-                        <button className="swiper-button-prev-testimonials absolute left-2 top-1/2 -translate-y-1/2 z-10">
-                          {/* Your custom SVG */}
-                          <Image src={assets.pmArrowLeft} alt="" width={52} height={32} className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]" />
-                        </button>
-
-                        <button className="swiper-button-next-testimonials absolute right-2 top-1/2 -translate-y-1/2 z-10">
-                          {/* Your custom SVG */}
-                          <Image src={assets.pmArrowRight} alt="" width={52} height={32} className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]" />
-                        </button>
-                      </div>
+                  <div className="pt-10 xl:pt-15 flex justify-between">
+                    <div>
+                      <Image src={assets.quoteUp} alt="quote-up" width={227} height={205.2} />
                     </div>
-                    <div className="pt-6 xl:pt-[50px] pl-0 xl:pl-[113px] pr-0 xl:pr-[48px]">
-                      <p className="text-19 leading-lhtext-19 font-inter font-light">{item.quote}</p>
+                    <div>
+                      <p className="text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch]">{item.quote}</p>
+                    </div>
+                    <div>
+                      <Image src={assets.quoteDown} alt="quote-down" width={227} height={205.2} />
                     </div>
                   </div>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
+          <div className="flex flex-col justify-center items-center max-w-[1428px] mx-auto">
+            <div className="testimonials-slider-navigation flex justify-center items-center gap-6">
+              <button className="swiper-button-prev-testimonials" onClick={() => setCurrent(current - 1)}>
+                {/* Your custom SVG */}
+                <Image src={assets.pmArrowLeft} alt="" width={52} height={32} className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]" />
+              </button>
+
+              <button className="swiper-button-next-testimonials" onClick={() => setCurrent(current + 1)}>
+                {/* Your custom SVG */}
+                <Image src={assets.pmArrowRight} alt="" width={52} height={32} className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]" />
+              </button>
+            </div>
+            <div className="pt-0 xl:pt-10">
+              <h4 className="text-50 leading-[0.8] font-light text-black/30"> {String(current).padStart(2, "0")}/{String(totalSlides).padStart(2, "0")}</h4>
+            </div>
+          </div>
         </div>
       </div>
     </section>
