@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"; 
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import {useTextReveal} from "@/hooks/useTextReveal";
+
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 const Main = () => { 
@@ -16,6 +18,16 @@ const Main = () => {
   const buttonRef = useRef<HTMLDivElement>(null);
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+
+  useTextReveal({ selector: '.heading' });
+
+  // Animate subtitles with different settings
+  useTextReveal({
+    selector: '.subtitle',
+    stagger: 0.02,
+    duration: 0.4,
+    y: 30,
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -138,8 +150,8 @@ const Main = () => {
       <div className="pm-noise pt-15 xl:pt-25">
       <div className="container">
         <div className="text-center pb-10 xl:pb-[114px]">
-          <motion.h3 variants={moveUp(0.2)} initial="hidden" animate="show" className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]" >About EET</motion.h3>
-          <motion.h1 variants={moveUp(0.4)} initial="hidden" animate="show" className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto" >Crafting Exceptional Journeys Across the Gulf</motion.h1>
+          <h3 className="subtitle text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]" >About EET</h3>
+          <h1 className="heading text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto" >Crafting Exceptional Journeys Across the Gulf</h1>
         </div>
       </div>
       </div>
@@ -160,8 +172,15 @@ const Main = () => {
             </ScrollReveal>
           </div>
           <div className="pt-10 xl:pt-[68px]">
-            <motion.h2 variants={moveUp(0.7)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">Our Legacy</motion.h2>
-            <motion.p variants={moveUp(0.8)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]">With years of experience in hospitality and event logistics, EET has grown from a small team into a recognized regional leader in DMC services. Our legacy is built on trust, creativity, and an unwavering commitment to service excellence.</motion.p>
+            <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">Our Legacy</h2>
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={5}
+              blurStrength={10}
+              containerClassName="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]"
+            >
+            With years of experience in hospitality and event logistics, EET has grown from a small team into a recognized regional leader in DMC services. Our legacy is built on trust, creativity, and an unwavering commitment to service excellence.</ScrollReveal>
           </div>
         </div>
       </div>
