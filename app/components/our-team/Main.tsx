@@ -2,8 +2,10 @@
 "use client";
 import { motion } from "motion/react";
 import { moveUp } from "../motionVarients";
+import { useTextReveal } from "@/hooks/useTextReveal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 const Main = () => { 
+  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.6, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 10%"});
   return ( 
     <section className="pb-10 xl:pb-[114px] ">
       <div className="pm-noise pt-15 xl:pt-25">
@@ -20,7 +22,7 @@ const Main = () => {
             
             <ScrollReveal
               baseOpacity={0}
-              enableBlur={true}
+              enableBlur={true} 
               baseRotation={5}
               blurStrength={10}
               rotationEnd="bottom 80%"

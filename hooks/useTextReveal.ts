@@ -34,7 +34,7 @@ export function useTextReveal(options: UseTextRevealOptions = {}) {
             .join("");
           return `<span class="inline-block" style="white-space: nowrap;">${chars}</span>`;
         })
-        .join('<span class="inline-block"> </span>');
+        .join(" "); // Changed from span wrapper to simple space
 
       return element.querySelectorAll("span span");
     };

@@ -59,7 +59,16 @@ const Services = () => {
   const [displayedService, setDisplayedService] = useState<number>(2); // What's currently shown
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
-  useTextReveal();
+  // Animate headings
+  useTextReveal({ selector: '.heading' });
+
+  // Animate subtitles with different settings
+  useTextReveal({
+    selector: '.subtitle',
+    stagger: 0.02,
+    duration: 0.4,
+    y: 30,
+  });
 
   const handleServiceChange = async (index: number) => {
     if (index === activeService || isTransitioning) return;
@@ -195,10 +204,10 @@ const Services = () => {
     <section ref={sectionRef} className="pt-10 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden">
       <div className="container">
         <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1020px_auto] 3xl:grid-cols-[1282px_auto]">
-          <h2 className="title text-70 leading-[1] font-light max-w-2xl text-black">
+          <h2 className="heading text-70 leading-[1] font-light max-w-2xl text-black">
             {servicesData.title}
           </h2>
-          <h3 className="text-30 leading-[1.4] font-light text-black">
+          <h3 className="subtitle text-30 leading-[1.4] font-light text-black">
             {servicesData.subtitle}
           </h3>
         </div>
