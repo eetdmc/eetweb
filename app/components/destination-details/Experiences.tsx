@@ -9,16 +9,26 @@ import "swiper/css/autoplay";
 import Image from "next/image";
 import { assets } from "@/public/assets";
 import { destinationsData } from "./data";
+import { motion } from "motion/react";
+import { moveUp } from "../motionVarients";
 const Experiences = () => {
   const swiperRef = useRef<SwiperType | null>(null);
   return (
     <section className="sec-noise py-10 xl:py-20 2xl:pt-[140px] 2xl:pb-[150px]">
       <div className="container">
         <div className="w-full relative mb-5 xl:mb-20 2xl:mb-[120px] flex items-center">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0 xl:mb-[30px] text-black xl:text-center">Signature UAE Experiences</h2>
-          <div className="flex gap-5 w-fit ml-auto xl:absolute xl:right-0 xl:top-[50%] xl:translate-y-[-50%]">
+          <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0 xl:mb-[30px] text-black xl:mx-auto xl:text-center">Signature UAE Experiences</motion.h2>
+          <div className="ml-0 flex items-center gap-5 group/main">
+            <motion.button variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} aria-label="View More" className="shadow-lg border-2 border-white text-white font-light font-inter bg-gradient-to-r from-primary
+             to-secondary px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >
+              <div className="absolute bottom-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
+              <span className="relative z-10">View More</span>
+            </motion.button> 
+          <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="flex gap-5 w-fit ">
             <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
             <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
+          </motion.div>
+
           </div>
         </div>
         <div className="xl:pl-[146px]">
@@ -49,18 +59,15 @@ const Experiences = () => {
           onSlideChange={(swiper) => {
             console.log(swiper);
           }}
-          onSwiper={
-            (swiper) => {
-              swiperRef.current = swiper;
-            }
-          }
-          >
+          onSwiper={(swiper) => {swiperRef.current = swiper;}}>
             {
               destinationsData.experiences.items.map((item, index) => (
                 <SwiperSlide key={index}>
                   <div className="border-t border-primary-light pt-10 overflow-hidden">
-                    <h3 className="text-20 xl:text-30 3xl:text-30 font-light leading-[1.333333333333333] mb-5 xl:mb-10 2xl:mb-[50px] text-black">{item.title}</h3>
+                    <motion.h3 variants={moveUp(index * 0.5)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-20 xl:text-30 3xl:text-30 font-light leading-[1.333333333333333] mb-5 xl:mb-10 2xl:mb-[50px] text-black">{item.title}</motion.h3>
+                    <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: false,amount: 0.2}}>
                     <Image src={item.image} alt={item.title} width={437} height={472} className="w-full h-[300px] xl:h-auto object-cover" />
+                    </motion.div>
                   </div>
                 </SwiperSlide>
               ))

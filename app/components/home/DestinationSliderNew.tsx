@@ -10,6 +10,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { assets } from '@/public/assets';
 import { Navigation } from 'swiper/modules';
+import { useTextReveal } from '@/hooks/useTextReveal';
 
 interface Destination {
   id: number;
@@ -50,7 +51,7 @@ const destinations: Destination[] = [
   }
 ];
 
-const DestinationSlider: React.FC = () => {
+const DestinationSliderNew: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
@@ -59,6 +60,8 @@ const DestinationSlider: React.FC = () => {
   const triggerRef = useRef<HTMLDivElement>(null);
   const dragStartRef = useRef({ x: 0, startX: 0 });
   const dragOffsetRef = useRef(0);
+
+  useTextReveal();
 
   // Fix hydration - only run on client
   useEffect(() => {
@@ -177,14 +180,7 @@ const DestinationSlider: React.FC = () => {
   }
 
   return (
-    <section className="py-10 xl:py-30 overflow-hidden">
-      <div className="container">
-        <div className="3xl:pl-[573px]" >
-          <h2 className="text-70 leading-[1] font-light mb-4 xl:mb-[50px] max-w-4xl text-black">Expertise Behind Every Experience</h2>
-          <h3 className="text-34 leading-[1.235294117647059] font-light text-black">Destinations</h3>
-        </div>
-      </div>
-
+<div>
       {/* Main slider section - FULL WIDTH with touch control */}
       <div className="relative pt-10 3xl:pt-[74px] hidden xl:block" ref={triggerRef}>
         <div
@@ -352,8 +348,8 @@ const DestinationSlider: React.FC = () => {
           ))}
         </Swiper>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default DestinationSlider;
+export default DestinationSliderNew;

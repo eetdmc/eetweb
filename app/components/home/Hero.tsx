@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper";
+import { Swiper as SwiperType, } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -19,6 +19,8 @@ import { useState, useRef } from "react";
 // import PrimaryBtn from "../common/PrimaryBtn";
 import Link from "next/link";
 import { assets } from "@/public/assets";
+import { motion, Variants } from "motion/react";
+import { moveUp } from "../motionVarients";
 
 // Custom Pagination Component matching the exact design
 interface CustomPaginationProps {
@@ -95,6 +97,35 @@ const Hero = () => {
   const imageRefs = useRef<HTMLImageElement[]>([]);
   const titleRefs = useRef<HTMLHeadingElement[]>([]);
   titleRefs.current = [];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const charVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+      rotateX: -90,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94], // Custom easing for smoothness
+      },
+    },
+  };
+
   useEffect(() => {
     imageRefs.current.forEach((img) => {
       gsap.fromTo(
@@ -196,8 +227,23 @@ const Hero = () => {
                     <div className="flex flex-col justify-end h-full pb-10 xl:pb-30 pt-25 xl:pt-0 ">
                       <div className="flex flex-wrap justify-between items-end">
                         <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[30%] flex flex-col justify-end  pb-10 xl:pb-0">
-                          <h2 className="text-[3rem] xl:text-60 3xl:text-80 leading-[1] text-white xl:text-black font-[300] mb-0 xl:mb-22 slide-title " >{item.title}</h2>
-                          <div className="flex items-center relative group/main overflow-hidden w-fit">
+                          <motion.h2 variants={containerVariants} initial="hidden" animate={activeIndex === index ? "show" : "hidden"} viewport={{ once: false, amount: "all" }} className="text-[3rem] xl:text-60 3xl:text-80 leading-[1] text-white xl:text-black font-[300] mb-0 xl:mb-22 slide-title " style={{ perspective: '1000px' }} >
+                            {item.title.split(' ').map((word, wordIndex) => (
+                              <span key={`word-${index}-${wordIndex}`} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                                {word.split('').map((char, charIndex) => (
+                                  <motion.span
+                                    key={`${index}-${wordIndex}-${charIndex}`}
+                                    variants={charVariants}
+                                    style={{ display: 'inline-block' }}
+                                  >
+                                    {char}
+                                  </motion.span>
+                                ))}
+                                {wordIndex < item.title.split(' ').length - 1 && '\u00A0'}
+                              </span>
+                            ))}
+                            </motion.h2>
+                          <motion.div variants={moveUp(0.3)} initial="hidden" animate={activeIndex === index ? "show" : "hidden"} viewport={{ once: false, amount: "all" }} className="flex items-center relative group/main overflow-hidden w-fit">
                             <Link href={item.slug} className="border border-white xl:border-black text-white xl:text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >
                               <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
                               <span className="relative z-10">{item.btnText}</span>
@@ -212,10 +258,10 @@ const Hero = () => {
                               <Image src={assets.arrowTopRight} alt="Arrow" width={20} height={20}
                                 className="w-4 h-4 xl:w-[16px] xl:h-[16px] object-contain absolute translate-x-[-1rem] translate-y-[1rem] opacity-0 transition-all duration-400 ease-in-out group-hover/main:translate-x-0 group-hover/main:translate-y-0 group-hover/main:opacity-100" />
                             </div>
-                          </div>
+                          </motion.div>
                         </div>
                         <div className="relative z-10 ml-auto xl:ml-0">
-                          <h3 className="text-[1.5rem] xl:text-90 leading-[1] text-white font-light mb-5 xl:mb-[23px] text-right">{item.location}</h3>
+                          {/* <h3 className="text-[1.5rem] xl:text-90 leading-[1] text-white font-light mb-5 xl:mb-[23px] text-right">{item.location}</h3> */}
                           <div>
                             <CustomPagination currentSlide={activeIndex} totalSlides={homeData.heroData.length} onSlideChange={handleSlideChange} locations={homeData.heroData.map((item) => item.location)} />
                           </div>

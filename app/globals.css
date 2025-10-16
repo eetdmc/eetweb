@@ -260,8 +260,13 @@ body {
 
 .word-span {
   transform-origin: bottom;
+  line-height: 1;
 }
-
+.word-span,
+.word-span-wrapper {
+  vertical-align: baseline;
+  line-height: 1;
+}
 /* .slide-title {
   opacity: 1;
   transform: translateY(20px);
@@ -648,3 +653,4 @@ body {
 .team-tilecard:hover .team-overlay {
   @apply h-full;
 }
+

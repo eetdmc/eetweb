@@ -3,12 +3,41 @@ import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { revealPresets, splitTextPresets, useSplitText } from "@/utils/animateText";
-
+import { useRef, useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 const FeaturesSection = () => {
 
+  const containerRef = useRef<HTMLDivElement>(null);
+    const overlayRef = useRef<HTMLDivElement>(null);
 
-  const containerRef = useSplitText([
+  useEffect(() => {
+    if (!containerRef.current || !overlayRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        overlayRef.current,
+        {
+          scaleY: 1,
+          transformOrigin: 'bottom',
+        },
+        {
+          scaleY: 0,
+          duration: 1.2,
+          ease: 'power3.inOut',
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: 1,
+          },
+        }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const sectionRef = useSplitText([
     {
       className: '.fadeInUp-text',
       options: {
@@ -40,12 +69,16 @@ const FeaturesSection = () => {
   ]);
 
   return (
-    <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 overflow-hidden" ref={containerRef}>
+    <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 overflow-hidden" ref={sectionRef}>
       <div className="container">
-        <div className="grid grid-cols-1 xl:grid-cols-[408px_auto] gap-10 xl:gap-20 3xl:gap-[235px]">
-          <div className="w-full h-full "> 
-              <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="h-40 w-full xl:h-full object-cover object-bottom xl:object-center" />
-            </div>
+        <div className="grid grid-cols-1 xl:grid-cols-[408px_auto] gap-10 xl:gap-20 3xl:gap-[235px]" >
+          <div className="w-full h-full relative overflow-hidden " ref={containerRef}>
+            <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="h-40 w-full xl:h-full object-cover object-bottom xl:object-center" />
+            <div
+              ref={overlayRef}
+              className="absolute inset-0 bg-white z-10"
+            />
+          </div>
           <div className=" 3xl:pr-[146px] pt-7 xl:pt-[38px]">
             <div className="grid grid-cols-2 3xl:grid-cols-[455px_auto]">
               <div className="border-r border-black/20">

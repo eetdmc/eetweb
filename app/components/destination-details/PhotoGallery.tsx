@@ -12,6 +12,8 @@ import { assets } from "@/public/assets";
 import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import { useEffect } from "react";
 import gsap from "gsap";
+import { moveUp } from "../motionVarients";
+import { motion } from "motion/react";
 interface SlideData {
   id: number;
   image: string;
@@ -66,7 +68,7 @@ const PhotoGallery = () => {
     <section className="py-10 xl:py-20 2xl:pt-50 2xl:pb-[266.06px]">
       <div className="container">
         <div className="max-w-[1417.9px] flex items-center justify-between  mb-5 xl:mb-20">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black">Photo Gallery</h2>
+          <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black">Photo Gallery</motion.h2>
           <div className="flex gap-5 w-fit">
             <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}>
                <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-10 h-auot" /></button>

@@ -4,7 +4,8 @@ import FeaturesSection from "./FeaturesSection";
 import Services from "./Services";
 // import DestinationSliderOne from "./DestinationSliderOne";
 // import DestinationSlider from "./DestinationSlider";
-import DestinationSliderNew from "./DestinationSliderNew";
+// import DestinationSliderNew from "./DestinationSliderNew";
+import DestinationSection from "./DestinationSection";
 import BlogSlider from "./BlogSlider";
 import Testimonials from "./Testimonials";
 import SocialFeeds from "./SocialFeeds";
@@ -17,7 +18,9 @@ const Index = () => {
       <Services />
       {/* <DestinationSliderOne /> */}
       {/* <DestinationSlider /> */}
-      <DestinationSliderNew />
+      {/* <DestinationSliderNew /> */}
+
+      <DestinationSection />
       {/* <BlogSlider /> */}
       <Testimonials />
       <SocialFeeds />
