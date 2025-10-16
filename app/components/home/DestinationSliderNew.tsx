@@ -10,7 +10,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { assets } from '@/public/assets';
 import { Navigation } from 'swiper/modules';
-import { useTextReveal } from '@/hooks/useTextReveal';
+import { motion } from 'motion/react';
+import { moveUp } from '../motionVarients';
 
 interface Destination {
   id: number;
@@ -61,7 +62,7 @@ const DestinationSliderNew: React.FC = () => {
   const dragStartRef = useRef({ x: 0, startX: 0 });
   const dragOffsetRef = useRef(0);
 
-  useTextReveal();
+
 
   // Fix hydration - only run on client
   useEffect(() => {
@@ -229,21 +230,21 @@ const DestinationSliderNew: React.FC = () => {
                 <div className={`flex items-center xl:mr-25 3xl:mr-[205px] ${index === currentSlide ? 'relative z-10 ml-5 mt-6 xl:mt-[44px]' : 'top-0 z-0 opacity-0'}`}>
                   <div className={`flex gap-5 3xl:gap-10 w-full ${index === currentSlide ? 'border-b border-black/30' : ''}`}>
                     <div className="pr-8 xl:pr-20 3xl:pr-[212px]">
-                      <h2 className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight">
+                      <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }} className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight">
                         {destination.country}
-                      </h2>
+                      </motion.h2>
                     </div>
                     <div className={`mr-8 xl:mr-18 3xl:mr-[136px] ${index === currentSlide ? 'block' : 'hidden'}`}>
-                      <h3 className="text-50 font-light text-black mb-[10px] leading-[0.9]">
+                      <motion.h3 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }} className="text-50 font-light text-black mb-[10px] leading-[0.9]">
                         {destination.destinationCount}
-                      </h3>
-                      <h4 className="text-lggray text-19 font-light leading-[1.526315789473684] font-inter">Destinations</h4>
+                      </motion.h3>
+                      <motion.h4 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }} className="text-lggray text-19 font-light leading-[1.526315789473684] font-inter">Destinations</motion.h4>
                     </div>
 
                     <div className={`mb-12 space-y-1 ${index === currentSlide ? 'block' : 'hidden'}`}>
                       <ul className="text-lggray text-lg xl:columns-2 xl:[column-width:180px] 3xl:[column-width:250px] xl:gap-4 3xl:gap-[83px] font-inter">
                         {destination.highlights.map((highlight, idx) => (
-                          <li className='text-base 3xl:text-19 font-light leading-[1.526315789473684]' key={idx}>{highlight}</li>
+                          <motion.li variants={moveUp(idx *0.1)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }} className='text-base 3xl:text-19 font-light leading-[1.526315789473684]' key={idx}>{highlight}</motion.li>
                         ))}
                       </ul>
                     </div>

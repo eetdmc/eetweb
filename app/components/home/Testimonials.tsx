@@ -11,7 +11,7 @@ import { assets } from "@/public/assets";
 import Image from "next/image";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { motion } from "motion/react";
-import { fadeIn } from "../motionVarients";
+import { fadeIn, moveDown, moveUp } from "../motionVarients";
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const totalSlides = homeData.testimonials.items.length ;
@@ -40,15 +40,23 @@ const Testimonials = () => {
                     <h3 className="text-30 leading-[1.2] font-light text-black">{item.name}</h3>
                   </div>
                   <div className="pt-10 xl:pt-15 flex justify-between">
-                    <div>
+                    <motion.div variants={moveDown(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
                       <Image src={assets.quoteUp} alt="quote-up" width={227} height={205.2} className="w-8 xl:w-[227px] h-auto" />
-                    </div>
+                    </motion.div>
                     <div>
-                      <motion.p variants={fadeIn(0.2)} initial="hidden" animate={current === index ? "show" : "hidden"} viewport={{ once: false, amount: "all" }} className=" text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch] mb-4 xl:mb-0">{item.quote}</motion.p>
+                      <motion.p
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={current === index ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+                        viewport={{ once: false, amount: "all" }}
+                        className="text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch] mb-4 xl:mb-0"
+                      >
+                        {item.quote}
+                      </motion.p>
                     </div>
-                    <div>
+                    <motion.div variants={moveDown(0.4)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
                       <Image src={assets.quoteDown} alt="quote-down" width={227} height={205.2} className="w-8 xl:w-[227px] h-auto" />
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </SwiperSlide>
