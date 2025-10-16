@@ -35,15 +35,17 @@ const Footer = () => {
                       alt="Arrow icon"
                       width={50}
                       height={50}
-                      className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:scale-[.8]"
+                          className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out   group-hover:scale-[.8]"
+                  
+                      // className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:scale-[.8]"
                     />
-                    <Image
+                    {/* <Image
                       src={assets.arrowPrimary}
                       alt="Arrow icon"
                       width={50}
                       height={50}
-                      className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out  -translate-x-[45px]  translate-y-[20px] group-hover:translate-x-0 group-hover:-translate-y-[20px] group-hover:scale-[.8]"
-                    />
+                      className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out  -translate-x-[45px]  translate-y-[20px] group-hover:translate-x-[45px] group-hover:-translate-y-[20px] group-hover:scale-[.8]"
+                    /> */}
                     </div>
                      
                   </button>
