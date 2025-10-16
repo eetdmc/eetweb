@@ -5,11 +5,18 @@ export const commonData = {
         menuItems: [
             {
                 label: "About",
-                href: "/about-us"
+                href: "/about-us",
+                submenu: [
+                { label: "About ", href: "#" },
+                { label: "services", href: "#" }, 
+                ],
             },
             {
                 label: "Services",
-                href: "/services"
+                href: "/services",
+    submenu: [
+      { label: "services", href: "#" }, 
+    ],
             },
             {
                 label: "Destinations",
