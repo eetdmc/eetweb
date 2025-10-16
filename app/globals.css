@@ -618,7 +618,7 @@ body {
 }
 
 .explr-grid .explr-grid__col:nth-child(3)>div:nth-child(2) {
-  @apply border-r  xl:border-l border-primary-light xl:min-h-[299px] xl:pl-[58px] pt-5 pb-5 xl:pt-0 xl:pb-15;
+  @apply border-r xl:border-r-0 xl:border-l border-primary-light xl:min-h-[299px] xl:pl-[58px] pt-5 pb-5 xl:pt-15 xl:pb-15;
 
   h3 {
     @apply max-w-[20ch]
