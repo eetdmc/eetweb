@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -11,11 +11,77 @@ import { assets } from "@/public/assets";
 import Image from "next/image";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { motion } from "motion/react";
-import { fadeIn, moveDown, moveUp } from "../motionVarients";
+import { moveDown } from "../motionVarients";
+import { gsap } from "gsap";
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+function splitTextIntoChars(element: HTMLElement) {
+  const text = element.textContent || '';
+  const chars = text.split('');
+  
+  element.innerHTML = chars
+    .map((char) => {
+      if (char === ' ') return '<span class="inline-block">&nbsp;</span>';
+      return `<span class="inline-block">${char}</span>`;
+    })
+    .join('');
+  
+  return element.querySelectorAll('span');
+}
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const totalSlides = homeData.testimonials.items.length ;
-  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 10%"});
+  // useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "top 90%"});/
+  // // Animate headings
+  // useTextReveal({ selector: '.heading' });
+
+  // // Animate subtitles with different settings
+  // useTextReveal({
+  //   selector: '.subtitle',
+  //   stagger: 0.02,
+  //   duration: 0.4,
+  //   y: 30,
+  // });
+ 
+  useEffect(() => {
+    const titles = document.querySelectorAll<HTMLElement>('.title');
+
+    titles.forEach((title) => {
+      const chars = splitTextIntoChars(title);
+
+      // Set perspective for 3D rotation
+      gsap.set(title, { perspective: 400 });
+
+      gsap.fromTo(
+        chars,
+        {
+          opacity: 0,
+          y: 50,
+          rotateX: -90,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.03,
+          scrollTrigger: {
+            trigger: title,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <section className="py-10 xl:py-30 pm-noise">
       <div className="container">
