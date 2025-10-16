@@ -4,6 +4,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { revealPresets, splitTextPresets, useSplitText } from "@/utils/animateText";
 import { useRef, useEffect } from "react";
+import { motion } from "motion/react";
+import { moveUp } from "../motionVarients";
 gsap.registerPlugin(ScrollTrigger);
 const FeaturesSection = () => {
 
@@ -83,24 +85,32 @@ const FeaturesSection = () => {
             <div className="grid grid-cols-2 3xl:grid-cols-[455px_auto]">
               <div className="border-r border-black/20">
                 <div className="flex flex-col gap-5 pb-8 xl:pb-[49px] border-b border-black/20 pr-2" >
-                  <Image src="/assets/images/home/features-section/icons/icon-1.svg" alt="World Class Service" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
+                  <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
+                    <Image src="/assets/images/home/features-section/icons/icon-1.svg" alt="World Class Service" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
+                  </motion.div>
                   <h3 className="text-30 leading-[1.466666666666667] text-black font-light typewriter-text" >World Class Service</h3>
                   <p className="text-19 leading-[1.526315789473684] font-light font-inter text-[#484848] max-w-[36ch] slideInLeft-text">Our world-class service ensures a seamless and unforgettable experience.</p>
                 </div>
                 <div className="flex flex-col gap-5 pt-10 xl:pt-[51px] pb-20 xl:pb-[130px] pr-2">
+                  <motion.div variants={moveUp(0.3)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
                   <Image src="/assets/images/home/features-section/icons/icon-2.svg" alt="Excellence" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
+                  </motion.div>
                   <h3 className="text-30 leading-[1.466666666666667] text-black font-light typewriter-text">Excellence</h3>
                   <p className="text-19 leading-[1.526315789473684] font-light font-inter text-[#484848] max-w-[36ch] slideInLeft-text">Driven by precision, defined by quality—excellence is our standard.</p>
                 </div>
               </div>
               <div>
                 <div className="flex flex-col gap-5 pl-6 xl:pl-[71.5px] pb-8 xl:pb-[57px] pt-8 xl:pt-[115px] border-b border-black/20">
+                  <motion.div variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
                   <Image src="/assets/images/home/features-section/icons/icon-3.svg" alt="24/7 Guide Support" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
+                  </motion.div>
                   <h3 className="text-30 leading-[1.466666666666667] text-black font-light typewriter-text" >24/7 Guide Support</h3>
                   <p className="text-19 leading-[1.526315789473684] font-light font-inter text-[#484848] max-w-[36ch] slideInLeft-text">Our dedicated team of professional guides is just a call away—day or night.</p>
                 </div>
                 <div className="flex flex-col gap-5 pl-6 xl:pl-[71.5px] pb-5 xl:pb-[28px] pt-6 xl:pt-[43px] ">
+                  <motion.div variants={moveUp(0.5)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
                   <Image src="/assets/images/home/features-section/icons/icon-4.svg" alt="Authentic Experience" width={60} height={60} className="w-fit h-13 xl:h-[60px] object-contain" />
+                  </motion.div>
                   <h3 className="text-30 leading-[1.466666666666667] text-black font-light typewriter-text" >Authentic Experience</h3>
                   <p className="text-19 leading-[1.526315789473684] font-light font-inter text-[#484848] max-w-[36ch] slideInLeft-text">Connect with the true spirit of the Gulf through curated, local experiences.</p>
                 </div>
