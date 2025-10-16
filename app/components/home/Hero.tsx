@@ -67,7 +67,7 @@ const CustomPagination: React.FC<CustomPaginationProps> = ({
       </div>
 
       {/* Location Navigation */}
-      <div className="flex space-x-6">
+      <div className="hidden space-x-6">
         {locations.map((location, index) => (
           <button
             key={location}

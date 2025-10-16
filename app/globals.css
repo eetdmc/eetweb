@@ -654,3 +654,17 @@ body {
   @apply h-full;
 }
 
+
+
+.photo-gallery-slider .swiper-slide {
+  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-gallery-slider .swiper-slide-active {
+  z-index: 2;
+}
+
+.photo-gallery-slider .swiper-slide-prev,
+.photo-gallery-slider .swiper-slide-next {
+  z-index: 1;
+}

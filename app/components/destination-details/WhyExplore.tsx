@@ -2,12 +2,15 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { moveUp } from "../motionVarients";
+import { useTextReveal } from "@/hooks/useTextReveal";
 const WhyExplore = () => {
+  useTextReveal({ selector: '.heading' });
+  useTextReveal({ selector: '.subtitle' });
   return (
     <section className="pm-noise pt-10 pb-50 xl:py-20 2xl:pt-[145px] 2xl:pb-[400px]">
       <div className="container">
         <div className="xl:max-w-[1000px] 2xl:max-w-[1283px] xl:ml-auto">
-          <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1.2] xl:leading-[1] text-black xl:max-w-[15ch] mb-10 xl:mb-20">Why Explore UAE with EET?</motion.h2>
+          <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1.2] xl:leading-[1] text-black xl:max-w-[15ch] mb-10 xl:mb-20">Why Explore UAE with EET?</h2>
         </div>
         <div className="explr-grid">
           <div className="explr-grid__col">

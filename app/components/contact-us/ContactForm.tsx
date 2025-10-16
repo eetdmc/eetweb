@@ -1,7 +1,9 @@
 "use client"
 import { assets } from '@/public/assets';
+import { motion } from 'motion/react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { moveUp } from '../motionVarients';
 
 interface FormData {
   name: string;
@@ -62,7 +64,11 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 cnt-form">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative pt-5">
-                  <input
+                  <motion.input
+                    variants={moveUp(0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{once: true,amount: "all"}}
                     id="name"
                     type="text"
                     placeholder=" "
@@ -74,13 +80,13 @@ export default function ContactForm() {
                       },
                     })}
                     className={`w-full border-b ${errors.name ? 'border-red-500' : 'border-primary-light'
-                      } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors peer`}
+                      } bg-transparent pb-2 px-0 focus:outline-none focus:border-green-500 transition-colors peer`}
                   />
-                  <label htmlFor="name"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  <motion.label variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="name"
+                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Name
-                  </label>
+                  </motion.label>
                   {errors.name && (
                     <p className="text-red-500 text-sm mt-1">
                       {errors.name.message}
@@ -89,7 +95,11 @@ export default function ContactForm() {
                 </div>
 
                 <div className="relative pt-5">
-                  <input
+                  <motion.input
+                    variants={moveUp(0.4)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{once: true,amount: "all"}}
                     id="phone"
                     type="tel"
                     placeholder=" "
@@ -101,14 +111,13 @@ export default function ContactForm() {
                       },
                     })}
                     className={`w-full border-b ${errors.phone ? 'border-red-500' : 'border-primary-light'
-                      } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors peer`}
+                      } bg-transparent pb-2 px-0 focus:outline-none focus:border-green-500 transition-colors peer`}
                   />
-                  <label
-                    htmlFor="phone"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  <motion.label variants={moveUp(0.1)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="phone"
+                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Phone
-                  </label>
+                  </motion.label>
                   {errors.phone && (
                     <p className="text-red-500 text-sm mt-1">
                       {errors.phone.message}
@@ -120,7 +129,11 @@ export default function ContactForm() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
                 <div className="relative pt-5">
-                  <input
+                  <motion.input
+                    variants={moveUp(0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{once: true,amount: "all"}}
                     id="email"
                     type="email"
                     placeholder=" "
@@ -132,14 +145,13 @@ export default function ContactForm() {
                       },
                     })}
                     className={`w-full border-b ${errors.email ? 'border-red-500' : 'border-primary-light'
-                      } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors peer`}
+                      } bg-transparent pb-2 px-0 focus:outline-none focus:border-green-500 transition-colors peer`}
                   />
-                  <label
-                    htmlFor="email"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                  <motion.label variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="email"
+                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Email
-                  </label>
+                  </motion.label>
                   {errors.email && (
                     <p className="text-red-500 text-sm mt-1">
                       {errors.email.message}
@@ -148,7 +160,11 @@ export default function ContactForm() {
                 </div>
 
                   <div className="relative pt-5">
-                    <select
+                    <motion.select
+                      variants={moveUp(0.2)}
+                      initial="hidden"
+                      whileInView="show"
+                      viewport={{once: true,amount: "all"}}
                       id="enquireAbout"
                       value={enquireValue}
                       {...register('enquireAbout', {
@@ -156,7 +172,7 @@ export default function ContactForm() {
                         onChange: (e) => setEnquireValue(e.target.value),
                       })}
                       className={`w-full border-b ${errors.enquireAbout ? 'border-red-500' : 'border-primary-light'
-                        } bg-transparent pb-6 px-0 pr-8 appearance-none focus:outline-none focus:border-blue-500 transition-colors cursor-pointer peer`}
+                        } bg-transparent pb-6 px-0 pr-8 appearance-none focus:outline-none focus:border-green-500 transition-colors cursor-pointer peer`}
                     >
                       <option value=""></option>
                       <option value="general">General Inquiry</option>
@@ -164,14 +180,13 @@ export default function ContactForm() {
                       <option value="sales">Sales</option>
                       <option value="partnership">Partnership</option>
                       <option value="other">Other</option>
-                    </select>
-                    <label
-                      htmlFor="enquireAbout"
-                      className={`absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground pb-3 pointer-events-none transition-all duration-300 ${enquireValue ? 'opacity-0' : 'opacity-100 '
+                    </motion.select>
+                    <motion.label variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="enquireAbout"
+                      className={`absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground pb-3 pointer-events-none transition-text ${enquireValue ? 'opacity-0' : 'opacity-100 '
                         }`}
                     >
                       Enquire About
-                    </label>
+                    </motion.label>
                     <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
                       fill="none"
                       stroke="currentColor"
@@ -194,7 +209,11 @@ export default function ContactForm() {
               </div>
 
               <div className="relative pt-5">
-                <textarea
+                <motion.textarea
+                  variants={moveUp(0.6)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{once: true,amount: "all"}}
                   id="message"
                   rows={4}
                   placeholder=" "
@@ -206,14 +225,13 @@ export default function ContactForm() {
                     },
                   })}
                   className={`w-full border-b ${errors.message ? 'border-red-500' : 'border-primary-light'
-                    } bg-transparent pb-2 px-0 focus:outline-none focus:border-blue-500 transition-colors resize-none peer`}
+                    } bg-transparent pb-2 px-0 focus:outline-none focus:border-green-500 transition-colors resize-none peer`}
                 />
-                <label
-                  htmlFor="message"
-                  className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-all duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
+                <motion.label variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="message"
+                  className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
                 >
                   Message
-                </label>
+                </motion.label>
                 {errors.message && (
                   <p className="text-red-500 text-sm mt-1">
                     {errors.message.message}
@@ -222,12 +240,12 @@ export default function ContactForm() {
               </div>
 
 
-              <div className="flex items-center relative group/main overflow-hidden w-fit">
+              <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="flex items-center relative group/main overflow-hidden w-fit">
                 <button aria-label="Submit" onClick={handleSubmit(onSubmit)} className="border border-black text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >
                   <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
                   <span className="relative z-10">Send</span>
                 </button>
-              </div>
+              </motion.div>
             </form>
           </div>
         )}
