@@ -1,12 +1,18 @@
+"use client";
 import Image from "next/image"
+import { useTextReveal } from "@/hooks/useTextReveal"
+import { motion } from "motion/react";
+import { moveUp } from "../motionVarients";
 const Main = () => {
+  useTextReveal({selector: ".heading"});
+  useTextReveal({selector: ".subtitle"});
   return ( 
     <section className="pb-15">
       <div className="pm-noise pt-15 xl:pt-25">
       <div className="container">
         <div className="text-center pb-10 xl:pb-[104px]">
-            <h3 className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">Contact</h3>
-            <h1 className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Just Say Hello!</h1>
+            <h3 className="subtitle text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">Contact</h3>
+            <h1 className="heading text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Just Say Hello!</h1>
         </div>
       </div>
       </div>
@@ -17,18 +23,18 @@ const Main = () => {
           <div className="w-full flex flex-col items-center justify-end h-full pb-15 xl:pb-25 2xl:pb-[123px] ">
             <div className="bg-gradient-to-r from-0 from-transparent via-49% via-white to-100 to-tranparent w-full h-[1px] max-w-[1488px] mb-8 lg:mb-10 xl:mb-[44px]" ></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-white text-center w-full">
-              <div>
+              <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}}>
                 <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">Call Us</h3>
                 <p className="text-30 leading-[1.333333333333333] font-light ">+971 4 422 9563</p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}}>
                 <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">Address</h3>
                 <p className="text-30 leading-[1.333333333333333] font-light max-w-md mx-auto">PO Box 212371, Suite 12AE02, iRise Tower, Barsha Heights, Dubai, UAE</p>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}}>
                 <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">Mail Us</h3>
                 <p className="text-30 leading-[1.333333333333333] font-light ">info@eet.ae</p>
-              </div>
+              </motion.div>
             </div>
           </div>
          </div>

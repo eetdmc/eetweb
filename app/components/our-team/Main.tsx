@@ -5,14 +5,15 @@ import { moveUp } from "../motionVarients";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 const Main = () => { 
-  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.6, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 10%"});
+  useTextReveal({ selector: '.heading' });
+  useTextReveal({ selector: '.subtitle', stagger: 0.02, duration: 0.4, y: 30 });
   return ( 
     <section className="pb-10 xl:pb-[114px] ">
       <div className="pm-noise pt-15 xl:pt-25">
       <div className="container">
         <div className="text-center pb-10 xl:pb-[164px]">
-            <motion.h3 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">Our Team</motion.h3>
-            <motion.h1 variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Meet the People Behind Your Journey</motion.h1>
+            <h3 className="heading text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">Our Team</h3>
+            <h1 className="heading text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Meet the People Behind Your Journey</h1>
         </div>
       </div>
       </div>

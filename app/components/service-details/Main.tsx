@@ -3,14 +3,17 @@ import Image from "next/image";
 import { motion } from "motion/react";
 import { moveUp } from "../motionVarients";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { useTextReveal } from "@/hooks/useTextReveal";
 const Main = () => {
+  useTextReveal({selector: ".heading"});
+  useTextReveal({selector: ".subtitle"});
   return (
     <section className="pb-10 xl:pb-25 2xl:pb-50 ">
       <div className="pm-noise pt-15 xl:pt-25">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
-            <motion.h3 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">MICE</motion.h3>
-            <motion.h1 variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Elevate Your Business Events with EET’s MICE Solutions</motion.h1>
+            <h3 className="subtitle text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">MICE</h3>
+            <h1 className="heading text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">Elevate Your Business Events with EET’s MICE Solutions</h1>
           </div>
         </div>
       </div>

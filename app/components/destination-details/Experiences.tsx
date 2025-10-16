@@ -11,13 +11,15 @@ import { assets } from "@/public/assets";
 import { destinationsData } from "./data";
 import { motion } from "motion/react";
 import { moveUp } from "../motionVarients";
+import { useTextReveal } from "@/hooks/useTextReveal";
 const Experiences = () => {
   const swiperRef = useRef<SwiperType | null>(null);
+  useTextReveal({ selector: '.heading' });
   return (
     <section className="sec-noise py-10 xl:py-20 2xl:pt-[140px] 2xl:pb-[150px]">
       <div className="container">
         <div className="w-full relative mb-5 xl:mb-20 2xl:mb-[120px] flex items-center">
-          <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0 xl:mb-[30px] text-black xl:mx-auto xl:text-center">Signature UAE Experiences</motion.h2>
+          <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0 xl:mb-[30px] text-black xl:mx-auto xl:text-center">Signature UAE Experiences</h2>
           <div className="ml-0 flex items-center gap-5 group/main">
             <motion.button variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} aria-label="View More" className="shadow-lg border-2 border-white text-white font-light font-inter bg-gradient-to-r from-primary
              to-secondary px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >

@@ -12,8 +12,7 @@ import { assets } from "@/public/assets";
 import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { moveUp } from "../motionVarients";
-import { motion } from "motion/react";
+import { useTextReveal } from "@/hooks/useTextReveal";
 interface SlideData {
   id: number;
   image: string;
@@ -44,7 +43,7 @@ const slides: SlideData[] = [
 
 const PhotoGallery = () => {
   const swiperRef = useRef<SwiperType | null>(null);
-
+  useTextReveal({ selector: '.heading-one' });
   useEffect(() => {
     // Animate slider entrance
     gsap.fromTo(
@@ -65,10 +64,10 @@ const PhotoGallery = () => {
     );
   };
   return (
-    <section className="py-10 xl:py-20 2xl:pt-50 2xl:pb-[266.06px]">
+    <section className="py-10 xl:py-20 2xl:pt-50 2xl:pb-[266.06px] ">
       <div className="container">
         <div className="max-w-[1417.9px] flex items-center justify-between  mb-5 xl:mb-20">
-          <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black">Photo Gallery</motion.h2>
+          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black heading-one">Photo Gallery</h2>
           <div className="flex gap-5 w-fit">
             <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}>
                <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-10 h-auot" /></button>
@@ -122,16 +121,16 @@ const PhotoGallery = () => {
             }}
             modules={[Navigation, Autoplay, EffectCoverflow]}
             onSlideChange={handleSlideChange}
-            className="w-full h-full !py-12 md:!py-16 lg:!py-20 2xl:h-[629.94px]"
+            className="w-full h-full !py-12 md:!py-16 lg:!py-20 2xl:h-[629.94px] photo-gallery-slider"
           >
             {slides.map((slide) => (
-              <SwiperSlide   key={slide.id} className="flex items-center justify-center !h-auto" >
+              <SwiperSlide key={slide.id} className="flex items-center justify-center !h-auto" >
                 {({ isActive }) => (
                   <div className={`relative w-full h-full  overflow-hidden transition-all duration-700 ${isActive ? 'scale-200' : 'scale-100 opacity-100'
-                      }`}
+                    }`}
                   >
                     {/* Image */}
-                    <Image width={1920} height={1280} src={slide.image}  alt={`Slide ${slide.id}`} className="w-full h-full object-contain"
+                    <Image width={1920} height={1280} src={slide.image} alt={`Slide ${slide.id}`} className="w-full h-full object-contain"
                     />
                   </div>
                 )}
@@ -140,7 +139,7 @@ const PhotoGallery = () => {
           </Swiper>
         </div>
       </div>
-      {/* Custom Styles */}
+      {/* Custom Styles
       <style jsx global>{`
         .swiper-slide {
           transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
@@ -154,7 +153,7 @@ const PhotoGallery = () => {
         .swiper-slide-next {
           z-index: 1;
         }
-      `}</style>
+      `}</style> */}
     </section>
   );
 }
