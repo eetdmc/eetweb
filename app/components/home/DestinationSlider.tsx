@@ -9,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { assets } from '@/public/assets';
 import { Navigation } from 'swiper/modules';
+import Link from 'next/link';
 // Register GSAP plugins
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,6 +21,7 @@ interface Destination {
   destinationCount: string;
   image: string;
   highlights: string[];
+  slug: string;
 }
 
 const destinations: Destination[] = [
@@ -28,28 +30,32 @@ const destinations: Destination[] = [
     country: 'UAE',
     destinationCount: '15+',
     image: '/assets/images/destinations/img-1.jpg',
-    highlights: ['Nizwa Fort and Souk', 'Al Hoota Cave', 'Sultan Qaboos Grand Mosque', 'Wahiba Sands', 'Wadi Shab']
+    highlights: ['Nizwa Fort and Souk', 'Al Hoota Cave', 'Sultan Qaboos Grand Mosque', 'Wahiba Sands', 'Wadi Shab'],
+    slug: '/destinations/uae'
   },
   {
     id: 2,
     country: 'Qatar',
     destinationCount: '8+',
     image: '/assets/images/destinations/img-2.jpg',
-    highlights: ['Wahiba Sands', 'Wadi Shab', 'Traditional Souks']
+    highlights: ['Wahiba Sands', 'Wadi Shab', 'Traditional Souks'],
+    slug: '/destinations/qatar'
   },
   {
     id: 3,
     country: 'Saudi Arabia',
     destinationCount: '12+',
     image: '/assets/images/home/hero/slide-3.jpg ',
-    highlights: ['Al-Masjid an-Nabawi', 'Kingdom Centre', 'Edge of the World']
+    highlights: ['Al-Masjid an-Nabawi', 'Kingdom Centre', 'Edge of the World'],
+    slug: '/destinations/saudi-arabia'
   },
   {
     id: 4,
     country: 'Oman',
     destinationCount: '6+',
     image: '/assets/images/home/hero/slide-4.jpg',
-    highlights: ['Mountain Landscapes', 'Desert Adventures', 'Historic Forts']
+    highlights: ['Mountain Landscapes', 'Desert Adventures', 'Historic Forts'],
+    slug: '/destinations/oman'
   }
 ];
 
@@ -159,9 +165,11 @@ const DestinationSlider: React.FC = () => {
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-0 from-transparent to-100 to-black/50" />
                   <div className="flex gap-6 relative z-40">
+                    <Link href={destination.slug}>
                     <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border border-primary text-white rounded-3xl hover:bg-primary transition-colors font-light font-funnel-display">
                       Know More
                     </button>
+                    </Link>
                     <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border-1 border-primary text-white rounded-3xl hover:bg-white hover:text-gray-900 transition-colors font-light font-funnel-display">
                       Enquire Now
                     </button>

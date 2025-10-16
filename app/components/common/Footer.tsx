@@ -18,9 +18,34 @@ const Footer = () => {
                 <div className="flex items-center justify-between flex-wrap gap-5">
                   <h2 className="3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-light text-white leading-[1]">
                     Start Your Destination Experience Today</h2>
-                  <button className="rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-8 xl:py-3 3xl:px-[65px] 3xl:py-[49.5px] flex items-center gap-5 text-base xl:text-30 font-light leading-lhtext-30 ">
-                    <span className="text-white">Let&apos; Connect</span>
-                    <Image src={assets.arrowPrimary} alt="" width={50} height={50} className="w-5 xl:w-5 3xl:w-10 h-auto" />
+                  <button
+                    className="group cursor-pointer rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-8 xl:py-3 3xl:px-[65px] 3xl:py-[49.5px]
+                              flex items-center gap-5 text-base xl:text-[30px] font-light leading-[1.2] 
+                              text-white transition-all duration-500 ease-in-out   hover:backdrop-blur-[1px] "
+                  >
+                    <span
+                      className="transition-all duration-500 ease-in-out group-hover:translate-x-2"
+                    >
+                      Let&apos;s Connect
+                    </span>
+
+                    <div className="  w-8 h-8 xl:w-[25px] xl:h-[25px] flex   relative overflow-hidden  ">
+                      <Image
+                      src={assets.arrowPrimary}
+                      alt="Arrow icon"
+                      width={50}
+                      height={50}
+                      className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:scale-[.8]"
+                    />
+                    <Image
+                      src={assets.arrowPrimary}
+                      alt="Arrow icon"
+                      width={50}
+                      height={50}
+                      className="w-5 xl:w-5 3xl:w-10 h-auto transition-transform duration-500 ease-in-out  -translate-x-[45px]  translate-y-[20px] group-hover:translate-x-0 group-hover:-translate-y-[20px] group-hover:scale-[.8]"
+                    />
+                    </div>
+                     
                   </button>
                 </div>
               </div>
@@ -90,16 +115,16 @@ const Footer = () => {
               <div>
                 <ul>
                   <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                    UAE
+                    <Link href={"/destinations/uae"}>UAE</Link>
                   </li>
                   <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                    Oman
+                    <Link href={"/destinations/oman"}>Oman</Link>
                   </li>
                   <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                    Qatar
+                    <Link href={"/destinations/qatar"}>Qatar</Link>
                   </li>
                   <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                    Saudi Arabia
+                    <Link href={"/destinations/saudi-arabia"}>Saudi Arabia</Link>
                   </li>
                 </ul>
               </div>
@@ -108,16 +133,16 @@ const Footer = () => {
               <h3 className="text-30 leading-[1.03448275862069] font-extralight text-white pb-3 xl:pb-[24px]">Services</h3>
               <ul>
                 <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                  <Link href={"#"}>Hotel & Leisure Services</Link>
+                  <Link href={"/services/hotel-leisure-services"}>Hotel & Leisure Services</Link>
                 </li>
                 <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                  <Link href={"#"}>MICE</Link>
+                  <Link href={"/services/mice"}>MICE</Link>
                 </li>
                 <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                  <Link href={"#"}>Cruise Liners</Link>
+                  <Link href={"/services/cruise-liners"}>Cruise Liners</Link>
                 </li>
                 <li className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-all duration-300">
-                  <Link href={"#"}>Experiences</Link>
+                  <Link href={"/services/experiences"}>Experiences</Link>
                 </li>
               </ul>
             </div>

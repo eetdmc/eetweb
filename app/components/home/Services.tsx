@@ -31,25 +31,25 @@ const servicesData: ServicesData = {
       title: "Hotel & Leisure Services",
       description: "Praesentium porro a repellat exercitationem architecto.Quam reprehenderit sed non atque in voluptate omnis, ratione architecto facere vitae ducimus.Error natus maxime molestias quo velit quas placeat praesentium nulla sit! ",
       image: "/assets/images/services/service-1.jpg",
-      slug: "#"
+      slug: "/services/hotel-leisure-services"
     },
     {
       title: "MICE",
       description: "Lorem ipsum dolor sit amet consectetur  perspiciatis exercitationem magnam minus sit libero officia! Fuga amet, a aspernatur soluta veritatis non odio architecto aliquid ipsum eveniet atque laborum provident eos sapiente quia dolore.Suscipit, sit voluptatum!",
       image: "/assets/images/services/service-2.jpg",
-      slug: "#"
+      slug: "/services/mice"
     },
     {
       title: "Cruise Liners",
       description: "Discover unforgettable journeys with our curated leisure travel experiences, offering personalized holidays, cultural escapes, and relaxing getaways across the Arabian Gulf and beyond.",
       image: "/assets/images/services/service-3.jpg",
-      slug: "#"
+      slug: "/services/cruise-liners"
     },
     {
       title: "Experiences",
       description: "Lorem ipsum dolor sit amet consectetur dfasf adipisicing elit. Doloremque magni cumdgs tempora dolore saepe? Natus in sed oditdfafa praesentium?Praesentium porro  provident eos sapiente quia dolore.Suscipit,",
       image: "/assets/images/services/service-4.png",
-      slug: "#"
+      slug: "/services/experiences"
     }
   ]
 };
@@ -276,7 +276,7 @@ const Services = () => {
                   {currentService.description}
                 </p>
                 <div className={`transition-all duration-500 ease-in-out  ${isTransitioning ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'}`}>
-                  <PrimaryBtn link="#" text="Read More" />
+                  <PrimaryBtn link={currentService.slug} text="Read More" />
                 </div>
                 {/* </div> */}
               </div>
