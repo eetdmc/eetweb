@@ -9,10 +9,10 @@ const AwardsList = () => {
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-3 xl:gap-x-8 xl:gap-y-5 2xl:gap-x-[104px] 2xl:gap-y-[84px]">
           {awardsData.items.map((item, index) => (
             <div key={index} className="group overflow-hidden hover:overflow-visible bg-gray-500/10 xl:bg-transparent p-2 md:p-4 xl:p-0">
-              <div className="pb-8 xl:pb-[23px] border-b border-black/10 ">
-                <div className="flex items-center justify-between xl:text-center relative">
-                  <h4 className="text-19 leading-lhtext-19 font-light font-inter text-center w-fit xl:mx-auto group-hover:mx-0 transition-all duration-300">{item.year}</h4>
-                  <Link href={item.link} className="bg-primary rounded-full flex items-center justify-center xl:absolute top-[-50%] -right-20 group-hover:right-0 w-8 h-8 xl:w-[44px] xl:h-[44px]  transition-all duration-300">
+              <div className="pb-8 xl:pb-[23px] pt-8 xl:pt-[13px] px-2 lg:px-6 border-b border-black/10 group-hover:border-none transition-all duration-300 ">
+                <div className="flex items-center justify-between xl:text-center relative translate-x-1/2  group-hover:translate-x-0 transition-all duration-300">
+                  <h4 className="text-19 leading-lhtext-19 font-light font-inter text-center  transition-all duration-300">{item.year}</h4>
+                  <Link href={item.link} className="bg-primary rounded-full flex items-center justify-center xl:absolute -top-2 -right-20 group-hover:right-0 w-8 h-8 xl:w-[44px] xl:h-[44px]  transition-all duration-300">
                     <Image src={assets.arrowTopRight} alt={item.name} width={30} height={30} className="w-3 xl:w-auto max-w-[100%] h-auto object-contain cursor-pointer brightness-0 invert" />
                   </Link>
                 </div>

@@ -30,7 +30,7 @@ const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
                     <li key={i} 
                      onMouseEnter={() => setHoveredMenu(item.label)}
             onMouseLeave={() => setHoveredMenu(null)}
-            className="group relative rounded-full hover:bg-primary transition-all duration-300 ease-in-out px-[17.5px] py-2 xl:py-[12.5px] first:pl-30px last:pr-30px">
+            className="group relative last:rounded-r-full first:rounded-l-full hover:bg-primary transition-all duration-300 ease-in-out px-[17.5px] py-2 xl:py-[12.5px] first:pl-30px last:pr-30px">
                       <a href={item.href} className="uppercase font-light w-full h-full leading-[1] text-base font-manrope text-black group-hover:text-white group-hover:scale-110 transition-all duration-300 ease-in-out">{item.label}</a>
                    {/* Submenu */}
             {item.submenu && (
