@@ -12,6 +12,7 @@ import { assets } from "@/public/assets";
 import { useState, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { motion } from "motion/react";
+import { moveUp } from "../motionVarients";
 const TeamSlider = () => {
   const [isTileView, setIsTileView] = useState(false);
   const handleTileView = () => {
@@ -28,7 +29,7 @@ const TeamSlider = () => {
     <section className="">
       <div className="container ">
         <div className="xl:max-w-[1283px] ml-auto">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-15 2xl:mb-20 text-black">Meet Our Team</h2>
+          <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-15 2xl:mb-20 text-black">Meet Our Team</motion.h2>
         </div>
       </div>
       <div className="sec-noise relative">

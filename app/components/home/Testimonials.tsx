@@ -9,14 +9,18 @@ import "swiper/css/effect-fade";
 import { homeData } from "./data";
 import { assets } from "@/public/assets";
 import Image from "next/image";
+import { useTextReveal } from "@/hooks/useTextReveal";
+import { motion } from "motion/react";
+import { fadeIn } from "../motionVarients";
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const totalSlides = homeData.testimonials.items.length ;
+  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 10%"});
   return (
     <section className="py-10 xl:py-30 pm-noise">
       <div className="container">
         <div className="mb-5 xl:mb-[78px]">
-          <h2 className="text-70 text-center font-light text-black">Client Testimonials</h2>
+          <h2 className="title text-70 text-center font-light text-black">Client Testimonials</h2>
         </div>
         <div className="">
           <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30}
@@ -40,7 +44,7 @@ const Testimonials = () => {
                       <Image src={assets.quoteUp} alt="quote-up" width={227} height={205.2} className="w-8 xl:w-[227px] h-auto" />
                     </div>
                     <div>
-                      <p className="text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch] mb-4 xl:mb-0">{item.quote}</p>
+                      <motion.p variants={fadeIn(0.2)} initial="hidden" animate={current === index ? "show" : "hidden"} viewport={{ once: false, amount: "all" }} className=" text-19 leading-lhtext-19 font-light font-inter text-center max-w-[50ch] mb-4 xl:mb-0">{item.quote}</motion.p>
                     </div>
                     <div>
                       <Image src={assets.quoteDown} alt="quote-down" width={227} height={205.2} className="w-8 xl:w-[227px] h-auto" />

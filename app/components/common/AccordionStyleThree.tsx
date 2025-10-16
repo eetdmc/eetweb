@@ -5,7 +5,8 @@ import { gsap } from "gsap";
 import Image, { StaticImageData } from "next/image";
 import { ArrowDown } from "lucide-react";
 import { assets } from "@/public/assets";
-
+import { motion } from "motion/react";
+import { moveUp } from "../motionVarients";
 type AccordionProps = {
   title: string;
   content: string;
@@ -48,7 +49,7 @@ const AccordionStyleThree: React.FC<AccordionProps> = ({ title, content, image, 
   }, [isOpen]);
 
   return (
-    <div className="border-b border-primary-light mb-1 px-2 xl:pl-[38px] xl:pr-[40.38px] first:border-t">
+    <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="border-b border-primary-light mb-1 px-2 xl:pl-[38px] xl:pr-[40.38px] first:border-t">
       <button onClick={onToggle} onMouseEnter={onToggle}  className="w-full flex gap-4 justify-between items-center py-4 2xl:py-10 text-left relative">
         <h4 className="text-30 leading-[1.466666666666667] font-light text-black absolute left-0">{(index + 1).toString().padStart(2, "0")}</h4>
         <div className="ml-container w-full pl-10 xl:pl-[15px]">
@@ -66,7 +67,7 @@ const AccordionStyleThree: React.FC<AccordionProps> = ({ title, content, image, 
         </div>
       </div>
 
-    </div>
+    </motion.div>
   );
 };
 
