@@ -177,7 +177,7 @@ const Hero = () => {
 
   };
   return (
-    <section className="w-full h-[calc(100vh-100px)] xl:h-[calc(100vh-130px)] pm-noise relative">
+    <section className="w-full h-[calc(100vh-100px)] md:h-[50vh] xl:h-[calc(100vh-130px)] pm-noise relative">
       {homeData.heroData.map((item, i) => (
         <div className="xl:w-[66%] 3xl:w-[1294px] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
           <Image src={item.image} alt={item.title} width={1920} height={1080}

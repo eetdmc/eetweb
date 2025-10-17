@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image"; 
-import { gsap } from "gsap"; 
+import Image from "next/image";
+import { gsap } from "gsap";
 import Link from "next/link";
 import { commonData } from "./data";
 import NavBar from "./NavBar";
@@ -41,18 +41,13 @@ const Header = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image src={commonData.headerData.logo} alt="Logo" width={200} height={200} className="w-20 xl:w-[105px] h-auto object-contain"/>
+            <Image src={commonData.headerData.logo} alt="Logo" width={200} height={200} className="w-20 xl:w-[105px] h-auto object-contain" />
           </Link>
-  <NavBar/>
-         
-
-          
-
-          
+          <NavBar />
         </div>
       </div>
 
-     
+
     </header>
   );
 };

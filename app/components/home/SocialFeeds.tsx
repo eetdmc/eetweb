@@ -5,7 +5,7 @@ import { moveUp } from "../motionVarients";
 const SocialFeeds = () => {
   useTextReveal({selector: ".title", stagger: 0.03, duration: 0.6, y: 50, rotateX: -90, ease: "power3.out", start: "top 90%"});
   return ( 
-    <section className="pt-10 pb-[160px] xl:pt-30 xl:pb-[300px] sec-noise">
+    <section className="pt-10 pb-[160px]  md:pb-[260px] xl:pt-30 xl:pb-[300px] sec-noise">
       <div className="container">
         <div>
           <h2 className="title text-70 leading-[1] font-light text-black mb-8 xl:mb-[78px]">Social Feeds</h2>

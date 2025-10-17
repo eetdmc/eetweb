@@ -54,7 +54,7 @@ const Accordion: React.FC<AccordionProps> = ({ title, content, image }) => {
 
       <div ref={contentRef} className="overflow-hidden h-0 text-gray-600">
         <div className="pb-4">
-          <Image src={image} alt="Arrow" width={600} height={600} className="w-full h-[200px] object-cover mb-5" />
+          <Image src={image} alt="Arrow" width={600} height={600} className="w-auto h-[200px]  object-contain mb-5" />
           <p> {content}</p>
         </div>
       </div>

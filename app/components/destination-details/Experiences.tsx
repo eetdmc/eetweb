@@ -22,13 +22,13 @@ const Experiences = () => {
           <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0 xl:mb-[30px] text-black xl:mx-auto xl:text-center">Signature UAE Experiences</h2>
           <div className="ml-0 flex items-center gap-5 group/main">
             <motion.button variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} aria-label="View More" className="shadow-lg border-2 border-white text-white font-light font-inter bg-gradient-to-r from-primary
-             to-secondary px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white" >
+             to-secondary px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white cursor-pointer" >
               <div className="absolute bottom-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
               <span className="relative z-10">View More</span>
             </motion.button> 
           <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="flex gap-5 w-fit ">
-            <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
-            <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
+            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
+            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
           </motion.div>
 
           </div>

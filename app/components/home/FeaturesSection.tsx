@@ -76,7 +76,7 @@ const FeaturesSection = () => {
       <div className="container">
         <div className="grid grid-cols-1 xl:grid-cols-[408px_auto] gap-10 xl:gap-20 3xl:gap-[235px]" >
           <div className="w-full h-full relative overflow-hidden " ref={containerRef}>
-            <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="h-40 w-full xl:h-full object-cover object-bottom xl:object-center" />
+            <Image src="/assets/images/home/features-section/main.jpg" alt="Features" width={1000} height={1000} className="h-40 w-full md:h-[300px] xl:h-full object-cover object-bottom xl:object-center" />
             <div ref={overlayRef} className="absolute inset-0 bg-white z-10" />
           </div>
           <div className=" 3xl:pr-[146px] pt-7 xl:pt-[38px]">
