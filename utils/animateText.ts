@@ -452,7 +452,7 @@ export const splitTextPresets = {
     opacity: 0,
     duration: 0.8,
     ease: "power2.out",
-    stagger: 0.03,
+    // stagger: 0.03,
   },
 
   fadeInDown: {
@@ -460,7 +460,7 @@ export const splitTextPresets = {
     opacity: 0,
     duration: 0.8,
     ease: "power2.out",
-    stagger: 0.03,
+    // stagger: 0.03,
   },
 
   slideInLeft: {
@@ -469,7 +469,7 @@ export const splitTextPresets = {
     opacity: 0,
     duration: 0.6,
     ease: "power2.out",
-    stagger: 0.02,
+    // stagger: 0.02,
   },
 
   slideInRight: {
@@ -478,14 +478,14 @@ export const splitTextPresets = {
     opacity: 0,
     duration: 0.6,
     ease: "power2.out",
-    stagger: 0.02,
+    // stagger: 0.02,
   },
 
   typewriter: {
     opacity: 0,
     duration: 0.05,
     ease: "none",
-    stagger: 0.05,
+    // stagger: 0.05,
     splitBy: "chars" as const,
   },
 
@@ -502,7 +502,7 @@ export const splitTextPresets = {
     y: 100,
     duration: 0.8,
     ease: "power2.out",
-    stagger: 0.03,
+    // stagger: 0.03,
     splitBy: "words" as const,
   },
 
