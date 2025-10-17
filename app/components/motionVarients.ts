@@ -1,61 +1,68 @@
-import { easeOut } from "framer-motion";
+import { easeInOut, easeOut } from "framer-motion";
+
+// Custom smooth easing curves
+const smoothEase: [number, number, number, number] = [0.25, 0.1, 0.25, 1]; // Smoother version of ease-in-out
+const butterSmooth: [number, number, number, number] = [0.33, 1, 0.68, 1]; // Extra smooth with a gentle bounce feel
+const silkyEase: [number, number, number, number] = [0.4, 0, 0.2, 1]; // Material Design standard easing
 
 // motionVariants.ts
 export const containerStagger = {
   show: {
     transition: {
-      staggerChildren: 0.15,
+      staggerChildren: 0.12, // Slightly faster for smoother flow
+      delayChildren: 0.05,
     },
   },
 };
+
 export const moveUp = (delay: number = 0) => ({
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 60 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       delay: delay,
-      duration: 0.6,
-      ease: easeOut,
+      duration: 0.8, // Slightly faster
+      ease: silkyEase,
     },
   },
 });
 
 export const moveDown = (delay: number = 0) => ({
-  hidden: { opacity: 0, y: -50 },
+  hidden: { opacity: 0, y: -60 },
   show: {
     opacity: 1,
     y: 0,
     transition: {
       delay: delay,
-      duration: 0.6,
-      ease: easeOut,
+      duration: 0.7,
+      ease: silkyEase,
     },
   },
 });
 
 export const moveLeft = (delay: number = 0) => ({
-  hidden: { opacity: 0, x: 50 },
+  hidden: { opacity: 0, x: 60 },
   show: {
     opacity: 1,
     x: 0,
     transition: {
       delay: delay,
-      duration: 0.6,
-      ease: easeOut,
+      duration: 0.7,
+      ease: silkyEase,
     },
   },
 });
 
 export const moveRight = (delay: number = 0) => ({
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -60 },
   show: {
     opacity: 1,
     x: 0,
     transition: {
       delay: delay,
-      duration: 0.6,
-      ease: easeOut,
+      duration: 0.7,
+      ease: silkyEase,
     },
   },
 });
@@ -66,28 +73,35 @@ export const fadeIn = (delay: number = 0) => ({
     opacity: 1,
     transition: {
       delay: delay,
-      duration: 0.6,
-      ease: easeOut,
+      duration: 0.8,
+      ease: smoothEase,
     },
   },
 });
 
 export const paragraphItem = {
-  hidden: { opacity: 0, y: 50 }, // Start with opacity 0 and slide up from 50px below
+  hidden: { opacity: 0, y: 40 },
   show: {
     opacity: 1,
-    y: 0, // Slide to its normal position
+    y: 0,
     transition: {
-      duration: 0.6,
-      ease: easeOut,
-      staggerChildren: 0.1,
+      duration: 0.7,
+      ease: silkyEase,
+      staggerChildren: 0.08,
     },
   },
 };
 
 export const opacityMove = {
-  hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0, transition: { duration: 0.4, ease: easeOut } },
+  hidden: { opacity: 0, x: -24 },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: butterSmooth,
+    },
+  },
 };
 
 export const listUpMove = {
@@ -95,9 +109,9 @@ export const listUpMove = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2, // Controls the stagger effect (delay for each item)
-      duration: 0.6,
-      ease: easeOut,
+      staggerChildren: 0.15,
+      duration: 0.5,
+      ease: smoothEase,
     },
   },
 };
@@ -106,36 +120,35 @@ export const letterContainer = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.05, // a little more time between letters
-      ease: easeOut,
+      staggerChildren: 0.035, // Tighter timing for smoother flow
+      ease: silkyEase,
     },
   },
 };
 
 export const letterItem = {
-  hidden: { y: "100%", opacity: 0 },
+  hidden: { y: "120%", opacity: 0 },
   show: {
     y: "0%",
     opacity: 1,
     transition: {
-      ease: easeOut,
-      duration: 0.5,
+      ease: butterSmooth,
+      duration: 0.6,
     },
   },
 };
 
-
 export const letterItemTop = {
   hidden: {
-    y: -40, // Start from top
+    y: -48,
     opacity: 0,
   },
   show: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
-      ease: easeOut, // cubic-bezier for a soft easeOut
+      duration: 0.7,
+      ease: butterSmooth,
     },
   },
 };

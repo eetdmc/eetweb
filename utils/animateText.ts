@@ -124,6 +124,7 @@ export const animateSplitText = (elements: HTMLElement[], options: Omit<SplitTex
       trigger: elements[0]?.parentElement,
       start: "top 80%",
       toggleActions: "play none none reverse",
+      once: true,
       ...scrollTrigger,
     },
   });
@@ -265,6 +266,7 @@ export const animateReveal = (element: HTMLElement, options: RevealAnimationOpti
       trigger: element,
       start: "top 90%",
       toggleActions: "play none none reverse",
+      once: true,
       ...scrollTrigger,
     },
   });

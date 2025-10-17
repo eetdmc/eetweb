@@ -40,7 +40,8 @@ const HeroBottom = () => {
           trigger: sectionRef.current,
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
+          once: true,
         }
       });
 
@@ -84,7 +85,8 @@ const HeroBottom = () => {
           trigger: imageContainerRef.current,
           start: "top 90%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
+          once: true,
         }
       });
 
