@@ -33,7 +33,7 @@ export const commonData = {
             },
             {
                 label: "Contact",
-                href: "/contact"
+                href: "/contact-us"
             }
         ]
     }

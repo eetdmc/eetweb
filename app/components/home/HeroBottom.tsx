@@ -127,7 +127,7 @@ const HeroBottom = () => {
               EET Destination Management is a leading inbound tour operator and travel management company serving the Arabian Gulf, with extensive expertise in tourism, tours, and MICE services across the UAE, Oman, Bahrain, Qatar, Kuwait, and Saudi Arabia.
             </p>
             <div ref={buttonRef}>
-              <PrimaryBtn text="About EET" link="#" />
+              <PrimaryBtn text="About EET" link="/about-us" />
             </div>
           </div>
         </div>

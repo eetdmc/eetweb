@@ -7,6 +7,7 @@ import { commonData } from "./data";
 import { assets } from "@/public/assets";
 import Image from "next/image";
 import Link from "next/link";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa6";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);  
 const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
@@ -17,12 +18,14 @@ const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
     } else {
       gsap.to("body", { overflow: "auto", duration: 0 });
     }
-  }, [isOpen]);
+  }, [isOpen]);  
 
+  const menuItems = commonData.headerData.menuItems;
   return (
     <> 
           {/* Desktop Nav */}
           <div className="w-fit rounded-3xl bg-white   hidden xl:block">
+           
             <nav>
               <ul className="flex font-manrope">
                 {commonData.headerData.menuItems.map(
@@ -92,7 +95,10 @@ const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
               <span className={`block w-6 h-[2px] bg-black transition-all ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}/>
             </button>
           </div>
-        
+         {isOpen && (
+              <div className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 transition-all duration-300 ease-in-out"
+                              onClick={() => setIsOpen(false)}> </div>
+            )}
 
       {/* Offcanvas Menu */}
       <AnimatePresence>
@@ -103,28 +109,84 @@ const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="fixed top-0 right-0 w-4/5 h-full bg-white shadow-lg z-40 p-6 flex flex-col"
+            className="fixed top-0 right-0 w-4/5 h-[100dvh] bg-white shadow-lg z-40 p-6 flex flex-col justify-between"
           >
-            <nav className="mt-10">
-              <ul className="flex flex-col gap-6 font-manrope text-lg">
-               
-                     {commonData.headerData.menuItems.map(
-                  (item, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: 30 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.1 }}
-                      className="border-b pb-2"
-                    >
-                      <a href="#" onClick={() => setIsOpen(false)}>
-                   {item.label}
-                      </a>
-                    </motion.li>
-                  )
-                )}
-              </ul>
-            </nav>
+             <nav className="relative font-manrope"> 
+      {/* ====== Mobile Menu (Slide In) ====== */} 
+       <Link href="/" className="flex items-center">
+            <Image src={commonData.headerData.logo} alt="Logo" width={100} height={100} className="w-15  h-auto object-contain"/>
+          </Link>
+           
+            <ul className="flex flex-col gap-4 mt-10 ">
+              {menuItems.map((item, i) => (
+                <li key={i} className="relative overflow-hidden">
+                  <button
+                    onClick={() =>
+                      setHoveredMenu(
+                        hoveredMenu === item.label ? null : item.label
+                      )
+                    }
+                    className="w-full text-left uppercase text-[16px] font-medium flex justify-between items-center"
+                  >
+                    {item.label}
+                    {item.submenu && (
+                      <motion.span
+                        animate={{
+                          rotate: hoveredMenu === item.label ? 90 : 0,
+                        }}
+                        className="transition-transform"
+                      >
+                        <Image src="/assets/images/icons/arrowdown.svg" alt="Arrow" width={15} height={15} className="rotate-270"/>
+                      </motion.span>
+                    )}
+                     {!item.submenu && (
+                      <Link href={item.href} className="block absolute w-full h-full"></Link>
+                    )}
+                  </button>
+
+                  {/* Mobile submenu */}
+                  <AnimatePresence>
+                    {hoveredMenu === item.label && item.submenu && (
+                      <motion.ul
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="flex flex-col gap-2 mt-2 ml-3 border-l border-gray-200 pl-3"
+                      >
+                        {item.submenu.map((sub) => (
+                          <li key={sub.label}>
+                            <Link
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className="block text-[16px] text-gray-600 hover:text-primary transition-all"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </li>
+              ))}
+            </ul> 
+         
+    </nav>
+    <div className="flex gap-[7px] pt-5 border-t border-[#f3f3f3] justify-center ">
+       <Link href="#" target="_blank" className="rounded-full xl:w-[46px] xl:h-[46px] w-[36px] h-[36px] border border-black/22 hover:border-transparent flex items-center justify-center hover:bg-primary cursor-pointer transition-colors duration-300">
+        <FaFacebookF className="text-md " />
+      </Link>
+      <Link href="#" target="_blank" className="rounded-full xl:w-[46px] xl:h-[46px] w-[36px] h-[36px] border border-black/22 hover:border-transparent flex items-center justify-center hover:bg-primary cursor-pointer transition-colors duration-300">
+        <FaXTwitter className="text-md " />
+      </Link>
+      <Link href="#" target="_blank" className="rounded-full xl:w-[46px] xl:h-[46px] w-[36px] h-[36px] border border-black/22 hover:border-transparent flex items-center justify-center hover:bg-primary cursor-pointer transition-colors duration-300">
+        <FaLinkedinIn className="text-md " />
+      </Link>
+      <Link href="#" target="_blank" className="rounded-full xl:w-[46px] xl:h-[46px] w-[36px] h-[36px] border border-black/22 hover:border-transparent flex items-center justify-center hover:bg-primary cursor-pointer transition-colors duration-300">
+        <FaInstagram className="text-md " />
+      </Link>
+    </div>
           </motion.aside>
         )}
       </AnimatePresence>
