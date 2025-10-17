@@ -125,7 +125,7 @@ const HeroBottom = () => {
       <div className="container relative">
         <div className="xl:pl-30 flex flex-col items-center">
           <div>
-            <p ref={textRef} className="text-30 text-lggray leading-[1.14] font-light mb-10 xl:mb-20 max-w-[70ch]">
+            <p ref={textRef} className="text-[1.1rem] xl:text-30 text-lggray leading-[1.14] font-light mb-10 xl:mb-20 max-w-[70ch]">
               EET Destination Management is a leading inbound tour operator and travel management company serving the Arabian Gulf, with extensive expertise in tourism, tours, and MICE services across the UAE, Oman, Bahrain, Qatar, Kuwait, and Saudi Arabia.
             </p>
             <div ref={buttonRef}>
@@ -133,7 +133,7 @@ const HeroBottom = () => {
             </div>
           </div>
         </div>
-        <div ref={imageContainerRef} className="absolute xl:bottom-[-80%] right-5 xl:right-0 w-40 h-20 xl:w-[699px] xl:h-[279px] overflow-hidden">
+        <div ref={imageContainerRef} className="absolute xl:bottom-[-80%] right-5 xl:right-0 w-40 h-20 md:w-[300px] md:h-auto xl:w-[699px] xl:h-[279px] overflow-hidden">
           <div ref={imageRef} className="w-full h-full">
             <Image src="/assets/images/home/hero/bottom-img.jpg" alt="Arrow" width={1000} height={1000} className="w-full h-full object-cover" />
           </div>

@@ -181,12 +181,12 @@ export default function ContactForm() {
                       <option value="partnership">Partnership</option>
                       <option value="other">Other</option>
                     </motion.select>
-                    <motion.label variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="enquireAbout"
+                    <label htmlFor="enquireAbout"
                       className={`absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground pb-3 pointer-events-none transition-text ${enquireValue ? 'opacity-0' : 'opacity-100 '
                         }`}
                     >
                       Enquire About
-                    </motion.label>
+                    </label>
                     <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
                       fill="none"
                       stroke="currentColor"

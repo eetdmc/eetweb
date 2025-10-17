@@ -26,7 +26,7 @@ const CoreValues = ({ title, data }: CoreValuesProps) => {
     });
 
   return ( 
-    <section className="pt-10 pb-45 xl:pt-25 xl:pb-[300px] 2xl:pb-[400px] 2xl:pt-50">
+    <section className="pt-10 pb-45 xl:pt-25 md:pb-[300px] xl:pb-[300px] 2xl:pb-[400px] 2xl:pt-50">
       <div className="container">
         <div className="max-w-[1106px] mx-auto">
           <h2 className="heading text-70 leading-[1] font-light text-black mb-30px">{title}</h2>

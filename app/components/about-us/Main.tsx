@@ -155,7 +155,7 @@ const Main = () => {
         </div>
       </div>
       </div>
-      <div className="mb-15 xl:mb-25">
+      <div className="mb-15 xl:mb-25 overflow-hidden">
         <Image src="/assets/images/about/main.jpg" alt="" width={1920} height={1080} className="w-full h-full max-h-[750px] object-cover" ref={imageRefZoom} />
       </div>
       <div className="container" ref={sectionRef}>
@@ -166,7 +166,7 @@ const Main = () => {
               enableBlur={true}
               baseRotation={5}
               blurStrength={10}
-              containerClassName="text-[30px] leading-[1.333333333333333] font-light max-w-[68chch]"
+              containerClassName="text-[1.2rem] xl:text-30 leading-[1.333333333333333] font-light max-w-[68chch]"
             >
             EET DMC is a destination management company built on a foundation of excellence, innovation, and deep regional expertise. Headquartered in the UAE and operating across the GCC, we specialize in delivering seamless travel, MICE, and leisure experiences.
             </ScrollReveal>
