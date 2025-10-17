@@ -12,7 +12,7 @@ const SocialFeeds = () => {
         </div>
         {/* <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 xl:gap-[212px]"> */}
         <div className="grid grid-cols-1">
-          <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }} className="xl:col-span-2 elfsight-app-f656c073-93a3-4f9d-9d37-e0f103630e4d" >
+          <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{ once: true, amount: "all" }} className="xl:col-span-2 elfsight-app-f656c073-93a3-4f9d-9d37-e0f103630e4d" >
             <script src="https://elfsightcdn.com/platform.js" async></script> <div className="elfsight-app-f656c073-93a3-4f9d-9d37-e0f103630e4d" data-elfsight-app-lazy></div>
           </motion.div>
           {/* <div className="bg-primary xl:h-[545px] "></div>  */}
