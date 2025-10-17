@@ -10,72 +10,72 @@ const Footer = () => {
       <div className="bg-black ">
         <div className="container">
           <div className="relative z-0">
-           <motion.div
-      initial={{ y: 100 }}              
-      whileInView={{  y: 0 }}           
-      viewport={{ once: true, amount: 0.2 }}         
-      transition={{ duration: 0.8, ease: "easeOut" }}  
-      className="absolute -top-[185px] md:-top-[250px] lg:-top-[150px] xl:-top-[215px] w-full h-auto xl:h-auto xl:max-h-[435px] left-0"
-    >
-      {/* Background image */}
-      <div className="w-full h-full absolute z-0">
-        <Image
-          src={assets.footerImg}
-          alt=""
-          width={1700}
-          height={700}
-          className="w-full h-full object-cover"
-        />
-      </div>
+            <motion.div
+              initial={{ y: 100 }}
+              whileInView={{ y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute -top-[185px] md:-top-[250px] lg:-top-[150px] xl:-top-[215px] w-full h-auto xl:h-auto xl:max-h-[435px] left-0"
+            >
+              {/* Background image */}
+              <div className="w-full h-full absolute z-0">
+                <Image
+                  src={assets.footerImg}
+                  alt=""
+                  width={1700}
+                  height={700}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-      {/* Overlay */}
-      <div className="absolute top-0 bg-black/60 w-full h-full z-10"></div>
+              {/* Overlay */}
+              <div className="absolute top-0 bg-black/60 w-full h-full z-10"></div>
 
-      {/* Content */}
-      <div className="relative z-20 px-8 xl:px-[142px] py-10 md:py-18 xl:py-20 3xl:py-[145px]">
-        <div className="flex items-center justify-between flex-wrap gap-5">
-          <motion.h2
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
-            className="3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-light text-white leading-[1]"
-          >
-            Start Your Destination Experience Today
-          </motion.h2>
+              {/* Content */}
+              <div className="relative z-20 px-8 xl:px-[142px] py-10 md:py-18 xl:py-20 3xl:py-[145px]">
+                <div className="flex items-center justify-between flex-wrap gap-5">
+                  <motion.h2
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+                    className="3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-light text-white leading-[1]"
+                  >
+                    Start Your Destination Experience Today
+                  </motion.h2>
 
-          <motion.button
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="group cursor-pointer rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-8 xl:py-3 3xl:px-[65px] 3xl:py-[49.5px]
+                  <motion.button
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                    className="group cursor-pointer rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-8 xl:py-3 3xl:px-[65px] 3xl:py-[49.5px]
               flex items-center gap-5 text-base xl:text-[30px] font-light leading-[1.2] 
               text-white transition-all duration-500 ease-in-out hover:backdrop-blur-[1px]"
-          >
-            <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-2">
-              Let&apos;s Connect
-            </span>
+                  >
+                    <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-2">
+                      Let&apos;s Connect
+                    </span>
 
-            <div className="w-8 h-8 md:w-[25px] md:h-[25px] flex relative overflow-hidden">
-              <Image
-                src={assets.arrowPrimary}
-                alt="Arrow icon"
-                width={50}
-                height={50}
-                className="w-5 xl:w-5 md:w-10 h-auto transition-transform duration-500 ease-in-out group-hover:translate-x-6 group-hover:-translate-y-6 group-hover:scale-[.8]"
-              />
-              <Image
-                src={assets.arrowPrimary}
-                alt="Arrow icon"
-                width={50}
-                height={50}
-                className="w-5 xl:w-5 md:w-10 h-auto transition-transform duration-500 ease-in-out -translate-x-[51px] translate-y-[30px] group-hover:-translate-x-[25px] group-hover:-translate-y-[0px]"
-              />
-            </div>
-          </motion.button>
-        </div>
-      </div>
-    </motion.div>
+                    <div className="w-8 h-8 md:w-[25px] md:h-[25px] xl:w-[50px] xl:h-[50px] flex relative overflow-hidden">
+                      <Image
+                        src={assets.arrowPrimary}
+                        alt="Arrow icon"
+                        width={50}
+                        height={50}
+                        className="w-5 xl:w-auto md:w-10 h-auto transition-transform duration-500 ease-in-out group-hover:translate-x-[51px] group-hover:-translate-y-[51px] "
+                      />
+                      <Image
+                        src={assets.arrowPrimary}
+                        alt="Arrow icon"
+                        width={50}
+                        height={50}
+                        className="w-5 xl:w-auto md:w-10 h-auto transition-transform duration-500 ease-in-out -translate-x-[102px] translate-y-[51px] group-hover:-translate-x-[51px] group-hover:-translate-y-[0px]"
+                      />
+                    </div>
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
           </div>
           <div className="pt-20 lg:pt-[201px] 2xl:pt-[201px] 3xl:pt-[391px]">
             <div className="hidden xl:grid grid-cols-[1fr_1fr_auto] 3xl:grid-cols-[583px_1fr_auto]">
