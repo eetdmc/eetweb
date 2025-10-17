@@ -11,11 +11,11 @@ import { assets } from "@/public/assets";
 import Image from "next/image";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { motion } from "motion/react";
-import { moveDown } from "../motionVarients";
+import { moveDown, moveUp } from "../motionVarients";
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const totalSlides = homeData.testimonials.items.length ;
-  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 10%"});
+  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 50%"});
   // Animate headings
   useTextReveal({ selector: '.heading' });
 
@@ -47,7 +47,7 @@ const Testimonials = () => {
               <SwiperSlide key={index}>
                 <div className="max-w-[1428px] mx-auto">
                   <div className="border-b border-primary-light pb-5 xl:pb-12 text-center">
-                    <h3 className="text-30 leading-[1.2] font-light text-black">{item.name}</h3>
+                    <motion.h3 variants={moveUp(0.2)} initial="hidden" animate={current === index ? "show" : "hidden"} viewport={{ once: false, amount: "all" }} className="text-30 leading-[1.2] font-light text-black">{item.name}</motion.h3>
                   </div>
                   <div className="pt-10 xl:pt-15 flex justify-between">
                     <motion.div variants={moveDown(0.2)} initial="hidden" whileInView="show" viewport={{ once: false, amount: "all" }}>
