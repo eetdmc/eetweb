@@ -15,7 +15,7 @@ import { moveDown, moveUp } from "../motionVarients";
 const Testimonials = () => {
   const [current, setCurrent] = useState(0);
   const totalSlides = homeData.testimonials.items.length ;
-  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 50%"});
+  // useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 50%"});
   // Animate headings
   useTextReveal({ selector: '.heading' });
 
@@ -30,7 +30,7 @@ const Testimonials = () => {
     <section className="py-10 xl:py-30 pm-noise">
       <div className="container">
         <div className="mb-5 xl:mb-[78px]">
-          <h2 className="title text-70 text-center font-light text-black">Client Testimonials</h2>
+          <h2 className="heading text-70 text-center font-light text-black">Client Testimonials</h2>
         </div>
         <div className="">
           <Swiper className="testimonials-slider relative" modules={[Navigation, EffectFade]} slidesPerView={1} spaceBetween={30}

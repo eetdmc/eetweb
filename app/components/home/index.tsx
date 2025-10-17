@@ -2,11 +2,8 @@ import Hero from "./Hero";
 import HeroBottom from "./HeroBottom";
 import FeaturesSection from "./FeaturesSection";
 import Services from "./Services";
-// import DestinationSliderOne from "./DestinationSliderOne";
-// import DestinationSlider from "./DestinationSlider";
-// import DestinationSliderNew from "./DestinationSliderNew";
 import DestinationSection from "./DestinationSection";
-import BlogSlider from "./BlogSlider";
+// import BlogSlider from "./BlogSlider";
 import Testimonials from "./Testimonials";
 import SocialFeeds from "./SocialFeeds";
 const Index = () => {
@@ -16,10 +13,6 @@ const Index = () => {
       <HeroBottom />
       <FeaturesSection />
       <Services />
-      {/* <DestinationSliderOne /> */}
-      {/* <DestinationSlider /> */}
-      {/* <DestinationSliderNew /> */}
-
       <DestinationSection />
       {/* <BlogSlider /> */}
       <Testimonials />
