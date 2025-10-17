@@ -64,6 +64,8 @@ const DestinationSliderNew: React.FC = () => {
 
 
 
+
+
   // Fix hydration - only run on client
   useEffect(() => {
     setIsMounted(true);
@@ -72,7 +74,19 @@ const DestinationSliderNew: React.FC = () => {
     if (typeof window !== 'undefined') {
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
     }
+
+    // Cleanup function to refresh ScrollTrigger when component unmounts or updates
+    return () => {
+      ScrollTrigger.refresh();
+    };
   }, []);
+
+  // Refresh ScrollTrigger when slide changes (height changes affect scroll positions)
+  useEffect(() => {
+    if (isMounted) {
+      ScrollTrigger.refresh();
+    }
+  }, [currentSlide, isMounted]);
 
   // Handle arrow navigation
   const goToSlide = (slideIndex: number) => {
