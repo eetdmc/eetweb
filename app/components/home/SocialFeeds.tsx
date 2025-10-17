@@ -3,7 +3,7 @@ import { useTextReveal } from "@/hooks/useTextReveal";
 import { motion } from "motion/react";
 import { moveUp } from "../motionVarients";
 const SocialFeeds = () => {
-  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.6, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 10%"});
+  useTextReveal({selector: ".title", stagger: 0.03, duration: 0.6, y: 50, rotateX: -90, ease: "power3.out", start: "top 90%"});
   return ( 
     <section className="pt-10 pb-[160px] xl:pt-30 xl:pb-[300px] sec-noise">
       <div className="container">
