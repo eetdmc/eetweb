@@ -66,12 +66,12 @@ const PhotoGallery = () => {
   return (
     <section className="py-10 xl:py-20 2xl:pt-50 2xl:pb-[266.06px] ">
       <div className="container">
-        <div className="max-w-[1417.9px] flex items-center justify-between  mb-5 xl:mb-20">
+        <div className="max-w-[1417.9px] flex items-center justify-between  mb-5 xl:mb-4">
           <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black heading-one">Photo Gallery</h2>
           <div className="flex gap-5 w-fit">
-            <button className="swiper-button-next-team" onClick={() => { swiperRef.current?.slideNext() }}>
+            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}>
                <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-10 h-auot" /></button>
-            <button className="swiper-button-prev-team" onClick={() => { swiperRef.current?.slidePrev() }}>
+            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}>
                <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-10 h-auot" /></button>
           </div>
         </div>
@@ -121,7 +121,7 @@ const PhotoGallery = () => {
             }}
             modules={[Navigation, Autoplay, EffectCoverflow]}
             onSlideChange={handleSlideChange}
-            className="w-full h-full !py-12 md:!py-16 lg:!py-20 2xl:h-[629.94px] photo-gallery-slider"
+            className="w-full h-full !py-0 md:!py-0 lg:!py-0 2xl:h-[629.94px] photo-gallery-slider"
           >
             {slides.map((slide) => (
               <SwiperSlide key={slide.id} className="flex items-center justify-center !h-auto" >

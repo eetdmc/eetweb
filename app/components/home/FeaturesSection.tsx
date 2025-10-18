@@ -72,7 +72,7 @@ const FeaturesSection = () => {
   ]);
 
   return (
-    <section className="pt-25 xl:pt-[247px] pb-15 xl:pb-25 overflow-hidden" ref={sectionRef}>
+    <section className="pt-15 xl:pt-[247px] pb-15 xl:pb-[241px] overflow-hidden" ref={sectionRef}>
       <div className="container">
         <div className="grid grid-cols-1 xl:grid-cols-[408px_auto] gap-10 xl:gap-20 3xl:gap-[235px]" >
           <div className="w-full h-full relative overflow-hidden " ref={containerRef}>

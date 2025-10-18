@@ -12,7 +12,8 @@ const Footer = () => {
         <div className="container">
           <div className="relative z-0">
             <motion.div  initial={{ y: 100 }} whileInView={{ y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.8, ease: "easeOut" }}
-              className="absolute -top-[185px] md:-top-[220px] lg:-top-[150px] 2xl:-top-[250px] 3xl:-top-[215px] w-full h-auto xl:h-auto xl:max-h-[435px] left-0"
+              className="absolute -top-[145px] sm:-top-[135px] md:-top-[220px] lg:-top-[230px] 2xl:-top-[250px] 3xl:-top-[215px]
+               w-full min-h-[160px] md:min-h-[265px] lg:min-h-[335px] xl:h-auto xl:max-h-[435px] left-0"
             >
               {/* Background image */}
               <div className="w-full h-full absolute z-0">
@@ -21,26 +22,27 @@ const Footer = () => {
               {/* Overlay */}
               <div className="absolute top-0 bg-black/60 w-full h-full z-10"></div>
               {/* Content */}
-              <div className="relative z-20 px-8 xl:px-15 3xl:px-[142px] py-10 md:py-12 xl:py-30 3xl:py-[145px]">
-                <div className="flex items-center justify-between flex-wrap 2xl:flex-nowrap gap-5">
+              <div className="relative flex flex-col h-full justify-center items-center z-20 px-8 xl:px-15 3xl:px-[142px] py-10 md:py-12 xl:py-30 3xl:py-[145px]">
+                <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-5">
                   <motion.h2 initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }} viewport={{ once:true }}
-                    className="xl:max-w-2xl 3xl:max-w-4xl text-50 xl:text-60 3xl:text-70 font-light text-white leading-[1.2] 3xl:leading-[1]"
+                    className=" max-w-[24ch] text-50 xl:text-60 3xl:text-70 font-light text-white leading-[1.2] 3xl:leading-[1]"
                   >
                     Start Your Destination Experience Today
                   </motion.h2>
 
-                  <motion.button
+                  <Link href={"/contact-us"} >
+                   <motion.button
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="group cursor-pointer rounded-full font-inter border border-white min-w-max px-4 py-3 xl:px-10 xl:py-5 3xl:px-[65px] 3xl:py-[49.5px] flex items-center gap-5 text-base xl:text-[30px] font-light leading-[1.2] text-white transition-colors hover:backdrop-blur-[1px] "
+                    className="m-auto sm:m-0 group cursor-pointer rounded-full font-inter border border-white min-w-max px-3 sm:px-4 py-1 sm:py-3 xl:px-10 xl:py-5 3xl:px-[65px] 3xl:py-[49.5px] flex items-center gap-1  sm:gap-5 text-base xl:text-[30px] font-light leading-[1.2] text-white transition-colors hover:backdrop-blur-[1px] "
                   >
                     <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-2">
                       Let&apos;s Connect
                     </span>
 
-                    <div className="w-8 h-8 md:w-[25px] md:h-[25px] xl:w-[50px] xl:h-[50px] flex relative overflow-hidden">
+                    <div className="w-5 h-5 md:w-[25px] md:h-[25px] xl:w-[50px] xl:h-[50px] flex relative overflow-hidden">
                       <Image src={assets.arrowPrimary} alt="Arrow icon" width={50} height={50}
                         className="w-5 xl:w-auto md:w-10 h-auto transition-transform duration-500 ease-in-out group-hover:translate-x-[51px] group-hover:-translate-y-[51px] scale-50 3xl:scale-100"
                       />
@@ -48,6 +50,7 @@ const Footer = () => {
                       />
                     </div>
                   </motion.button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
