@@ -14,9 +14,9 @@ const DestinationSection = () => {
     y: 30,
   });
   return ( 
-    <section className="py-10 xl:py-30 overflow-hidden">
+    <section className="py-10 xl:pt-30 xl:pb-26 overflow-hidden">
       <div className="container">
-        <div className="3xl:pl-[573px]" >
+        <div className="xl:pl-[353px] 3xl:pl-[573px]" >
           <h2 className="heading text-70 leading-[1] font-light mb-4 xl:mb-[50px] max-w-4xl text-black">Expertise Behind Every Experience</h2>
           <h3 className="subtitle text-34 leading-[1.235294117647059] font-light text-black">Destinations</h3>
         </div>
