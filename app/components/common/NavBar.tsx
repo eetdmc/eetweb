@@ -24,7 +24,7 @@ const NavBar = () => {
   return (
     <>
       {/* Desktop Nav */}
-      <div className="w-fit rounded-3xl bg-white   hidden lg:block">
+      <div className="w-fit rounded-3xl bg-white   hidden lg:block absolute left-1/2 -translate-x-1/2 z-10" >
 
         <nav>
           <ul className="flex font-manrope">

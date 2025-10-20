@@ -603,7 +603,7 @@ body {
   @apply border-b border-r xl:border-r-0 border-primary-light xl:min-h-[369px] flex flex-col xl:justify-end pb-5 xl:pb-15 xl:pr-15;
 
   h3 {
-    @apply max-w-[25ch] xl:ml-auto;
+    @apply max-w-[24ch] xl:ml-auto;
   }
 
 }

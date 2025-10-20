@@ -179,13 +179,13 @@ const Hero = () => {
   return (
     <section className="w-full h-[calc(100vh-100px)] md:h-[50vh] xl:h-[calc(100vh-130px)] pm-noise relative">
       {homeData.heroData.map((item, i) => (
-        <div className="xl:w-[66%] 3xl:w-[1294px] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
+        <div className="w-full xl:w-[calc(66%-10px)] 3xl:w-[1280px] h-full absolute right-0 top-0 z-0 overflow-hidden" key={i}>
           <Image src={item.image} alt={item.title} width={1920} height={1080}
             ref={(el) => { if (el) imageRefs.current[i] = el; }}
-            className={`max-w-[1294px] object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${activeIndex === i ? "opacity-100 " : "opacity-0"}`} />
+            className={`max-w-[1275px] object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${activeIndex === i ? "opacity-100 " : "opacity-0"}`} />
         </div>
       ))}
-      <div className="w-full xl:w-[66%] 3xl:w-[1294px] h-full xl:h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-black/20 xl:from-transparent to-black xl:to-black/70"></div>
+      <div className="w-full xl:w-[calc(66%-10px)] 3xl:w-[1280px] h-full xl:h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-black/20 xl:from-transparent to-black xl:to-black/70"></div>
       <div className="container h-full">
         <Swiper className="w-full h-full hero-slider"
           pagination={false}
@@ -226,7 +226,7 @@ const Hero = () => {
                   <div className="h-full z-10 relative">
                     <div className="flex flex-col justify-end h-full pb-10 xl:pb-30 pt-25 xl:pt-0 ">
                       <div className="flex flex-wrap justify-between items-end">
-                        <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[30%] flex flex-col justify-end  pb-10 xl:pb-0">
+                        <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[calc(30%+10px)] flex flex-col  justify-end  pb-10 xl:pb-0">
                           <motion.h2 variants={containerVariants} initial="hidden" animate={activeIndex === index ? "show" : "hidden"} viewport={{ once: false, amount: "all" }} className="text-[3rem] xl:text-60 3xl:text-80 leading-[1] text-white xl:text-black font-[300] mb-0 xl:mb-22 slide-title " style={{ perspective: '1000px' }} >
                             {item.title.split(' ').map((word, wordIndex) => (
                               <span key={`word-${index}-${wordIndex}`} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
