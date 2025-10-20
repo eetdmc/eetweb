@@ -24,13 +24,13 @@ const WhyExplore = () => {
           <div className="explr-grid__col">
             <div >
               <motion.div variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="mb-4 xl:mb-30px">
-                <Image src="/assets/images/destinations/details/why-explore/icon-2.svg" width={60} height={60} alt="" className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"></Image>
+                <Image src="/assets/images/destinations/details/why-explore/icon-2.svg" width={60} height={60} alt="" className="w-10 xl:w-15 h-auto mb-4 xl:mb-5"></Image>
               <h3 className="text-30 leading-[1.333333333333333] font-light text-black">On-ground support in all 7 Emirates</h3>
               </motion.div>
             </div>
             <div className="">
               <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}}>
-                <Image src="/assets/images/destinations/details/why-explore/icon-3.svg" width={60} height={60} alt="" className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"></Image>
+                <Image src="/assets/images/destinations/details/why-explore/icon-3.svg" width={60} height={60} alt="" className="w-10 xl:w-15 h-auto mb-4 xl:mb-5"></Image>
               <h3 className="text-30 leading-[1.333333333333333] font-light text-black">Multilingual expert guides</h3>
               </motion.div>
             </div>

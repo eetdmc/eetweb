@@ -172,7 +172,7 @@ export default function ContactForm() {
                         onChange: (e) => setEnquireValue(e.target.value),
                       })}
                       className={`w-full border-b ${errors.enquireAbout ? 'border-red-500' : 'border-primary-light'
-                        } bg-transparent pb-6 px-0 pr-8 appearance-none focus:outline-none focus:border-green-500 transition-colors cursor-pointer peer`}
+                        } bg-transparent pb-6 px-3 pr-8 appearance-none focus:outline-none focus:border-green-500 transition-colors cursor-pointer peer`}
                     >
                       <option value=""></option>
                       <option value="general">General Inquiry</option>
