@@ -1,98 +1,93 @@
 import mongoose from "mongoose";
 
 const miceSchema = new mongoose.Schema({
-    metaTitle:{
-        type:String,
-        required:true
+    metaTitle: {
+        type: String,
     },
-    metaDescription:{
-        type:String,
-        required:true
+    metaDescription: {
+        type: String,
     },
-    firstSection:{
-        mainTitle:{
-            type:String,
-            required:true
+    firstSection: {
+        mainTitle: {
+            type: String,
         },
-        subTitle:{
-            type:String,
-            required:true
+        subTitle: {
+            type: String,
         },
-        thirdTitle:{
-            type:String,
-            required:true
+        thirdTitle: {
+            type: String,
         },
-        description:{
-            type:String,
-            required:true
+        description: {
+            type: String,
+
         },
-        image:{
-            type:String,
-            required:true
+        image: {
+            type: String,
+
         },
-        imageAlt:{
-            type:String,
+        imageAlt: {
+            type: String,
         },
     },
-    secondSection:{
-        title:{
-            type:String,
-            required:true
+    secondSection: {
+        title: {
+            type: String,
+
         },
-        items:[{
-            image:{
-                type:String,
-                required:true
+        items: [{
+            image: {
+                type: String,
+
             },
-            imageAlt:{
-                type:String,
+            imageAlt: {
+                type: String,
             },
-            title:{
-                type:String,
-                required:true
+            title: {
+                type: String,
+
             },
-            description:{
-                type:String,
-                required:true
+            description: {
+                type: String,
+
             }
         }]
     },
-    thirdSection:{
-        title:{
-            type:String,
-            required:true
+    thirdSection: {
+        title: {
+            type: String,
+
         },
-        items:[{
-            image:{
-                type:String,
-                required:true
+        items: [{
+            image: {
+                type: String,
+
             },
-            imageAlt:{
-                type:String,
+            imageAlt: {
+                type: String,
             },
-            title:{
-                type:String,
-                required:true
+            title: {
+                type: String,
+
             },
-            description:{
-                type:String,
-                required:true
+            description: {
+                type: String,
+
             }
         }]
     },
-    fourthSection:{
-        title:{
-            type:String,
-            required:true
+    fourthSection: {
+        title: {
+            type: String,
+
         },
-        items:[{
-            title:{
-                type:String,
-                required:true
+        items: [{
+            title: {
+                type: String,
+
             },
-            description:{
-                type:String,
-                required:true
+            description: {
+                type: String,
+
             }
         }],
     },

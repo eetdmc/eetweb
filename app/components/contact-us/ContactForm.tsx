@@ -1,5 +1,4 @@
 "use client"
-import { assets } from '@/public/assets';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';

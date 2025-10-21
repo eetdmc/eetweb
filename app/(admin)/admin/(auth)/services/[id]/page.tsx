@@ -10,6 +10,18 @@ import { ImageUploader } from '@/components/ui/image-uploader'
 import { RiDeleteBinLine } from "react-icons/ri";
 import { Textarea } from '@/components/ui/textarea'
 import AdminItemContainer from '@/app/components/common/AdminItemContainer';
+import { useParams } from 'next/navigation';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog"
+import { MdDelete } from "react-icons/md";
+import { useRouter } from 'next/navigation';
+import { useRefetchServices } from '@/app/contexts/refetchServices';
 
 interface MiceFormProps {
     metaTitle: string;
@@ -51,9 +63,10 @@ interface MiceFormProps {
 
 const MicePage = () => {
 
-
+    const { id } = useParams();
+    const router = useRouter();
     const { register, handleSubmit, setValue, control, formState: { errors } } = useForm<MiceFormProps>();
-
+    const { setRefetchServices } = useRefetchServices();
 
 
     const { fields: thirdSectionItems, append: thirdSectionAppend, remove: thirdSectionRemove } = useFieldArray({
@@ -74,13 +87,14 @@ const MicePage = () => {
 
     const handleAddMice = async (data: MiceFormProps) => {
         try {
-            const response = await fetch(`/api/admin/services/mice`, {
+            const response = await fetch(`/api/admin/services?id=${id}`, {
                 method: "PATCH",
                 body: JSON.stringify(data),
             });
             if (response.ok) {
                 const data = await response.json();
                 alert(data.message);
+                setRefetchServices((prev)=>!prev);
                 // router.push("/admin/commitment");
             }
         } catch (error) {
@@ -90,7 +104,7 @@ const MicePage = () => {
 
     const fetchMiceData = async () => {
         try {
-            const response = await fetch(`/api/admin/services/mice`);
+            const response = await fetch(`/api/admin/services?id=${id}`);
             if (response.ok) {
                 const data = await response.json();
                 setValue("metaTitle", data.data.metaTitle);
@@ -111,6 +125,21 @@ const MicePage = () => {
         }
     }
 
+    const handleDeleteService = async (id: string) => {
+        try {
+            const response = await fetch(`/api/admin/services?id=${id}`, {
+                method: "DELETE",
+            });
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message);
+                setRefetchServices((prev)=>!prev);
+                router.push("/admin");
+            }
+        } catch (error) {
+            console.log("Error in deleting service", error);
+        }
+    }
 
 
     useEffect(() => {
@@ -120,6 +149,22 @@ const MicePage = () => {
 
     return (
         <div className='flex flex-col gap-5'>
+            <div className="flex items-center justify-end">
+            <Dialog>
+              <DialogTrigger className='flex items-center gap-2 bg-red-500 text-white px-2 py-1 rounded-md'>Delete Service<MdDelete/></DialogTrigger>
+              <DialogContent className="bg-white">
+                <DialogHeader>
+                  <DialogTitle>Are you sure?</DialogTitle>
+                </DialogHeader>
+                <div className="flex gap-2">
+                  <DialogClose className="bg-black text-white px-2 py-1 rounded-md">No</DialogClose>
+                  <DialogClose className="bg-black text-white px-2 py-1 rounded-md" onClick={()=>handleDeleteService(id as string)}>Yes</DialogClose>
+                </div>
+
+              </DialogContent>
+
+            </Dialog>
+            </div>
             <form className='flex flex-col gap-5' onSubmit={handleSubmit(handleAddMice)}>
 
 

@@ -1,4 +1,3 @@
-import { features } from "process";
 
 
 export const homeData = {

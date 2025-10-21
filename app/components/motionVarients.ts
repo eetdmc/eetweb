@@ -1,5 +1,3 @@
-import { easeInOut, easeOut } from "framer-motion";
-
 // Custom smooth easing curves
 const smoothEase: [number, number, number, number] = [0.25, 0.1, 0.25, 1]; // Smoother version of ease-in-out
 const butterSmooth: [number, number, number, number] = [0.33, 1, 0.68, 1]; // Extra smooth with a gentle bounce feel

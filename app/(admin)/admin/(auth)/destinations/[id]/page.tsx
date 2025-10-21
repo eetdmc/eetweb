@@ -10,6 +10,18 @@ import { ImageUploader } from '@/components/ui/image-uploader'
 import { RiDeleteBinLine } from "react-icons/ri";
 import { Textarea } from '@/components/ui/textarea'
 import AdminItemContainer from '@/app/components/common/AdminItemContainer';
+import { useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog"
+import { MdDelete } from "react-icons/md";
+import { useRefetchDestinations } from '@/app/contexts/refetchDestinations';
 
 interface UAEFormProps {
     metaTitle: string;
@@ -58,6 +70,9 @@ const UAEPage = () => {
     const { register, handleSubmit, setValue, control, formState: { errors } } = useForm<UAEFormProps>();
 
 
+    const router = useRouter();
+    const { id } = useParams();
+    const { setRefetchDestinations } = useRefetchDestinations();
 
     const { fields: thirdSectionItems, append: thirdSectionAppend, remove: thirdSectionRemove } = useFieldArray({
         control,
@@ -78,23 +93,25 @@ const UAEPage = () => {
 
     const handleAddUAE = async (data: UAEFormProps) => {
         try {
-            const response = await fetch(`/api/admin/destinations/uae`, {
+            const response = await fetch(`/api/admin/destinations?id=${id}`, {
                 method: "PATCH",
                 body: JSON.stringify(data),
             });
             if (response.ok) {
                 const data = await response.json();
                 alert(data.message);
+                console.log("here")
+                setRefetchDestinations((prev)=>!prev);
                 // router.push("/admin/commitment");
             }
         } catch (error) {
-            console.log("Error in adding uae", error);
+            console.log("Error in adding destination", error);
         }
     }
 
     const fetchUAEData = async () => {
         try {
-            const response = await fetch(`/api/admin/destinations/uae`);
+            const response = await fetch(`/api/admin/destinations?id=${id}`);
             if (response.ok) {
                 const data = await response.json();
                 setValue("metaTitle", data.data.metaTitle);
@@ -112,7 +129,23 @@ const UAEPage = () => {
                 alert(data.message);
             }
         } catch (error) {
-            console.log("Error in fetching uae data", error);
+            console.log("Error in fetching destination data", error);
+        }
+    }
+
+        const handleDeleteDestination = async (id: string) => {
+        try {
+            const response = await fetch(`/api/admin/destinations?id=${id}`, {
+                method: "DELETE",
+            });
+            if (response.ok) {
+                const data = await response.json();
+                alert(data.message);
+                setRefetchDestinations((prev)=>!prev);
+                router.push("/admin");
+            }
+        } catch (error) {
+            console.log("Error in deleting destination", error);
         }
     }
 
@@ -125,6 +158,22 @@ const UAEPage = () => {
 
     return (
         <div className='flex flex-col gap-5'>
+            <div className="flex items-center justify-end">
+            <Dialog>
+              <DialogTrigger className='flex items-center gap-2 bg-red-500 text-white px-2 py-1 rounded-md'>Delete Destination<MdDelete/></DialogTrigger>
+              <DialogContent className="bg-white">
+                <DialogHeader>
+                  <DialogTitle>Are you sure?</DialogTitle>
+                </DialogHeader>
+                <div className="flex gap-2">
+                  <DialogClose className="bg-black text-white px-2 py-1 rounded-md">No</DialogClose>
+                  <DialogClose className="bg-black text-white px-2 py-1 rounded-md" onClick={()=>handleDeleteDestination(id as string)}>Yes</DialogClose>
+                </div>
+
+              </DialogContent>
+
+            </Dialog>
+            </div>
             <form className='flex flex-col gap-5' onSubmit={handleSubmit(handleAddUAE)}>
 
 

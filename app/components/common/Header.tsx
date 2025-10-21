@@ -7,7 +7,7 @@ import Link from "next/link";
 import { commonData } from "./data";
 import NavBar from "./NavBar";
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
   // Sticky effect after 400px

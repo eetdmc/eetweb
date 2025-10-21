@@ -4,23 +4,52 @@ import ClientSideLink from '@/app/(admin)/admin/client-side-link';
 import React, { useState } from 'react'
 import {
     HomeIcon,
-    NewspaperIcon,
     UserGroupIcon,
-    EnvelopeIcon,
     BriefcaseIcon,
-    GlobeAltIcon,
   } from "@heroicons/react/24/outline";
-import { AwardIcon, GalleryThumbnails, GroupIcon, HeartHandshake, InfoIcon, LeafIcon, PhoneIcon, Settings, Share2Icon, ThumbsUp, Workflow } from 'lucide-react';
+import { AwardIcon, GroupIcon, InfoIcon, PhoneIcon, Settings } from 'lucide-react';
 import { useEffect } from 'react';
-import {RiShakeHandsLine } from 'react-icons/ri';
-import { GiHealthNormal } from 'react-icons/gi';
-import { FaRobot } from 'react-icons/fa';
+
+import { useRefetchServices } from '@/app/contexts/refetchServices';
+import { useRefetchDestinations } from '@/app/contexts/refetchDestinations';
 
 
 
 const AdminNavbar = () => {
 
     const [openLink, setOpenLink] = useState<string | null>(null);
+    const [services, setServices] = useState([]);
+    const [destinations, setDestinations] = useState([]);
+    const { refetchServices } = useRefetchServices();
+    const { refetchDestinations } = useRefetchDestinations();
+
+    useEffect(() => {
+        const fetchServices = async () => {
+            try {
+                const res = await fetch("/api/admin/services/add");
+                const data = await res.json();
+                setServices(data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchServices();
+    }, [refetchServices]);
+
+        useEffect(() => {
+        const fetchDestinations = async () => {
+            try {
+                const res = await fetch("/api/admin/destinations/add");
+                const data = await res.json();
+                console.log(data);
+                setDestinations(data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        console.log(destinations);
+        fetchDestinations();
+    }, [refetchDestinations]);
 
 
     const navItems = [
@@ -30,10 +59,16 @@ const AdminNavbar = () => {
         { name: "Partners", href: "/admin/partners", icon: GroupIcon },
         { name: "Awards", href: "/admin/awards", icon: AwardIcon },
         { name: "Services", href: "####", icon:BriefcaseIcon,hasChild:true,children: [
-          { name: "MICE", href: "/admin/services/mice" },
+          ...services.map((service: {firstSection:{mainTitle:string},_id:string}) => ({
+            name: service.firstSection.mainTitle,
+            href: `/admin/services/${service._id}`,
+          })),
         ] },
         { name: "Destinations", href: "#####", icon:BriefcaseIcon,hasChild:true,children: [
-          { name: "UAE", href: "/admin/destinations/uae" },
+          ...destinations.map((destination: {firstSection:{mainTitle:string},_id:string}) => ({
+            name: destination.firstSection.mainTitle,
+            href: `/admin/destinations/${destination._id}`,
+          })),
         ] },
         // { name: "Clients", href: "/admin/clients", icon: PresentationChartBarIcon },
         // { name: "Services", href: "#", icon: EnvelopeIcon,hasChild:true,children: [

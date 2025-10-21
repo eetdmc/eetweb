@@ -1,7 +1,6 @@
 
 "use client";
-import { motion } from "motion/react";
-import { moveUp } from "../motionVarients";
+
 import { useTextReveal } from "@/hooks/useTextReveal";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 const Main = () => { 

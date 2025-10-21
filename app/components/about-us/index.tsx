@@ -1,4 +1,4 @@
-import AccordionStyleTwo from "../common/AccordionStyleTwo";
+
 import Main from "./Main";
 import MIVI from "./MIVI";
 import { AboutData } from "./data";

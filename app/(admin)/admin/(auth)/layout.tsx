@@ -5,12 +5,16 @@ import {
   import ClientSideLink from "../client-side-link";
   import AdminNavbar from "@/app/components/AdminNavbar/Index";
 import Image from "next/image";
+import { RefetchDestinationsProvider } from "@/app/contexts/refetchDestinations";
+import { RefetchServicesProvider } from "@/app/contexts/refetchServices";
 
 
   
   
   export default function AdminLayout({ children }: { children: React.ReactNode }) {
     return (
+      <RefetchDestinationsProvider>
+      <RefetchServicesProvider>
       <div className="flex h-screen bg-gray-100">
         {/* Sidebar */}
         <aside className="w-64 bg-white shadow-md flex flex-col h-screen overflow-y-auto">
@@ -40,6 +44,8 @@ import Image from "next/image";
         {/* Main content */}
         <main className="flex-1  h-screen overflow-y-auto p-8 bg-gray-100">{children}</main>
       </div>
+      </RefetchServicesProvider>
+      </RefetchDestinationsProvider>
     );
   }
   

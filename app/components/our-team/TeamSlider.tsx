@@ -12,7 +12,6 @@ import { assets } from "@/public/assets";
 import { useState, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
 import { motion } from "motion/react";
-import { moveUp } from "../motionVarients";
 import { useTextReveal } from "@/hooks/useTextReveal";
 const TeamSlider = () => {
   const [isTileView, setIsTileView] = useState(false);
