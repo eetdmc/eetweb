@@ -113,7 +113,7 @@ export default function ContactForm() {
                       } bg-transparent pb-2 px-0 focus:outline-none focus:border-green-500 transition-colors peer`}
                   />
                   <motion.label variants={moveUp(0.1)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="phone"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="transition-all duration-300 ease-in-out absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Phone
                   </motion.label>
@@ -147,7 +147,7 @@ export default function ContactForm() {
                       } bg-transparent pb-2 px-0 focus:outline-none focus:border-green-500 transition-colors peer`}
                   />
                   <motion.label variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} htmlFor="email"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="transition-all duration-300 ease-in-out absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Email
                   </motion.label>
@@ -159,51 +159,79 @@ export default function ContactForm() {
                 </div>
 
                   <div className="relative pt-5">
-                    <motion.select
-                      variants={moveUp(0.2)}
-                      initial="hidden"
-                      whileInView="show"
-                      viewport={{once: true,amount: "all"}}
-                      id="enquireAbout"
-                      value={enquireValue}
-                      {...register('enquireAbout', {
-                        required: 'Please select an option',
-                        onChange: (e) => setEnquireValue(e.target.value),
-                      })}
-                      className={`w-full border-b ${errors.enquireAbout ? 'border-red-500' : 'border-primary-light'
-                        } bg-transparent pb-6 px-3 pr-8 appearance-none focus:outline-none focus:border-green-500 transition-colors cursor-pointer peer`}
-                    >
-                      <option value=""></option>
-                      <option value="general">General Inquiry</option>
-                      <option value="support">Support</option>
-                      <option value="sales">Sales</option>
-                      <option value="partnership">Partnership</option>
-                      <option value="other">Other</option>
-                    </motion.select>
-                    <label htmlFor="enquireAbout"
-                      className={`absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground pb-3 pointer-events-none transition-text ${enquireValue ? 'opacity-0' : 'opacity-100 '
-                        }`}
-                    >
-                      Enquire About
-                    </label>
-                    <svg className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                    {errors.enquireAbout && (
-                      <p className="text-red-500 text-sm mt-1">
-                        {errors.enquireAbout.message}
-                      </p>
-                    )}
-                  </div>
+                  <motion.select
+                    variants={moveUp(0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: "all" }}
+                    id="enquireAbout"
+                    value={enquireValue}
+                    {...register("enquireAbout", {
+                      required: "Please select an option",
+                      onChange: (e) => setEnquireValue(e.target.value),
+                    })}
+                    className={`w-full border-b ${
+                      errors.enquireAbout ? "border-red-500" : "border-primary-light"
+                    } relative z-10 bg-transparent text-34 pb-2 ps-1 pt-5 pr-8 font-light appearance-none focus:outline-none focus:border-green-500 transition-all duration-300 peer cursor-pointer`}
+                  >
+                    <option className="text-[16px]" value="" disabled hidden></option>
+                    <option className="text-[16px]" value="general">
+                      General Inquiry
+                    </option>
+                    <option className="text-[16px]" value="support">
+                      Support
+                    </option>
+                    <option className="text-[16px]" value="sales">
+                      Sales
+                    </option>
+                    <option className="text-[16px]" value="partnership">
+                      Partnership
+                    </option>
+                    <option className="text-[16px]" value="other">
+                      Other
+                    </option>
+                  </motion.select>
+
+                  {/* Floating label — FIXED logic */}
+                  <motion.label
+                    variants={moveUp(0.2)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: "all" }}
+                    htmlFor="enquireAbout"
+                    className={`absolute left-0 font-light text-foreground transition-all duration-300 ease-in-out
+                      ${enquireValue
+                        ? "text-xs top-5"
+                        : "text-34 top-[27px] peer-focus:text-xs peer-focus:top-5"}
+                    `}
+                  >
+                    Enquire About
+                  </motion.label>
+
+                  {/* Dropdown arrow */}
+                  <svg
+                    className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+
+                  {/* Error message */}
+                  {errors.enquireAbout && (
+                    <p className="text-red-500 text-sm mt-1">
+                      {errors.enquireAbout.message}
+                    </p>
+                  )}
+                </div>
+
+
 
               </div>
 
