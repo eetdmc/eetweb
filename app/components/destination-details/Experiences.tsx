@@ -19,7 +19,7 @@ const Experiences = () => {
     <section className="sec-noise py-15 xl:py-20 2xl:pt-[140px] 2xl:pb-[150px]">
       <div className="container">
         <div className="w-full relative mb-10 md:mb-15  xl:mb-20 2xl:mb-[120px] flex items-center justify-between">
-          <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0   text-black xl:mx-auto xl:text-center">Signature UAE Experiences</h2>
+          <h2 className="relative md:left-[100px] 3xl:left-0 heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0   text-black xl:mx-auto xl:text-center">Signature UAE Experiences</h2>
           <div className="ml-0 flex items-center gap-5 group/main">
             <motion.button variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} aria-label="View More" 
             className="flex hidden shadow-lg border-2 border-white text-white font-light font-inter bg-gradient-to-r from-primary
@@ -28,8 +28,8 @@ const Experiences = () => {
               <span className="relative z-10">View More</span>
             </motion.button> 
           <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="flex gap-5 w-fit ">
-            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
-            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
+            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
+            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
           </motion.div>
 
           </div>
@@ -45,15 +45,16 @@ const Experiences = () => {
                 slidesPerView:1
               },
               768:{
-                slidesPerView:1.20
+                slidesPerView:1.3
               },
               1024:{
                 slidesPerView:2
               },
               1280:{
-                slidesPerView:3
+                slidesPerView:3,
+                spaceBetween:"70"
               },
-              1536:{
+              1800:{
                 slidesPerView:3,
                 spaceBetween:"131"
               }
