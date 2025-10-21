@@ -1,7 +1,5 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { moveUp } from "../motionVarients";
 import { useRef } from "react";
 import { useEffect } from "react";
 import gsap from "gsap";

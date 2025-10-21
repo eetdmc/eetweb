@@ -102,17 +102,9 @@ const DestinationSlider: React.FC = () => {
 
         // Calculate which slide is fully visible based on 75% movement
         // A slide is fully visible when scroll progress reaches certain thresholds
-        let newSlideIndex = 0;
+        
 
-        for (let i = 0; i < slides.length; i++) {
-          const slideThreshold = i / (slides.length - 1);
-          if (progress >= slideThreshold - 0.8 && progress <= slideThreshold + 0.8) {
-            newSlideIndex = i;
-            break;
-          } else if (progress >= slideThreshold) {
-            newSlideIndex = i;
-          }
-        }
+        
 
         // Only update if slide is fully positioned (not mid-transition)
         const isAtStablePosition = Math.abs(slideProgress - Math.round(slideProgress)) < 0.9;

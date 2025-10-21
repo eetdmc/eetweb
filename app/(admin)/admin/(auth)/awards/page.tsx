@@ -8,7 +8,6 @@ import { useForm, useFieldArray, Controller } from "react-hook-form";
 import { Button } from '@/components/ui/button'
 import { ImageUploader } from '@/components/ui/image-uploader'
 import { RiDeleteBinLine } from "react-icons/ri";
-import { Textarea } from '@/components/ui/textarea'
 import AdminItemContainer from '@/app/components/common/AdminItemContainer';
 
 interface AwardFormProps {

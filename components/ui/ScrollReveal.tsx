@@ -26,7 +26,6 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   baseRotation = 3,
   blurStrength = 4,
   containerClassName = '',
-  textClassName = '',
   rotationEnd = 'top 60%',
   wordAnimationEnd = 'top 40%',
   as = 'p'

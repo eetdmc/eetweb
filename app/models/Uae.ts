@@ -1,102 +1,102 @@
 import mongoose from "mongoose";
 
 const uaeSchema = new mongoose.Schema({
-    metaTitle:{
-        type:String,
-        required:true
+    metaTitle: {
+        type: String,
+
     },
-    metaDescription:{
-        type:String,
-        required:true
+    metaDescription: {
+        type: String,
+
     },
-    firstSection:{
-        mainTitle:{
-            type:String,
-            required:true
+    firstSection: {
+        mainTitle: {
+            type: String,
+
         },
-        subTitle:{
-            type:String,
-            required:true
+        subTitle: {
+            type: String,
+
         },
-        description:{
-            type:String,
-            required:true
+        description: {
+            type: String,
+
         },
-        firstImage:{
-            type:String,
-            required:true
+        firstImage: {
+            type: String,
+
         },
-        firstImageAlt:{
-            type:String,
+        firstImageAlt: {
+            type: String,
         },
-        secondImage:{
-            type:String,
-            required:true
+        secondImage: {
+            type: String,
+
         },
-        secondImageAlt:{
-            type:String,
-        },
-    },
-    secondSection:{
-        title:{
-            type:String,
-            required:true
-        },
-        description:{
-            type:String,
-            required:true
+        secondImageAlt: {
+            type: String,
         },
     },
-    thirdSection:{
-        title:{
-            type:String,
-            required:true
+    secondSection: {
+        title: {
+            type: String,
+
         },
-        items:[{
-            image:{
-                type:String,
-                required:true
+        description: {
+            type: String,
+
+        },
+    },
+    thirdSection: {
+        title: {
+            type: String,
+
+        },
+        items: [{
+            image: {
+                type: String,
+
             },
-            imageAlt:{
-                type:String,
+            imageAlt: {
+                type: String,
             },
-            title:{
-                type:String,
-                required:true
+            title: {
+                type: String,
+
             },
         }]
     },
-    fourthSection:{
-        title:{
-            type:String,
-            required:true
+    fourthSection: {
+        title: {
+            type: String,
+
         },
-        items:[{
-            image:{
-                type:String,
-                required:true
+        items: [{
+            image: {
+                type: String,
+
             },
-            imageAlt:{
-                type:String,
+            imageAlt: {
+                type: String,
             },
         }],
     },
-    fifthSection:{
-        title:{
-            type:String,
-            required:true
+    fifthSection: {
+        title: {
+            type: String,
+
         },
-        items:[{
-            image:{
-                type:String,
-                required:true
+        items: [{
+            image: {
+                type: String,
+
             },
-            imageAlt:{
-                type:String,
+            imageAlt: {
+                type: String,
             },
-            title:{
-                type:String,
-                required:true
+            title: {
+                type: String,
+
             },
         }]
     }

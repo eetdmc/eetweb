@@ -7,7 +7,7 @@ import { commonData } from "./data";
 import { assets } from "@/public/assets";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram, FaYoutube } from "react-icons/fa6";
+import { FaFacebookF, FaXTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa6";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
