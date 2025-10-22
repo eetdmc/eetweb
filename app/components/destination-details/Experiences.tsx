@@ -27,9 +27,9 @@ const Experiences = () => {
               <div className="absolute bottom-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
               <span className="relative z-10">View More</span>
             </motion.button> 
-          <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="flex gap-5 w-fit ">
-            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
-            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-auto" /></button>
+          <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="flex gap-2 lg:gap-5 w-fit ">
+            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}> <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-4 lg:w-8 xl:w-auto" /></button>
+            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}> <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-4 lg:w-8 xl:w-auto" /></button>
           </motion.div>
 
           </div>
@@ -67,12 +67,12 @@ const Experiences = () => {
             {
               destinationsData.experiences.items.map((item, index) => (
                 <SwiperSlide key={index}>
-                  <div className="border-t border-primary-light pt-10 overflow-hidden">
-                    <motion.h3 variants={moveUp(index * 0.5)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-20 xl:text-30 3xl:text-30 font-light leading-[1.333333333333333] mb-5 xl:mb-10 2xl:mb-[50px] text-black">{item.title}</motion.h3>
+                  <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: false,amount: 0.2}} className="border-t border-primary-light pt-5  md:pt-10 overflow-hidden">
+                    <motion.h3 variants={moveUp(0.3)} initial="hidden" whileInView="show" viewport={{once: false,amount: 0.3}} className="text-20 xl:text-30 3xl:text-30 font-light leading-[1.333333333333333] mb-5 xl:mb-10 2xl:mb-[50px] text-black">{item.title}</motion.h3>
                     <motion.div variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: false,amount: 0.2}}>
                     <Image src={item.image} alt={item.title} width={437} height={472} className="w-full h-[300px] xl:h-auto object-cover" />
                     </motion.div>
-                  </div>
+                  </motion.div>
                 </SwiperSlide>
               ))
             }

@@ -157,7 +157,7 @@ const NavBar = () => {
                         </motion.span>
                       )}
                       {!item.submenu && (
-                        <Link href={item.href} className="block absolute w-full h-full"></Link>
+                        <Link href={item.href} className="block absolute w-full h-full" onClick={() => setIsOpen(false)}></Link>
                       )}
                     </button>
 

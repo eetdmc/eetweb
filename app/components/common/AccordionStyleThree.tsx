@@ -58,14 +58,14 @@ const AccordionStyleThree: React.FC<AccordionProps> = ({ title, content, image, 
         </div>
          </div>
         {/* <ArrowDown ref={iconRef} className="xl:w-10 xl:h-[24.6px] text-primary transform absolute right-0" /> */}
-        <Image src={assets.arrowDown} ref={iconRef} alt="arrow-down" className="w-5 h-5 xl:w-[40px] xl:h-[40px] object-contain text-primary transform " />
+        <Image src={assets.arrowDown} ref={iconRef} alt="arrow-down" className="w-3 h-3 xl:w-[40px] xl:h-[40px] object-contain text-primary transform " />
     
        </div>
          </button>
       <div ref={contentRef} className="overflow-hidden h-0 text-gray-600">
-        <div className="pb-4 ml-container pl-[15px]">
+        <div className="pb-4 ml-container lg:pl-[15px]">
           <div className="flex flex-col gap-y-5 lg:flex-row xl:gap-10 2xl:gap-20 overflow-hidden">
-            <Image src={image} alt={title} width={533} height={390} className="h-[250px] w-full object-cover xl:w-[533px] xl:h-[390px] xl:object-contain flex" />
+            <Image src={image} alt={title} width={533} height={390} className="h-[300px] w-full object-cover xl:w-[533px] xl:h-[390px] xl:object-contain flex object-top" />
             <p className="text-19 leading-lhtext-19 font-light max-w-[40ch] font-inter">{content}</p>
           </div>
         </div>
