@@ -3,7 +3,7 @@ import connectDB from "@/lib/mongodb";
 import UAE from "@/app/models/Uae";
 import { verifyAdmin } from "@/lib/verifyAdmin";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
     try {
         // const isAdmin = await verifyAdmin(request);
         // if (!isAdmin) {

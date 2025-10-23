@@ -350,7 +350,7 @@ const NavBar = () => {
                         transition={{ duration: 0.25, ease: "easeInOut" }}
                         className="absolute left-0 top-full mt-2 min-w-[290px] bg-white shadow-xl rounded-lg py-2 px-3 flex flex-col z-50"
                       >
-                        {item.submenu.map((sub: any) => (
+                        {item.submenu.map((sub: MenuItem) => (
                           <li
                             key={sub.label}
                             className="border-b border-[#f3f3f3] last:border-b-0 py-2 linkhrs"
@@ -504,7 +504,7 @@ const NavBar = () => {
                             transition={{ duration: 0.3, ease: "easeInOut" }}
                             className="flex flex-col gap-2 mt-2 ml-3 border-l border-gray-200 pl-3"
                           >
-                            {item.submenu.map((sub: any) => (
+                            {item.submenu.map((sub: MenuItem) => (
                               <li key={sub.label}>
                                 <Link
                                   href={sub.href}

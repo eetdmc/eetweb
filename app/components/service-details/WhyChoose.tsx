@@ -1,5 +1,4 @@
 "use client";
-import { serviceDetailsData } from "./data";
 import Image from "next/image";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { motion } from "motion/react";

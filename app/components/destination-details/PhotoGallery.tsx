@@ -14,34 +14,6 @@ import gsap from "gsap";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { DestinationFourthSection } from "./type";
 
-interface SlideData {
-  id: number;
-  image: string;
-}
-
-const slides: SlideData[] = [
-  {
-    id: 1,
-    image: "/assets/images/destinations/details/photo-gallery/img-1.jpg",
-  },
-  {
-    id: 2,
-    image: "/assets/images/destinations/details/photo-gallery/img-2.jpg",
-  },
-  {
-    id: 3,
-    image: "/assets/images/destinations/details/photo-gallery/img-3.jpg",
-  },
-  {
-    id: 4,
-    image: "/assets/images/destinations/details/photo-gallery/img-1.jpg",
-  },
-  {
-    id: 5,
-    image: "/assets/images/destinations/details/photo-gallery/img-2.jpg",
-  },
-];
-
 type Props = {
   data: DestinationFourthSection;
 };

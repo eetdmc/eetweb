@@ -3,7 +3,7 @@ import connectDB from "@/lib/mongodb";
 import Mice from "@/app/models/Mice";
 import { verifyAdmin } from "@/lib/verifyAdmin";
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // const isAdmin = await verifyAdmin(request);
     // if (!isAdmin) {
