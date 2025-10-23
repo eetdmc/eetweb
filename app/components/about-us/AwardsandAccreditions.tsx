@@ -7,50 +7,6 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import { AwardData } from "../awards-accreditations/type";
 
-interface AwardItem {
-  id: number;
-  image: string;
-  title: string;
-}
-
-const awards: AwardItem[] = [
-  {
-    id: 1,
-    image: "assets/images/awards/aw1.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-  {
-    id: 2,
-    image: "assets/images/awards/aw2.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-  {
-    id: 3,
-    image: "assets/images/awards/aw3.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-  {
-    id: 4,
-    image: "assets/images/awards/aw4.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-  {
-    id: 5,
-    image: "assets/images/awards/aw2.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-  {
-    id: 6,
-    image: "assets/images/awards/aw3.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-  {
-    id: 7,
-    image: "assets/images/awards/aw4.png",
-    title: "Travel & Hospitality Award Winner",
-  },
-];
-
 const Awards = ({
   awardsData,
 }: {

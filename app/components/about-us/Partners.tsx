@@ -7,42 +7,6 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import { PartnerData } from "../partners/type";
 
-interface AwardItem {
-  id: number;
-  image: string;
-}
-
-const awards: AwardItem[] = [
-  {
-    id: 1,
-    image: "assets/images/partners/p1.jpg",
-  },
-  {
-    id: 2,
-    image: "assets/images/partners/p2.jpg",
-  },
-  {
-    id: 3,
-    image: "assets/images/partners/p3.jpg",
-  },
-  {
-    id: 4,
-    image: "assets/images/partners/p4.jpg",
-  },
-  {
-    id: 5,
-    image: "assets/images/partners/p5.jpg",
-  },
-  {
-    id: 6,
-    image: "assets/images/partners/p6.jpg",
-  },
-  {
-    id: 7,
-    image: "assets/images/partners/p7.jpg",
-  },
-];
-
 const Partners = ({
   partnersData,
 }: {
