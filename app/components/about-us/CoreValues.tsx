@@ -20,9 +20,8 @@ const CoreValues = ({ data }: CoreValuesProps) => {
     duration: 0.4,
     y: 30,
   });
-
   return (
-    <section className="pt-10 pb-45 xl:pt-25 md:pb-[300px] xl:pb-[300px] 2xl:pb-[400px] 2xl:pt-50">
+    <section className="py-10 xl:py-25 2xl:py-[150px]">
       <div className="container">
         <div className="max-w-[1106px] mx-auto">
           <h2 className="heading text-70 leading-[1] font-light text-black mb-30px">
