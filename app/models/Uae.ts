@@ -36,6 +36,9 @@ const uaeSchema = new mongoose.Schema({
         secondImageAlt: {
             type: String,
         },
+        slug: {
+            type: String,
+        },
     },
     secondSection: {
         title: {

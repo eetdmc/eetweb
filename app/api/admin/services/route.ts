@@ -8,11 +8,21 @@ export async function GET(request: NextRequest) {
     try {
         await connectDB();
         const id = request.nextUrl.searchParams.get("id");
-        const mice = await Mice.findById(id);
-        if (!mice) {
-            return NextResponse.json({ message: "Service not found" }, { status: 404 });
+        const slug = request.nextUrl.searchParams.get("slug");
+        if(id){
+            const mice = await Mice.findById(id);
+            if (!mice) {
+                return NextResponse.json({ message: "Service not found" }, { status: 404 });
+            }
+            return NextResponse.json({data:mice,message:"Service fetched successfully"}, { status: 200 });
         }
-        return NextResponse.json({data:mice,message:"Service fetched successfully"}, { status: 200 });
+        if(slug){
+            const mice = await Mice.findOne({"firstSection.slug":slug});
+            if (!mice) {
+                return NextResponse.json({ message: "Service not found" }, { status: 404 });
+            }
+            return NextResponse.json({data:mice,message:"Service fetched successfully"}, { status: 200 });
+        }
     } catch (error) {
         console.log(error);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
