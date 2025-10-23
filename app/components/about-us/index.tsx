@@ -1,16 +1,15 @@
-
 import Main from "./Main";
 import MIVI from "./MIVI";
-import { AboutData } from "./data";
 import CoreValues from "./CoreValues";
-const Index = () => {
-  return ( 
+import { AboutData } from "./type";
+const Index = ({ data }: { data: AboutData["data"] }) => {
+  return (
     <>
-    <Main />
-    <MIVI />
-    <CoreValues title={AboutData.coreValues.title} data={AboutData.coreValues.items} />
+      <Main data={data.firstSection} legacy={data.secondSection} />
+      <MIVI data={data.thirdSection} />
+      <CoreValues data={data.fourthSection} />
     </>
-   );
-}
- 
+  );
+};
+
 export default Index;
