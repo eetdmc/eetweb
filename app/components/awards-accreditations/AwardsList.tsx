@@ -1,5 +1,4 @@
 import { assets } from "@/public/assets";
-import { awardsData } from "./darta";
 import Image from "next/image";
 import Link from "next/link";
 import { AwardData } from "./type";

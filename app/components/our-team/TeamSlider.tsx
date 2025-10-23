@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import { teamData } from "./data";
 import Image from "next/image";
 import Link from "next/link";
 import { assets } from "@/public/assets";

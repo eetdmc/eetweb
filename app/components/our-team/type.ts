@@ -23,9 +23,6 @@ export interface TeamData {
       secondImage: string;
       secondImageAlt: string;
     };
-    fourthSection: {
-      items: any[];
-    };
     _id: string;
     __v: number;
     metaTitle: string;
