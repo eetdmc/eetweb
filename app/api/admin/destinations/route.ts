@@ -8,11 +8,21 @@ export async function GET(request: NextRequest) {
     try {
         await connectDB();
         const id = request.nextUrl.searchParams.get("id");
-        const uae = await UAE.findById(id);
-        if (!uae) {
-            return NextResponse.json({ message: "Destination not found" }, { status: 404 });
+        const slug = request.nextUrl.searchParams.get("slug");
+        if(id){
+            const uae = await UAE.findById(id);
+            if (!uae) {
+                return NextResponse.json({ message: "Destination not found" }, { status: 404 });
+            }
+            return NextResponse.json({data:uae,message:"Destination fetched successfully"}, { status: 200 });
         }
-        return NextResponse.json({data:uae,message:"Destination fetched successfully"}, { status: 200 });
+        if(slug){
+            const uae = await UAE.findOne({"firstSection.slug":slug});
+            if (!uae) {
+                return NextResponse.json({ message: "Destination not found" }, { status: 404 });
+            }
+            return NextResponse.json({data:uae,message:"Destination fetched successfully"}, { status: 200 });
+        }
     } catch (error) {
         console.log(error);
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
