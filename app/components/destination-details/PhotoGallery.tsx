@@ -64,15 +64,15 @@ const PhotoGallery = () => {
     );
   };
   return (
-    <section className="py-10 xl:py-20  2xl:py-30  3xl:pt-50 3xl:pb-[266.06px] ">
+    <section className="pt-10 pb-12 xl:py-20  2xl:py-30  3xl:pt-50 3xl:pb-[266.06px] ">
       <div className="container">
         <div className="max-w-[1417.9px] flex items-center justify-between  mb-10 xl:mb-12 3xl:mb-20">
           <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black heading-one">Photo Gallery</h2>
-          <div className="flex gap-5 w-fit">
+          <div className="flex gap-2 lg:gap-5 w-fit">
             <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}>
-               <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-10 h-auot" /></button>
+               <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-4 lg:w-8 xl:w-10 h-auot" /></button>
             <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}>
-               <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-8 xl:w-10 h-auot" /></button>
+               <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-4 lg:w-8 xl:w-10 h-auot" /></button>
           </div>
         </div>
         <div>

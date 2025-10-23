@@ -153,8 +153,8 @@ body {
 
 .sec-noise {
   @apply bg-contain bg-center bg-repeat;
-  background-image: url('../public/assets/images/pattern-2.svg');
-  background-size: 6%;
+  background-image: url('../public/assets/images/pattern-3.jpg');
+   
 }
 
 .hero-slider .swiper-pagination.swiper-pagination-horizontal {

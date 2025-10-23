@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";  
 import { motion } from "framer-motion";
-import { moveUp } from "../motionVarients";
+import { moveUpfourty } from "../motionVarients";
 
 gsap.registerPlugin(ScrollTrigger);
 const MIVI = () => {
@@ -64,16 +64,17 @@ const MIVI = () => {
             <div className="mb-8 xl:mb-50px" ref={imageRef}>
               <Image src="/assets/images/about/mission.jpg" alt="" width={1920} height={1080} className="w-full h-full xl:max-w-[80%] 3xl:max-w-none 3xl:max-h-[750px] object-cover"   />
             </div>
-            <motion.h2 variants={moveUp(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-70 leading-[1] font-light text-black mb-30px">Mission</motion.h2>
-            <motion.p variants={moveUp(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]">To deliver tailor-made destination solutions that blend cultural richness, logistical precision, and memorable experiences.</motion.p>
+            <motion.h2 variants={moveUpfourty(0.2)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-70 leading-[1] font-light text-black mb-30px">Mission</motion.h2>
+            <motion.p variants={moveUpfourty(0.4)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]">To deliver tailor-made destination solutions that blend cultural richness, logistical precision, and memorable experiences.</motion.p>
+         
           </div>
         <div className="flex flex-wrap justify-between w-full xl:w-auto">
           <div className="w-full xl:w-auto ">
-            <motion.div variants={moveUp(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="mb-8 xl:mb-50px">
+            <motion.div variants={moveUpfourty(0.6)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="mb-8 xl:mb-50px">
               <Image src="/assets/images/about/vision.jpg" alt="" width={1920} height={1080} className="w-full h-[250px] max-h-full md:h-[400px] xl:max-h-[750px] object-cover" />
             </motion.div>
-            <motion.h2 variants={moveUp(0.7)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-70 leading-[1] font-light text-black mb-30px">Vision</motion.h2>
-              <motion.p variants={moveUp(0.8)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]">To be the most trusted and innovative destination management company in the GCC, setting benchmarks in service quality and sustainability.</motion.p>
+            <motion.h2 variants={moveUpfourty(0.7)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-70 leading-[1] font-light text-black mb-30px">Vision</motion.h2>
+              <motion.p variants={moveUpfourty(0.8)} initial="hidden" whileInView="show" viewport={{once: true,amount: "all"}} className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]">To be the most trusted and innovative destination management company in the GCC, setting benchmarks in service quality and sustainability.</motion.p>
           </div>
         </div>
         </div>

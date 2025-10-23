@@ -7,7 +7,7 @@ const WhyExplore = () => {
   useTextReveal({ selector: '.heading' });
   useTextReveal({ selector: '.subtitle' });
   return (
-    <section className="pm-noise pt-10 pb-50 xl:py-20 2xl:pt-[145px] 2xl:pb-[400px]">
+    <section className="pm-noise pt-10 pb-50 md:pb-80 xl:pb-80 xl:pt-20 2xl:pt-[145px] 2xl:pb-[400px]">
       <div className="container">
         <div className="xl:ml-[20%] w-fit 2xl:ml-[27%] 2xl:w-fit ">
           <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1.2] xl:leading-[1] text-black xl:max-w-[15ch] mb-10 xl:mb-20">Why Explore UAE with EET?</h2>
