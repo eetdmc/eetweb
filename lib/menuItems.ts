@@ -35,11 +35,7 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
     return [
       {
         label: "About",
-        href: "",
-        submenu: [
-          { label: "Overview", href: "/about-us" },
-          { label: "Partners", href: "/partners" },
-        ],
+        href: "/about-us",
       },
       {
         label: "Services",
