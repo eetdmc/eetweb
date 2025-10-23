@@ -28,6 +28,9 @@ const miceSchema = new mongoose.Schema({
         imageAlt: {
             type: String,
         },
+        slug: {
+            type: String,
+        },
     },
     secondSection: {
         title: {

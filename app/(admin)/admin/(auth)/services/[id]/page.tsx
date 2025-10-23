@@ -22,6 +22,7 @@ import {
 import { MdDelete } from "react-icons/md";
 import { useRouter } from 'next/navigation';
 import { useRefetchServices } from '@/app/contexts/refetchServices';
+import { RiAiGenerateText } from 'react-icons/ri'
 
 interface MiceFormProps {
     metaTitle: string;
@@ -33,6 +34,7 @@ interface MiceFormProps {
         description: string;
         image: string;
         imageAlt: string;
+        slug: string;
     };
     secondSection: {
         title: string;
@@ -65,7 +67,7 @@ const MicePage = () => {
 
     const { id } = useParams();
     const router = useRouter();
-    const { register, handleSubmit, setValue, control, formState: { errors } } = useForm<MiceFormProps>();
+    const { register, handleSubmit, setValue, control, formState: { errors },watch } = useForm<MiceFormProps>();
     const { setRefetchServices } = useRefetchServices();
 
 
@@ -141,6 +143,17 @@ const MicePage = () => {
         }
     }
 
+        const handleAutoGenerate = () => {
+        const name = watch("firstSection.mainTitle");
+        if (!name) return;
+        const slug = name
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-+|-+$/g, ''); // remove leading/trailing dashes
+        setValue("firstSection.slug", slug);
+      };
+
 
     useEffect(() => {
         fetchMiceData();
@@ -179,6 +192,22 @@ const MicePage = () => {
                             })} />
                             {errors.firstSection?.mainTitle && <p className='text-red-500'>{errors.firstSection?.mainTitle.message}</p>}
                         </div>
+                        <div>
+                <Label className='flex gap-2 items-center mb-1'>
+                                                Slug
+                                                <div className='flex gap-2 items-center bg-green-600 text-white p-1 rounded-md cursor-pointer w-fit' onClick={handleAutoGenerate}>
+                                                    <p>Auto Generate</p>
+                                                    <RiAiGenerateText />
+                                                </div>
+                                                </Label>
+                    <Input type='text' placeholder='Slug' {...register("firstSection.slug", {
+                        required: "Slug is required", pattern: {
+                            value: /^[a-z0-9]+(-[a-z0-9]+)*$/,
+                            message: "Slug must contain only lowercase letters, numbers, and hyphens (no spaces)"
+                        }
+                    })} />
+                    {errors.firstSection?.slug && <p className='text-red-500'>{errors.firstSection?.slug.message}</p>}
+                </div>
                         <div className='flex flex-col gap-1'>
                             <Label className='font-bold'>Sub Title</Label>
                             <Input type='text' placeholder='Sub Title' {...register("firstSection.subTitle", {
