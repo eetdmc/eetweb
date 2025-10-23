@@ -6,19 +6,23 @@ import DestinationSection from "./DestinationSection";
 // import BlogSlider from "./BlogSlider";
 import Testimonials from "./Testimonials";
 import SocialFeeds from "./SocialFeeds";
-const Index = () => {
+import type { HomeData } from "./type";
+interface Props {
+  data: HomeData;
+}
+const Index = ({ data }: Props) => {
   return (
     <>
-      <Hero />
-      <HeroBottom />
-      <FeaturesSection />
+      <Hero data={data.bannerSection} />
+      <HeroBottom data={data.secondSection} />
+      <FeaturesSection data={data.thirdSection} />
       <Services />
       <DestinationSection />
       {/* <BlogSlider /> */}
-      <Testimonials />
+      <Testimonials data={data.seventhSection} />
       <SocialFeeds />
     </>
   );
-}
+};
 
 export default Index;
