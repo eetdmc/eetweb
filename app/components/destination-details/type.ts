@@ -16,6 +16,7 @@ export interface DestinationData {
 }
 
 export interface DestinationFirstSection {
+  location: string;
   mainTitle: string;
   subTitle: string;
   firstVideo: string;

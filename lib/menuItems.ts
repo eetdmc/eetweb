@@ -27,7 +27,7 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
 
     const destinationsItems = destinationsData.data.map(
       (d: DestinationData) => ({
-        label: d.firstSection.mainTitle,
+        label: d.firstSection.location,
         href: `/destinations/${d.firstSection.slug}`,
       })
     );
