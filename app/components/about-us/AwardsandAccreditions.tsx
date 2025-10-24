@@ -24,7 +24,7 @@ const Awards = ({
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1}
-            spaceBetween={103}
+            spaceBetween={30}
             autoplay={{ delay: 3000 }}
             pagination={{
               clickable: true,
@@ -42,21 +42,22 @@ const Awards = ({
               <SwiperSlide key={award._id}>
                 <motion.div
                   key={award._id}
-                  variants={moveUp(index * 0.22)}
+                  variants={moveUp(index * 0.14)}
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="w-full h-[116px] relative mb-[40px]">
+                  <div className="relative mb-[46px]">
                     <Image
                       src={award.image}
                       alt={award.imageAlt}
-                      fill
+                      height={408}
+                      width={439}
                       className="object-contain w-full h-full"
                     />
                   </div>
-                  <p className="font-light text-34 text-black leading-[1.294117647058824]">
+                  <p className="font-light text-34 text-black leading-[1.294117647058824] max-w-[18ch]">
                     {award.title}
                   </p>
                 </motion.div>
