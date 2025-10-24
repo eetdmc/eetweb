@@ -30,6 +30,7 @@ const Services = ({
     image: service.firstSection.image,
     slug: `/services/${service.firstSection.slug}`,
     ctaHome: service.firstSection.ctaHome,
+    descriptionHome: service.firstSection.descriptionHome,
   }));
   // Animate headings
   useTextReveal({ selector: ".heading" });
@@ -268,7 +269,7 @@ const Services = ({
                       : "opacity-100 translate-y-0"
                   }`}
                 >
-                  {currentService.description}
+                  {currentService.descriptionHome}
                 </p>
                 <div
                   className={`transition-all duration-500 ease-in-out  ${
