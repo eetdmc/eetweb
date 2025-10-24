@@ -17,6 +17,9 @@ const miceSchema = new mongoose.Schema({
     ctaHome: {
       type: String,
     },
+    descriptionHome: {
+      type: String,
+    },
     thirdTitle: {
       type: String,
     },

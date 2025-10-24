@@ -14,6 +14,7 @@ export interface ServiceProcessItem {
 
 export interface ServiceFirstSection {
   ctaHome: string;
+  descriptionHome: string;
   mainTitle: string;
   subTitle: string;
   thirdTitle: string;

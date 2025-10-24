@@ -29,6 +29,7 @@ interface MiceFormProps {
   metaDescription: string;
   firstSection: {
     ctaHome: string;
+    descriptionHome: string;
     mainTitle: string;
     subTitle: string;
     thirdTitle: string;
@@ -268,20 +269,38 @@ const MicePage = () => {
                   </p>
                 )}
               </div>
-              <div className="flex flex-col gap-1">
-                <Label className="font-bold">CTA Home Title</Label>
-                <Input
-                  type="text"
-                  placeholder="CTA Home Title"
-                  {...register("firstSection.ctaHome", {
-                    required: "CTA Home Title is required",
-                  })}
-                />
-                {errors.firstSection?.ctaHome && (
-                  <p className="text-red-500">
-                    {errors.firstSection?.ctaHome.message}
-                  </p>
-                )}
+              <div className="flex gap-2 border mt-1 p-2 rounded-md flex-col">
+                <h2 className="text-primary">Home</h2>
+                <div className="flex flex-col gap-1">
+                  <Label className="font-bold">CTA Home Title</Label>
+                  <Input
+                    type="text"
+                    placeholder="CTA Home Title"
+                    {...register("firstSection.ctaHome", {
+                      required: "CTA Home Title is required",
+                    })}
+                  />
+                  {errors.firstSection?.ctaHome && (
+                    <p className="text-red-500">
+                      {errors.firstSection?.ctaHome.message}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col gap-1">
+                  <Label className="font-bold">Description Home</Label>
+                  <Input
+                    type="text"
+                    placeholder="Description Home"
+                    {...register("firstSection.descriptionHome", {
+                      required: "Description Home is required",
+                    })}
+                  />
+                  {errors.firstSection?.descriptionHome && (
+                    <p className="text-red-500">
+                      {errors.firstSection?.descriptionHome.message}
+                    </p>
+                  )}
+                </div>
               </div>
 
               <div className="flex flex-col gap-1">
