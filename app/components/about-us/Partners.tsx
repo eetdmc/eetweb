@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { PartnerData } from "../partners/type";
+import { motion } from "framer-motion";
+import { moveUp } from "../motionVarients";
 
 const Partners = ({
   partnersData,
@@ -36,9 +38,16 @@ const Partners = ({
             }}
             className="!pb-20 relative"
           >
-            {partnersData.items.map((partner) => (
+            {partnersData.items.map((partner, index) => (
               <SwiperSlide key={partner._id}>
-                <div className="flex flex-col items-center text-center">
+                <motion.div
+                  key={partner._id}
+                  variants={moveUp(index * 0.12)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="flex flex-col items-center text-center"
+                >
                   <div className="w-full h-[101px] relative">
                     <Image
                       src={partner.image}
@@ -47,7 +56,7 @@ const Partners = ({
                       className="object-contain w-full h-full"
                     />
                   </div>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
             {/* Custom pagination container */}
