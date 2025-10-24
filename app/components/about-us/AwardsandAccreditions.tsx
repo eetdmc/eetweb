@@ -6,6 +6,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { AwardData } from "../awards-accreditations/type";
+import { motion } from "framer-motion";
+import { moveUp } from "../motionVarients";
 
 const Awards = ({
   awardsData,
@@ -36,9 +38,16 @@ const Awards = ({
             }}
             className="!pb-20 relative"
           >
-            {awardsData.items.map((award) => (
+            {awardsData.items.map((award, index) => (
               <SwiperSlide key={award._id}>
-                <div className="flex flex-col items-center text-center">
+                <motion.div
+                  key={award._id}
+                  variants={moveUp(index * 0.22)}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  className="flex flex-col items-center text-center"
+                >
                   <div className="w-full h-[116px] relative mb-[40px]">
                     <Image
                       src={award.image}
@@ -50,7 +59,7 @@ const Awards = ({
                   <p className="font-light text-34 text-black leading-[1.294117647058824]">
                     {award.title}
                   </p>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
             {/* Custom pagination container */}
