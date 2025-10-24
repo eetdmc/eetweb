@@ -40,7 +40,7 @@ const AccordionStyleTwo: React.FC<AccordionProps> = ({
   }, [isOpen]);
 
   return (
-    <div className="border-b border-primary-light bg-white/70 mb-1 ">
+    <div className="border-b border-primary-light mb-1 ">
       <button
         onClick={onToggle}
         onMouseEnter={onToggle}
