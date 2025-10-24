@@ -35,6 +35,15 @@ export interface ThirdSection {
   items: ThirdSectionItem[];
 }
 
+export interface FourthSection {
+  mainTitle: string;
+  subTitle: string;
+}
+export interface FifthSection {
+  mainTitle: string;
+  subTitle: string;
+}
+
 export interface SeventhSectionItem {
   _id: string;
   title: string;
@@ -52,6 +61,8 @@ export interface HomeData {
   bannerSection: BannerSection;
   secondSection: SecondSection;
   thirdSection: ThirdSection;
+  fourthSection: FourthSection;
+  fifthSection: FifthSection;
   seventhSection: SeventhSection;
   metaTitle: string;
   metaDescription: string;

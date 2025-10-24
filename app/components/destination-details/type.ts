@@ -9,6 +9,7 @@ export interface DestinationData {
   thirdSection: DestinationThirdSection;
   fourthSection: DestinationFourthSection;
   fifthSection: DestinationFifthSection;
+  sixthSection: DestinationSixthSection;
   _id: string;
   __v: number;
   metaDescription: string;
@@ -66,5 +67,16 @@ export interface DestinationFifthItem {
   _id: string;
   image: string;
   imageAlt: string;
+  title: string;
+}
+
+export interface DestinationSixthSection {
+  destinationCount: number;
+  homeImage: string;
+  mainDestinations: DestinationSixthItem[];
+}
+
+export interface DestinationSixthItem {
+  _id: string;
   title: string;
 }

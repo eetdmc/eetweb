@@ -68,6 +68,7 @@ interface UAEFormProps {
   };
   sixthSection: {
     destinationCount: number;
+    homeImage: string;
     mainDestinations: {
       title: string;
     }[];
@@ -805,6 +806,25 @@ const UAEPage = () => {
                 {errors.sixthSection?.destinationCount && (
                   <p className="text-red-500">
                     {errors.sixthSection?.destinationCount.message}
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-col gap-1">
+                <Label className="font-bold">Home Image</Label>
+                <Controller
+                  name={`sixthSection.homeImage`}
+                  control={control}
+                  rules={{ required: "Image is required" }}
+                  render={({ field }) => (
+                    <ImageUploader
+                      value={field.value}
+                      onChange={field.onChange}
+                    />
+                  )}
+                />
+                {errors.sixthSection?.homeImage && (
+                  <p className="text-red-500">
+                    {errors.sixthSection?.homeImage.message}
                   </p>
                 )}
               </div>

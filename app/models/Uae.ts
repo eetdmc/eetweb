@@ -99,6 +99,9 @@ const uaeSchema = new mongoose.Schema({
     destinationCount: {
       type: Number,
     },
+    homeImage: {
+      type: String,
+    },
     mainDestinations: [
       {
         title: {
