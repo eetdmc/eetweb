@@ -1,4 +1,3 @@
-
 "use client";
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,43 +12,21 @@ import { Navigation, Autoplay, EffectCoverflow } from "swiper/modules";
 import { useEffect } from "react";
 import gsap from "gsap";
 import { useTextReveal } from "@/hooks/useTextReveal";
-interface SlideData {
-  id: number;
-  image: string;
-}
+import { DestinationFourthSection } from "./type";
 
-const slides: SlideData[] = [
-  {
-    id: 1,
-    image: '/assets/images/destinations/details/photo-gallery/img-1.jpg',
-  },
-  {
-    id: 2,
-    image: '/assets/images/destinations/details/photo-gallery/img-2.jpg',
-  },
-  {
-    id: 3,
-    image: '/assets/images/destinations/details/photo-gallery/img-3.jpg',
-  },
-  {
-    id: 4,
-    image: '/assets/images/destinations/details/photo-gallery/img-1.jpg',
-  },
-  {
-    id: 5,
-    image: '/assets/images/destinations/details/photo-gallery/img-2.jpg',
-  }
-];
+type Props = {
+  data: DestinationFourthSection;
+};
 
-const PhotoGallery = () => {
+const PhotoGallery = ({ data }: Props) => {
   const swiperRef = useRef<SwiperType | null>(null);
-  useTextReveal({ selector: '.heading-one' });
+  useTextReveal({ selector: ".heading-one" });
   useEffect(() => {
     // Animate slider entrance
     gsap.fromTo(
-      '.swiper-container',
+      ".swiper-container",
       { opacity: 1, y: 50 },
-      { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
+      { opacity: 1, y: 0, duration: 1, ease: "power3.out" }
     );
   }, []);
 
@@ -58,27 +35,53 @@ const PhotoGallery = () => {
     const activeSlide = swiper.slides[swiper.activeIndex];
 
     gsap.fromTo(
-      activeSlide.querySelector('img'),
+      activeSlide.querySelector("img"),
       { scale: 0.5 },
-      { scale:1, duration: 0.6, ease: 'power2.out' }
+      { scale: 1, duration: 0.6, ease: "power2.out" }
     );
   };
   return (
     <section className="pt-10 pb-12 xl:py-20  2xl:py-30  3xl:pt-50 3xl:pb-[266.06px] ">
       <div className="container">
         <div className="max-w-[1417.9px] flex items-center justify-between  mb-10 xl:mb-12 3xl:mb-20">
-          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black heading-one">Photo Gallery</h2>
+          <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black heading-one">
+            {data.title}
+          </h2>
           <div className="flex gap-2 lg:gap-5 w-fit">
-            <button className="swiper-button-next-team cursor-pointer" onClick={() => { swiperRef.current?.slidePrev() }}>
-               <Image src={assets.pmArrowLeft} alt={"arrow"} width={40} height={24.62} className="w-4 lg:w-8 xl:w-10 h-auot" /></button>
-            <button className="swiper-button-prev-team cursor-pointer" onClick={() => { swiperRef.current?.slideNext() }}>
-               <Image src={assets.pmArrowRight} alt={"arrow"} width={40} height={24.62} className="w-4 lg:w-8 xl:w-10 h-auot" /></button>
+            <button
+              className="swiper-button-next-team cursor-pointer"
+              onClick={() => {
+                swiperRef.current?.slidePrev();
+              }}
+            >
+              <Image
+                src={assets.pmArrowLeft}
+                alt={"arrow"}
+                width={40}
+                height={24.62}
+                className="w-4 lg:w-8 xl:w-10 h-auot"
+              />
+            </button>
+            <button
+              className="swiper-button-prev-team cursor-pointer"
+              onClick={() => {
+                swiperRef.current?.slideNext();
+              }}
+            >
+              <Image
+                src={assets.pmArrowRight}
+                alt={"arrow"}
+                width={40}
+                height={24.62}
+                className="w-4 lg:w-8 xl:w-10 h-auot"
+              />
+            </button>
           </div>
         </div>
         <div>
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            effect={'coverflow'}
+            effect={"coverflow"}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={3}
@@ -102,35 +105,45 @@ const PhotoGallery = () => {
                 coverflowEffect: {
                   depth: 100,
                   modifier: 1,
-                }
+                },
               },
               768: {
                 slidesPerView: 2,
                 coverflowEffect: {
                   depth: 150,
                   modifier: 1,
-                }
+                },
               },
               1024: {
                 slidesPerView: 2.7,
                 coverflowEffect: {
                   depth: 100,
                   modifier: 1,
-                }
+                },
               },
             }}
             modules={[Navigation, Autoplay, EffectCoverflow]}
             onSlideChange={handleSlideChange}
             className="w-full h-full !py-0 md:!py-0 lg:!py-0 md:h-[300px] 2xl:h-[629.94px] photo-gallery-slider"
           >
-            {slides.map((slide) => (
-              <SwiperSlide key={slide.id} className="flex items-center justify-center !h-auto" >
+            {data.items.map((slide) => (
+              <SwiperSlide
+                key={slide._id}
+                className="flex items-center justify-center !h-auto"
+              >
                 {({ isActive }) => (
-                  <div className={`relative w-full h-full  overflow-hidden transition-all duration-700 ${isActive ? 'scale-200' : 'scale-100 opacity-100'
+                  <div
+                    className={`relative w-full h-full  overflow-hidden transition-all duration-700 ${
+                      isActive ? "scale-200" : "scale-100 opacity-100"
                     }`}
                   >
                     {/* Image */}
-                    <Image width={1920} height={1280} src={slide.image} alt={`Slide ${slide.id}`} className="w-full h-full object-contain"
+                    <Image
+                      width={1920}
+                      height={1280}
+                      src={slide.image}
+                      alt={slide.imageAlt}
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 )}
@@ -156,6 +169,6 @@ const PhotoGallery = () => {
       `}</style> */}
     </section>
   );
-}
+};
 
 export default PhotoGallery;
