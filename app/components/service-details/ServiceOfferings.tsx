@@ -15,7 +15,7 @@ const ServiceOfferings = ({ data }: ServiceOfferingsProps) => {
       <div className="container">
         <div className="ml-container">
           <h2 className="heading text-50 xl:text-70  font-light leading-[1] mb-8   xl:mb-10 2xl:mb-20 text-black">
-            Our MICE Offerings
+            {data.title}
           </h2>
         </div>
         <div>
