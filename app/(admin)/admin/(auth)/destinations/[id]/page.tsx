@@ -29,6 +29,7 @@ interface UAEFormProps {
   metaTitle: string;
   metaDescription: string;
   firstSection: {
+    location: string;
     mainTitle: string;
     subTitle: string;
     description: string;
@@ -167,7 +168,7 @@ const UAEPage = () => {
   };
 
   const handleAutoGenerate = () => {
-    const name = watch("firstSection.mainTitle");
+    const name = watch("firstSection.location");
     if (!name) return;
     const slug = name
       .toLowerCase()
@@ -227,6 +228,21 @@ const UAEPage = () => {
                 {errors.firstSection?.mainTitle && (
                   <p className="text-red-500">
                     {errors.firstSection?.mainTitle.message}
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-col gap-1">
+                <Label className="font-bold">Location</Label>
+                <Input
+                  type="text"
+                  placeholder="Location"
+                  {...register("firstSection.location", {
+                    required: "Location is required",
+                  })}
+                />
+                {errors.firstSection?.location && (
+                  <p className="text-red-500">
+                    {errors.firstSection?.location.message}
                   </p>
                 )}
               </div>
@@ -320,9 +336,9 @@ const UAEPage = () => {
                     />
                   )}
                 />
-                {errors.firstSection?.firstVideo && (
+                {errors.firstSection?.firstVideoPoster && (
                   <p className="text-red-500">
-                    {errors.firstSection?.firstVideo.message}
+                    {errors.firstSection?.firstVideoPoster.message}
                   </p>
                 )}
               </div>
@@ -357,9 +373,9 @@ const UAEPage = () => {
                     />
                   )}
                 />
-                {errors.firstSection?.secondVideo && (
+                {errors.firstSection?.secondVideoPoster && (
                   <p className="text-red-500">
-                    {errors.firstSection?.secondVideo.message}
+                    {errors.firstSection?.secondVideoPoster.message}
                   </p>
                 )}
               </div>

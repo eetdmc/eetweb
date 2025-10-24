@@ -8,6 +8,9 @@ const uaeSchema = new mongoose.Schema({
     type: String,
   },
   firstSection: {
+    location: {
+      type: String,
+    },
     mainTitle: {
       type: String,
     },
