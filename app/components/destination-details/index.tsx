@@ -5,7 +5,6 @@ import WhyExplore from "./WhyExplore";
 import type { DestinationData } from "./type";
 
 const Index = ({ data }: { data: DestinationData }) => {
-  console.log(data);
   return (
     <>
       <Main data={data.firstSection} about={data.secondSection} />

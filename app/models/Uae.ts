@@ -8,6 +8,9 @@ const uaeSchema = new mongoose.Schema({
     type: String,
   },
   firstSection: {
+    location: {
+      type: String,
+    },
     mainTitle: {
       type: String,
     },
@@ -86,6 +89,21 @@ const uaeSchema = new mongoose.Schema({
         imageAlt: {
           type: String,
         },
+        title: {
+          type: String,
+        },
+      },
+    ],
+  },
+  sixthSection: {
+    destinationCount: {
+      type: Number,
+    },
+    homeImage: {
+      type: String,
+    },
+    mainDestinations: [
+      {
         title: {
           type: String,
         },

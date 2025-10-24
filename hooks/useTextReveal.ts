@@ -15,9 +15,18 @@ interface UseTextRevealOptions {
 }
 
 export function useTextReveal(options: UseTextRevealOptions = {}) {
-  const { selector = ".title", stagger = 0.03, duration = 0.6, y = 50, rotateX = -90, ease = "power3.out", start = "top 85%" } = options;
+  const {
+    selector = ".title",
+    stagger = 0.03,
+    duration = 0.6,
+    y = 50,
+    rotateX = -90,
+    ease = "power3.out",
+    start = "top 85%",
+  } = options;
 
   useEffect(() => {
+    if (typeof window === "undefined") return; // SSR guard
     const titles = document.querySelectorAll<HTMLElement>(selector);
 
     const splitTextIntoChars = (element: HTMLElement) => {
@@ -41,6 +50,7 @@ export function useTextReveal(options: UseTextRevealOptions = {}) {
 
     titles.forEach((title) => {
       const chars = splitTextIntoChars(title);
+      if (!chars) return; // Skip if no chars found
 
       // Set perspective for 3D rotation
       gsap.set(title, { perspective: 400 });

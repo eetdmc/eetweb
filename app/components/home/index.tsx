@@ -7,17 +7,26 @@ import DestinationSection from "./DestinationSection";
 import Testimonials from "./Testimonials";
 import SocialFeeds from "./SocialFeeds";
 import type { HomeData } from "./type";
+import type { DestinationData } from "../destination-details/type";
+import type { ServiceData } from "../service-details/type";
+
 interface Props {
   data: HomeData;
+  destinations: DestinationData[];
+  services: ServiceData[];
 }
-const Index = ({ data }: Props) => {
+const Index = ({ data, services, destinations }: Props) => {
   return (
     <>
       <Hero data={data.bannerSection} />
       <HeroBottom data={data.secondSection} />
       <FeaturesSection data={data.thirdSection} />
-      <Services />
-      <DestinationSection />
+      <Services data={data.fourthSection} services={services} />
+
+      <DestinationSection
+        data={data.fifthSection}
+        destinations={destinations}
+      />
       {/* <BlogSlider /> */}
       <Testimonials data={data.seventhSection} />
       <SocialFeeds />

@@ -40,30 +40,14 @@ interface HomeFormProps {
       description: string;
     }[];
   };
-  //   fourthSection: {
-  //     mainTitle: string;
-  //     subTitle: string;
-  //     items: {
-  //       image: string;
-  //       imageAlt: string;
-  //       title: string;
-  //       description: string;
-  //     }[];
-  //   };
-  //   fifthSection: {
-  //     mainTitle: string;
-  //     subTitle: string;
-  //     items: {
-  //       image: string;
-  //       imageAlt: string;
-  //       title: string;
-  //       number: string;
-  //       value: string;
-  //       locations: {
-  //         title: string;
-  //       }[];
-  //     }[];
-  //   };
+  fourthSection: {
+    mainTitle: string;
+    subTitle: string;
+  };
+  fifthSection: {
+    mainTitle: string;
+    subTitle: string;
+  };
   seventhSection: {
     title: string;
     items: {
@@ -101,23 +85,23 @@ const HomePage = () => {
     name: "thirdSection.items",
   });
 
-  //   const {
-  //     fields: fourthSectionItems,
-  //     append: fourthSectionAppend,
-  //     remove: fourthSectionRemove,
-  //   } = useFieldArray({
-  //     control,
-  //     name: "fourthSection.items",
-  //   });
+  // const {
+  //   fields: fourthSectionItems,
+  //   append: fourthSectionAppend,
+  //   remove: fourthSectionRemove,
+  // } = useFieldArray({
+  //   control,
+  //   name: "fourthSection.items",
+  // });
 
-  //   const {
-  //     fields: fifthSectionItems,
-  //     append: fifthSectionAppend,
-  //     remove: fifthSectionRemove,
-  //   } = useFieldArray({
-  //     control,
-  //     name: "fifthSection.items",
-  //   });
+  // const {
+  //   fields: fifthSectionItems,
+  //   append: fifthSectionAppend,
+  //   remove: fifthSectionRemove,
+  // } = useFieldArray({
+  //   control,
+  //   name: "fifthSection.items",
+  // //   });
 
   const {
     fields: seventhSectionItems,
@@ -155,9 +139,9 @@ const HomePage = () => {
         setValue("secondSection", data.data.secondSection);
         setValue("thirdSection", data.data.thirdSection);
         setValue("thirdSection.items", data.data.thirdSection.items);
-        // setValue("fourthSection", data.data.fourthSection);
+        setValue("fourthSection", data.data.fourthSection);
         // setValue("fourthSection.items", data.data.fourthSection.items);
-        // setValue("fifthSection", data.data.fifthSection);
+        setValue("fifthSection", data.data.fifthSection);
         // setValue("fifthSection.items", data.data.fifthSection.items);
         setValue("seventhSection", data.data.seventhSection);
         setValue("seventhSection.items", data.data.seventhSection.items);
@@ -627,7 +611,7 @@ const HomePage = () => {
           </div>
         </AdminItemContainer>
 
-        {/* <AdminItemContainer>
+        <AdminItemContainer>
           <Label main>Fourth Section</Label>
           <div className="p-5 rounded-md flex flex-col gap-2">
             <div className="flex flex-col gap-2">
@@ -661,148 +645,16 @@ const HomePage = () => {
                   </p>
                 )}
               </div>
-
-              <div>
-                <Label className="font-bold">Items</Label>
-                <div className="border p-2 rounded-md flex flex-col gap-5">
-                  {fourthSectionItems.map((field, index) => (
-                    <div
-                      key={field.id}
-                      className="grid grid-cols-2 gap-2 relative border-b pb-5 last:border-b-0"
-                    >
-                      <div className="absolute top-2 right-2">
-                        <RiDeleteBinLine
-                          onClick={() => fourthSectionRemove(index)}
-                          className="cursor-pointer text-red-600"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <div className="flex flex-col gap-2">
-                          <Label className="font-bold">Image</Label>
-                          <Controller
-                            name={`fourthSection.items.${index}.image`}
-                            control={control}
-                            rules={{ required: "Image is required" }}
-                            render={({ field }) => (
-                              <ImageUploader
-                                value={field.value}
-                                onChange={field.onChange}
-                              />
-                            )}
-                          />
-                          {errors.fourthSection?.items?.[index]?.image && (
-                            <p className="text-red-500">
-                              {
-                                errors.fourthSection?.items?.[index]?.image
-                                  .message
-                              }
-                            </p>
-                          )}
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                          <div className="flex flex-col gap-2">
-                            <Label className="font-bold">Alt Tag</Label>
-                            <Input
-                              type="text"
-                              placeholder="Alt Tag"
-                              {...register(
-                                `fourthSection.items.${index}.imageAlt`,
-                                {
-                                  required: "Value is required",
-                                }
-                              )}
-                            />
-                            {errors.fourthSection?.items?.[index]?.imageAlt && (
-                              <p className="text-red-500">
-                                {
-                                  errors.fourthSection?.items?.[index]?.imageAlt
-                                    .message
-                                }
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="grid grid-cols-1 gap-2 col-span-2">
-                          <div className="flex flex-col gap-2">
-                            <Label className="font-bold">Title</Label>
-                            <Input
-                              type="text"
-                              placeholder="Title"
-                              {...register(
-                                `fourthSection.items.${index}.title`,
-                                {
-                                  required: "Value is required",
-                                }
-                              )}
-                            />
-                            {errors.fourthSection?.items?.[index]?.title && (
-                              <p className="text-red-500">
-                                {
-                                  errors.fourthSection?.items?.[index]?.title
-                                    .message
-                                }
-                              </p>
-                            )}
-                          </div>
-                          <div>
-                            <Label className="text-sm font-bold">
-                              Description
-                            </Label>
-                            <Controller
-                              name={`fourthSection.items.${index}.description`}
-                              control={control}
-                              rules={{ required: "Description is required" }}
-                              render={({ field }) => {
-                                return (
-                                  <Textarea
-                                    value={field.value}
-                                    onChange={field.onChange}
-                                  />
-                                );
-                              }}
-                            />
-                            {errors.fourthSection?.items?.[index]
-                              ?.description && (
-                              <p className="text-red-500">
-                                {
-                                  errors.fourthSection?.items?.[index]
-                                    ?.description.message
-                                }
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex justify-end mt-2">
-                  <Button
-                    type="button"
-                    addItem
-                    onClick={() =>
-                      fourthSectionAppend({
-                        title: "",
-                        description: "",
-                        image: "",
-                        imageAlt: "",
-                      })
-                    }
-                  >
-                    Add Item
-                  </Button>
-                </div>
-              </div>
+            </div>
+            <div>
+              <p className="text-primary">
+                Services are rendered from the service API.
+              </p>
             </div>
           </div>
-        </AdminItemContainer> */}
+        </AdminItemContainer>
 
-        {/* <AdminItemContainer>
+        <AdminItemContainer>
           <Label main>Fifth Section</Label>
           <div className="p-5 rounded-md flex flex-col gap-2">
             <div className="flex flex-col gap-2">
@@ -839,217 +691,12 @@ const HomePage = () => {
             </div>
 
             <div>
-              <Label className="font-bold">Items</Label>
-              <div className="border p-2 rounded-md flex flex-col gap-5">
-                {fifthSectionItems.map((field, index) => (
-                  <div key={field.id}>
-                    <div className="grid grid-cols-2 gap-2 relative border p-2 rounded-md">
-                      <div className="absolute top-2 right-2">
-                        <RiDeleteBinLine
-                          onClick={() => fifthSectionRemove(index)}
-                          className="cursor-pointer text-red-600"
-                        />
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <div className="flex flex-col gap-2">
-                          <Label className="font-bold">Image</Label>
-                          <Controller
-                            name={`fifthSection.items.${index}.image`}
-                            control={control}
-                            rules={{ required: "Image is required" }}
-                            render={({ field }) => (
-                              <ImageUploader
-                                value={field.value}
-                                onChange={field.onChange}
-                              />
-                            )}
-                          />
-                          {errors.fifthSection?.items?.[index]?.image && (
-                            <p className="text-red-500">
-                              {
-                                errors.fifthSection?.items?.[index]?.image
-                                  .message
-                              }
-                            </p>
-                          )}
-                        </div>
-
-                        <div className="flex flex-col gap-2">
-                          <div className="flex flex-col gap-2">
-                            <Label className="font-bold">Alt Tag</Label>
-                            <Input
-                              type="text"
-                              placeholder="Alt Tag"
-                              {...register(
-                                `fifthSection.items.${index}.imageAlt`,
-                                {
-                                  required: "Value is required",
-                                }
-                              )}
-                            />
-                            {errors.fifthSection?.items?.[index]?.imageAlt && (
-                              <p className="text-red-500">
-                                {
-                                  errors.fifthSection?.items?.[index]?.imageAlt
-                                    .message
-                                }
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-col gap-2">
-                        <div>
-                          <Label>Title</Label>
-                          <Input
-                            type="text"
-                            placeholder="Title"
-                            {...register(`fifthSection.items.${index}.title`, {
-                              required: "Title is required",
-                            })}
-                          />
-                          {errors.fifthSection?.items?.[index]?.title && (
-                            <p className="text-red-500">
-                              {
-                                errors.fifthSection?.items?.[index]?.title
-                                  .message
-                              }
-                            </p>
-                          )}
-                        </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          <div>
-                            <Label>Number</Label>
-                            <Input
-                              type="text"
-                              placeholder="Number"
-                              {...register(
-                                `fifthSection.items.${index}.number`,
-                                {
-                                  required: "Number is required",
-                                }
-                              )}
-                            />
-                            {errors.fifthSection?.items?.[index]?.number && (
-                              <p className="text-red-500">
-                                {
-                                  errors.fifthSection?.items?.[index]?.number
-                                    .message
-                                }
-                              </p>
-                            )}
-                          </div>
-                          <div>
-                            <Label>Value</Label>
-                            <Input
-                              type="text"
-                              placeholder="Value"
-                              {...register(
-                                `fifthSection.items.${index}.value`,
-                                {
-                                  required: "Value is required",
-                                }
-                              )}
-                            />
-                            {errors.fifthSection?.items?.[index]?.value && (
-                              <p className="text-red-500">
-                                {
-                                  errors.fifthSection?.items?.[index]?.value
-                                    .message
-                                }
-                              </p>
-                            )}
-                          </div>
-                        </div>
-
-                        <div>
-                          <Button
-                            type="button"
-                            className="w-full cursor-pointer text-white bg-green-400 text-[16px]"
-                            onClick={() => {
-                              handleAddLocation(index);
-                            }}
-                          >
-                            Add Location
-                          </Button>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-2 mt-5">
-                      {watch(`fifthSection.items.${index}.locations`).map(
-                        (file, fileIndex) => (
-                          <div
-                            key={fileIndex}
-                            className="grid grid-cols-1 gap-2 relative border p-2 rounded-md"
-                          >
-                            <div className="absolute top-2 right-2">
-                              <RiDeleteBinLine
-                                onClick={() =>
-                                  handleRemoveLocation(index, fileIndex)
-                                }
-                                className="cursor-pointer text-red-600"
-                              />
-                            </div>
-
-                            <div className="flex flex-col gap-2">
-                              <div className="flex flex-col gap-2">
-                                <Label className="font-bold">Title</Label>
-                                <Controller
-                                  name={`fifthSection.items.${index}.locations.${fileIndex}.title`}
-                                  control={control}
-                                  rules={{ required: "Title is required" }}
-                                  render={({ field }) => (
-                                    <Input
-                                      value={field.value}
-                                      onChange={(e) => {
-                                        field.onChange(e.target.value); // update file URL // update size separately
-                                      }}
-                                    />
-                                  )}
-                                />
-                                {errors.fifthSection?.items?.[index]
-                                  ?.locations?.[fileIndex]?.title && (
-                                  <p className="text-red-500">
-                                    {
-                                      errors.fifthSection?.items?.[index]
-                                        ?.locations?.[fileIndex]?.title.message
-                                    }
-                                  </p>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-3 flex justify-end">
-                <Button
-                  type="button"
-                  className="w-fit cursor-pointer text-white text-[16px]"
-                  addItem
-                  onClick={() => {
-                    fifthSectionAppend({
-                      image: "",
-                      imageAlt: "",
-                      title: "",
-                      number: "",
-                      value: "",
-                      locations: [],
-                    });
-                  }}
-                >
-                  Add Item
-                </Button>
-              </div>
+              <p className="text-primary">
+                Destinations are rendered from the destination API.
+              </p>
             </div>
           </div>
-        </AdminItemContainer> */}
+        </AdminItemContainer>
 
         <AdminItemContainer>
           <Label main>Seventh Section</Label>

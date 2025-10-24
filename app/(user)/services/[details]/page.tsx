@@ -7,7 +7,7 @@ const Page = async ({ params }: { params: Promise<{ details: string }> }) => {
     { next: { revalidate: 60 } }
   );
   const data = await response.json();
-  console.log(data);
+
   return <Index data={data.data} />;
 };
 
