@@ -21,7 +21,6 @@ import Link from "next/link";
 const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
   destinations,
 }) => {
-  console.log(destinations);
   const formattedDestinations = destinations.map(
     (item: DestinationData, index: number) => ({
       id: index + 1,
