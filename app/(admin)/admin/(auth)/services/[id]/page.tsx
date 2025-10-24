@@ -28,6 +28,7 @@ interface MiceFormProps {
   metaTitle: string;
   metaDescription: string;
   firstSection: {
+    ctaHome: string;
     mainTitle: string;
     subTitle: string;
     thirdTitle: string;
@@ -267,6 +268,22 @@ const MicePage = () => {
                   </p>
                 )}
               </div>
+              <div className="flex flex-col gap-1">
+                <Label className="font-bold">CTA Home Title</Label>
+                <Input
+                  type="text"
+                  placeholder="CTA Home Title"
+                  {...register("firstSection.ctaHome", {
+                    required: "CTA Home Title is required",
+                  })}
+                />
+                {errors.firstSection?.ctaHome && (
+                  <p className="text-red-500">
+                    {errors.firstSection?.ctaHome.message}
+                  </p>
+                )}
+              </div>
+
               <div className="flex flex-col gap-1">
                 <Label className="font-bold">Third Title</Label>
                 <Input

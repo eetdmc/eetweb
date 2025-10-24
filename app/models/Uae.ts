@@ -95,6 +95,18 @@ const uaeSchema = new mongoose.Schema({
       },
     ],
   },
+  sixthSection: {
+    destinationCount: {
+      type: Number,
+    },
+    mainDestinations: [
+      {
+        title: {
+          type: String,
+        },
+      },
+    ],
+  },
 });
 
 export default mongoose.models.UAE || mongoose.model("UAE", uaeSchema);

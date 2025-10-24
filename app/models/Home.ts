@@ -82,76 +82,26 @@ const homeSchema = new mongoose.Schema({
       },
     ],
   },
-  //   fourthSection: {
-  //     mainTitle: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     subTitle: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     items: [
-  //       {
-  //         image: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //         imageAlt: {
-  //           type: String,
-  //         },
-  //         title: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //         description: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   fifthSection: {
-  //     mainTitle: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     subTitle: {
-  //       type: String,
-  //       required: true,
-  //     },
-  //     items: [
-  //       {
-  //         image: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //         imageAlt: {
-  //           type: String,
-  //         },
-  //         title: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //         number: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //         value: {
-  //           type: String,
-  //           required: true,
-  //         },
-  //         locations: [
-  //           {
-  //             title: {
-  //               type: String,
-  //               required: true,
-  //             },
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   },
+  fourthSection: {
+    mainTitle: {
+      type: String,
+      required: true,
+    },
+    subTitle: {
+      type: String,
+      required: true,
+    },
+  },
+  fifthSection: {
+    mainTitle: {
+      type: String,
+      required: true,
+    },
+    subTitle: {
+      type: String,
+      required: true,
+    },
+  },
   seventhSection: {
     title: {
       type: String,

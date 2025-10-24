@@ -66,6 +66,12 @@ interface UAEFormProps {
       title: string;
     }[];
   };
+  sixthSection: {
+    destinationCount: number;
+    mainDestinations: {
+      title: string;
+    }[];
+  };
 }
 
 const UAEPage = () => {
@@ -109,6 +115,15 @@ const UAEPage = () => {
     name: "fifthSection.items",
   });
 
+  const {
+    fields: sixthSectionItems,
+    append: sixthSectionAppend,
+    remove: sixthSectionRemove,
+  } = useFieldArray({
+    control,
+    name: "sixthSection.mainDestinations",
+  });
+
   const handleAddUAE = async (data: UAEFormProps) => {
     try {
       const response = await fetch(`/api/admin/destinations?id=${id}`, {
@@ -142,6 +157,11 @@ const UAEPage = () => {
         setValue("fourthSection.items", data.data.fourthSection.items);
         setValue("fifthSection", data.data.fifthSection);
         setValue("fifthSection.items", data.data.fifthSection.items);
+        setValue("sixthSection", data.data.sixthSection);
+        setValue(
+          "sixthSection.mainDestinations",
+          data.data.sixthSection.mainDestinations
+        );
       } else {
         const data = await response.json();
         alert(data.message);
@@ -764,6 +784,74 @@ const UAEPage = () => {
                     Add Item
                   </Button>
                 </div>
+              </div>
+            </div>
+          </div>
+        </AdminItemContainer>
+
+        <AdminItemContainer>
+          <Label main>Sixth Section</Label>
+          <div className="p-5 rounded-md flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1">
+                <Label className="font-bold">Destination Count</Label>
+                <Input
+                  type="text"
+                  placeholder="Destination Count"
+                  {...register("sixthSection.destinationCount", {
+                    required: "Destination Count is required",
+                  })}
+                />
+                {errors.sixthSection?.destinationCount && (
+                  <p className="text-red-500">
+                    {errors.sixthSection?.destinationCount.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <Label className="text-sm font-bold">Main Destinations</Label>
+                <div className="border p-2 rounded-md grid grid-cols-2 gap-2">
+                  {sixthSectionItems.map((field, index) => (
+                    <div
+                      key={field.id}
+                      className="grid grid-cols-1 gap-2 relative border-r pr-2 last:border-r-0"
+                    >
+                      <div className="absolute top-2 right-2">
+                        <RiDeleteBinLine
+                          onClick={() => sixthSectionRemove(index)}
+                          className="cursor-pointer text-red-600"
+                        />
+                      </div>
+
+                      <div>
+                        <div className="flex flex-col gap-2">
+                          <Label className="pl-3 font-bold">Title</Label>
+                          <Input
+                            type="text"
+                            placeholder="Title"
+                            {...register(
+                              `sixthSection.mainDestinations.${index}.title`
+                            )}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-end mt-2">
+                  <Button
+                    type="button"
+                    addItem
+                    onClick={() => sixthSectionAppend({ title: "" })}
+                  >
+                    Add Item
+                  </Button>
+                </div>
+                {errors.sixthSection?.mainDestinations && (
+                  <p className="text-red-500">
+                    {errors.sixthSection?.mainDestinations?.message}
+                  </p>
+                )}
               </div>
             </div>
           </div>
