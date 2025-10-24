@@ -17,7 +17,7 @@ const Page = async () => {
   const partnersResponse = await fetch(
     `${process.env.BASE_URL}/api/admin/partners`,
     {
-      next: { revalidate: 60 }, 
+      next: { revalidate: 60 },
     }
   );
   const partnersData = await partnersResponse.json();
