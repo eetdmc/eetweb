@@ -38,7 +38,7 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
         href: "",submenu: [
                 { label: "Overview ", href: "/about-us" },
                 { label: "Our Team ", href: "/our-team" },
-                { label: "Partners", href: "/partners" }, 
+                // { label: "Partners", href: "/partners" }, 
                 ]
       },
       {
@@ -65,7 +65,7 @@ const fallbackMenu = () => [
                 submenu: [
                 { label: "Overview ", href: "/about-us" },
                 { label: "Our Team ", href: "/our-team" },
-                { label: "Partners", href: "/partners" }, 
+                // { label: "Partners", href: "/partners" }, 
                 ],},
   { label: "Services", href: "/services", submenu: [] },
   { label: "Destinations", href: "/destinations", submenu: [] },
