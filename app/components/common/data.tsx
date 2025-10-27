@@ -8,7 +8,8 @@ export const commonData = {
                 href: "",
                 submenu: [
                 { label: "Overview ", href: "/about-us" },
-                { label: "Partners", href: "/partners" }, 
+                { label: "Our Team ", href: "/our-team" },
+                // { label: "Partners", href: "/partners" }, 
                 ],
             },
             {
