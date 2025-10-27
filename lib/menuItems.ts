@@ -35,7 +35,11 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
     return [
       {
         label: "About",
-        href: "/about-us",
+        href: "",submenu: [
+                { label: "Overview ", href: "/about-us" },
+                { label: "Our Team ", href: "/our-team" },
+                { label: "Partners", href: "/partners" }, 
+                ]
       },
       {
         label: "Services",
@@ -57,7 +61,12 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
 
 // Fallback static menu
 const fallbackMenu = () => [
-  { label: "About", href: "/about-us", submenu: [] },
+  { label: "About", href: "",
+                submenu: [
+                { label: "Overview ", href: "/about-us" },
+                { label: "Our Team ", href: "/our-team" },
+                { label: "Partners", href: "/partners" }, 
+                ],},
   { label: "Services", href: "/services", submenu: [] },
   { label: "Destinations", href: "/destinations", submenu: [] },
   { label: "Contact", href: "/contact-us" },

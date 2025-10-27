@@ -384,7 +384,7 @@ const NavBar = () => {
 
       {/* ===== Partner Login Button ===== */}
       <div className="ml-auto mr-2 w-fit lg:m-0">
-        <button className="cursor-pointer font-inter bg-white px-2 py-2 xl:px-5 xl:pt-[15px] xl:pb-[13px] flex items-center gap-[6px] uppercase rounded-full relative group hover:text-white">
+        <Link href="/partner-login" className="cursor-pointer font-inter bg-white px-2 py-2 xl:px-5 xl:pt-[15px] xl:pb-[13px] flex items-center gap-[6px] uppercase rounded-full relative group hover:text-white">
           <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
           <span className="relative z-10 font-[300] leading-[1] text-black group-hover:text-white hidden lg:block">
             Partner Login
@@ -398,7 +398,7 @@ const NavBar = () => {
               className="w-[11px] h-[11px] group-hover:brightness-0 group-hover:invert"
             />
           </span>
-        </button>
+        </Link>
       </div>
 
       {/* ===== Mobile Menu Toggle ===== */}

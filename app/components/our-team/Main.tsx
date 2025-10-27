@@ -25,7 +25,7 @@ const Main = ({ data }: MainProps) => {
         </div>
       </div>
       <div className="container pt-10 xl:pt-30 2xl:pt-50 mb-0 xl:mb-30">
-        <div className="xl:max-w-[1136px] ml-auto mr-10 xl:mr-[147px]">
+        <div className="xl:max-w-[1136px] lg-auto md:mr-10 xl:mr-[147px]">
           <div className="border-b border-[#5C8898] pb-10 xl:pb-25">
             <ScrollReveal
               baseOpacity={0}
@@ -34,7 +34,7 @@ const Main = ({ data }: MainProps) => {
               blurStrength={10}
               rotationEnd="bottom 80%"
               wordAnimationEnd="bottom 80%"
-              containerClassName="text-[30px] leading-[1.333333333333333] font-light max-w-[63ch]"
+              containerClassName="text-50 lg:text-[30px] leading-[1.333333333333333] font-light max-w-[63ch]"
             >
               {data.description}
             </ScrollReveal>
