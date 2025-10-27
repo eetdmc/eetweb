@@ -36,6 +36,7 @@
   --text-34: clamp(1rem, 3vw + 0.1em, 34px);
   --text-19: clamp(0.9rem, 2vw + 0.1em, 19px);
   --text-14: clamp(0.7rem, 2vw + 0.1em, 14px);
+  --text-16: clamp(0.7rem, 2vw + 0.1em, 16px);
 
   --lhtext-19: 1.526315789473684;
   --lhtext-30: 1.2;
@@ -78,6 +79,7 @@
   --text-40: var(--text-40);
   --text-19: var(--text-19);
   --text-14: var(--text-14);
+  --text-16: var(--text-16);
 
   --font-inter: var(--font-inter);
   --font-manrope: var(--font-manrope);
