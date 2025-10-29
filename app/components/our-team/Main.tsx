@@ -11,7 +11,7 @@ const Main = ({ data }: MainProps) => {
   useTextReveal({ selector: ".heading" });
   useTextReveal({ selector: ".subtitle", stagger: 0.02, duration: 0.4, y: 30 });
   return (
-    <section className="pb-10 xl:pb-[114px] ">
+    <section className="pb-10 xl:pb-[80px] ">
       <div className="pm-noise pt-15 xl:pt-25">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[164px]">
@@ -25,7 +25,7 @@ const Main = ({ data }: MainProps) => {
         </div>
       </div>
       <div className="container pt-10 xl:pt-30 2xl:pt-50 mb-0 xl:mb-30">
-        <div className="xl:max-w-[1136px] lg-auto md:mr-10 xl:mr-[147px]">
+        <div className="xl:max-w-[1136px] lg-auto md:mr-10 xl:mr-[147px] ml-auto">
           <div className="border-b border-[#5C8898] pb-10 xl:pb-25">
             <ScrollReveal
               baseOpacity={0}
