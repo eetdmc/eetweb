@@ -10,8 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { assets } from "@/public/assets";
 import { Navigation } from "swiper/modules";
-import { motion } from "motion/react";
-import { moveUp } from "../motionVarients";
+ 
 import {
   DestinationData,
   DestinationSixthItem,
