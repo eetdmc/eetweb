@@ -59,7 +59,7 @@ const BehindTheScene = ({ data }: Props) => {
   }, []);
   return (
     <section
-      className="pt-10 xl:pt-30 pb-50 xl:pb-[130px] 2xl:pb-[350px] overflow-hidden"
+      className="pt-10 md:pt-20 2xl:pt-30 pb-[200px] md:pb-[280px] lg:pb-[320px] 2xl:pb-[350px] overflow-hidden"
       ref={sectionRef}
     >
       <div className="container">
@@ -77,7 +77,7 @@ const BehindTheScene = ({ data }: Props) => {
             {data.title}
           </ScrollReveal>
         </div>
-        <div className="flex flex-wrap gap-y-10 justify-between">
+        <div className="flex flex-wrap lg:flex-nowrap gap-y-10 justify-between">
           <motion.div
             variants={moveUp(0.4)}
             initial="hidden"
@@ -93,7 +93,7 @@ const BehindTheScene = ({ data }: Props) => {
             />
           </motion.div>
           <div>
-            <div className="ml-auto pr-15 xl:pr-[145px]">
+            <div className="ml-auto md:pl-5 pr-2 3xl:pr-[145px]">
               <ScrollReveal
                 baseOpacity={0}
                 enableBlur={true}
@@ -101,7 +101,7 @@ const BehindTheScene = ({ data }: Props) => {
                 blurStrength={20}
                 rotationEnd="bottom 80%"
                 wordAnimationEnd="bottom 80%"
-                containerClassName="text-30 leading-[1.333333333333333] font-light max-w-[59ch]"
+                containerClassName="text-30 md:text-[24px] xl:text-30 leading-[1.333333333333333] font-light max-w-[59ch]"
               >
                 {data.description}
               </ScrollReveal>
@@ -113,7 +113,7 @@ const BehindTheScene = ({ data }: Props) => {
                   alt={data.secondImageAlt}
                   width={406}
                   height={192}
-                  className="mt-15 xl:mt-[146px] ml-auto"
+                  className="mt-8 md:mt-15 xl:mt-[146px] ml-auto"
                 />
               </div>
             </div>
