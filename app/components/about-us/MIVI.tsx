@@ -51,7 +51,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
       ref={sectionRef}
     >
       <div className="container">
-        <div className="flex flex-wrap justify-between gap-y-10 xl:gap-y-5 2xl:flex-nowrap">
+        <div className="flex flex-wrap justify-between gap-y-10 xl:gap-y-5 xl:flex-nowrap">
           {/* Mission Section */}
           <div ref={imageContainerRef}>
             <div className="mb-8 xl:mb-50px" ref={imageRef}>
@@ -67,7 +67,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
               variants={moveUpfourty(0.2)}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: "all" }}
+              viewport={{ once: true, amount: 0.3 }}
               className="text-70 leading-[1] font-light text-black mb-30px"
             >
               {mission.title}
@@ -76,7 +76,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
               variants={moveUpfourty(0.4)}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true, amount: "all" }}
+              viewport={{ once: true, amount: 0.3 }}
               className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]"
             >
               {mission.description}
@@ -90,7 +90,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
                 variants={moveUpfourty(0.6)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: "all" }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="mb-8 xl:mb-50px"
               >
                 <Image
@@ -105,7 +105,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
                 variants={moveUpfourty(0.7)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: "all" }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="text-70 leading-[1] font-light text-black mb-30px"
               >
                 {vision.title}
@@ -114,7 +114,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
                 variants={moveUpfourty(0.8)}
                 initial="hidden"
                 whileInView="show"
-                viewport={{ once: true, amount: "all" }}
+                viewport={{ once: true, amount: 0.3 }}
                 className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]"
               >
                 {vision.description}
