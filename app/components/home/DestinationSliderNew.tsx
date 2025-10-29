@@ -403,7 +403,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
         <Swiper
           className="destinations-slider"
           modules={[Navigation]}
-          slidesPerView={1}
+          slidesPerView={1}  
           spaceBetween={30}
           pagination={{ clickable: true }}
           navigation={{ prevEl: ".mobile-prev", nextEl: ".mobile-next" }}
