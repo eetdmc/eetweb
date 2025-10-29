@@ -269,39 +269,27 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                     }`}
                   >
                     <div className="pr-8 xl:pr-20 3xl:pr-[212px]">
-                      <motion.h2
-                        variants={moveUp(0.2)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: "all" }}
+                      <h2
                         className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight"
                       >
                         {destination.location}
-                      </motion.h2>
+                      </h2>
                     </div>
                     <div
                       className={`mr-8 xl:mr-18 3xl:mr-[136px] ${
                         index === currentSlide ? "block" : "hidden"
                       }`}
                     >
-                      <motion.h3
-                        variants={moveUp(0.2)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: "all" }}
+                      <h3
                         className="text-50 font-light text-black mb-[10px] leading-[0.9]"
                       >
                         {destination.destinationCount}
-                      </motion.h3>
-                      <motion.h4
-                        variants={moveUp(0.2)}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: false, amount: "all" }}
+                      </h3>
+                      <h4
                         className="text-lggray text-19 font-light leading-[1.526315789473684] font-inter"
                       >
                         Destinations
-                      </motion.h4>
+                      </ h4>
                     </div>
 
                     <div
@@ -311,16 +299,12 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                     >
                       <ul className="text-lggray text-lg xl:columns-2 xl:[column-width:180px] 3xl:[column-width:250px] xl:gap-4 3xl:gap-[83px] font-inter">
                         {destination.mainDestinations.map((highlight, idx) => (
-                          <motion.li
-                            variants={moveUp(idx * 0.1)}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: false, amount: "all" }}
+                          <li
                             className="text-base 3xl:text-19 font-light leading-[1.526315789473684]"
                             key={idx}
                           >
                             {highlight}
-                          </motion.li>
+                          </li>
                         ))}
                       </ul>
                     </div>
