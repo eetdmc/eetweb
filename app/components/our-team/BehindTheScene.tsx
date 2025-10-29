@@ -89,7 +89,7 @@ const BehindTheScene = ({ data }: Props) => {
               alt={data.firstImageAlt}
               width={408}
               height={498}
-              className="w-auto h-60 xl:h-auto"
+              className="w-auto h-full md:h-60 xl:h-auto"
             />
           </motion.div>
           <div>
