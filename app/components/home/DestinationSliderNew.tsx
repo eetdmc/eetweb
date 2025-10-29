@@ -80,8 +80,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
 
     // Animate with GSAP
     gsap.to(container, {
-      // x: targetPosition,
-      x: Math.round(targetPosition),
+      x: targetPosition, 
       duration: 1.2,
       ease: "power2.inOut",
       force3D: true,
@@ -128,8 +127,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
     dragOffsetRef.current = diff;
     const newX = dragStartRef.current.startX + diff;
 
-    // gsap.set(container, { x: newX });
-    gsap.set(container, { x: Math.round(newX) });
+    gsap.set(container, { x: newX }); 
   };
 
   const handleDragEnd = () => {
@@ -199,7 +197,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
               <div
                 key={destination.id}
                 className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px] ${
-                  index === currentSlide ? "mt-0" : "mt-44 xl:mt-[250px]"
+                  index === currentSlide ? "mt-0" : "mt-44 xl:mt-[160px] 3xl:mt-[260px]"
                 }`}
                 style={{ width: "80vw" }}
               >
@@ -211,7 +209,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                       : "relative opacity-100"
                   }`}
                 >
-                  <div className="flex gap-5 xl:gap-10 border-b border-black/30 w-full">
+                  <div className="flex gap-5 xl:gap-10  w-full">
                     <div className="pr-8 xl:pr-[212px]">
                       <h2 className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight">
                         {destination.location}
@@ -226,7 +224,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                   ${
                     index === currentSlide
                       ? "ml-5 scale-y-100 h-[441px] 3xl:h-[620px]"
-                      : "scale-y-100 h-[400px] 3xl:h-[441px]"
+                      : "scale-y-100 h-[400px] xl:h-[350px] 3xl:h-[441px]"
                   }`}
                 >
                   <div
@@ -298,7 +296,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                         index === currentSlide ? "block" : "hidden"
                       }`}
                     >
-                      <ul className="text-lggray text-lg xl:columns-2 xl:[column-width:180px] 3xl:[column-width:250px] xl:gap-4 3xl:gap-[83px] font-inter">
+                      <ul className="min-h-[73px] text-lggray text-lg xl:columns-2 xl:[column-width:180px] 3xl:[column-width:250px] xl:gap-4 3xl:gap-[83px] font-inter">
                         {destination.mainDestinations.map((highlight, idx) => (
                           <li
                             className="text-base 3xl:text-19 font-light leading-[1.526315789473684]"
@@ -414,13 +412,13 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
             <SwiperSlide key={index}>
               <div className="h-full">
                 <div className="relative">
-                  {/* <Image
-                    src={destination.image.trimEnd()}
+                  <Image
+                    src={destination.homeImage.trimEnd()}
                     width={1000}
                     height={500}
-                    alt={destination.country}
+                    alt={destination.location}
                     className="w-full h-[300px] object-cover"
-                  /> */}
+                  />
                   <div className="flex gap-6 z-40 absolute left-5 bottom-5">
                     <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border border-primary text-white rounded-3xl hover:bg-primary transition-colors font-light font-funnel-display">
                       Know More
