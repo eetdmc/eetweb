@@ -80,7 +80,8 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
 
     // Animate with GSAP
     gsap.to(container, {
-      x: targetPosition,
+      // x: targetPosition,
+      x: Math.round(targetPosition),
       duration: 1.2,
       ease: "power2.inOut",
       force3D: true,
@@ -127,7 +128,8 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
     dragOffsetRef.current = diff;
     const newX = dragStartRef.current.startX + diff;
 
-    gsap.set(container, { x: newX });
+    // gsap.set(container, { x: newX });
+    gsap.set(container, { x: Math.round(newX) });
   };
 
   const handleDragEnd = () => {
