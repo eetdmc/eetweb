@@ -89,11 +89,11 @@ const BehindTheScene = ({ data }: Props) => {
               alt={data.firstImageAlt}
               width={408}
               height={498}
-              className="w-auto h-full md:h-60 xl:h-auto"
+              className="w-auto h-full "
             />
           </motion.div>
           <div>
-            <div className="ml-auto md:pl-5 pr-2 3xl:pr-[145px]">
+            <div className="ml-auto lg:pl-15 pr-2 3xl:pr-[145px]">
               <ScrollReveal
                 baseOpacity={0}
                 enableBlur={true}
