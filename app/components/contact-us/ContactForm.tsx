@@ -1,8 +1,9 @@
 "use client";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { moveUp } from "../motionVarients";
+import { Listbox, Transition } from "@headlessui/react";
 
 interface FormData {
   name: string;
@@ -33,6 +34,13 @@ export default function ContactForm() {
     }, 5000);
   };
 
+  const options = [
+    { value: "general", label: "General Inquiry" },
+    { value: "support", label: "Support" },
+    { value: "sales", label: "Sales" },
+    { value: "partnership", label: "Partnership" },
+    { value: "other", label: "Other" },
+  ];
   return (
     <div className="container">
       <div className="w-full max-w-[1428px] mx-auto">
@@ -180,78 +188,98 @@ export default function ContactForm() {
                 </div>
 
                 <div className="relative pt-5">
-                  <motion.select
+                  <motion.div
                     variants={moveUp(0.2)}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
-                    id="enquireAbout"
-                    value={enquireValue}
-                    {...register("enquireAbout", {
-                      required: "Please select an option",
-                      onChange: (e) => setEnquireValue(e.target.value),
-                    })}
-                    className={`w-full border-b ${
-                      errors.enquireAbout
-                        ? "border-red-500"
-                        : "border-primary-light"
-                    } relative z-10 bg-transparent text-34 pb-2 ps-1 pt-5 pr-8 font-light appearance-none focus:outline-none focus:border-green-500 transition-colors duration-300 peer cursor-pointer`}
+                    className="relative z-10"
                   >
-                    <option
-                      className="text-[16px]"
-                      value=""
-                      disabled
-                      hidden
-                    ></option>
-                    <option className="text-[16px]" value="general">
-                      General Inquiry
-                    </option>
-                    <option className="text-[16px]" value="support">
-                      Support
-                    </option>
-                    <option className="text-[16px]" value="sales">
-                      Sales
-                    </option>
-                    <option className="text-[16px]" value="partnership">
-                      Partnership
-                    </option>
-                    <option className="text-[16px]" value="other">
-                      Other
-                    </option>
-                  </motion.select>
+                    <Listbox
+                      value={enquireValue}
+                      onChange={(val) => setEnquireValue(val)}
+                    >
+                      <div className="relative">
+                        {/* Button styled like input */}
+                        <Listbox.Button
+                          className={`w-full border-b ${
+                            errors.enquireAbout
+                              ? "border-red-500"
+                              : "border-primary-light"
+                          } bg-transparent text-34 pb-2 pt-5 pr-8 font-light text-forground appearance-none focus:outline-none focus:border-green-500 transition-colors duration-300 peer cursor-pointer flex justify-between items-center`}
+                        >
+                          <span
+                            className={`${
+                              enquireValue
+                                ? "text-foreground absolute -top-11"
+                                : "text-foreground absolute -top-11" // placeholder style
+                            }`}
+                          >
+                            {enquireValue
+                              ? options.find((o) => o.value === enquireValue)
+                                  ?.label
+                              : "Enquire About"}{" "}
+                            {/* Placeholder text initially */}
+                          </span>
 
-                  {/* Floating label — FIXED logic */}
-                  <motion.label
-                    variants={moveUp(0.2)}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: "all" }}
-                    htmlFor="enquireAbout"
-                    className={`absolute left-0 font-light text-foreground transition-colors duration-300 ease-in-out
-                      ${
-                        enquireValue
-                          ? "text-xs top-5"
-                          : "text-34 top-[27px] peer-focus:text-xs peer-focus:top-5"
-                      }
-                    `}
-                  >
-                    Enquire About
-                  </motion.label>
+                          {/* Dropdown arrow */}
+                          <svg
+                            className="absolute right-0 -top-6 w-5 h-5 text-foreground opacity-60 pointer-events-none"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </Listbox.Button>
 
-                  {/* Dropdown arrow */}
-                  <svg
-                    className="absolute right-0 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
+                        {/* Floating label for accessibility, hidden but keeps form structure */}
+                        <motion.label
+                          htmlFor="enquireAbout"
+                          className="absolute left-0 top-0 text-xs font-light text-foreground opacity-0 pointer-events-none"
+                        >
+                          Enquire About
+                        </motion.label>
+
+                        {/* Dropdown list */}
+                        <Transition
+                          as={Fragment}
+                          leave="transition ease-in duration-100"
+                          leaveFrom="opacity-100"
+                          leaveTo="opacity-0"
+                        >
+                          <Listbox.Options className="absolute mt-[2px] w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-27 overflow-auto z-20 text-sm">
+                            {options.map((option) => (
+                              <Listbox.Option
+                                key={option.value}
+                                value={option.value}
+                                as={Fragment}
+                              >
+                                {({ active, selected }) => (
+                                  <li
+                                    className={`cursor-pointer select-none px-3 py-2 ${
+                                      active
+                                        ? "bg-primary text-white"
+                                        : "text-foreground"
+                                    } ${
+                                      selected ? "font-medium" : "font-normal"
+                                    }`}
+                                  >
+                                    {option.label}
+                                  </li>
+                                )}
+                              </Listbox.Option>
+                            ))}
+                          </Listbox.Options>
+                        </Transition>
+                      </div>
+                    </Listbox>
+                  </motion.div>
 
                   {/* Error message */}
                   {errors.enquireAbout && (
