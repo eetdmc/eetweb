@@ -7,6 +7,7 @@ export interface PartnerData {
       items: {
         image: string;
         imageAlt: string;
+        title: string;
         _id: string;
       }[];
     };

@@ -10,6 +10,7 @@
     "create-admin": "ts-node --project tsconfig.json scripts/create-admin.ts"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-label": "^2.1.7",

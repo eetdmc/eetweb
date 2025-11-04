@@ -159,7 +159,14 @@ const Footer = () => {
                       viewport={{ once: true }}
                       className="text-30 leading-lhtext-30 font-extralight text-white"
                     >
-                      <Link href={"#"}>Instagram</Link>
+                      <Link
+                        href={
+                          "https://www.instagram.com/eet_destinationmanagement"
+                        }
+                        target="_blank"
+                      >
+                        Instagram
+                      </Link>
                     </motion.li>
                     <motion.li
                       variants={moveUp(0.4)}
@@ -168,7 +175,14 @@ const Footer = () => {
                       viewport={{ once: true }}
                       className="text-30 leading-lhtext-30 font-extralight text-white"
                     >
-                      <Link href={"#"}>Linkedin</Link>
+                      <Link
+                        href={
+                          "https://www.linkedin.com/company/eet-destinationmanagement"
+                        }
+                        target="_blank"
+                      >
+                        Linkedin
+                      </Link>
                     </motion.li>
                     <motion.li
                       variants={moveUp(0.6)}

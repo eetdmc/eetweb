@@ -56,6 +56,9 @@ const Partners = ({
                       className="object-contain w-full h-full"
                     />
                   </div>
+                  {/* <p className="font-light text-34 text-black leading-[1.294117647058824] max-w-[18ch]">
+                    {partner?.title}
+                  </p> */}
                 </motion.div>
               </SwiperSlide>
             ))}

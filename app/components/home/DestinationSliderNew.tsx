@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { assets } from "@/public/assets";
 import { Navigation } from "swiper/modules";
- 
+
 import {
   DestinationData,
   DestinationSixthItem,
@@ -80,7 +80,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
 
     // Animate with GSAP
     gsap.to(container, {
-      x: targetPosition, 
+      x: targetPosition,
       duration: 1.2,
       ease: "power2.inOut",
       force3D: true,
@@ -127,7 +127,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
     dragOffsetRef.current = diff;
     const newX = dragStartRef.current.startX + diff;
 
-    gsap.set(container, { x: newX }); 
+    gsap.set(container, { x: newX });
   };
 
   const handleDragEnd = () => {
@@ -197,7 +197,9 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
               <div
                 key={destination.id}
                 className={`slide flex-shrink-0 h-full relative transition-all duration-700 flex flex-col max-h-[792px] ${
-                  index === currentSlide ? "mt-0" : "mt-44 xl:mt-[160px] 3xl:mt-[260px]"
+                  index === currentSlide
+                    ? "mt-0"
+                    : "mt-44 xl:mt-[160px] 3xl:mt-[260px]"
                 }`}
                 style={{ width: "80vw" }}
               >
@@ -241,12 +243,12 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-b from-0 from-transparent to-100 to-black/50" />
                   <div className="flex gap-6 relative z-40">
-                    <Link href={`/destination/${destination.slug}`}>
+                    <Link href={`/destinations/${destination.slug}`}>
                       <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border border-primary text-white rounded-3xl hover:bg-primary transition-colors font-light font-funnel-display">
                         Know More
                       </button>
                     </Link>
-                    <Link href="#">
+                    <Link href="/contact-us">
                       <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border-1 border-primary text-white rounded-3xl hover:bg-white hover:text-gray-900 transition-colors font-light font-funnel-display">
                         Enquire Now
                       </button>
@@ -268,9 +270,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                     }`}
                   >
                     <div className="pr-8 xl:pr-20 3xl:pr-[212px]">
-                      <h2
-                        className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight"
-                      >
+                      <h2 className="text-50 font-light text-black mb-6 xl:mb-8 leading-tight">
                         {destination.location}
                       </h2>
                     </div>
@@ -279,16 +279,12 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                         index === currentSlide ? "block" : "hidden"
                       }`}
                     >
-                      <h3
-                        className="text-50 font-light text-black mb-[10px] leading-[0.9]"
-                      >
+                      <h3 className="text-50 font-light text-black mb-[10px] leading-[0.9]">
                         {destination.destinationCount}
                       </h3>
-                      <h4
-                        className="text-lggray text-19 font-light leading-[1.526315789473684] font-inter"
-                      >
+                      <h4 className="text-lggray text-19 font-light leading-[1.526315789473684] font-inter">
                         Destinations
-                      </ h4>
+                      </h4>
                     </div>
 
                     <div
@@ -403,7 +399,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
         <Swiper
           className="destinations-slider"
           modules={[Navigation]}
-          slidesPerView={1}  
+          slidesPerView={1}
           spaceBetween={30}
           pagination={{ clickable: true }}
           navigation={{ prevEl: ".mobile-prev", nextEl: ".mobile-next" }}
@@ -424,7 +420,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                       Know More
                     </button>
                     <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border-1 border-primary text-white rounded-3xl hover:bg-white hover:text-gray-900 transition-colors font-light font-funnel-display">
-                      Enquire Now
+                      Connect to Contact
                     </button>
                   </div>
                 </div>
