@@ -289,6 +289,7 @@ import {
 } from "react-icons/fa6";
 import { fetchMenuItems } from "@/lib/menuItems";
 import { MenuItem } from "./type";
+import { LogIn } from "lucide-react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -383,13 +384,33 @@ const NavBar = () => {
       </div>
 
       {/* ===== Partner Login Button ===== */}
-      <div className="ml-auto mr-2 w-fit lg:m-0">
-        <Link href="/partner-login" className="cursor-pointer font-inter bg-white px-2 py-2 xl:px-5 xl:pt-[15px] xl:pb-[13px] flex items-center gap-[6px] uppercase rounded-full relative group hover:text-white">
-          <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
+      <div className="ml-auto mr-3 w-fit lg:m-0 flex gap-2 lg:gap-3">
+        <Link
+          href="/partner-login"
+          className="flex-shrink-0 cursor-pointer font-inter bg-white px-2 xl:px-5 h-10 sm:h-12 lg:h-12 w-10 md:w-fit  flex items-center gap-[6px] uppercase rounded-full relative group hover:text-white overflow-hidden"
+        >
+          {/* expanding black overlay inside the pill */}
+          <div className="absolute inset-0 h-full bg-black rounded-full origin-left scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></div>
+
+          {/* button text */}
           <span className="relative z-10 font-[300] leading-[1] text-black group-hover:text-white hidden lg:block">
             Partner Login
           </span>
-          <span>
+          <span className="relative z-10 font-[300] leading-[1] text-primary group-hover:text-white lg:hidden">
+            <LogIn size={18} />
+          </span>
+        </Link>
+
+        <Link
+          href="https://online.eet.ae/b2b"
+          target="_blank"
+          className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 lg:w-12 lg:h-12 cursor-pointer font-inter bg-white flex items-center justify-center uppercase rounded-full relative group hover:text-white overflow-hidden"
+        >
+          {/* expanding black overlay inside the circle */}
+          <div className="absolute inset-0 w-0 h-full z-0 bg-black transition-all duration-300 ease-in-out rounded-full group-hover:w-full"></div>
+
+          {/* icon/content */}
+          <span className="relative z-10 flex items-center justify-center">
             <Image
               src={assets.user}
               alt="User"
