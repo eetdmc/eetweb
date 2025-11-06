@@ -144,7 +144,7 @@ const HeroBottom = ({ data }: { data: SecondSection }) => {
         </div>
         <div
           ref={imageContainerRef}
-          className="hidden xl:block mt-15 xl:mt-0 xl:absolute xl:bottom-[-80%] right-5 xl:right-0 w-full    md:h-auto xl:w-[699px] xl:h-[279px] overflow-hidden"
+          className="hidden xl:block mt-15 xl:mt-0 xl:absolute xl:bottom-[-80%] right-5 xl:right-3 w-full    md:h-auto xl:w-[699px] xl:h-[279px] overflow-hidden"
         >
           <div ref={imageRef} className="w-full h-full">
             <Image

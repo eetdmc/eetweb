@@ -201,7 +201,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                     ? "mt-0"
                     : "mt-44 xl:mt-[160px] 3xl:mt-[260px]"
                 }`}
-                style={{ width: "80vw" }}
+                style={{ width: "78vw" }}
               >
                 {/* top title */}
                 <div
@@ -225,7 +225,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                   className={`relative z-20 flex flex-col items-end justify-end pb-5 xl:p-[30px] mr-25 3xl:mr-[205px] transition-all duration-700 
                   ${
                     index === currentSlide
-                      ? "ml-5 scale-y-100 h-[441px] 3xl:h-[620px]"
+                      ? " scale-y-100 h-[441px] 3xl:h-[620px]"
                       : "scale-y-100 h-[400px] xl:h-[350px] 3xl:h-[441px]"
                   }`}
                 >
@@ -260,7 +260,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                 <div
                   className={`flex items-center xl:mr-25 3xl:mr-[205px] ${
                     index === currentSlide
-                      ? "relative z-10 ml-5 mt-6 xl:mt-[44px]"
+                      ? "relative z-10  mt-6 xl:mt-[40px]"
                       : "top-0 z-0 opacity-0"
                   }`}
                 >
@@ -288,7 +288,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                     </div>
 
                     <div
-                      className={`mb-12 space-y-1 ${
+                      className={`mb-[41px] space-y-1 ${
                         index === currentSlide ? "block" : "hidden"
                       }`}
                     >
@@ -311,14 +311,14 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
         </div>
 
         {/* Pagination - OVERLAID on top right */}
-        <div className="absolute right-0 top-10 3xl:top-[74px] z-50 pr-11 pb-6 bg-white">
+        <div className="absolute right-0 top-10 3xl:top-[74px] z-50 pr-19 pb-6 bg-white">
           {/* Progress lines */}
-          <div className="flex mb-6">
+          <div className="flex mb-2">
             {destinations.map((_, index) => (
               <div
                 key={index}
-                className={`w-8 xl:w-[65.25px] h-0.5 transition-all duration-500 ${
-                  index === currentSlide ? "bg-primary" : "bg-black/30"
+                className={`w-8  h-[1px] transition-all duration-500 ${
+                  index === currentSlide ? "bg-primary xl:w-[93px]" : "bg-black/30 xl:w-[56px]"
                 }`}
               />
             ))}
@@ -335,7 +335,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
             </div>
           </div>
 
-          <div className="flex gap-5 relative z-30">
+          <div className="flex gap-5 relative z-30 pl-1">
             <button
               className={`desktop-prev ${
                 currentSlide === 0

@@ -139,8 +139,8 @@ const PhotoGallery = ({ data }: Props) => {
                   >
                     {/* Image */}
                     <Image
-                      width={1920}
-                      height={1280}
+                      width={1116}
+                      height={629}
                       src={slide.image}
                       alt={slide.imageAlt}
                       className="w-full h-full object-contain"
