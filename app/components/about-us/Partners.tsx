@@ -25,7 +25,7 @@ const Partners = ({
             modules={[Pagination, Autoplay]}
             slidesPerView={1}
             spaceBetween={245}
-            autoplay={{ delay: 3000 }}
+            // autoplay={{ delay: 3000 }}
             pagination={{
               clickable: true,
               el: ".awards-pagination",
@@ -33,8 +33,10 @@ const Partners = ({
               bulletActiveClass: "awards-bullet-active",
             }}
             breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 4 },
+              0: { slidesPerView: 2,spaceBetween: "10" },
+              640: { slidesPerView: 2,spaceBetween: "100" },
+              1024: { slidesPerView: 3 ,   spaceBetween: "100" },
+              1420: { slidesPerView: 4 },
             }}
             className="!pb-20 relative"
           >
@@ -48,7 +50,7 @@ const Partners = ({
                   viewport={{ once: true }}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="w-full h-[101px] relative">
+                  <div className=" h-[101px] w-[120px] sm:w-[150px]   lg:w-[150px]   xl:w-[200px] relative">
                     <Image
                       src={partner.image}
                       alt={partner.imageAlt}
@@ -63,7 +65,7 @@ const Partners = ({
               </SwiperSlide>
             ))}
             {/* Custom pagination container */}
-            <div className="awards-pagination absolute -bottom-20 left-0 right-0"></div>
+            <div className="awards-pagination absolute bottom-10  lg:-bottom-20 left-0 right-0"></div>
           </Swiper>
         </div>
       </div>

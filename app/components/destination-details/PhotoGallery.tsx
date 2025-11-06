@@ -41,9 +41,9 @@ const PhotoGallery = ({ data }: Props) => {
     );
   };
   return (
-    <section className="pt-10 pb-12 xl:py-20  2xl:py-30  3xl:pt-50 3xl:pb-[266.06px] ">
+    <section className="pt-10 pb-12 xl:py-20  2xl:py-30  3xl:pt-[150px] 3xl:pb-[150px] ">
       <div className="container">
-        <div className="max-w-[1417.9px] flex items-center justify-between  mb-10 xl:mb-12 3xl:mb-20">
+        <div className="max-w-[1160px] 3xl:max-w-[1465px] flex items-center justify-between  mb-10 xl:mb-12 3xl:mb-20">
           <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] text-black heading-one">
             {data.title}
           </h2>

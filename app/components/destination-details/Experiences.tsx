@@ -23,7 +23,7 @@ const Experiences = ({ data }: Props) => {
     <section className="sec-noise py-15 xl:py-20 2xl:pt-[140px] 2xl:pb-[150px]">
       <div className="container">
         <div className="w-full relative mb-10 md:mb-15  xl:mb-20 2xl:mb-[120px] flex items-center justify-between">
-          <h2 className="relative md:left-[100px] 3xl:left-0 heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0   text-black xl:mx-auto xl:text-center">
+          <h2 className="relative xl:left-[50px] 3xl:left-0 heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0   text-black xl:mx-auto xl:text-center">
             {data.title}
           </h2>
           <div className="ml-0 flex items-center gap-5 group/main">

@@ -236,7 +236,7 @@ const Hero = ({ data }: HeroProps) => {
             return (
               <SwiperSlide key={index} className="w-full h-full relative ">
                 <div className="h-full z-10 relative">
-                  <div className="flex flex-col justify-end h-full pb-10 xl:pb-30 pt-25 xl:pt-0 ">
+                  <div className="flex flex-col justify-end h-full pb-10 xl:pb-21 pt-25 xl:pt-0 ">
                     <div className="flex flex-wrap justify-between items-end">
                       <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[calc(30%+10px)] flex flex-col  justify-end  pb-10 xl:pb-0">
                         <motion.h2

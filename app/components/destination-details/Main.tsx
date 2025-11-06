@@ -1,8 +1,7 @@
 "use client";
 import { motion } from "motion/react";
-import { moveUp, moveRight, moveLeft } from "../motionVarients";
-import { useTextReveal } from "@/hooks/useTextReveal";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import { moveUp, moveRight, moveLeft, moveUpfourty } from "../motionVarients";
+import { useTextReveal } from "@/hooks/useTextReveal"; 
 import type { DestinationFirstSection, DestinationSecondSection } from "./type";
 
 type Props = {
@@ -14,7 +13,7 @@ const Main = ({ data, about }: Props) => {
   useTextReveal({ selector: ".heading" });
   useTextReveal({ selector: ".subtitle" });
   return (
-    <section className="pb-15 xl:pb-50 ">
+    <section className="pb-15 xl:pb-[150px] ">
       <div className="pm-noise pt-10 xl:pt-25">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
@@ -32,7 +31,8 @@ const Main = ({ data, about }: Props) => {
         <div className="grid grid-cols-[4fr_1.5fr]">
           <motion.video
             variants={moveRight(0.4)}
-            initial="hidden"
+            initial="hidden" 
+            webkit-playsinline 
             animate="show"
             viewport={{ once: true, amount: "all" }}
             src={data.firstVideo}
@@ -46,6 +46,7 @@ const Main = ({ data, about }: Props) => {
             variants={moveLeft(0.5)}
             initial="hidden"
             animate="show"
+            webkit-playsinline 
             viewport={{ once: true, amount: "all" }}
             src={data.secondVideo}
             autoPlay
@@ -74,15 +75,15 @@ const Main = ({ data, about }: Props) => {
               {about.title}
             </h2>
 
-            <ScrollReveal
-              baseOpacity={0}
-              enableBlur={true}
-              baseRotation={5}
-              blurStrength={10}
-              containerClassName="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]"
+            <motion.p
+              variants={moveUpfourty(0.4)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              className="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]"
             >
               {about.description}
-            </ScrollReveal>
+            </motion.p>
           </div>
         </div>
       </div>

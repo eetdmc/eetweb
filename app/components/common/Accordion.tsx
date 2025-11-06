@@ -10,49 +10,55 @@ type AccordionProps = {
   title: string;
   content: string;
   image: string | StaticImageData;
+   isOpen: boolean;
+  onToggle: () => void;
+  
 };
 
-const Accordion: React.FC<AccordionProps> = ({ title, content, image }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Accordion: React.FC<AccordionProps> = ({ title, content, image,isOpen, onToggle }: AccordionProps) => {
+ 
   const contentRef = useRef<HTMLDivElement>(null);
-  const iconRef = useRef<SVGSVGElement>(null);
+  const iconRef = useRef<SVGSVGElement>(null); 
 
-  useEffect(() => {
-    if (contentRef.current) {
-      if (isOpen) {
-        gsap.to(contentRef.current, {
-          height: "auto",
-          duration: 0.4,
-          ease: "power2.out",
-        });
-        gsap.to(iconRef.current, {
-          rotate: 180,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      } else {
-        gsap.to(contentRef.current, {
-          height: 0,
-          duration: 0.4,
-          ease: "power2.inOut",
-        });
-        gsap.to(iconRef.current, {
-          rotate: 0,
-          duration: 0.3,
-          ease: "power2.inOut",
-        });
-      }
+ useEffect(() => {
+    if (!contentRef.current) return;
+
+    if (isOpen) {
+      gsap.to(contentRef.current, {
+        height: "auto",
+        duration: 0.4,
+        ease: "power2.out",
+      });
+      gsap.to(iconRef.current, {
+        rotate: 180,
+        duration: 0.3,
+        ease: "power2.out",
+      });
+    } else {
+      gsap.to(contentRef.current, {
+        height: 0,
+        duration: 0.4,
+        ease: "power2.inOut",
+      });
+      gsap.to(iconRef.current, {
+        rotate: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
     }
   }, [isOpen]);
 
   return (
     <div className="border-b border-gray-300 bg-white/70 mb-1 px-4 rounded-[5px]">
-      <button onClick={() => setIsOpen(!isOpen)} className="w-full flex justify-between items-center py-4 text-left">
+      <button 
+        onClick={onToggle} 
+        className="w-full flex justify-between items-center py-4 text-left">
         <span className="text-lg font-medium">{title}</span>
         <ChevronDown ref={iconRef} className="w-5 h-5 transform" />
       </button>
 
-      <div ref={contentRef} className="overflow-hidden h-0 text-gray-600">
+      <div ref={contentRef}  
+       className={`overflow-hidden h-0 text-gray-600 `}>
         <div className="p-4 border-t border-[#d6d6d6]">
           <Image src={image} alt="Arrow" width={600} height={600} className="w-full h-[300px] md:h-[380px]  xl:h-[200px]  object-cover mb-5" />
           <p> {content}</p>

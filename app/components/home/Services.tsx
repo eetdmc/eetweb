@@ -24,6 +24,11 @@ const Services = ({
   const [displayedService, setDisplayedService] = useState<number>(2);
   const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleAccordion = (index: number) => {
+    setActiveIndex(prevIndex => (prevIndex === index ? null : index));
+  };
   const formattedServices = services?.map((service: ServiceData) => ({
     title: service.firstSection.mainTitle,
     description: service.firstSection.description,
@@ -178,7 +183,7 @@ const Services = ({
   return (
     <section
       ref={sectionRef}
-      className="pt-10 xl:pt-[138px] pb-15 xl:pb-[150px] sec-noise overflow-hidden"
+      className="pt-10 xl:pt-[138px] pb-15 xl:pb-[138px] sec-noise overflow-hidden"
     >
       <div className="container">
         <div className="grid grid-cols-1 gap-3 xl:grid-cols-[1020px_auto] 3xl:grid-cols-[1282px_auto]">
@@ -245,7 +250,7 @@ const Services = ({
             </div>
 
             {/* Service Details */}
-            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px] pl-15 xl:pl-[106px]">
+            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px] pl-15 xl:pl-[70px] 3xl:pl-[106px]">
               <div className="relative">
                 {/* <div
                   className={`transition-all duration-300 ease-in-out ${isTransitioning
@@ -263,7 +268,7 @@ const Services = ({
                   {currentService.title}
                 </h3>
                 <p
-                  className={`text-19 leading-[1.526315789473684] font-light text-[#484848] font-inter max-w-[36ch] mb-12 xl:mb-[63px] transition-all duration-700 ease-in-out   ${
+                  className={`text-19 leading-[1.526315789473684] font-light text-[#484848] font-inter max-w-[36ch] mb-12 xl:mb-10 3xl:mb-[63px] transition-all duration-700 ease-in-out   ${
                     isTransitioning
                       ? "opacity-0 translate-y-6"
                       : "opacity-100 translate-y-0"
@@ -296,6 +301,9 @@ const Services = ({
               title={service.title}
               content={service.description}
               image={service.image}
+              
+               isOpen={activeIndex === index}
+              onToggle={() => toggleAccordion(index)}
             />
           ))}
         </div>

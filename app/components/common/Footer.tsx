@@ -34,7 +34,7 @@ const Footer = () => {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="absolute -top-[145px] sm:-top-[135px] md:-top-[220px] lg:-top-[230px] 2xl:-top-[250px] 3xl:-top-[215px]
-               w-full min-h-[160px] md:min-h-[265px] lg:min-h-[335px] xl:h-auto xl:max-h-[435px] left-0"
+               w-full  left-0"
             >
               {/* Background image */}
               <div className="w-full h-full absolute z-0">
@@ -49,8 +49,9 @@ const Footer = () => {
               {/* Overlay */}
               <div className="absolute top-0 bg-black/60 w-full h-full z-10"></div>
               {/* Content */}
-              <div className="relative flex flex-col h-full justify-center items-center z-20 px-8 xl:px-15 3xl:px-[142px] py-10 md:py-12 xl:py-30 3xl:py-[145px]">
-                <div className="flex items-center justify-between flex-wrap sm:flex-nowrap gap-5">
+              <div className="relative flex flex-col h-full justify-center items-center z-20 
+              px-8 xl:px-30 3xl:px-[142px] py-10 md:py-20 lg:py-30  3xl:py-[145px]">
+                <div className="flex items-center w-full justify-between flex-wrap sm:flex-nowrap gap-5">
                   <motion.h2
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}

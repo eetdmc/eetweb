@@ -77,7 +77,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]"
+              className="text-19 leading-lhtext-19 font-light font-inter xl:max-w-[45ch]"
             >
               {mission.description}
             </motion.p>
@@ -98,7 +98,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
                   alt={vision.imageAlt}
                   width={1920}
                   height={1080}
-                  className="w-full h-[250px] max-h-full md:h-[400px] xl:max-h-[750px] object-cover"
+                  className="w-full h-[250px] max-h-full md:h-[350px] 2xl:h-[400px] 3xl:h-[446px] xl:max-h-[750px] object-cover"
                 />
               </motion.div>
               <motion.h2
@@ -115,7 +115,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                className="text-19 leading-lhtext-19 font-light font-inter max-w-[40ch]"
+                className="text-19 leading-lhtext-19 font-light font-inter xl:max-w-[45ch]"
               >
                 {vision.description}
               </motion.p>

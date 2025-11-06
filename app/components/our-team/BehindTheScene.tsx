@@ -1,11 +1,10 @@
 "use client";
-import Image from "next/image";
-import ScrollReveal from "@/components/ui/ScrollReveal";
+import Image from "next/image"; 
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "motion/react";
-import { moveUp } from "../motionVarients";
+import { moveUp,moveUpfourty } from "../motionVarients";
 import { TeamData } from "./type";
 
 type Props = {
@@ -64,47 +63,43 @@ const BehindTheScene = ({ data }: Props) => {
     >
       <div className="container">
         <div className="xl:max-w-[1285px] 2xl:max-w-[1400px] ml-auto mb-15 xl:mb-25 2xl:mb-[132px]">
-          <ScrollReveal
-            as="h2"
-            baseOpacity={0}
-            enableBlur={true}
-            baseRotation={5}
-            blurStrength={10}
-            rotationEnd="bottom 80%"
-            wordAnimationEnd="bottom 80%"
-            containerClassName="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black xl:max-w-[23ch]"
+          <motion.h2
+            variants={moveUpfourty(0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+           className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black xl:max-w-[23ch]"
           >
             {data.title}
-          </ScrollReveal>
+          </motion.h2>
         </div>
-        <div className="flex flex-wrap lg:flex-nowrap gap-y-10 justify-between">
+        <div className="flex flex-wrap lg:flex-nowrap gap-y-10 justify-end">
           <motion.div
             variants={moveUp(0.4)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: "all" }}
+            className="m-auto sm:mr-auto  sm:ml-0"
           >
             <Image
               src={data.firstImage}
               alt={data.firstImageAlt}
               width={408}
               height={498}
-              className="w-auto h-full "
+              className="w-auto h-full sm:h-[300px] md:h-[300px] lg:h-full "
             />
           </motion.div>
           <div>
-            <div className="ml-auto lg:pl-15 pr-2 3xl:pr-[145px]">
-              <ScrollReveal
-                baseOpacity={0}
-                enableBlur={true}
-                baseRotation={5}
-                blurStrength={20}
-                rotationEnd="bottom 80%"
-                wordAnimationEnd="bottom 80%"
-                containerClassName="text-30 md:text-[24px] xl:text-30 leading-[1.333333333333333] font-light max-w-[59ch]"
+            <div className="lg:ml-auto lg:pl-15   3xl:pr-[135px]">
+              <motion.p
+                variants={moveUpfourty(0.4)}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+                className="text-30 md:text-[24px] xl:text-30 leading-[1.333333333333333] font-light max-w-[58ch]"
               >
                 {data.description}
-              </ScrollReveal>
+              </motion.p>
             </div>
             <div ref={imageContainerRef}>
               <div ref={imageRef}>
@@ -113,7 +108,7 @@ const BehindTheScene = ({ data }: Props) => {
                   alt={data.secondImageAlt}
                   width={406}
                   height={192}
-                  className="mt-8 md:mt-15 xl:mt-[146px] ml-auto"
+                  className="mt-8 md:mt-15 xl:mt-[146px] w-full sm:w-auto sm:ml-auto"
                 />
               </div>
             </div>
