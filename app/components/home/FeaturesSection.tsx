@@ -99,7 +99,7 @@ const FeaturesSection = ({ data }: Props) => {
               alt={data.bigImageAlt}
               width={1000}
               height={1000}
-              className="hidden xl:block h-40 w-full   xl:h-full object-cover object-bottom xl:object-right"
+              className="hidden xl:block h-40 w-full   xl:h-full object-cover object-bottom xl:object-right max-h-[630px]"
             />
             <Image
               src={data.smallImage}

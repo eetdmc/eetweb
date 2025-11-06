@@ -73,7 +73,7 @@ const Testimonials = ({ data }: Props) => {
                       variants={moveDown(0.2)}
                       initial="hidden"
                       whileInView="show"
-                      viewport={{ once: false, amount: "all" }}
+                      viewport={{ once: false, amount: 0.2 }}
                     >
                       <Image
                         src={assets.quoteUp}
@@ -101,20 +101,22 @@ const Testimonials = ({ data }: Props) => {
                         {item.description}
                       </motion.p>
                     </div>
-                    <motion.div
-                      variants={moveDown(0.4)}
-                      initial="hidden"
-                      whileInView="show"
-                      viewport={{ once: false, amount: "all" }}
-                    >
-                      <Image
-                        src={assets.quoteDown}
-                        alt="quote-down"
-                        width={227}
-                        height={205.2}
-                        className="w-8 xl:w-[227px] h-auto"
-                      />
-                    </motion.div>
+                   <motion.div
+                  initial={{ opacity: 0, y: -50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  viewport={{ once: false, amount: 0.2 }}  
+                >
+                  <Image
+                    src={assets.quoteDown}
+                    alt="quote-down"
+                    width={227}
+                    height={205.2}
+                    className="w-8 xl:w-[227px] h-auto"
+                  />
+                </motion.div>
+
+                     
                   </div>
                 </div>
               </SwiperSlide>

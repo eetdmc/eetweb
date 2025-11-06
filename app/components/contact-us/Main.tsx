@@ -13,7 +13,7 @@ const Main = ({ data }: MainProps) => {
   useTextReveal({ selector: ".subtitle" });
   return (
     <section className="pb-15">
-      <div className="pm-noise pt-15 xl:pt-25">
+      <div className="pm-noise pt-15 xl:pt-23">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[104px]">
             <h3 className="subtitle text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">

@@ -58,7 +58,7 @@ const AccordionStyleThree: React.FC<AccordionProps> = ({ title, content, image, 
         </div>
          </div>
         {/* <ArrowDown ref={iconRef} className="xl:w-10 xl:h-[24.6px] text-primary transform absolute right-0" /> */}
-        <Image src={assets.arrowDown} ref={iconRef} alt="arrow-down" className="w-3 h-3 xl:w-[40px] xl:h-[40px] object-contain text-primary transform " />
+        <Image src={assets.arrowDown} ref={iconRef} alt="arrow-down" className="w-4 h-4 lg:w-3 lg:h-3 xl:w-[40px] xl:h-[40px] object-contain text-primary transform " />
     
        </div>
          </button>

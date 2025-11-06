@@ -413,7 +413,7 @@ const DestinationSliderNew: React.FC<{ destinations: DestinationData[] }> = ({
                     width={1000}
                     height={500}
                     alt={destination.location}
-                    className="w-full h-[300px] object-cover"
+                    className="w-full h-[300px] sm:h-[400px] xl:h-[300px] object-cover"
                   />
                   <div className="flex gap-6 z-40 absolute left-5 bottom-5">
                     <button className="px-4 py-2 xl:px-5 xl:py-3 leading-[1] bg-black/75 border border-primary text-white rounded-3xl hover:bg-primary transition-colors font-light font-funnel-display">

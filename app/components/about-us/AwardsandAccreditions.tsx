@@ -25,7 +25,7 @@ const Awards = ({
             modules={[Pagination, Autoplay]}
             slidesPerView={1}
             spaceBetween={30}
-            autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 3500 }}
             pagination={{
               clickable: true,
               el: ".awards-pagination",
@@ -64,7 +64,7 @@ const Awards = ({
               </SwiperSlide>
             ))}
             {/* Custom pagination container */}
-            <div className="awards-pagination absolute bottom-0 left-0 right-0"></div>
+            <div className="awards-pagination absolute bottom-10 lg:bottom-0 left-0 right-0"></div>
           </Swiper>
         </div>
       </div>

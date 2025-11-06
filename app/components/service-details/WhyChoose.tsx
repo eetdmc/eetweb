@@ -21,10 +21,13 @@ const WhyChoose = ({ data }: WhyChooseProps) => {
           {data.items.map((item, index) => (
             <div
               key={index}
-              className="pl-5 xl:pl-6 2xl:pl-[47px] pr-5 xl:pr-0 2xl:pr-0 3xl:first:border-l border-primary-light xl:min-h-[506px] flex flex-col xl:last:pt-5 group bg-gray-600/10 xl:bg-transparent py-5 xl:py-0 xl:bg-none justify-between lg:justify-normal"
+              className=" pr-5 xl:pr-0 2xl:pr-0  xl:min-h-[506px] flex flex-col xl:last:pt-5 group bg-gray-600/10 xl:bg-transparent py-5 xl:py-0 xl:bg-none justify-between lg:justify-normal"
             >
-              <div className="card-head">
-                <p className="text-19 leading-lhtext-19 font-inter text-primary crd-index pb-50px">
+             <div className={`pl-5 xl:pl-6 2xl:pl-[47px] ${
+                index === 0 ? "2xl:border-l border-primary-light" : ""
+              }`}>
+               <div className="card-head">
+                <p className="text-19 leading-lhtext-19 font-inter text-primary crd-index pb-3 xl:pb-50px">
                   {(index + 1).toString().padStart(2, "0")}
                 </p>
                 <h3 className="text-30 leading-[1.466666666666667] font-light pb-3 xl:pb-[25px]">
@@ -49,6 +52,7 @@ const WhyChoose = ({ data }: WhyChooseProps) => {
                   className="h-full w-full    xl:w-[383px] object-contain flex"
                 />
               </motion.div>
+             </div>
             </div>
           ))}
         </div>

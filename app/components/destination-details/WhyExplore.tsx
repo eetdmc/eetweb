@@ -41,7 +41,7 @@ const WhyExplore = ({ data }: Props) => {
                     alt={items[0].imageAlt}
                     className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black">
+                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black !max-w-[21ch]">
                     {items[0].title}
                   </h3>
                 </motion.div>
@@ -108,7 +108,7 @@ const WhyExplore = ({ data }: Props) => {
                     alt={items[3].imageAlt}
                     className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black">
+                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black !max-w-[21ch]">
                     {items[3].title}
                   </h3>
                 </motion.div>
