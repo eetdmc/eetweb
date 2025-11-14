@@ -1,4 +1,4 @@
-import Index from "../components/home";
+import Index from "../components/homeV2";
 export default async function Home() {
   const response = await fetch(`${process.env.BASE_URL}/api/admin/home`, {
     next: { revalidate: 60 },

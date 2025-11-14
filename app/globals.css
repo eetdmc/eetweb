@@ -28,6 +28,7 @@
   --text-90: clamp(3rem, 7vw + 0.5em, 90px);
   --text-80: clamp(2.5rem, 7vw + 0.1em, 80px);
   --text-70: clamp(1.6rem, 5vw + 0.1em, 70px);
+  --text-65: clamp(1.6rem, 5vw + 0.1em, 65px);
   --text-60: clamp(1.5rem, 4vw + 0.1em, 60px);
   --text-55: clamp(1.5rem, 5vw + 0.1em, 55px);
   --text-50: clamp(1.5rem, 5vw + 0.1em, 50px);
@@ -71,6 +72,7 @@
   --text-90: var(--text-90);
   --text-80: var(--text-80);
   --text-70: var(--text-70);
+  --text-65: var(--text-65);
   --text-60: var(--text-60);
   --text-50: var(--text-50);
   --text-55: var(--text-55);
