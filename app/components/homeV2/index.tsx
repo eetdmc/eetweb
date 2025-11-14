@@ -24,7 +24,7 @@ const Index = ({ data, services, destinations }: Props) => {
       <Services data={data.fourthSection} services={services} />
 
       <DestinationSection
-        data={data.fifthSection}
+        // data={data.fifthSection}
         destinations={destinations}
       />
       {/* <BlogSlider /> */}

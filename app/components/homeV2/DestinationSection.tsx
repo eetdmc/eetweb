@@ -1,15 +1,13 @@
 "use client";
 // import DestinationSliderNew from "./DestinationSliderNew";
 import { useTextReveal } from "@/hooks/useTextReveal";
-import { HomeData } from "./type";
+// import { HomeData } from "./type";
 import { DestinationData } from "../destination-details/type";
 import DestinationSliderV2 from "./DestinationSliderV2";
 
 const DestinationSection = ({
-  data,
   destinations,
 }: {
-  data: HomeData["fifthSection"];
   destinations: DestinationData[];
 }) => {
   // Animate headings

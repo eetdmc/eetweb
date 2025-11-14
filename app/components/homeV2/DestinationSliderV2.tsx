@@ -94,13 +94,13 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
             nextEl: nextRef.current,
             prevEl: prevRef.current,
           }}
-          onInit={(swiper) => {
-            // @ts-ignore
-            swiper.params.navigation.nextEl = nextRef.current;
-            // @ts-ignore
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          onBeforeInit={(swiper) => {
+            if (!swiper.params.navigation) return;
+
+            Object.assign(swiper.params.navigation, {
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            });
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           className="w-full"

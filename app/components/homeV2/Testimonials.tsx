@@ -18,7 +18,7 @@ interface Props {
 }
 const Testimonials = ({ data }: Props) => {
   const [current, setCurrent] = useState(0);
-  const totalSlides = data.items.length;
+  // const totalSlides = data.items.length;
   // useTextReveal({selector: ".title", stagger: 0.03, duration: 0.9, y: 50, rotateX: -90, ease: "power3.out", start: "bottom 50%"});
   // Animate headings
   useTextReveal({ selector: ".heading" });
