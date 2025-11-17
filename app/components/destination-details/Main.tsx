@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 import { moveUp, moveRight, moveLeft, moveUpfourty } from "../motionVarients";
-import { useTextReveal } from "@/hooks/useTextReveal"; 
+import { useTextReveal } from "@/hooks/useTextReveal";
 import type { DestinationFirstSection, DestinationSecondSection } from "./type";
 
 type Props = {
@@ -13,14 +13,14 @@ const Main = ({ data, about }: Props) => {
   useTextReveal({ selector: ".heading" });
   useTextReveal({ selector: ".subtitle" });
   return (
-    <section className="pb-15 xl:pb-[150px] ">
+    <section className="pb-15 xl:pb-[170px] ">
       <div className="pm-noise pt-10 xl:pt-25">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
-            <h3 className="text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px] heading">
+            <h3 className="text-19 leading-lhtext-19 font-light text-black mb-3 xl:mb-[40px] heading">
               {data.mainTitle}
             </h3>
-            <h1 className="text-60 xl:text-80 leading-[1.25] font-light text-black max-w-7xl mx-auto subtitle">
+            <h1 className="text-60 xl:text-65 leading-[1.153846153846154] font-light text-black max-w-7xl mx-auto subtitle">
               {data.subTitle}
             </h1>
           </div>
@@ -31,8 +31,9 @@ const Main = ({ data, about }: Props) => {
         <div className="grid grid-cols-[4fr_1.5fr]">
           <motion.video
             variants={moveRight(0.4)}
-            initial="hidden" 
-            webkit-playsinline 
+            initial="hidden"
+            // webkit-playsinline
+            playsInline
             animate="show"
             viewport={{ once: true, amount: "all" }}
             src={data.firstVideo}
@@ -46,7 +47,8 @@ const Main = ({ data, about }: Props) => {
             variants={moveLeft(0.5)}
             initial="hidden"
             animate="show"
-            webkit-playsinline 
+            // webkit-playsinline
+            playsInline
             viewport={{ once: true, amount: "all" }}
             src={data.secondVideo}
             autoPlay
@@ -59,19 +61,19 @@ const Main = ({ data, about }: Props) => {
       </div>
       <div className="container">
         <div className="xl:max-w-[1135px] mx-auto mr-10 xl:mr-[107px] 2xl:mr-[147px]">
-          <div className="border-b border-primary-light pb-10 xl:pb-[150px]">
+          <div className="border-b border-primary-light pb-10 xl:pb-[120px]">
             <motion.p
               variants={moveUp(0.2)}
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: "all" }}
-              className="text-30 leading-[1.333333333333333] font-light "
+              className="text-19 leading-lhtext-19 font-medium font-inter text-black"
             >
               {data.description}
             </motion.p>
           </div>
           <div className="pt-10 xl:pt-[50px] ">
-            <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black heading">
+            <h2 className="text-50 font-light leading-[1] mb-5 xl:mb-[30px] text-black heading font-sans">
               {about.title}
             </h2>
 
@@ -80,7 +82,7 @@ const Main = ({ data, about }: Props) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]"
+              className="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch] text-black"
             >
               {about.description}
             </motion.p>
