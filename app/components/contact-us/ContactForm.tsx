@@ -211,8 +211,8 @@ export default function ContactForm() {
                           <span
                             className={`${
                               enquireValue
-                                ? "text-foreground absolute -top-11"
-                                : "text-foreground absolute -top-11" // placeholder style
+                                ? "text-black absolute -top-11"
+                                : "text-black absolute -top-11" // placeholder style
                             }`}
                           >
                             {enquireValue
@@ -316,7 +316,7 @@ export default function ContactForm() {
                   whileInView="show"
                   viewport={{ once: true, amount: "all" }}
                   htmlFor="message"
-                  className="absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
+                  className="absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
                 >
                   Message
                 </motion.label>
