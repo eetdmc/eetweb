@@ -65,7 +65,7 @@ export const emiratesData = [
     name: "Abu Dhabi",
     image: "/assets/images/destinations/details/emirates/1.jpg",
     description:
-      "Abu Dhabi, the capital of the UAE, blends deep-rooted heritage with modern sophistication. From its iconic Sheikh Zayed Grand Mosque and world-class museums to thrilling adventure parks and pristine beaches, the emirate offers unforgettable experiences for every traveler. Abu Dhabi is known for its serene landscapes, luxury resorts, rich culture, safe environment and endless sunshine. It’s a perfect destination for families, culture lovers and adventure seekers looking to explore the true essence of the Emirates.",
+      "Abu Dhabi, the capital of the UAE, blends deep-rooted heritage with modern sophistication. From its iconic Sheikh Zayed Grand Mosque and world-class museums to thrilling adventure parks and pristine beaches, the emirate offers unforgettable experiences for every traveler. Abu Dhabi is known for its serene landscapes, luxury resorts, rich culture, safe environment and endless sunshine.",
   },
   {
     name: "Dubai",
@@ -77,24 +77,24 @@ export const emiratesData = [
     name: "Sharjah",
     image: "/assets/images/destinations/details/experiences/exp-2.jpg",
     description:
-      "Sharjah is the cultural heart of the UAE, offering a unique blend of history, art and authentic Emirati charm. Known for its beautifully preserved heritage districts, educational museums and traditional souks, Sharjah gives visitors an immersive experience of the region’s cultural legacy. With stunning beaches, family attractions and a strong focus on arts and literature, the emirate provides a peaceful and enriching getaway for travelers who appreciate culture and creativity.",
+      "Sharjah is the cultural heart of the UAE, offering a unique blend of history, art and authentic Emirati charm. Known for its beautifully preserved heritage districts, educational museums and traditional souks, Sharjah gives visitors an immersive experience of the region’s cultural legacy. With stunning beaches, family attractions and a strong focus on arts and literature",
   },
   {
     name: "Ajman",
     image: "/assets/images/destinations/details/experiences/exp-1.jpg",
     description:
-      "Ajman is a cozy and welcoming emirate known for its relaxed coastal lifestyle. With pristine beaches, charming waterfronts and a growing collection of boutique resorts, Ajman offers a calm and refreshing escape from the busy city life. The emirate highlights simplicity, hospitality and natural beauty — making it an ideal destination for families, couples and anyone seeking a peaceful retreat with modern comforts.",
+      "Ajman is a cozy and welcoming emirate known for its relaxed coastal lifestyle. With pristine beaches, charming waterfronts and a growing collection of boutique resorts, Ajman offers a calm and refreshing escape from the busy city life. The emirate highlights simplicity, ",
   },
   {
     name: "Fujairah",
     image: "/assets/images/destinations/details/experiences/exp-2.jpg",
     description:
-      "Fujairah stands out with its spectacular mountains, crystal-clear waters and a coastline perfect for diving, snorkeling and water adventures. As the only emirate facing the Gulf of Oman, it offers a unique natural environment combined with historical forts, archaeological sites and tranquil resorts. Whether you love outdoor activities or serene landscapes, Fujairah provides a refreshing and nature-rich experience in the UAE.",
+      "Fujairah stands out with its spectacular mountains, crystal-clear waters and a coastline perfect for diving, snorkeling and water adventures. As the only emirate facing the Gulf of Oman, it offers a unique natural environment combined with historical forts, archaeological sites and tranquil resorts.",
   },
   {
     name: "Um Al Quwain & Ras Al Khaimah",
     image: "/assets/images/destinations/details/experiences/exp-3.jpg",
     description:
-      "Umm Al Quwain and Ras Al Khaimah together showcase the UAE’s untouched natural beauty, traditional lifestyle and exciting outdoor adventures. From quiet mangroves and heritage sites in UAQ to the dramatic mountains, luxury resorts and adrenaline-filled activities in RAK, the region has something for every type of traveler. These emirates offer a perfect mix of tranquillity, culture and adventure — ideal for families, nature lovers and thrill seekers looking to explore beyond the big cities.",
+      "Umm Al Quwain and Ras Al Khaimah together showcase the UAE’s untouched natural beauty, traditional lifestyle and exciting outdoor adventures. From quiet mangroves and heritage sites in UAQ to the dramatic mountains, luxury resorts and adrenaline-filled activities in RAK, the region has something for every type of traveler.",
   },
 ];
