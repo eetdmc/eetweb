@@ -342,7 +342,7 @@ const Footer = () => {
                     viewport={{ once: true }}
                     className="text-19 leading-lhtext-19 font-[200] text-white font-sans hover:text-white/70 transition-colors"
                   >
-                    <Link href={item.href}>{item.label}</Link>
+                    <Link href={"/services"}>{item.label}</Link>
                   </motion.p>
                   // <motion.li
                   //   variants={moveUp(0.4)}

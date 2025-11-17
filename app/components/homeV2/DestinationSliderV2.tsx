@@ -14,6 +14,9 @@ import {
   DestinationSixthItem,
 } from "../destination-details/type";
 import { assets } from "@/public/assets";
+import { useTextReveal } from "@/hooks/useTextReveal";
+import { motion } from "framer-motion";
+import { moveLeft, moveUp } from "../motionVarients";
 
 const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
   destinations,
@@ -40,15 +43,23 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
 
   const active = formattedDestinations[activeIndex];
 
+  useTextReveal({ selector: ".heading" });
+
   return (
     <section className="overflow-hidden">
       <div className="container font-sans">
         {/* Header */}
         <div className="flex items-center justify-between mb-[30px] md:mb-[50px] xl:mb-[70px]">
-          <h2 className="font-sans text-50 font-light leading-[1] text-black ml-0 lg:ml-[31.3%]">
+          <h2 className="font-sans text-50 font-light leading-[1] text-black ml-0 lg:ml-[31.3%] heading">
             Destinations
           </h2>
-          <div className="flex gap-[16px] xl:gap-[26px]">
+          <motion.div
+            variants={moveLeft(0.3)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: "all" }}
+            className="flex gap-[16px] xl:gap-[26px]"
+          >
             <div
               ref={prevRef}
               className={`cursor-pointer transition-opacity duration-300 opacity-100 
@@ -81,7 +92,7 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
                 } `}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Swiper */}
@@ -139,35 +150,53 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
           ))}
 
           {/* UNDER-IMAGE CONTENT (only active slide) */}
-          <div className="lg:w-[65%] mt-[28px] lg:mt-[35px] grid grid-cols-2 lg:grid-cols-4 gap-6 text-black">
+          <motion.div
+            key={activeIndex} // ⭐ triggers re-animation on slide change
+            className="lg:w-[65%] mt-[28px] lg:mt-[35px] grid grid-cols-2 lg:grid-cols-4 gap-6 text-black"
+            variants={{
+              show: {
+                transition: {
+                  staggerChildren: 0.12, // Delay between columns
+                },
+              },
+            }}
+            initial="hidden"
+            animate="show" // ⭐ animate on every index change
+          >
             {/* Column 1 */}
-            <div>
+            <motion.div variants={moveUp(0.1)}>
               <p className="text-19 font-medium">{active.location}</p>
-            </div>
+            </motion.div>
 
             {/* Column 2 */}
-            <div>
+            <motion.div variants={moveUp(0.15)}>
               <p className="text-19 font-medium">{active.destinationCount}</p>
               <p className="text-19 font-light">Destinations</p>
-            </div>
+            </motion.div>
 
             {/* Column 3 */}
-            <div className="text-19 font-light leading-1h-text19">
+            <motion.div
+              variants={moveUp(0.2)}
+              className="text-19 font-light leading-1h-text19"
+            >
               {active.mainDestinations.slice(0, 3).map((d, i) => (
                 <p key={i}>{d}</p>
               ))}
-            </div>
+            </motion.div>
 
             {/* Column 4 */}
-            <div className="text-19 font-light leading-1h-text19 lg:ml-12">
+            <motion.div
+              variants={moveUp(0.25)}
+              className="text-19 font-light leading-1h-text19 lg:ml-12"
+            >
               {active.mainDestinations.slice(3).map((d, i) => (
                 <p key={i}>{d}</p>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Bottom line */}
-          <div className="w-full border-b mt-[35px] border-[#5C8898]"></div>
+          <div className="w-full border-b mt-[35px] border-[#5C8898]" />
         </Swiper>
       </div>
     </section>

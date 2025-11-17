@@ -15,17 +15,17 @@ const Partners = ({
   partnersData: PartnerData["data"]["firstSection"];
 }) => {
   return (
-    <section className="pt-10 pb-45 xl:pt-25 md:pb-[300px] xl:pb-[300px] 2xl:pb-[400px] 2xl:pt-[100px]">
+    <section className="pt-10 pb-45 xl:pt-25 md:pb-[300px] xl:pb-[300px] 2xl:pb-[335px] 2xl:pt-[100px]">
       <div className="container">
         <div className="container">
-          <h2 className="heading text-70 leading-[1] font-light text-black mb-[45px] xl:mb-[60px] 2xl:mb-[75px] text-center">
+          <h2 className="heading text-50 leading-[1] font-light text-black mb-[45px] 2xl:mb-[70px] text-center">
             Partners
           </h2>
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={1}
             spaceBetween={245}
-            // autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 3000 }}
             pagination={{
               clickable: true,
               el: ".awards-pagination",
@@ -33,9 +33,9 @@ const Partners = ({
               bulletActiveClass: "awards-bullet-active",
             }}
             breakpoints={{
-              0: { slidesPerView: 2,spaceBetween: "10" },
-              640: { slidesPerView: 2,spaceBetween: "100" },
-              1024: { slidesPerView: 3 ,   spaceBetween: "100" },
+              0: { slidesPerView: 2, spaceBetween: "10" },
+              640: { slidesPerView: 2, spaceBetween: "100" },
+              1024: { slidesPerView: 3, spaceBetween: "100" },
               1420: { slidesPerView: 4 },
             }}
             className="!pb-20 relative"
