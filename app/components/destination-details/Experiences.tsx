@@ -20,12 +20,14 @@ const Experiences = ({ data }: Props) => {
   const swiperRef = useRef<SwiperType | null>(null);
   useTextReveal({ selector: ".heading" });
   return (
-    <section className="sec-noise py-15 xl:py-20 2xl:pt-[140px] 2xl:pb-[150px]">
+    <section className="bg-white py-15 xl:py-20 2xl:py-[170px]">
       <div className="container">
-        <div className="w-full relative mb-10 md:mb-15  xl:mb-20 2xl:mb-[120px] flex items-center justify-between">
-          <h2 className="relative xl:left-[50px] 3xl:left-0 heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-0   text-black xl:mx-auto xl:text-center">
-            {data.title}
-          </h2>
+        <div className="w-full relative mb-10 xl:mb-15 2xl:mb-[70px] flex items-center justify-between">
+          <div className="container">
+            <h2 className="font-sans text-50 font-light leading-[1] text-black lg:pl-[26.3%] heading">
+              {data.title}
+            </h2>
+          </div>
           <div className="ml-0 flex items-center gap-5 group/main">
             <motion.button
               variants={moveUp(0.4)}
@@ -119,14 +121,14 @@ const Experiences = ({ data }: Props) => {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: false, amount: 0.2 }}
-                  className="border-t border-primary-light pt-5  md:pt-10 overflow-hidden"
+                  className="border-t border-primary-light pt-5 md:pt-10 overflow-hidden"
                 >
                   <motion.h3
                     variants={moveUp(0.3)}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: false, amount: 0.3 }}
-                    className="text-20 xl:text-30 3xl:text-30 font-light leading-[1.333333333333333] mb-5 xl:mb-10 2xl:mb-[50px] text-black"
+                    className="text-19 font-sans font-medium leading-lhtext-19 mb-5 xl:mb-5 2xl:mb-[40px] text-black"
                   >
                     {item.title}
                   </motion.h3>

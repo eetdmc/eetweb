@@ -16,10 +16,10 @@ const WhyExplore = ({ data }: Props) => {
   const items = data.items || [];
 
   return (
-    <section className="pm-noise pt-10 pb-50 md:pb-80 xl:pb-80 xl:pt-20 2xl:pt-[145px] 2xl:pb-[400px]">
+    <section className="bg-white pt-10 pb-50 md:pb-80 xl:pb-80 xl:pt-20 2xl:pt-[170px] 2xl:pb-[335px] font-sans">
       <div className="container">
         <div className="xl:ml-[20%] w-fit 2xl:ml-[27%] 2xl:w-fit ">
-          <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1.2] xl:leading-[1] text-black xl:max-w-[15ch] mb-10 xl:mb-20">
+          <h2 className="heading text-50 font-light leading-[1.2] text-black xl:max-w-[16ch] mb-10 xl:mb-[70px]">
             {data.title}
           </h2>
         </div>
@@ -39,9 +39,9 @@ const WhyExplore = ({ data }: Props) => {
                     width={60}
                     height={60}
                     alt={items[0].imageAlt}
-                    className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"
+                    className="w-10 xl:w-15 h-auto mb-4 xl:mb-[20px]"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black !max-w-[21ch]">
+                  <h3 className="text-19 font-medium leading-1h-text-19 text-black !max-w-[21ch]">
                     {items[0].title}
                   </h3>
                 </motion.div>
@@ -64,7 +64,7 @@ const WhyExplore = ({ data }: Props) => {
                     alt={items[1].imageAlt}
                     className="w-10 xl:w-15 h-auto mb-4 xl:mb-5"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black">
+                  <h3 className="text-19 font-medium leading-1h-text-19 text-black">
                     {items[1].title}
                   </h3>
                 </motion.div>
@@ -85,7 +85,7 @@ const WhyExplore = ({ data }: Props) => {
                     alt={items[2].imageAlt}
                     className="w-10 xl:w-15 h-auto mb-4 xl:mb-5"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black">
+                  <h3 className="text-19 font-medium leading-1h-text-19 text-black">
                     {items[2].title}
                   </h3>
                 </motion.div>
@@ -106,9 +106,9 @@ const WhyExplore = ({ data }: Props) => {
                     width={60}
                     height={60}
                     alt={items[3].imageAlt}
-                    className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"
+                    className="w-10 xl:w-15 h-auto mb-4 xl:mb-[20px]"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black !max-w-[21ch]">
+                  <h3 className="text-19 font-medium leading-1h-text-19 text-black !max-w-[21ch]">
                     {items[3].title}
                   </h3>
                 </motion.div>
@@ -127,9 +127,9 @@ const WhyExplore = ({ data }: Props) => {
                     width={60}
                     height={60}
                     alt={items[4].imageAlt}
-                    className="w-10 xl:w-15 h-auto mb-4 xl:mb-30px"
+                    className="w-10 xl:w-15 h-auto mb-4 xl:mb-[20px]"
                   ></Image>
-                  <h3 className="text-30 leading-[1.333333333333333] font-light text-black">
+                  <h3 className="text-19 font-medium leading-1h-text-19 text-black">
                     {items[4].title}
                   </h3>
                 </motion.div>
