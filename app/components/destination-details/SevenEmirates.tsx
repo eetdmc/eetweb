@@ -52,7 +52,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
         </h2>
       </div>
 
-      <div className="flex flex-col xl:flex-row gap-[40px] 2xl:gap-[70px] container">
+      <div className="flex flex-col xl:flex-row items-stretch gap-[40px] 2xl:gap-[70px] container">
         {/* LEFT IMAGE SWIPER */}
         <motion.div
           variants={moveRight(0.2)}
@@ -60,14 +60,20 @@ const SevenEmirates = ({ heading, items }: Props) => {
           whileInView="show"
           transition={{ duration: 0.45 }}
           viewport={{ amount: 0.2, once: true }}
-          className="relative w-full 2xl:w-[963px] 2xl:min-h-[611px]"
+          className="
+  relative 
+  w-full 
+  xl:w-[700px] 
+  emiratesImage
+  2xl:min-h-[611px]
+"
         >
           {/* LEFT ARROW */}
           <button
             onClick={() => !isPrevDisabled && swiperRef.current?.slidePrev()}
             disabled={isPrevDisabled}
             className={`
-    absolute z-20 lg:top-1/2 lg:-translate-y-1/2 lg:left-[30px] -bottom-7 lg:bottom-auto
+    absolute z-20 lg:top-1/2 lg:-translate-y-1/2 lg:left-[30px] -bottom-8 lg:bottom-auto
     transition-opacity duration-300
     ${
       isPrevDisabled
@@ -90,7 +96,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
             onClick={() => !isNextDisabled && swiperRef.current?.slideNext()}
             disabled={isNextDisabled}
             className={`
-    absolute z-20 lg:top-1/2 lg:-translate-y-1/2 lg:right-[30px] right-0 -bottom-7 lg:bottom-auto
+    absolute z-20 lg:top-1/2 lg:-translate-y-1/2 lg:right-[30px] right-0 -bottom-8 lg:bottom-auto
     transition-opacity duration-300
     ${
       isNextDisabled
@@ -126,7 +132,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
                   alt={item.name}
                   width={963}
                   height={650}
-                  className="w-full h-[280px] md:h-[500px] lg:h-[520px] 2xl:min-h-[611px] object-cover"
+                  className="w-full h-[280px] md:h-[500px] lg:h-[520px]  2xl:min-h-[611px] object-cover"
                 />
               </SwiperSlide>
             ))}
@@ -142,7 +148,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
             whileInView="show"
             transition={{ duration: 0.45 }}
             viewport={{ amount: 0.2, once: true }}
-            className="space-y-2 grid grid-cols-2 lg:grid-cols-1"
+            className="space-y-2 grid grid-cols-2 xl:grid-cols-1"
           >
             {items.map((item, index) => (
               <motion.div
@@ -196,7 +202,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
             whileInView="show"
             transition={{ duration: 0.45 }}
             viewport={{ amount: 0.2, once: true }}
-            className="border-b border-[#5C8898] mt-[18px] xl:mt-[50px] 2xl:mt-[70px] mb-[15px] xl:mb-[20px] 2xl:mb-[50px]"
+            className="border-b border-[#5C8898] mt-[18px] mb-[15px] emiratesLineMargin"
           />
 
           {/* CONTENT */}
@@ -207,7 +213,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
               whileInView={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.45, ease: "easeOut" }}
-              className="space-y-5"
+              className="space-y-4 2xl:space-y-5"
             >
               {/* TITLE FIRST */}
               <motion.h3
