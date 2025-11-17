@@ -18,7 +18,7 @@ const Awards = ({
     <section className="pt-10 xl:pt-25 2xl:pt-[150px]">
       <div className="container">
         <div className="container border-b border-primary-light pb-12 xl:pb-[75px] 2xl:pb-[200px]">
-          <h2 className="heading text-70 leading-[1] font-light text-black mb-[45px] xl:mb-[60px] 2xl:mb-[75px] text-center">
+          <h2 className="heading text-50 leading-[1] font-light text-black mb-[45px] 2xl:mb-[70px] text-center">
             {awardsData.mainTitle}
           </h2>
           <Swiper
@@ -57,7 +57,7 @@ const Awards = ({
                       className="object-contain w-full h-full"
                     />
                   </div>
-                  <p className="font-light text-34 text-black leading-[1.294117647058824] max-w-[18ch]">
+                  <p className="font-light text-19 text-black leading-[1.294117647058824] max-w-[18ch]">
                     {award.title}
                   </p>
                 </motion.div>

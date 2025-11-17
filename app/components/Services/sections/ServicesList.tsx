@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export interface ServiceItem {
   title: string;
@@ -10,16 +11,40 @@ export interface ServiceItem {
 }
 
 const ServicesSection = ({ servicesData }: { servicesData: ServiceItem[] }) => {
+  // Motion variants
+  const slideLeft = {
+    hidden: { opacity: 0, x: -80 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
+  const slideRight = {
+    hidden: { opacity: 0, x: 80 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <section className="w-full pt-10 pb-35 md:pt-16 md:pb-40 lg:pt-20 lg:pb-60  2xl:pt-[100px] 2xl:pb-[315px]">
+    <section className="w-full pt-10 pb-35 md:pt-16 md:pb-40 lg:pt-20 lg:pb-60 2xl:pt-[100px] 2xl:pb-[315px]">
       <div className="container flex flex-col gap-[50px] xl:gap-[100px]">
         {servicesData.map((item, index) => {
           const isImageLeft = index % 2 === 0;
+          const animationVariant = isImageLeft ? slideLeft : slideRight;
 
           return (
-            <div
+            <motion.div
               key={index}
-              className={`flex flex-col xl:flex-row items-center gap-[20px] lg:gap-[40px] xl:gap-[70px] ${
+              variants={animationVariant}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }} // triggers earlier than GSAP
+              className={`flex flex-col xl:flex-row items-center opacity-0 gap-[20px] lg:gap-[40px] xl:gap-[70px] ${
                 isImageLeft ? "" : "xl:flex-row-reverse"
               }`}
             >
@@ -46,7 +71,7 @@ const ServicesSection = ({ servicesData }: { servicesData: ServiceItem[] }) => {
                   {item.desc2}
                 </p>
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

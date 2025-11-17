@@ -100,7 +100,7 @@ export default function ContactForm() {
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
                     htmlFor="name"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Name
                   </motion.label>
@@ -137,7 +137,7 @@ export default function ContactForm() {
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
                     htmlFor="phone"
-                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Phone
                   </motion.label>
@@ -176,7 +176,7 @@ export default function ContactForm() {
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
                     htmlFor="email"
-                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Email
                   </motion.label>
@@ -206,7 +206,7 @@ export default function ContactForm() {
                             errors.enquireAbout
                               ? "border-red-500"
                               : "border-primary-light"
-                          } bg-transparent text-34 pb-2 pt-5 pr-8 font-light text-forground appearance-none focus:outline-none focus:border-green-500 transition-colors duration-300 peer cursor-pointer flex justify-between items-center`}
+                          } bg-transparent text-19 pb-2 pt-5 pr-8 font-light text-forground appearance-none focus:outline-none focus:border-green-500 transition-colors duration-300 peer cursor-pointer flex justify-between items-center`}
                         >
                           <span
                             className={`${
@@ -224,7 +224,7 @@ export default function ContactForm() {
 
                           {/* Dropdown arrow */}
                           <svg
-                            className="absolute right-0 -top-6 w-5 h-5 text-foreground opacity-60 pointer-events-none"
+                            className="absolute right-0 -top-6 w-5 h-5 text-black opacity-60 pointer-events-none"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -241,7 +241,7 @@ export default function ContactForm() {
                         {/* Floating label for accessibility, hidden but keeps form structure */}
                         <motion.label
                           htmlFor="enquireAbout"
-                          className="absolute left-0 top-0 text-xs font-light text-foreground opacity-0 pointer-events-none"
+                          className="absolute left-0 top-0 text-xs font-light text-black opacity-0 pointer-events-none"
                         >
                           Enquire About
                         </motion.label>
@@ -265,7 +265,7 @@ export default function ContactForm() {
                                     className={`cursor-pointer select-none px-3 py-2 ${
                                       active
                                         ? "bg-primary text-white"
-                                        : "text-foreground"
+                                        : "text-black"
                                     } ${
                                       selected ? "font-medium" : "font-normal"
                                     }`}
@@ -316,7 +316,7 @@ export default function ContactForm() {
                   whileInView="show"
                   viewport={{ once: true, amount: "all" }}
                   htmlFor="message"
-                  className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
+                  className="absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
                 >
                   Message
                 </motion.label>

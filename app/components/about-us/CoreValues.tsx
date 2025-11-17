@@ -24,7 +24,7 @@ const CoreValues = ({ data }: CoreValuesProps) => {
     <section className="py-10 xl:py-25 2xl:py-[150px] pm-noise">
       <div className="container">
         <div className="max-w-[1106px] mx-auto">
-          <h2 className="heading text-70 leading-[1] font-light text-black mb-30px">
+          <h2 className="heading text-50 leading-[1] font-light text-black mb-30px">
             {data.title}
           </h2>
           <div>

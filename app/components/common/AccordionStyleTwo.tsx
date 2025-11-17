@@ -45,9 +45,12 @@ const AccordionStyleTwo: React.FC<AccordionProps> = ({
         onClick={onToggle}
         onMouseEnter={onToggle}
         onMouseLeave={onToggle}
-        className="w-full flex justify-between items-center py-4 xl:py-4 text-left"
+        className="w-full flex justify-between items-center py-5 xl:py-4 text-left"
       >
-        <h3 className="text-30 leading-[1.2] font-light text-black">{title}</h3>
+        {/* <h3 className="text-30 leading-[1.2] font-light text-black"> */}
+        <h3 className="text-19 leading-1h-text-19 font-medium text-black">
+          {title}
+        </h3>
         <Image
           src={image}
           alt="Arrow"

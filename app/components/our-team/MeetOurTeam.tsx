@@ -41,7 +41,7 @@ const MeetOurTeam = () => {
             style={{ marginLeft }}
             className="transition-all duration-500 px-3 mb-5 md:mb-0"
           >
-            <h2 className="text-50 xl:text-70 3xl:text-70 font-light leading-[1] mt-12 lg:mt-[148px]">
+            <h2 className="text-50 font-light leading-[1.2] mt-12 lg:mt-[148px]">
               Meet <br /> Our Team
             </h2>
           </div>

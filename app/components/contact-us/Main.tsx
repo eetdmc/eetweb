@@ -13,13 +13,13 @@ const Main = ({ data }: MainProps) => {
   useTextReveal({ selector: ".subtitle" });
   return (
     <section className="pb-15">
-      <div className="pm-noise pt-15 xl:pt-23">
+      <div className="pm-noise pt-15 xl:pt-[118px]">
         <div className="container">
-          <div className="text-center pb-10 xl:pb-[104px]">
-            <h3 className="subtitle text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">
+          <div className="text-center pb-10 xl:pb-[114px]">
+            <h3 className="subtitle text-19 leading-lhtext-19 font-light text-black mb-3 xl:mb-[40px]">
               {data.mainTitle}
             </h3>
-            <h1 className="heading text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">
+            <h1 className="heading text-65 leading-[1.15384] font-light text-black max-w-6xl mx-auto">
               {data.subTitle}
             </h1>
           </div>
@@ -47,7 +47,7 @@ const Main = ({ data }: MainProps) => {
                 <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">
                   Call Us
                 </h3>
-                <p className="text-30 leading-[1.333333333333333] font-light ">
+                <p className="text-19 leading-lhtext-19 font-medium ">
                   {data.phone}
                 </p>
               </motion.div>
@@ -60,7 +60,7 @@ const Main = ({ data }: MainProps) => {
                 <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">
                   Address
                 </h3>
-                <p className="text-30 leading-[1.333333333333333] font-light max-w-md mx-auto">
+                <p className="text-19 leading-lhtext-19 font-medium max-w-md mx-auto">
                   {data.address}
                 </p>
               </motion.div>
@@ -73,7 +73,7 @@ const Main = ({ data }: MainProps) => {
                 <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">
                   Mail Us
                 </h3>
-                <p className="text-30 leading-[1.333333333333333] font-light ">
+                <p className="text-19 leading-lhtext-19 font-medium ">
                   {data.email}
                 </p>
               </motion.div>

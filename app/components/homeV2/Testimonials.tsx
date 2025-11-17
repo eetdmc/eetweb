@@ -30,6 +30,9 @@ const Testimonials = ({ data }: Props) => {
     duration: 0.4,
     y: 30,
   });
+
+  const isNextDisabled = current === data.items.length - 1;
+  const isPrevDisabled = current === 0;
   return (
     <section className="py-10 xl:pt-[143px] xl:pb-[150px] pm-noise">
       <div className="container">
@@ -122,23 +125,37 @@ const Testimonials = ({ data }: Props) => {
           </Swiper>
           <div className="flex flex-col justify-center items-center max-w-[1428px] mx-auto gap-y-5 xl:gap-y-0">
             <div className="testimonials-slider-navigation flex justify-center items-center gap-6 ">
-              <button className="swiper-button-prev-testimonials">
+              <button
+                className="swiper-button-prev-testimonials "
+                disabled={isPrevDisabled}
+              >
                 <Image
                   src={assets.pmArrowLeft}
                   alt=""
                   width={52}
                   height={32}
-                  className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]"
+                  className={`w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px] ${
+                    isPrevDisabled
+                      ? "opacity-40 cursor-not-allowed pointer-events-none"
+                      : ""
+                  }`}
                 />
               </button>
 
-              <button className="swiper-button-next-testimonials">
+              <button
+                className="swiper-button-next-testimonials"
+                disabled={isNextDisabled}
+              >
                 <Image
                   src={assets.pmArrowRight}
                   alt=""
                   width={52}
                   height={32}
-                  className="w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px]"
+                  className={`w-8 xl:w-10 h-auto 2xl:w-[52px] 2xl:h-[32px] ${
+                    isNextDisabled
+                      ? "opacity-40 cursor-not-allowed pointer-events-none"
+                      : ""
+                  }`}
                 />
               </button>
             </div>
