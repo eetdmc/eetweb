@@ -126,7 +126,7 @@ const Testimonials = ({ data }: Props) => {
           <div className="flex flex-col justify-center items-center max-w-[1428px] mx-auto gap-y-5 xl:gap-y-0">
             <div className="testimonials-slider-navigation flex justify-center items-center gap-6 ">
               <button
-                className="swiper-button-prev-testimonials "
+                className="swiper-button-prev-testimonials cursor-pointer"
                 disabled={isPrevDisabled}
               >
                 <Image
@@ -143,7 +143,7 @@ const Testimonials = ({ data }: Props) => {
               </button>
 
               <button
-                className="swiper-button-next-testimonials"
+                className="swiper-button-next-testimonials cursor-pointer"
                 disabled={isNextDisabled}
               >
                 <Image

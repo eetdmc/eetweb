@@ -46,7 +46,7 @@ const Experiences = ({ data }: Props) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: "all" }}
-              className="flex gap-2 lg:gap-5 w-fit "
+              className="flex gap-4 w-fit"
             >
               <button
                 className="swiper-button-next-team cursor-pointer"
@@ -60,7 +60,7 @@ const Experiences = ({ data }: Props) => {
                   alt={"arrow"}
                   width={40}
                   height={24.62}
-                  className="w-4 lg:w-8 xl:w-auto"
+                  className="w-[24px] h-[24px] lg:w-[40px] lg:h-[24.62px]"
                 />
               </button>
               <button
@@ -75,7 +75,7 @@ const Experiences = ({ data }: Props) => {
                   alt={"arrow"}
                   width={40}
                   height={24.62}
-                  className="w-4 lg:w-8 xl:w-auto"
+                  className="w-[24px] h-[24px] lg:w-[40px] lg:h-[24.62px]"
                 />
               </button>
             </motion.div>
