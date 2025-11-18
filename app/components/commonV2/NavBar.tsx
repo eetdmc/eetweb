@@ -338,7 +338,7 @@ const NavBar = ({
                 ) : (
                   <Link
                     href={item.href}
-                    className="uppercase font-light w-full h-full leading-[1] text-base text-black group-hover:text-white group-hover:scale-110 transition-all duration-300 ease-in-out"
+                    className="uppercase font-light w-full h-full leading-[1] text-19 text-black group-hover:text-white group-hover:scale-110 transition-all duration-300 ease-in-out"
                   >
                     {item.label}
                   </Link>
@@ -362,7 +362,7 @@ const NavBar = ({
                           >
                             <Link
                               href={sub.href}
-                              className="flex gap-5 text-[16px] font-light text-black hover:text-primary hover:translate-x-1 transition-all duration-300"
+                              className="flex gap-5 text-19 font-light text-black hover:text-primary hover:translate-x-1 transition-all duration-300"
                             >
                               <span>{sub.label}</span>
                               <span className="bg-primary rounded-full p-2 w-[27px] h-[27px] opacity-0 blks transition-all duration-500">

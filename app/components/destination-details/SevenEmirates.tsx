@@ -234,7 +234,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
                   ease: "easeOut",
                   delay: 0.15,
                 }}
-                className="text-black text-19 leading-[1.526315789473684] font-light font-inter"
+                className="text-black text-19 leading-[1.526315789473684] font-light font-sans"
               >
                 {items[activeIndex].description}
               </motion.p>

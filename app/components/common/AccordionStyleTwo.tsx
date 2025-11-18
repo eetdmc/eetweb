@@ -62,7 +62,7 @@ const AccordionStyleTwo: React.FC<AccordionProps> = ({
 
       <div ref={contentRef} className="overflow-hidden h-0 text-gray-600">
         <div className="pb-4">
-          <p className="text-20 leading-[1.5] font-light text-black max-w-[80%] font-inter">
+          <p className="text-20 leading-[1.5] font-light text-black max-w-[80%] font-sans">
             {content}
           </p>
         </div>

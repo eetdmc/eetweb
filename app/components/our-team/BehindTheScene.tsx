@@ -58,7 +58,7 @@ const BehindTheScene = ({ data }: Props) => {
   }, []);
   return (
     <section
-      className="pt-10 md:pt-20 2xl:pt-30 pb-[200px] lg:pb-[280px] 2xl:pb-[335px] overflow-hidden"
+      className="pt-10 md:pt-20 2xl:pt-30 pb-[150px] md:pb-[280px] 2xl:pb-[335px] overflow-hidden"
       ref={sectionRef}
     >
       <div className="container">
@@ -97,7 +97,7 @@ const BehindTheScene = ({ data }: Props) => {
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
                 // className="text-30 md:text-[24px] xl:text-30 leading-[1.333333333333333] text-black font-light max-w-[58ch]"
-                className="text-19 leading-1h-text-19 text-black font-sans font-light max-w-[78ch]"
+                className="text-19 leading-1h-text-19 text-black font-sans font-light max-w-[77ch]"
               >
                 {data.description}
               </motion.p>

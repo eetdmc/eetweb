@@ -66,7 +66,7 @@ const AccordionStyleThree: React.FC<AccordionProps> = ({ title, content, image, 
         <div className="pb-4 ml-container lg:pl-[15px]">
           <div className="flex flex-col gap-y-5 lg:flex-row xl:gap-10 2xl:gap-20 overflow-hidden">
             <Image src={image} alt={title} width={533} height={390} className="h-[300px] w-full object-cover xl:w-[533px] xl:h-[390px] xl:object-contain flex object-top" />
-            <p className="text-19 leading-lhtext-19 font-light max-w-[40ch] font-inter">{content}</p>
+            <p className="text-19 leading-lhtext-19 font-light max-w-[40ch] font-sans">{content}</p>
           </div>
         </div>
       </div>

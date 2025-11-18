@@ -186,7 +186,7 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.1 }}
-              className="text-19 font-medium leading-1h-text-19 max-w-[98ch] font-inter text-black"
+              className="text-19 font-medium leading-1h-text-19 max-w-[98ch] font-sans text-black"
             >
               {data.description}
             </motion.p>
@@ -200,7 +200,7 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.1 }}
-              className=" text-19 leading-lhtext-19 font-light max-w-[70ch] text-black font-inter"
+              className=" text-19 leading-lhtext-19 font-light max-w-[70ch] text-black font-sans"
             >
               {legacy.description}
             </motion.p>

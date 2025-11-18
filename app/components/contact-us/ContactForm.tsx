@@ -338,7 +338,7 @@ export default function ContactForm() {
                 <button
                   aria-label="Submit"
                   onClick={handleSubmit(onSubmit)}
-                  className="border border-black text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group overflow-hidden hover:text-white"
+                  className="border border-black text-black font-light font-sans bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group overflow-hidden hover:text-white"
                 >
                   <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
                   <span className="relative z-10">Send</span>

@@ -18,7 +18,7 @@ const AwardsList = ({ data }: AwardsListProps) => {
             >
               <div className="pb-8 xl:pb-[23px] pt-8 xl:pt-[13px] px-2 lg:px-6 border-b border-black/10 group-hover:border-none transition-all duration-300 ">
                 <div className="flex items-center justify-between xl:text-center relative translate-x-1/2  group-hover:translate-x-0 transition-all duration-300">
-                  <h4 className="text-19 leading-lhtext-19 font-light font-inter text-center  transition-all duration-300">
+                  <h4 className="text-19 leading-lhtext-19 font-light font-sans text-center  transition-all duration-300">
                     {item.year}
                   </h4>
                   <Link
