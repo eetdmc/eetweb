@@ -283,10 +283,7 @@ const Services = ({
                       : "opacity-100 translate-y-0"
                   }`}
                 >
-                  <PrimaryBtn
-                    link={currentService.slug}
-                    text={currentService.ctaHome}
-                  />
+                  <PrimaryBtn link="services" text="View Services" />
                 </div>
                 {/* </div> */}
               </div>
