@@ -10,6 +10,8 @@ import { assets } from "@/public/assets";
 
 import { DestinationFourthSection } from "./type";
 import { useTextReveal } from "@/hooks/useTextReveal";
+import { motion } from "framer-motion";
+import { moveLeft } from "../motionVarients";
 
 type Props = {
   data: DestinationFourthSection;
@@ -30,10 +32,16 @@ const GallerySlider = ({ data }: Props) => {
         </h2>
 
         {/* Arrows */}
-        <div className="flex gap-4">
+        <motion.div
+          variants={moveLeft(0.2)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: "all" }}
+          className="flex gap-4"
+        >
           <button
             onClick={() => swiperRef.current?.slidePrev()}
-            className="flex items-center justify-center rounded-full hover:scale-110 transition"
+            className="flex items-center justify-center rounded-full hover:scale-110 transition cursor-pointer"
           >
             <Image
               src={assets.pmArrowLeft}
@@ -46,7 +54,7 @@ const GallerySlider = ({ data }: Props) => {
 
           <button
             onClick={() => swiperRef.current?.slideNext()}
-            className="flex items-center justify-center rounded-full hover:scale-110 transition"
+            className="flex items-center justify-center rounded-full hover:scale-110 transition cursor-pointer"
           >
             <Image
               src={assets.pmArrowRight}
@@ -56,7 +64,7 @@ const GallerySlider = ({ data }: Props) => {
               className="w-[24px] h-[24px] lg:w-[40px] lg:h-[24.62px]"
             />
           </button>
-        </div>
+        </motion.div>
       </div>
 
       {/* Slider */}

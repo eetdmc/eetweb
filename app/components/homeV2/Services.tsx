@@ -205,7 +205,7 @@ const Services = ({
                     className="flex items-center gap-3 xl:gap-4 group"
                   >
                     <button
-                      className={`text-19 leading-[2.631578947368421] font-sans font-light text-black text-left transition-all duration-300 ${
+                      className={`text-19 leading-[2.631578947368421] font-sans font-light text-black text-left transition-all duration-300 cursor-pointer ${
                         activeService === index ? "font-medium" : ""
                       }`}
                       onClick={() => handleServiceChange(index)}
