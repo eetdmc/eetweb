@@ -61,10 +61,10 @@ const ServicesSection = ({ servicesData }: { servicesData: ServiceItem[] }) => {
               {/* TEXT */}
               <div className="flex flex-col gap-[15px] lg:gap-[30px] text-black font-light">
                 <h2 className="text-50 font-sans leading-[1]">{item.title}</h2>
-                <p className="text-19 font-inter leading-[1.526315789473684]">
+                <p className="text-19 font-sans leading-[1.526315789473684]">
                   {item.desc1}
                 </p>
-                <p className="text-19 font-inter leading-[1.526315789473684]">
+                <p className="text-19 font-sans leading-[1.526315789473684]">
                   {item.desc2}
                 </p>
               </div>

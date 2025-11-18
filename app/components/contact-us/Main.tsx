@@ -44,7 +44,7 @@ const Main = ({ data }: MainProps) => {
                 whileInView="show"
                 viewport={{ once: true, amount: "all" }}
               >
-                <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">
+                <h3 className="text-19 leading-lhtext-19 font-light font-sans mb-3 xl:mb-[25px]">
                   Call Us
                 </h3>
                 <p className="text-19 leading-lhtext-19 font-medium ">
@@ -57,7 +57,7 @@ const Main = ({ data }: MainProps) => {
                 whileInView="show"
                 viewport={{ once: true, amount: "all" }}
               >
-                <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">
+                <h3 className="text-19 leading-lhtext-19 font-light font-sans mb-3 xl:mb-[25px]">
                   Address
                 </h3>
                 <p className="text-19 leading-lhtext-19 font-medium max-w-md mx-auto">
@@ -70,7 +70,7 @@ const Main = ({ data }: MainProps) => {
                 whileInView="show"
                 viewport={{ once: true, amount: "all" }}
               >
-                <h3 className="text-19 leading-lhtext-19 font-light font-inter mb-3 xl:mb-[25px]">
+                <h3 className="text-19 leading-lhtext-19 font-light font-sans mb-3 xl:mb-[25px]">
                   Mail Us
                 </h3>
                 <p className="text-19 leading-lhtext-19 font-medium ">

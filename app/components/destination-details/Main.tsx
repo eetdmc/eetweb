@@ -67,7 +67,7 @@ const Main = ({ data, about }: Props) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: "all" }}
-              className="text-19 leading-lhtext-19 font-medium font-inter text-black"
+              className="text-19 leading-lhtext-19 font-medium font-sans text-black"
             >
               {data.description}
             </motion.p>
@@ -82,7 +82,7 @@ const Main = ({ data, about }: Props) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="text-19 leading-lhtext-19 font-light font-inter max-w-[57ch] text-black"
+              className="text-19 leading-lhtext-19 font-light font-sans max-w-[70ch] text-black"
             >
               {about.description}
             </motion.p>

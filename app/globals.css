@@ -771,3 +771,96 @@ body {
     margin-bottom: 50px;
   }
 }
+
+/* ---------- Gallery Slider Specific Styles ---------- */
+
+/* Slide container */
+.gallery-slider .swiper-slide {
+  width: auto;
+  height: auto;
+}
+
+/* ========== FIX: Only size, NO animation on size ========== */
+
+/* ---------- BASE (mobile) ---------- */
+.gallery-slider .swiper-slide .active-card,
+.gallery-slider .swiper-slide .side-card {
+  width: 280px !important;
+  height: 170px !important;
+}
+
+/* ---------- SM ≥ 640px ---------- */
+@media (min-width: 640px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 380px !important;
+    height: 262px !important;
+  }
+}
+
+/* ---------- MD ≥ 768px ---------- */
+@media (min-width: 768px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 583px !important;
+    height: 314px !important;
+  }
+}
+
+/* ---------- XL ≥ 1280px ---------- */
+@media (min-width: 1280px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 901px !important;
+    height: 524px !important;
+  }
+}
+
+/* ---------- 2XL ≥ 1536px ---------- */
+@media (min-width: 1536px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 1166px !important;
+    height: 629px !important;
+  }
+}
+
+
+/* Hide coverflow shadows */
+.gallery-slider .swiper-slide-shadow-left,
+.gallery-slider .swiper-slide-shadow-right {
+  display: none;
+}
+
+
+/* ========== JOURNEY SLIDER STYLE ANIMATION ========== */
+
+/* Smooth zoom transform on image (JUST LIKE JourneySlider) */
+.gallery-slider .swiper-slide>div img {
+  transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Side slide image zoom */
+.gallery-slider .swiper-slide img {
+  transform: scale(0.90);
+}
+
+/* Active slide image zoom */
+.gallery-slider .swiper-slide-active img {
+  transform: scale(1.03);
+}
+
+
+/* Smooth JourneySlider style transition */
+.gallery-slider .swiper-slide .active-card,
+.gallery-slider .swiper-slide .side-card {
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}

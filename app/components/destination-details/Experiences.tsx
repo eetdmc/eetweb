@@ -35,7 +35,7 @@ const Experiences = ({ data }: Props) => {
               whileInView="show"
               viewport={{ once: true, amount: "all" }}
               aria-label="View More"
-              className="flex hidden shadow-lg border-2 border-white text-white font-light font-inter bg-gradient-to-r from-primary
+              className="flex hidden shadow-lg border-2 border-white text-white font-light font-sans bg-gradient-to-r from-primary
              to-secondary px-5 py-2  items-center gap-2 rounded-3xl relative z-10 group/link overflow-hidden group-hover/main:text-white cursor-pointer"
             >
               <div className="absolute bottom-0 left-0 w-0 h-full z-0 group-hover/main:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>

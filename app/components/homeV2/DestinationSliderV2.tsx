@@ -50,7 +50,7 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
       <div className="container font-sans">
         {/* Header */}
         <div className="flex items-center justify-between mb-[30px] md:mb-[50px] xl:mb-[70px]">
-          <h2 className="font-sans text-50 font-light leading-[1] text-black ml-0 lg:ml-[31.3%] heading">
+          <h2 className="font-sans text-50 font-light leading-[1] text-black heading">
             Destinations
           </h2>
           <motion.div

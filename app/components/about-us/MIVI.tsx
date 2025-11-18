@@ -77,7 +77,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.3 }}
-              className="text-19 leading-lhtext-19 font-light font-inter xl:max-w-[45ch] text-black"
+              className="text-19 leading-lhtext-19 font-light font-sans xl:max-w-[45ch] text-black"
             >
               {mission.description}
             </motion.p>
@@ -115,7 +115,7 @@ const MIVI = ({ data }: { data: AboutData["data"]["thirdSection"] }) => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.3 }}
-                className="text-19 leading-lhtext-19 font-light text-black font-inter xl:max-w-[45ch]"
+                className="text-19 leading-lhtext-19 font-light text-black font-sans xl:max-w-[45ch]"
               >
                 {vision.description}
               </motion.p>

@@ -10,9 +10,9 @@ export interface DestinationData {
   fourthSection: DestinationFourthSection;
   fifthSection: DestinationFifthSection;
   sixthSection: DestinationSixthSection;
-  _id: string;  
+  _id: string;
   __v: number;
-  metaDescription: string;  
+  metaDescription: string;
   metaTitle: string;
 }
 
