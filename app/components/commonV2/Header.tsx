@@ -7,7 +7,6 @@ import Link from "next/link";
 import { commonData } from "./data";
 // import NavBar from "./NavBar";
 import NavBar from "./NavBar";
-import { LogIn } from "lucide-react";
 import { assets } from "@/public/assets";
 
 const Header = () => {
@@ -61,21 +60,21 @@ const Header = () => {
           </div>
           {/* ===== Partner Login Button ===== */}
           <div className="w-[20%] flex gap-2 lg:gap-3 justify-end items-center">
-            <Link
+            {/* <Link
               href="/partner-login"
               className="flex-shrink-0 cursor-pointer font-sans bg-white px-2 xl:px-5 h-10 sm:h-12 lg:h-12 w-10 md:w-fit  flex items-center gap-[6px] uppercase rounded-full relative group hover:text-white overflow-hidden"
             >
-              {/* expanding black overlay inside the pill */}
+              
               <div className="absolute inset-0 h-full bg-black rounded-full origin-left scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100"></div>
 
-              {/* button text */}
+              
               <span className="relative z-10 font-[300] leading-[1] text-19 text-black group-hover:text-white hidden lg:block">
                 Partner Login
               </span>
               <span className="relative z-10 font-[300] leading-[1] text-primary group-hover:text-white lg:hidden">
                 <LogIn size={18} />
               </span>
-            </Link>
+            </Link> */}
 
             <Link
               href="https://online.eet.ae/b2b"

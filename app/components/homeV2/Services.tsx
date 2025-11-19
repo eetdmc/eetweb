@@ -8,7 +8,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Accordion from "../common/Accordion";
 import { useTextReveal } from "@/hooks/useTextReveal";
-import { ServiceData } from "../service-details/type";
 import { HomeData } from "./type";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -18,7 +17,19 @@ const Services = ({
   services,
 }: {
   data: HomeData["fourthSection"];
-  services: ServiceData[];
+  services: {
+    secondSection:{
+      items:{
+        title:string;
+        description:string;
+        image:string;
+        slug:string;
+        ctaHome:string;
+        homeDescription:string;
+        homeImage:string;
+      }[]
+    }
+  };
 }) => {
   const [activeService, setActiveService] = useState<number>(2);
   const [displayedService, setDisplayedService] = useState<number>(2);
@@ -29,13 +40,13 @@ const Services = ({
   const toggleAccordion = (index: number) => {
     setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
   };
-  const formattedServices = services?.map((service: ServiceData) => ({
-    title: service.firstSection.mainTitle,
-    description: service.firstSection.description,
-    image: service.firstSection.image,
-    slug: `/services/${service.firstSection.slug}`,
-    ctaHome: service.firstSection.ctaHome,
-    descriptionHome: service.firstSection.descriptionHome,
+  const formattedServices = services?.secondSection?.items?.map((service) => ({
+    title: service.title,
+    description: service.description,
+    image: service.homeImage,
+    slug: `/services/${service.slug}`,
+    ctaHome: service.ctaHome,
+    descriptionHome: service.homeDescription,
   }));
   // Animate headings
   useTextReveal({ selector: ".heading" });

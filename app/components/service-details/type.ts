@@ -22,6 +22,7 @@ export interface ServiceFirstSection {
   image: string;
   imageAlt: string;
   slug: string;
+  title:string;
 }
 
 export interface ServiceSecondSection {

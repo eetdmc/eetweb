@@ -43,6 +43,15 @@ interface UAEFormProps {
     title: string;
     description: string;
   };
+  destinationSection: {
+    title: string;
+    items: {
+      image: string;
+      imageAlt: string;
+      title: string;
+      description: string;
+    }[];
+  };
   thirdSection: {
     title: string;
     items: {
@@ -125,6 +134,15 @@ const UAEPage = () => {
     name: "sixthSection.mainDestinations",
   });
 
+  const {
+    fields: destinationSectionItems,
+    append: destinationSectionAppend,
+    remove: destinationSectionRemove,
+  } = useFieldArray({
+    control,
+    name: "destinationSection.items",
+  });
+
   const handleAddUAE = async (data: UAEFormProps) => {
     try {
       const response = await fetch(`/api/admin/destinations?id=${id}`, {
@@ -152,6 +170,8 @@ const UAEPage = () => {
         setValue("metaDescription", data.data.metaDescription);
         setValue("firstSection", data.data.firstSection);
         setValue("secondSection", data.data.secondSection);
+        setValue("destinationSection", data.data.destinationSection);
+        setValue("destinationSection.items", data.data.destinationSection.items);
         setValue("thirdSection", data.data.thirdSection);
         setValue("thirdSection.items", data.data.thirdSection.items);
         setValue("fourthSection", data.data.fourthSection);
@@ -435,6 +455,153 @@ const UAEPage = () => {
                     );
                   }}
                 />
+              </div>
+            </div>
+          </div>
+        </AdminItemContainer>
+
+        <AdminItemContainer>
+          <Label main>Destination Section</Label>
+          <div className="p-5 rounded-md flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1">
+                <Label className="font-bold">Title</Label>
+                <Input
+                  type="text"
+                  placeholder="Title"
+                  {...register("destinationSection.title", {
+                    required: "Title is required",
+                  })}
+                />
+                {errors.destinationSection?.title && (
+                  <p className="text-red-500">
+                    {errors.destinationSection?.title.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <Label className="font-bold">Items</Label>
+                <div className="border p-2 rounded-md flex flex-col gap-5">
+                  {destinationSectionItems.map((field, index) => (
+                    <div
+                      key={field.id}
+                      className="grid grid-cols-2 gap-2 relative border-b pb-5 last:border-b-0"
+                    >
+                      <div className="absolute top-2 right-2">
+                        <RiDeleteBinLine
+                          onClick={() => destinationSectionRemove(index)}
+                          className="cursor-pointer text-red-600"
+                        />
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-2">
+                          <Label className="font-bold">Image</Label>
+                          <Controller
+                            name={`destinationSection.items.${index}.image`}
+                            control={control}
+                            rules={{ required: "Image is required" }}
+                            render={({ field }) => (
+                              <ImageUploader
+                                value={field.value}
+                                onChange={field.onChange}
+                              />
+                            )}
+                          />
+                          {errors.destinationSection?.items?.[index]?.image && (
+                            <p className="text-red-500">
+                              {
+                                errors.destinationSection?.items?.[index]?.image
+                                  .message
+                              }
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="flex flex-col gap-2">
+                          <div className="flex flex-col gap-2">
+                            <Label className="font-bold">Alt Tag</Label>
+                            <Input
+                              type="text"
+                              placeholder="Alt Tag"
+                              {...register(
+                                `destinationSection.items.${index}.imageAlt`,
+                                {
+                                  required: "Value is required",
+                                }
+                              )}
+                            />
+                            {errors.destinationSection?.items?.[index]?.imageAlt && (
+                              <p className="text-red-500">
+                                {
+                                  errors.destinationSection?.items?.[index]?.imageAlt
+                                    .message
+                                }
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-col gap-2">
+                        <div className="flex flex-col gap-2">
+                          <div className="flex flex-col gap-2">
+                            <Label className="font-bold">Title</Label>
+                            <Input
+                              type="text"
+                              placeholder="Title"
+                              {...register(
+                                `destinationSection.items.${index}.title`,
+                                {
+                                  required: "Value is required",
+                                }
+                              )}
+                            />
+                            {errors.destinationSection?.items?.[index]?.title && (
+                              <p className="text-red-500">
+                                {
+                                  errors.destinationSection?.items?.[index]?.title
+                                    .message
+                                }
+                              </p>
+                            )}
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            <Label className="font-bold">Description</Label>
+                            <Textarea
+                              placeholder="Description"
+                              {...register(
+                                `destinationSection.items.${index}.description`,
+                                {
+                                  required: "Value is required",
+                                }
+                              )}
+                            />
+                            {errors.destinationSection?.items?.[index]?.description && (
+                              <p className="text-red-500">
+                                {
+                                  errors.destinationSection?.items?.[index]?.description
+                                    .message
+                                }
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex justify-end mt-2">
+                  <Button
+                    type="button"
+                    addItem
+                    onClick={() =>
+                      destinationSectionAppend({ title: "", image: "", imageAlt: "", description: "" })
+                    }
+                  >
+                    Add Item
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

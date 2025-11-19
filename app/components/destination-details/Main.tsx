@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { moveUp, moveRight, moveLeft, moveUpfourty } from "../motionVarients";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import type { DestinationFirstSection, DestinationSecondSection } from "./type";
+import { usePathname } from "next/navigation";
 
 type Props = {
   data: DestinationFirstSection;
@@ -10,10 +11,11 @@ type Props = {
 };
 
 const Main = ({ data, about }: Props) => {
+  const pathname = usePathname();
   useTextReveal({ selector: ".heading" });
   useTextReveal({ selector: ".subtitle" });
   return (
-    <section className="pb-15 xl:pb-[170px] ">
+    <section className={`pb-15 xl:pb-[170px]  ${pathname !== "/destinations/uae" ? "border-b border-primary-light" : ""}`}>
       <div className="pm-noise pt-10 xl:pt-25">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
