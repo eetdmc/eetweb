@@ -39,6 +39,8 @@ export const metadata: Metadata = {
   description: "EET Destination Management",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
 }: Readonly<{
