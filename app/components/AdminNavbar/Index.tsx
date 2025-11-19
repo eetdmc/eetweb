@@ -16,28 +16,27 @@ import {
 } from "lucide-react";
 import { useEffect } from "react";
 
-import { useRefetchServices } from "@/app/contexts/refetchServices";
 import { useRefetchDestinations } from "@/app/contexts/refetchDestinations";
 
 const AdminNavbar = () => {
   const [openLink, setOpenLink] = useState<string | null>(null);
-  const [services, setServices] = useState([]);
+  // const [services, setServices] = useState([]);
   const [destinations, setDestinations] = useState([]);
-  const { refetchServices } = useRefetchServices();
+  // const { refetchServices } = useRefetchServices();
   const { refetchDestinations } = useRefetchDestinations();
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const res = await fetch("/api/admin/services/add");
-        const data = await res.json();
-        setServices(data.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchServices();
-  }, [refetchServices]);
+  // useEffect(() => {
+  //   const fetchServices = async () => {
+  //     try {
+  //       const res = await fetch("/api/admin/services/add");
+  //       const data = await res.json();
+  //       setServices(data.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchServices();
+  // }, [refetchServices]);
 
   useEffect(() => {
     const fetchDestinations = async () => {
@@ -62,17 +61,17 @@ const AdminNavbar = () => {
     { name: "Awards", href: "/admin/awards", icon: AwardIcon },
     {
       name: "Services",
-      href: "####",
+      href: "/admin/services",
       icon: BriefcaseIcon,
-      hasChild: true,
-      children: [
-        ...services.map(
-          (service: { firstSection: { mainTitle: string }; _id: string }) => ({
-            name: service.firstSection.mainTitle,
-            href: `/admin/services/${service._id}`,
-          })
-        ),
-      ],
+      // hasChild: true,
+      // children: [
+      //   ...services.map(
+      //     (service: { firstSection: { mainTitle: string }; _id: string }) => ({
+      //       name: service.firstSection.mainTitle,
+      //       href: `/admin/services/${service._id}`,
+      //     })
+      //   ),
+      // ],
     },
     {
       name: "Destinations",

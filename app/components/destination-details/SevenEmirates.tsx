@@ -14,9 +14,10 @@ import "swiper/css/navigation";
 import { moveLeft, moveRight, moveUp } from "../motionVarients";
 
 interface EmirateItem {
-  name: string;
+  title: string;
   image: string;
   description: string;
+  imageAlt: string;
 }
 
 interface Props {
@@ -129,7 +130,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
               <SwiperSlide key={index}>
                 <Image
                   src={item.image}
-                  alt={item.name}
+                  alt={item.imageAlt}
                   width={963}
                   height={650}
                   className="w-full h-[280px] md:h-[500px] lg:h-[520px]  2xl:min-h-[611px] object-cover"
@@ -172,7 +173,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
                   transition={{ duration: 0.25, ease: "easeOut" }}
                 >
                   {/* EMIRATE NAME */}
-                  {item.name}
+                  {item.title}
 
                   {/* SMALL ICON */}
                   {activeIndex === index && (
@@ -222,7 +223,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 className="font-medium text-19 text-black leading-[1.526315789473684]"
               >
-                {items[activeIndex].name}
+                {items[activeIndex].title}
               </motion.h3>
 
               {/* DESCRIPTION AFTER DELAY */}

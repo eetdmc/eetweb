@@ -101,16 +101,16 @@ const Hero = ({ data }: HeroProps) => {
   const titleRefs = useRef<HTMLHeadingElement[]>([]);
   titleRefs.current = [];
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.03,
-        delayChildren: 0.1,
-      },
-    },
-  };
+  // const containerVariants: Variants = {
+  //   hidden: { opacity: 0 },
+  //   show: {
+  //     opacity: 1,
+  //     transition: {
+  //       staggerChildren: 0.03,
+  //       delayChildren: 0.1,
+  //     },
+  //   },
+  // };
 
   const charVariants: Variants = {
     hidden: {
@@ -239,11 +239,7 @@ const Hero = ({ data }: HeroProps) => {
                   <div className="flex flex-col justify-end h-full pb-10 xl:pb-21 pt-25 xl:pt-0 ">
                     <div className="flex flex-wrap justify-between items-end">
                       <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[calc(30%+10px)] flex flex-col  justify-end  pb-10 xl:pb-0">
-                        <motion.h2
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate={activeIndex === index ? "show" : "hidden"}
-                          viewport={{ once: false, amount: "all" }}
+                        <h2
                           className="text-[3rem] xl:text-60 2xl:text-65 leading-[1] xl:leading-[65px] text-white xl:text-black font-[300] mb-0 xl:mb-[70px] slide-title "
                           style={{ perspective: "1000px" }}
                         >
@@ -268,7 +264,7 @@ const Hero = ({ data }: HeroProps) => {
                                 "\u00A0"}
                             </span>
                           ))}
-                        </motion.h2>
+                        </h2>
                         <motion.div
                           variants={moveUp(0.3)}
                           initial="hidden"

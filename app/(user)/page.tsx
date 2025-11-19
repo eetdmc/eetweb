@@ -14,7 +14,7 @@ export default async function Home() {
   const destinations = await destinationsResponse.json();
 
   const servicesResponse = await fetch(
-    `${process.env.BASE_URL}/api/admin/services/add`,
+    `${process.env.BASE_URL}/api/admin/services`,
     {
       next: { revalidate: 60 },
     }

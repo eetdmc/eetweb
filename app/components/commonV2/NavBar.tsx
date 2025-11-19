@@ -304,6 +304,7 @@ const NavBar = ({
   useEffect(() => {
     const loadMenu = async () => {
       const items = await fetchMenuItems();
+      console.log(items);
       setMenuItems(items);
     };
     loadMenu();

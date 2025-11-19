@@ -8,12 +8,9 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
   if (!BASE_URL) return fallbackMenu();
 
   try {
-    const [servicesRes, destinationsRes] = await Promise.all([
-      fetch(`${BASE_URL}/api/admin/services/add`),
-      fetch(`${BASE_URL}/api/admin/destinations/add`),
-    ]);
+    const destinationsRes = await fetch(`${BASE_URL}/api/admin/destinations/add`);
 
-    if (!servicesRes.ok || !destinationsRes.ok)
+    if (!destinationsRes.ok)
       throw new Error("Failed to fetch menu");
 
     // const servicesData = await servicesRes.json();

@@ -1,29 +1,27 @@
 // lib/fetchMenu.ts
 import { MenuItem } from "../app/components/common/type";
 import { DestinationData } from "../app/components/destination-details/type";
-import { ServiceData } from "../app/components/service-details/type";
 
 export const fetchMenuItems = async (): Promise<MenuItem[]> => {
   const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
   if (!BASE_URL) return fallbackMenu();
 
   try {
-    const [servicesRes, destinationsRes] = await Promise.all([
-      fetch(`${BASE_URL}/api/admin/services/add`),
+    const [destinationsRes] = await Promise.all([
+      // fetch(`${BASE_URL}/api/admin/services/add`),
       fetch(`${BASE_URL}/api/admin/destinations/add`),
     ]);
 
-    if (!servicesRes.ok || !destinationsRes.ok)
+    if (!destinationsRes.ok)
       throw new Error("Failed to fetch menu");
 
-    const servicesData = await servicesRes.json();
     const destinationsData = await destinationsRes.json();
 
     // Extract only service/destination names and slugs
-    const servicesItems = servicesData.data.map((s: ServiceData) => ({
-      label: s.firstSection.mainTitle,
-      href: `/services/${s.firstSection.slug}`,
-    }));
+    // const servicesItems = servicesData.data.map((s: ServiceData) => ({
+    //   label: s.firstSection.mainTitle,
+    //   href: `/services/${s.firstSection.slug}`,
+    // }));
 
     const destinationsItems = destinationsData.data.map(
       (d: DestinationData) => ({
@@ -44,7 +42,7 @@ export const fetchMenuItems = async (): Promise<MenuItem[]> => {
       {
         label: "Services",
         href: "/services",
-        submenu: servicesItems,
+        // submenu: servicesItems,
       },
       {
         label: "Destinations",

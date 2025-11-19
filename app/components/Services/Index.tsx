@@ -1,13 +1,13 @@
 import React from "react";
 import Main from "./sections/Main";
 import ServicesList from "./sections/ServicesList";
-import { servicesData } from "./data";
+import { ServiceProps } from "./type";
 
-const Index = () => {
+const Index = ({data}: {data: ServiceProps}) => {
   return (
     <>
-      <Main />
-      <ServicesList servicesData={servicesData} />
+      <Main data={data.firstSection}/>
+      <ServicesList servicesData={data.secondSection} />
     </>
   );
 };

@@ -6,6 +6,7 @@ export interface DestinationResponse {
 export interface DestinationData {
   firstSection: DestinationFirstSection;
   secondSection: DestinationSecondSection;
+  destinationSection: DestinationDestinationSection;
   thirdSection: DestinationThirdSection;
   fourthSection: DestinationFourthSection;
   fifthSection: DestinationFifthSection;
@@ -31,6 +32,19 @@ export interface DestinationFirstSection {
 }
 
 export interface DestinationSecondSection {
+  title: string;
+  description: string;
+}
+
+export interface DestinationDestinationSection {
+  title: string;
+  items: DestinationDestinationItem[];
+}
+
+export interface DestinationDestinationItem {
+  _id: string;
+  image: string;
+  imageAlt: string;
   title: string;
   description: string;
 }

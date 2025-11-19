@@ -8,12 +8,23 @@ import Testimonials from "./Testimonials";
 import SocialFeeds from "./SocialFeeds";
 import type { HomeData } from "./type";
 import type { DestinationData } from "../destination-details/type";
-import type { ServiceData } from "../service-details/type";
 
 interface Props {
   data: HomeData;
   destinations: DestinationData[];
-  services: ServiceData[];
+  services: {
+    secondSection: {
+      items: {
+        title: string;
+        description: string;
+        image: string;
+        slug: string;
+        ctaHome: string;
+        homeDescription: string;
+        homeImage: string;
+      }[]
+    }
+  };
 }
 const Index = ({ data, services, destinations }: Props) => {
   return (
