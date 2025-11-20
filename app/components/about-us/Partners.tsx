@@ -6,8 +6,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Image from "next/image";
 import { PartnerData } from "../partners/type";
-import { motion } from "framer-motion";
-import { moveUp } from "../motionVarients";
 
 const Partners = ({
   partnersData,
