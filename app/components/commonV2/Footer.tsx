@@ -11,15 +11,34 @@ import { MenuItem } from "./type";
 const Footer = () => {
   const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
 
-  useEffect(() => {
-    const loadMenu = async () => {
-      const items = await fetchMenuItems();
-      setMenuItems(items);
-    };
-    loadMenu();
-  }, []);
+useEffect(() => {
+  const loadMenu = async () => {
+    const items = await fetchMenuItems();
+
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/admin/services`);
+    const data = await response.json();
+
+    // Remove old "Services" if it exists
+    const filteredItems = items.filter(i => i.label !== "Services");
+
+    // Add real Services
+    setMenuItems([
+      ...filteredItems,
+      {
+        label: "Services",
+        href: "/services",
+        submenu: data.data.secondSection.items,
+      }
+    ]);
+  };
+
+  loadMenu();
+}, []);
+
+
 
   const services = menuItems.find((m) => m.label === "Services")?.submenu || [];
+  console.log(menuItems.find((m) => m.label === "Services"));
   const destinations =
     menuItems.find((m) => m.label === "Destinations")?.submenu || [];
 
@@ -334,43 +353,26 @@ const Footer = () => {
               </motion.h3>
               <ul>
                 {services.map((item, i) => (
+                  <div key={i}>
                   <motion.p
-                    key={i}
                     variants={moveUp(i * 0.2)}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
                     className="text-19 leading-lhtext-19 font-[200] text-white font-sans hover:text-white/70 transition-colors"
                   >
-                    <Link href={"/services"}>{item.label}</Link>
+                    <Link href={"/services?title="+item?.title?.toLowerCase().trim().replace(/\s+/g, "-")}>{item?.title}</Link>
                   </motion.p>
-                  // <motion.li
-                  //   variants={moveUp(0.4)}
-                  //   initial="hidden"
-                  //   whileInView="show"
-                  //   viewport={{ once: true }}
-                  //   className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-colors"
-                  // >
-                  //   <Link href={"/services/mice"}>MICE</Link>
-                  // </motion.li>
-                  // <motion.li
-                  //   variants={moveUp(0.6)}
-                  //   initial="hidden"
-                  //   whileInView="show"
-                  //   viewport={{ once: true }}
-                  //   className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-colors"
-                  // >
-                  //   <Link href={"/services/cruise-liners"}>Cruise Liners</Link>
-                  // </motion.li>
-                  // <motion.li
-                  //   variants={moveUp(0.8)}
-                  //   initial="hidden"
-                  //   whileInView="show"
-                  //   viewport={{ once: true }}
-                  //   className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-colors"
-                  // >
-                  //   <Link href={"/services/experiences"}>Experiences</Link>
-                  // </motion.li>
+                  {/* <motion.li
+                    variants={moveUp(0.4)}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    className="text-19 leading-lhtext-19 font-extralight text-white/70 font-inter hover:text-white transition-colors"
+                  >
+                    <Link href={"/services/mice"}>{item.title}</Link>
+                  </motion.li> */}
+                  </div>
                 ))}
               </ul>
             </div>

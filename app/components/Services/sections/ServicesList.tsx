@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { ServiceProps } from "../type";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 
 export interface ServiceItem {
   title: string;
@@ -30,6 +32,33 @@ const slideRight: Variants = {
 };
 
 const ServicesSection = ({ servicesData }: { servicesData: ServiceProps['secondSection'] }) => {
+    const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("title")) {
+
+      console.log(searchParams.get("title"));
+      const handleLoad = () => {
+        const el = document.getElementById(searchParams.get("title") || "");
+        console.log(el)
+        if (el) {
+          const yOffset = -80;
+          const y =
+            el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      };
+
+      window.addEventListener("load", handleLoad);
+      const timeout = setTimeout(handleLoad, 500);
+
+      return () => {
+        clearTimeout(timeout);
+        window.removeEventListener("load", handleLoad);
+      };
+    }
+  }, [searchParams]);
+
   return (
     <section className="w-full pt-10 pb-35 md:pt-16 md:pb-40 lg:pt-20 lg:pb-60  2xl:pt-[100px] 2xl:pb-[315px] overflow-hidden">
       <div className="container flex flex-col gap-[50px] xl:gap-[100px]">
@@ -40,6 +69,7 @@ const ServicesSection = ({ servicesData }: { servicesData: ServiceProps['secondS
           return (
             <motion.div
               key={index}
+              id={item.title.replace(/\s+/g, "-").toLowerCase()}
               variants={animationVariant}
               initial="hidden"
               whileInView="show"
