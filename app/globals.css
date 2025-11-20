@@ -741,6 +741,58 @@ body {
   transform: scale(1.25);
 }
 
+/* Dynamic bullets wrap container */
+/* Base bullet size */
+.partners-pagination .swiper-pagination-bullet {
+  width: 16px !important;    /* increase size */
+  height: 16px !important;
+  background-color: var(--primary-light) !important;
+  opacity: 1 !important;
+}
+
+/* Active center bullet */
+.partners-pagination .swiper-pagination-bullet-active {
+  width: 14px !important;     /* bigger active bullet */
+  height: 14px !important;
+  opacity: 1;
+  background: var(--primary-color) !important;
+}
+
+/* Bullets near active (dynamic) */
+.partners-pagination .swiper-pagination-bullet-main {
+  width: 16px !important;     /* medium bullet */
+  height: 16px !important;
+  opacity: 0.8;
+}
+
+
+
+/* .awards-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  margin: 0 6px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.3s ease;
+}
+
+.awards-bullet.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.awards-bullet-active {
+  background-color: black;
+  transform: scale(1.4);
+  opacity: 1;
+} */
+
+
+
+
+
 .emiratesImage {
   @media (min-width: 1240px) {
     width: 700px;
