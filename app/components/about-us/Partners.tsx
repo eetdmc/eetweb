@@ -14,7 +14,7 @@ const Partners = ({
 }) => {
   return (
     <section className="pt-10 pb-45 xl:pt-25 md:pb-[300px] xl:pb-[300px] 2xl:pb-[335px] 2xl:pt-[100px]">
-      <div className="container">
+      <div className="container partners-pagination">
         <div className="container">
           <h2 className="heading text-50 leading-[1] font-light text-black mb-[45px] 2xl:mb-[70px] text-center">
             Partners
@@ -26,10 +26,8 @@ const Partners = ({
             autoplay={{ delay: 3000 }}
             pagination={{
               clickable: true,
-              el: ".awards-pagination",
-              bulletClass: "awards-bullet",
-              bulletActiveClass: "awards-bullet-active",
-              
+              dynamicBullets: true,
+              dynamicMainBullets: 1,
             }}
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: "10" },
