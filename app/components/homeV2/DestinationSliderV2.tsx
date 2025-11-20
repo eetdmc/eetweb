@@ -17,6 +17,7 @@ import { assets } from "@/public/assets";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { motion } from "framer-motion";
 import { moveLeft, moveUp } from "../motionVarients";
+import Link from "next/link";
 
 const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
   destinations,
@@ -137,12 +138,12 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
 
                   {/* Buttons */}
                   <div className="absolute bottom-3 right-3 md:bottom-5 md:right-5 xl:bottom-10 xl:right-10 flex gap-2 lg:gap-[14px] font-light font-funnel-display text-19 ">
-                    <button className="px-3 lg:px-6 py-2 bg-black/75 border border-[#00AEEF] text-white rounded-[50px] cursor-pointer">
+                    <Link href={"/destinations/" + item.slug} className="px-3 lg:px-6 py-2 bg-black/75 border border-[#00AEEF] text-white rounded-[50px] cursor-pointer">
                       Know More
-                    </button>
-                    <button className="px-3 lg:px-6 py-2 bg-black/75 border border-[#00AEEF] text-white rounded-[50px] cursor-pointer">
+                    </Link>
+                    <Link href={"/contact-us"} className="px-3 lg:px-6 py-2 bg-black/75 border border-[#00AEEF] text-white rounded-[50px] cursor-pointer">
                       Enquire Now
-                    </button>
+                    </Link>
                   </div>
                 </div>
               </div>

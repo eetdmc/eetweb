@@ -76,16 +76,24 @@ const Header = () => {
               </span>
             </Link> */}
 
-            <Link
-              href="https://online.eet.ae/b2b"
-              target="_blank"
-              className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 lg:w-12 lg:h-12 cursor-pointer font-inter bg-white flex items-center justify-center uppercase rounded-full relative group hover:text-white overflow-hidden"
+
+            <Link href="https://online.eet.ae/b2b" target="_blank" className="flex items-center gap-2 bg-white uppercase rounded-full relative group hover:text-white overflow-hidden pl-5 cursor-pointer">
+
+            <span className="relative z-10 font-[300] leading-[1] text-19 text-black group-hover:text-white hidden lg:block">
+                Partner Login
+              </span>
+              <div className="absolute inset-0 w-0 h-full z-0 bg-primary transition-all duration-300 ease-in-out rounded-full group-hover:w-full"></div>
+            <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 lg:w-12 lg:h-12 cursor-pointer font-inter flex items-center justify-center uppercase rounded-full relative group hover:text-white overflow-hidden"
             >
+
+              
+              
               {/* expanding black overlay inside the circle */}
-              <div className="absolute inset-0 w-0 h-full z-0 bg-black transition-all duration-300 ease-in-out rounded-full group-hover:w-full"></div>
 
               {/* icon/content */}
+              
               <span className="relative z-10 flex items-center justify-center">
+                
                 <Image
                   src={assets.user}
                   alt="User"
@@ -94,6 +102,8 @@ const Header = () => {
                   className="w-[11px] h-[11px] group-hover:brightness-0 group-hover:invert"
                 />
               </span>
+            </div>
+
             </Link>
 
             {/* Mobile Hamburger */}
