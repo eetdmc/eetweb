@@ -29,6 +29,7 @@ const Partners = ({
               el: ".awards-pagination",
               bulletClass: "awards-bullet",
               bulletActiveClass: "awards-bullet-active",
+              
             }}
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: "10" },
