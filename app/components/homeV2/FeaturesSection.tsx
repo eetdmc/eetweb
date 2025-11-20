@@ -58,6 +58,11 @@ const FeaturesSection = ({ data }: Props) => {
       options: {
         ...splitTextPresets.fadeInUp,
         delay: 0,
+        scrollTrigger: {
+        trigger: ".fadeInUp-text",
+        start: "top 80%",
+        once: true,
+      },
       },
     },
     {
@@ -65,6 +70,11 @@ const FeaturesSection = ({ data }: Props) => {
       options: {
         ...splitTextPresets.typewriter,
         delay: 0.5,
+        scrollTrigger: {
+        trigger: ".typewriter-text",
+        start: "top 80%",
+        once: true,
+      },
       },
     },
     {
@@ -72,6 +82,11 @@ const FeaturesSection = ({ data }: Props) => {
       options: {
         ...splitTextPresets.slideInLeft,
         delay: 1.0,
+        scrollTrigger: {
+        trigger: ".slideInLeft-text",
+        start: "top 80%",
+        once: true,
+      },
       },
     },
     {

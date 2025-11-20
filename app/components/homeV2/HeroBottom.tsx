@@ -19,69 +19,88 @@ const HeroBottom = ({ data }: { data: SecondSection }) => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       // Split text into words and wrap each word in a span
-      const splitText = () => {
-        if (!textRef.current) return;
+      // const splitText = () => {
+      //   if (!textRef.current) return;
 
-        const text = textRef.current.textContent || "";
-        const words = text.split(" ");
+      //   const text = textRef.current.textContent || "";
+      //   const words = text.split(" ");
 
-        textRef.current.innerHTML = words
-          .map(
-            (word) =>
-              `<span class="inline-block overflow-hidden"><span class="inline-block word-span">${word}</span></span>`
-          )
-          .join(" ");
-      };
+      //   textRef.current.innerHTML = words
+      //     .map(
+      //       (word) =>
+      //         `<span class="inline-block overflow-hidden"><span class="inline-block word-span">${word}</span></span>`
+      //     )
+      //     .join(" ");
+      // };
 
-      splitText();
+      // splitText();
 
       // Get all word spans
-      const wordSpans = textRef.current?.querySelectorAll(".word-span");
+      // const wordSpans = textRef.current?.querySelectorAll(".word-span");
 
-      // Create timeline for text animation
-      const textTimeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-          once: true,
-        },
-      });
+      // // Create timeline for text animation
+      // const textTimeline = gsap.timeline({
+      //   scrollTrigger: {
+      //     trigger: sectionRef.current,
+      //     start: "top 80%",
+      //     end: "bottom 20%",
+      //     toggleActions: "play none none reverse",
+      //     once: true,
+      //   },
+      // });
 
       // Animate words with stagger effect
-      if (wordSpans) {
-        textTimeline.fromTo(
-          wordSpans,
-          {
-            y: "100%",
-            opacity: 0,
-          },
-          {
-            y: "0%",
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            stagger: 0.03,
-          }
-        );
-      }
+      // if (wordSpans) {
+      //   textTimeline.fromTo(
+      //     textRef.current,
+      //     {
+      //       y: "100%",
+      //       opacity: 0,
+      //     },
+      //     {
+      //       y: "0%",
+      //       opacity: 1,
+      //       duration: 0.8,
+      //       ease: "power2.out",
+      //       stagger: 0.03,
+      //     }
+      //   );
+      // }
 
-      // Animate button
-      textTimeline.fromTo(
-        buttonRef.current,
-        {
-          y: 30,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power2.out",
-        },
-        "-=0.3"
-      );
+      // // Animate button
+      // textTimeline.fromTo(
+      //   buttonRef.current,
+      //   {
+      //     y: 30,
+      //     opacity: 0,
+      //   },
+      //   {
+      //     y: 0,
+      //     opacity: 1,
+      //     duration: 0.6,
+      //     ease: "power2.out",
+      //   },
+      //   "-=0.3"
+      // );
+
+      // Description fade-in animation
+gsap.fromTo(
+  textRef.current,
+  { opacity: 0, y: 40 },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: textRef.current,
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+      once: true,
+    },
+  }
+);
+
 
       // Image reveal animation
       const imageTimeline = gsap.timeline({

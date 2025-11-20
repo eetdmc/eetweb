@@ -35,33 +35,27 @@ const Partners = ({
             breakpoints={{
               0: { slidesPerView: 2, spaceBetween: "10" },
               640: { slidesPerView: 2, spaceBetween: "100" },
-              1024: { slidesPerView: 3, spaceBetween: "100" },
-              1420: { slidesPerView: 4 },
+              1024: { slidesPerView: 3, spaceBetween: "60" },
+              1420: { slidesPerView: 4, spaceBetween: "50" },
             }}
             className="!pb-20 relative"
           >
-            {partnersData.items.map((partner, index) => (
+            {partnersData.items.map((partner) => (
               <SwiperSlide key={partner._id}>
-                <motion.div
-                  key={partner._id}
-                  variants={moveUp(index * 0.12)}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true }}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div className=" h-[101px] w-[120px] sm:w-[150px]   lg:w-[150px]   xl:w-[200px] relative">
+                
+                  <div className="relative">
                     <Image
                       src={partner.image}
                       alt={partner.imageAlt}
-                      fill
+                      height={101}
+                      width={120}
                       className="object-contain w-full h-full"
                     />
                   </div>
                   {/* <p className="font-light text-34 text-black leading-[1.294117647058824] max-w-[18ch]">
                     {partner?.title}
                   </p> */}
-                </motion.div>
+                
               </SwiperSlide>
             ))}
             {/* Custom pagination container */}
