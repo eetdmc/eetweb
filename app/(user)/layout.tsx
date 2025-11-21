@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Source_Serif_4, Manrope, Funnel_Display } from "next/font/google";
+import {
+  Inter,
+  Source_Serif_4,
+  Manrope,
+  Funnel_Display,
+} from "next/font/google";
 import "../globals.css";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
+import Header from "../components/commonV2/Header";
+// import Footer from "../components/common/Footer";
+import Footer from "../components/commonV2/Footer";
 // Fonts
 const inter = Inter({
   variable: "--font-inter",
@@ -33,6 +39,8 @@ export const metadata: Metadata = {
   description: "EET Destination Management",
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,13 +48,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} ${sourceSerif.variable} ${funnelDisplay.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${manrope.variable} ${sourceSerif.variable} ${funnelDisplay.variable} antialiased`}
+      >
         <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
-        
       </body>
     </html>
   );

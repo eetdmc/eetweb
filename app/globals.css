@@ -28,6 +28,7 @@
   --text-90: clamp(3rem, 7vw + 0.5em, 90px);
   --text-80: clamp(2.5rem, 7vw + 0.1em, 80px);
   --text-70: clamp(1.6rem, 5vw + 0.1em, 70px);
+  --text-65: clamp(1.6rem, 5vw + 0.1em, 65px);
   --text-60: clamp(1.5rem, 4vw + 0.1em, 60px);
   --text-55: clamp(1.5rem, 5vw + 0.1em, 55px);
   --text-50: clamp(1.5rem, 5vw + 0.1em, 50px);
@@ -71,6 +72,7 @@
   --text-90: var(--text-90);
   --text-80: var(--text-80);
   --text-70: var(--text-70);
+  --text-65: var(--text-65);
   --text-60: var(--text-60);
   --text-50: var(--text-50);
   --text-55: var(--text-55);
@@ -654,11 +656,11 @@ body {
 }
 
 .cnt-form input {
-  @apply text-34 leading-[1.294117647058824] font-light text-foreground;
+  @apply text-19 leading-[1.294117647058824] font-light text-black;
 }
 
 .cnt-form input::placeholder {
-  @apply text-34 leading-[1.294117647058824] font-light text-foreground;
+  @apply text-19 leading-[1.294117647058824] font-light text-black;
 }
 
 
@@ -737,4 +739,180 @@ body {
   background-color: var(--primary-color) !important;
   width: 25px;
   transform: scale(1.25);
+}
+
+/* Dynamic bullets wrap container */
+/* Base bullet size */
+.partners-pagination .swiper-pagination-bullet {
+  width: 16px !important;    /* increase size */
+  height: 16px !important;
+  background-color: var(--primary-light) !important;
+  opacity: 1 !important;
+}
+
+/* Active center bullet */
+.partners-pagination .swiper-pagination-bullet-active {
+  width: 14px !important;     /* bigger active bullet */
+  height: 14px !important;
+  opacity: 1;
+  background: var(--primary-color) !important;
+}
+
+/* Bullets near active (dynamic) */
+.partners-pagination .swiper-pagination-bullet-main {
+  width: 16px !important;     /* medium bullet */
+  height: 16px !important;
+  opacity: 0.8;
+}
+
+
+
+/* .awards-bullet {
+  width: 6px;
+  height: 6px;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  margin: 0 6px;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: all 0.3s ease;
+}
+
+.awards-bullet.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.awards-bullet-active {
+  background-color: black;
+  transform: scale(1.4);
+  opacity: 1;
+} */
+
+
+
+
+
+.emiratesImage {
+  @media (min-width: 1240px) {
+    width: 700px;
+  }
+
+  @media (min-width: 1450px) {
+    width: 763px;
+  }
+
+  @media (min-width: 1600px) {
+    width: 963px;
+  }
+}
+
+.emiratesLineMargin {
+  @media (min-width: 1240px) {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 1450px) {
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 1600px) {
+    margin-top: 70px;
+    margin-bottom: 50px;
+  }
+}
+
+/* ---------- Gallery Slider Specific Styles ---------- */
+
+/* Slide container */
+.gallery-slider .swiper-slide {
+  width: auto;
+  height: auto;
+}
+
+/* ========== FIX: Only size, NO animation on size ========== */
+
+/* ---------- BASE (mobile) ---------- */
+.gallery-slider .swiper-slide .active-card,
+.gallery-slider .swiper-slide .side-card {
+  width: 280px !important;
+  height: 170px !important;
+}
+
+/* ---------- SM ≥ 640px ---------- */
+@media (min-width: 640px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 380px !important;
+    height: 262px !important;
+  }
+}
+
+/* ---------- MD ≥ 768px ---------- */
+@media (min-width: 768px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 583px !important;
+    height: 314px !important;
+  }
+}
+
+/* ---------- XL ≥ 1280px ---------- */
+@media (min-width: 1280px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 901px !important;
+    height: 524px !important;
+  }
+}
+
+/* ---------- 2XL ≥ 1536px ---------- */
+@media (min-width: 1536px) {
+
+  .gallery-slider .swiper-slide .active-card,
+  .gallery-slider .swiper-slide .side-card {
+    width: 1166px !important;
+    height: 629px !important;
+  }
+}
+
+
+/* Hide coverflow shadows */
+.gallery-slider .swiper-slide-shadow-left,
+.gallery-slider .swiper-slide-shadow-right {
+  display: none;
+}
+
+
+/* ========== JOURNEY SLIDER STYLE ANIMATION ========== */
+
+/* Smooth zoom transform on image (JUST LIKE JourneySlider) */
+.gallery-slider .swiper-slide>div img {
+  transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transform-origin: center;
+  will-change: transform;
+}
+
+/* Side slide image zoom */
+.gallery-slider .swiper-slide img {
+  transform: scale(0.90);
+}
+
+/* Active slide image zoom */
+.gallery-slider .swiper-slide-active img {
+  transform: scale(1.03);
+}
+
+
+/* Smooth JourneySlider style transition */
+.gallery-slider .swiper-slide .active-card,
+.gallery-slider .swiper-slide .side-card {
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
 }

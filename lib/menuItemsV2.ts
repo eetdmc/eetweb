@@ -1,0 +1,74 @@
+// lib/fetchMenu.ts
+import { MenuItem } from "../app/components/common/type";
+import { DestinationData } from "../app/components/destination-details/type";
+// import { ServiceData } from "../app/components/service-details/type";
+
+export const fetchMenuItems = async (): Promise<MenuItem[]> => {
+  const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+  if (!BASE_URL) return fallbackMenu();
+
+  try {
+    const destinationsRes = await fetch(`${BASE_URL}/api/admin/destinations/add`);
+
+    if (!destinationsRes.ok)
+      throw new Error("Failed to fetch menu");
+
+    // const servicesData = await servicesRes.json();
+    const destinationsData = await destinationsRes.json();
+
+    // Extract only service/destination names and slugs
+    // const servicesItems = servicesData.data.map((s: ServiceData) => ({
+    //   label: s.firstSection.mainTitle,
+    //   href: `/services/${s.firstSection.slug}`,
+    // }));
+
+    const destinationsItems = destinationsData.data.map(
+      (d: DestinationData) => ({
+        label: d.firstSection.location,
+        href: `/destinations/${d.firstSection.slug}`,
+      })
+    );
+
+    return [
+      {
+        label: "About",
+        href: "",
+        submenu: [
+          { label: "Overview ", href: "/about-us" },
+          { label: "Our Team ", href: "/our-team" },
+          // { label: "Partners", href: "/partners" },
+        ],
+      },
+      {
+        label: "Services",
+        href: "/services",
+        // submenu: servicesItems,
+      },
+      {
+        label: "Destinations",
+        href: "/destinations",
+        submenu: destinationsItems,
+      },
+      { label: "Contact", href: "/contact-us" },
+    ];
+  } catch (err) {
+    console.error(err);
+    return fallbackMenu();
+  }
+};
+
+// Fallback static menu
+const fallbackMenu = () => [
+  {
+    label: "About",
+    href: "",
+    submenu: [
+      { label: "Overview ", href: "/about-us" },
+      { label: "Our Team ", href: "/our-team" },
+      // { label: "Partners", href: "/partners" },
+    ],
+  },
+  { label: "Services", href: "/services" },
+  { label: "Destinations", href: "/destinations", submenu: [] },
+  { label: "Contact", href: "/contact-us" },
+];

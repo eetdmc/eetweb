@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTextReveal } from "@/hooks/useTextReveal";
 import { AboutData } from "./type";
 import { motion } from "motion/react";
@@ -34,7 +34,7 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
     stagger: 0.02,
     duration: 0.4,
     y: 30,
-  }); 
+  });
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -155,14 +155,14 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
     }
   }, []);
   return (
-    <section className="pb-15 xl:pb-[114px] 2xl:pb-50 overflow-hidden">
+    <section className="pb-15 xl:pb-[114px] 2xl:pb-[170px] overflow-hidden">
       <div className="pm-noise pt-15 xl:pt-23">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
-            <h3 className="subtitle text-30 leading-lhtext-30 font-light text-black mb-3 xl:mb-[25px]">
+            <h3 className="subtitle text-19 leading-lhtext-19 font-light text-black mb-3 xl:mb-[40px]">
               {data.mainTitle}
             </h3>
-            <h1 className="heading text-60 xl:text-80 leading-[1.25] font-light text-black max-w-6xl mx-auto">
+            <h1 className="heading text-60 leading-[1.153846153846154] font-light text-black max-w-4xl mx-auto">
               {data.subTitle}
             </h1>
           </div>
@@ -180,26 +180,28 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
       </div>
       <div className="container" ref={sectionRef}>
         <div className="xl:max-w-[1136px] mx-auto">
-          <div className="border-b border-primary-light pb-15 xl:pb-30 2xl:pb-50">
-            <motion.p 
-            variants={moveUpfourty(0.4)}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }} 
-            className="text-[1.2rem] xl:text-30 leading-[1.333333333333333] font-light max-w-[68chch]" >
+          <div className="border-b border-primary-light pb-15 xl:pb-30 2xl:pb-[120px]">
+            <motion.p
+              variants={moveUpfourty(0.4)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
+              className="text-19 font-medium leading-1h-text-19 max-w-[98ch] font-sans text-black"
+            >
               {data.description}
             </motion.p>
           </div>
-          <div className="pt-10 xl:pt-[68px]">
-            <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black">
+          <div className="pt-10 xl:pt-[50px]">
+            <h2 className="heading text-50 xl:text-70 3xl:text-70 font-light leading-[1] mb-5 xl:mb-[30px] text-black font-sans">
               {legacy.title}
             </h2>
             <motion.p
-             variants={moveUpfourty(0.4)}
-                           initial="hidden"
-                           whileInView="show"
-                           viewport={{ once: true, amount: 0.1 }}
-              className=" text-19 leading-lhtext-19 font-light font-inter max-w-[57ch]" >
+              variants={moveUpfourty(0.4)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.1 }}
+              className=" text-19 leading-lhtext-19 font-light max-w-[70ch] text-black font-sans"
+            >
               {legacy.description}
             </motion.p>
           </div>

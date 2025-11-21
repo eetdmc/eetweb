@@ -46,8 +46,8 @@ const PartnerLogin = () => {
     <div>
       <section className=" pm-noise">
         <div className="container">
-          <div className="text-center py-18 md:py-20 xl:py-30 2xl:pb-[120px] 2xl:pt-[90px]">
-            <h2 className="font-light text-80 text-black heading">
+          <div className="text-center py-18 md:py-20 xl:py-30 2xl:pb-[114px] 2xl:pt-[118px]">
+            <h2 className="font-light text-65 leading-[1.153846153846154] text-black heading">
               Partner Login
             </h2>
           </div>
@@ -82,7 +82,7 @@ const PartnerLogin = () => {
               variants={container}
               className="flex items-center justify-center"
             >
-              <motion.form variants={container} className="w-full">
+              <motion.form variants={container} className="w-full text-black">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 2xl:gap-[70px]">
                   {/* Field Example */}
                   {[
@@ -184,9 +184,9 @@ const PartnerLogin = () => {
                       <label
                         htmlFor={field.id}
                         className={`absolute left-0 -top-6 text-[#5A5A5A] transition-all duration-300 font-inter font-light
-                        peer-placeholder-shown:-top-1 peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:text-[16px]
-                        peer-focus:-top-6 peer-focus:text-[13px] peer-focus:text-[#000]
-                        ${field.value ? "-top-6 text-[13px] text-[#000]" : ""}`}
+                        peer-placeholder-shown:-top-1 peer-placeholder-shown:text-[#9CA3AF] peer-placeholder-shown:text-19
+                        peer-focus:-top-8 peer-focus:text-19 peer-focus:text-[#000]
+                        ${field.value ? "-top-6 text-19 text-[#000]" : ""}`}
                       >
                         {field.label}
                       </label>
@@ -203,9 +203,23 @@ const PartnerLogin = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                    className="cursor-pointer border text-16 border-[#484848] font-inter text-[#484848] font-light py-3 px-8 rounded-full transition-all duration-500 ease-in-out hover:bg-[#484848] hover:text-white"
+                    className="
+    group cursor-pointer relative overflow-hidden 
+    border text-16 border-[#484848] font-inter text-black font-light 
+    py-3 px-8 rounded-full hover:text-white
+  "
                   >
-                    Submit
+                    {/* expanding black overlay */}
+                    <div
+                      className="
+      absolute inset-0 w-0 h-full z-0 
+      bg-black transition-all duration-300 ease-in-out 
+      group-hover:w-full
+    "
+                    ></div>
+
+                    {/* Button label stays above overlay */}
+                    <span className="relative z-10">Submit</span>
                   </motion.button>
                 </motion.div>
               </motion.form>

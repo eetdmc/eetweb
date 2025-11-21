@@ -1,4 +1,5 @@
 "use client";
+
 import { motion } from "motion/react";
 import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -100,7 +101,7 @@ export default function ContactForm() {
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
                     htmlFor="name"
-                    className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Name
                   </motion.label>
@@ -137,7 +138,7 @@ export default function ContactForm() {
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
                     htmlFor="phone"
-                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text  peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Phone
                   </motion.label>
@@ -176,7 +177,7 @@ export default function ContactForm() {
                     whileInView="show"
                     viewport={{ once: true, amount: "all" }}
                     htmlFor="email"
-                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
+                    className="transition-colors duration-300 ease-in-out absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs"
                   >
                     Email
                   </motion.label>
@@ -206,13 +207,13 @@ export default function ContactForm() {
                             errors.enquireAbout
                               ? "border-red-500"
                               : "border-primary-light"
-                          } bg-transparent text-34 pb-2 pt-5 pr-8 font-light text-forground appearance-none focus:outline-none focus:border-green-500 transition-colors duration-300 peer cursor-pointer flex justify-between items-center`}
+                          } bg-transparent text-19 pb-2 pt-5 pr-8 font-light text-forground appearance-none focus:outline-none focus:border-green-500 transition-colors duration-300 peer cursor-pointer flex justify-between items-center`}
                         >
                           <span
                             className={`${
                               enquireValue
-                                ? "text-foreground absolute -top-11"
-                                : "text-foreground absolute -top-11" // placeholder style
+                                ? "text-black absolute -top-11"
+                                : "text-black absolute -top-11" // placeholder style
                             }`}
                           >
                             {enquireValue
@@ -224,7 +225,7 @@ export default function ContactForm() {
 
                           {/* Dropdown arrow */}
                           <svg
-                            className="absolute right-0 -top-6 w-5 h-5 text-foreground opacity-60 pointer-events-none"
+                            className="absolute right-0 -top-6 w-5 h-5 text-black opacity-60 pointer-events-none"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -241,7 +242,7 @@ export default function ContactForm() {
                         {/* Floating label for accessibility, hidden but keeps form structure */}
                         <motion.label
                           htmlFor="enquireAbout"
-                          className="absolute left-0 top-0 text-xs font-light text-foreground opacity-0 pointer-events-none"
+                          className="absolute left-0 top-0 text-xs font-light text-black opacity-0 pointer-events-none"
                         >
                           Enquire About
                         </motion.label>
@@ -265,7 +266,7 @@ export default function ContactForm() {
                                     className={`cursor-pointer select-none px-3 py-2 ${
                                       active
                                         ? "bg-primary text-white"
-                                        : "text-foreground"
+                                        : "text-black"
                                     } ${
                                       selected ? "font-medium" : "font-normal"
                                     }`}
@@ -316,7 +317,7 @@ export default function ContactForm() {
                   whileInView="show"
                   viewport={{ once: true, amount: "all" }}
                   htmlFor="message"
-                  className="absolute left-0 top-0 text-34 leading-[1.294117647058824] font-light text-foreground transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
+                  className="absolute left-0 top-0 text-19 leading-[1.294117647058824] font-light text-black transition-text duration-300 peer-focus:top-0 peer-focus:text-xs peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-xs pointer-events-none"
                 >
                   Message
                 </motion.label>
@@ -337,7 +338,7 @@ export default function ContactForm() {
                 <button
                   aria-label="Submit"
                   onClick={handleSubmit(onSubmit)}
-                  className="border border-black text-black font-light font-inter bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group overflow-hidden hover:text-white"
+                  className="border border-black text-black font-light font-sans bg-transparent px-5 py-2 flex items-center gap-2 rounded-3xl relative z-10 group overflow-hidden hover:text-white"
                 >
                   <div className="absolute top-0 left-0 w-0 h-full z-0 group-hover:w-full bg-black transition-all duration-300 ease-in-out rounded-full"></div>
                   <span className="relative z-10">Send</span>

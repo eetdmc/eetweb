@@ -44,6 +44,27 @@ const uaeSchema = new mongoose.Schema({
       type: String,
     },
   },
+  destinationSection: {
+    title: {
+      type: String,
+    },
+    items: [
+      {
+        image: {
+          type: String,
+        },
+        imageAlt: {
+          type: String,
+        },
+        title: {
+          type: String,
+        },
+        description: {
+          type: String,
+        },
+      },
+    ],
+  },
   thirdSection: {
     title: {
       type: String,
