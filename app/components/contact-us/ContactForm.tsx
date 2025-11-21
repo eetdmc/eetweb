@@ -72,7 +72,7 @@ export default function ContactForm() {
           <div className="space-y-8">
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="space-y-8 cnt-form"
+              className="space-y-8 2xl:space-y-[90px] cnt-form"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="relative pt-5">

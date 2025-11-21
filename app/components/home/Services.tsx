@@ -190,14 +190,14 @@ const Services = ({
           <h2 className="heading text-70 leading-[1] font-light max-w-2xl text-black">
             {data.mainTitle}
           </h2>
-          <h3 className="subtitle text-30 leading-[1.4] font-light text-black">
+          <h3 className="subtitle text-30 leading-[1.4] font-light text-black lg:pt-5">
             {data.subTitle}
           </h3>
         </div>
         <div className="mt-18 xl:mt-[120px] hidden xl:block">
           <div className="grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-[544px_631px_auto]">
             {/* Services List */}
-            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px]">
+            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[200px]">
               <ul>
                 {formattedServices.map((service, index) => (
                   <li
@@ -250,7 +250,7 @@ const Services = ({
             </div>
 
             {/* Service Details */}
-            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[180px] pl-15 xl:pl-[70px] 3xl:pl-[106px]">
+            <div className="pt-6 xl:pt-[41px] border-t border-[#5C8898] mt-25 xl:mt-[200px] pl-15 xl:pl-[70px] 3xl:pl-[106px]">
               <div className="relative">
                 {/* <div
                   className={`transition-all duration-300 ease-in-out ${isTransitioning

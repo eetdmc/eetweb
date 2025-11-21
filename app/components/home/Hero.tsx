@@ -178,10 +178,10 @@ const Hero = ({ data }: HeroProps) => {
     setActiveIndex(swiper.realIndex);
   };
   return (
-    <section className="w-full h-[calc(100vh-100px)] md:h-[50vh] xl:h-[calc(100vh-130px)] pm-noise relative">
+    <section className="w-full h-[calc(100vh-100px)] md:h-[50vh] xl:h-[766px] pm-noise relative">
       {data.items.map((item, i) => (
         <div
-          className="w-full xl:w-[calc(66%-10px)] 3xl:w-[1280px] h-full absolute right-0 top-0 z-0 overflow-hidden"
+          className="w-full xl:w-[calc(66%-10px)] 3xl:w-[1294px] h-full absolute right-0 top-0 z-0 overflow-hidden"
           key={i}
         >
           <Image
@@ -192,13 +192,13 @@ const Hero = ({ data }: HeroProps) => {
             ref={(el) => {
               if (el) imageRefs.current[i] = el;
             }}
-            className={`max-w-[1275px] object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${
+            className={`max-w-[1294px] object-cover w-full h-full transition-opacity duration-[1800ms] ease-in-out ${
               activeIndex === i ? "opacity-100 " : "opacity-0"
             }`}
           />
         </div>
       ))}
-      <div className="w-full xl:w-[calc(66%-10px)] 3xl:w-[1280px] h-full xl:h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-black/20 xl:from-transparent to-black xl:to-black/70"></div>
+      <div className="w-full xl:w-[calc(66%-10px)] 3xl:w-[1294px] h-full xl:h-[70%] absolute right-0 bottom-0 z-0 bg-gradient-to-b from-black/20 xl:from-transparent to-black xl:to-black/70"></div>
       <div className="container h-full">
         <Swiper
           className="w-full h-full hero-slider"

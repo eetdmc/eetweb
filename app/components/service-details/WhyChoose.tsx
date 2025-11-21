@@ -30,10 +30,10 @@ const WhyChoose = ({ data }: WhyChooseProps) => {
                 <p className="text-19 leading-lhtext-19 font-inter text-primary crd-index pb-3 xl:pb-50px">
                   {(index + 1).toString().padStart(2, "0")}
                 </p>
-                <h3 className="text-30 leading-[1.466666666666667] font-light pb-3 xl:pb-[25px]">
+                <h3 className="text-30 leading-[1.466666666666667] font-light pb-3 xl:pb-[25px] text-black">
                   {item.title}
                 </h3>
-                <p className="pb-8 xl:pb-10 text-19 font-inter font-light text-foreground max-w-[28ch] lg:pe-2 ">
+                <p className="pb-8 xl:pb-10 text-19 font-inter font-light text-foreground max-w-[28ch] lg:pe-2 text-[#484848]">
                   {item.description}
                 </p>
               </div>

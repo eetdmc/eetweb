@@ -113,7 +113,7 @@ const FeaturesSection = ({ data }: Props) => {
           <div className=" 3xl:pr-[146px] pt-7 xl:pt-[38px]">
             <div className="grid grid-cols-2 3xl:grid-cols-[455px_auto]">
               <div className="border-r border-black/20">
-                <div className="flex flex-col gap-5 pb-8 xl:pb-[49px] border-b border-black/20 pr-2">
+                <div className="flex flex-col gap-5 pb-8 xl:pb-[49px] border-b border-black/20 pr-2 2xl:pl-6">
                   <motion.div
                     variants={moveUp(0.2)}
                     initial="hidden"
@@ -135,7 +135,7 @@ const FeaturesSection = ({ data }: Props) => {
                     {items[0].description}
                   </p>
                 </div>
-                <div className="flex flex-col gap-5 pt-10 xl:pt-[51px] pb-20 xl:pb-[130px] pr-2">
+                <div className="flex flex-col gap-5 pt-10 xl:pt-[51px] pb-20 xl:pb-[130px] pr-2 2xl:pl-6">
                   <motion.div
                     variants={moveUp(0.3)}
                     initial="hidden"
