@@ -170,10 +170,10 @@ const DestinationSliderV2: React.FC<{ destinations: DestinationData[] }> = ({
             </motion.div>
 
             {/* Column 2 */}
-            <motion.div variants={moveUp(0.15)}>
+            {/* <motion.div variants={moveUp(0.15)}>
               <p className="text-19 font-medium">{active.destinationCount}</p>
               <p className="text-19 font-light">Destinations</p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Column 3 */}
             <motion.div
