@@ -107,14 +107,14 @@ const UAEPage = () => {
     name: "thirdSection.items",
   });
 
-  const {
-    fields: fourthSectionItems,
-    append: fourthSectionAppend,
-    remove: fourthSectionRemove,
-  } = useFieldArray({
-    control,
-    name: "fourthSection.items",
-  });
+  // const {
+  //   fields: fourthSectionItems,
+  //   append: fourthSectionAppend,
+  //   remove: fourthSectionRemove,
+  // } = useFieldArray({
+  //   control,
+  //   name: "fourthSection.items",
+  // });
 
   const {
     fields: fifthSectionItems,
@@ -734,7 +734,7 @@ const UAEPage = () => {
           </div>
         </AdminItemContainer>
 
-        <AdminItemContainer>
+        {/* <AdminItemContainer>
           <Label main>Fourth Section</Label>
 
           <div className="p-5 rounded-md flex flex-col gap-5">
@@ -828,7 +828,7 @@ const UAEPage = () => {
               </Button>
             </div>
           </div>
-        </AdminItemContainer>
+        </AdminItemContainer> */}
 
         <AdminItemContainer>
           <Label main>Fifth Section</Label>
