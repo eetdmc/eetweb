@@ -32,6 +32,8 @@ export function useTextReveal(options: UseTextRevealOptions = {}) {
     const ctx = gsap.context(() => {
       const titles = document.querySelectorAll<HTMLElement>(selector);
 
+      if(!titles) return;
+
       const splitTextIntoChars = (element: HTMLElement) => {
         const text = element.textContent || "";
         const words = text.split(" ");
