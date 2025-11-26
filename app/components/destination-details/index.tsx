@@ -3,7 +3,7 @@
 import Main from "./Main";
 import Experiences from "./Experiences";
 // import PhotoGallery from "./PhotoGallery";
-import PhotoGalleryV2 from "./PhotoGalleryV2";
+// import PhotoGalleryV2 from "./PhotoGalleryV2";
 import WhyExplore from "./WhyExplore";
 import type { DestinationData } from "./type";
 import SevenEmirates from "./SevenEmirates";
@@ -19,7 +19,7 @@ const Index = ({ data }: { data: DestinationData }) => {
       )}
       <Experiences data={data.thirdSection} />
       {/* <PhotoGallery data={data.fourthSection} /> */}
-      <PhotoGalleryV2 data={data.fourthSection} />
+      {/* <PhotoGalleryV2 data={data.fourthSection} /> */}
       <WhyExplore data={data.fifthSection} />
     </>
   );
