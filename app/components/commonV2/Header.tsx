@@ -59,7 +59,7 @@ const Header = () => {
             <NavBar isOpen={isOpen} setIsOpen={setIsOpen} />
           </div>
           {/* ===== Partner Login Button ===== */}
-          <div className="w-[20%] flex gap-2 lg:gap-3 justify-end items-center">
+          <div className="w-[35%] lg:w-[20%] flex gap-2 lg:gap-3 justify-end items-center">
             {/* <Link
               href="/partner-login"
               className="flex-shrink-0 cursor-pointer font-sans bg-white px-2 xl:px-5 h-10 sm:h-12 lg:h-12 w-10 md:w-fit  flex items-center gap-[6px] uppercase rounded-full relative group hover:text-white overflow-hidden"
@@ -77,9 +77,9 @@ const Header = () => {
             </Link> */}
 
 
-            <Link href="https://online.eet.ae/b2b" target="_blank" className="flex items-center gap-2 bg-white uppercase rounded-full relative group hover:text-white overflow-hidden pl-5 cursor-pointer">
+            <Link href="https://online.eet.ae/b2b" target="_blank" className="flex items-center gap-2 bg-white uppercase rounded-full relative group hover:text-white overflow-hidden lg:pl-5 cursor-pointer">
 
-            <span className="relative z-10 font-[300] leading-[1] text-19 text-black group-hover:text-white hidden lg:block">
+            <span className="relative z-10 font-[300] leading-[1] text-19 lg:text-[13px] xl:text-19 text-black group-hover:text-white hidden lg:block">
                 Partner Login
               </span>
               <div className="absolute inset-0 w-0 h-full z-0 bg-primary transition-all duration-300 ease-in-out rounded-full group-hover:w-full"></div>
