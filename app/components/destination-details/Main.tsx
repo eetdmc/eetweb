@@ -63,7 +63,7 @@ const Main = ({ data, about }: Props) => {
       </div>
       <div className="container">
         <div className="xl:max-w-[1135px] mx-auto mr-10 xl:mr-[107px] 2xl:mr-[147px]">
-          <div className="border-b border-primary-light pb-10 xl:pb-[120px]">
+          <div className="border-b border-primary-light pb-10">
             <motion.p
               variants={moveUp(0.2)}
               initial="hidden"
@@ -84,7 +84,7 @@ const Main = ({ data, about }: Props) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="text-19 leading-lhtext-19 font-light font-sans max-w-[70ch] text-black"
+              className="text-19 leading-lhtext-19 font-light font-sans text-black"
             >
               {about.description}
             </motion.p>

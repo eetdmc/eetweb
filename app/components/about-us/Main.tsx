@@ -155,7 +155,7 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
     }
   }, []);
   return (
-    <section className="pb-15 xl:pb-[114px] 2xl:pb-[170px] overflow-hidden">
+    <section className="pb-15 xl:pb-[105px] 2xl:pb-[120px] overflow-hidden">
       <div className="pm-noise pt-15 xl:pt-23">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
@@ -180,7 +180,7 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
       </div>
       <div className="container" ref={sectionRef}>
         <div className="xl:max-w-[1136px] mx-auto">
-          <div className="border-b border-primary-light pb-15 xl:pb-30 2xl:pb-[120px]">
+          <div className="border-b border-primary-light pb-15 xl:pb-20 2xl:pb-[70px]">
             <motion.p
               variants={moveUpfourty(0.4)}
               initial="hidden"
@@ -200,7 +200,7 @@ const Main = ({ data, legacy }: MainProps & LegacyProps) => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.1 }}
-              className=" text-19 leading-lhtext-19 font-light max-w-[70ch] text-black font-sans"
+              className=" text-19 leading-lhtext-19 font-light text-black font-sans"
             >
               {legacy.description}
             </motion.p>

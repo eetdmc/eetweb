@@ -12,7 +12,7 @@ const Main = ({ data }: MainProps) => {
   useTextReveal({ selector: ".heading" });
   useTextReveal({ selector: ".subtitle", stagger: 0.02, duration: 0.4, y: 30 });
   return (
-    <section className="pb-15">
+    <section className="">
       <div className="pm-noise pt-15 xl:pt-[118px]">
         <div className="container">
           <div className="text-center pb-10 xl:pb-[114px]">
@@ -27,7 +27,7 @@ const Main = ({ data }: MainProps) => {
       </div>
       <div className="container pt-15 2xl:pt-25 mb-0 xl:mb-[120px]">
         <div className="xl:max-w-[1136px] lg-auto md:mr-10 xl:mr-[147px] ml-auto">
-          <div className="xl:border-b border-[#5C8898] xl:pb-[120px]">
+          <div className="xl:border-b border-[#5C8898] pb-10">
             <motion.p
               variants={moveUpfourty(0.4)}
               initial="hidden"
