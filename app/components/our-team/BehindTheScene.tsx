@@ -110,7 +110,7 @@ const BehindTheScene = ({ data }: Props) => {
                   width={406}
                   height={192}
                   // className="mt-8 md:mt-15 xl:mt-[146px] w-full sm:w-auto sm:ml-auto"
-                  className="mt-8 md:mt-15 xl:mt-[126px] w-full sm:w-auto sm:ml-auto"
+                  className="mt-8 md:mt-15 xl:mt-[126px] w-full sm:w-auto sm:ml-[60px]"
                 />
               </div>
             </div>

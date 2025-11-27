@@ -117,8 +117,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
 
           {/* SWIPER */}
           <Swiper
-            modules={[Navigation, Autoplay]}
-            autoplay={{ delay: 2500 }}
+            modules={[Navigation]}
             speed={900}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             // onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
