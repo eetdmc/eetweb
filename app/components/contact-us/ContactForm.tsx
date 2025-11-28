@@ -1,10 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "motion/react";
 import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { moveUp } from "../motionVarients";
 import { Listbox, Transition } from "@headlessui/react";
+import { sendContactAction } from "@/lib/mail/contactAction";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormData {
   name: string;
@@ -15,6 +18,7 @@ interface FormData {
 }
 
 export default function ContactForm() {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [enquireValue, setEnquireValue] = useState("");
   const {
@@ -24,15 +28,49 @@ export default function ContactForm() {
     reset,
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form data:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    try {
+      // 1️⃣ Check ReCAPTCHA (client-side only)
+      const captchaToken = recaptchaRef.current?.getValue();
+      if (!captchaToken) {
+        alert("Please complete the captcha verification");
+        return;
+      }
 
-    setTimeout(() => {
-      setIsSubmitted(false);
+      // 2️⃣ Save to DB
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...data,
+          enquireAbout: enquireValue,
+        }),
+      });
+
+      if (!res.ok) {
+        console.error("Failed to save enquiry");
+        return;
+      }
+
+      // 3️⃣ Send email through Resend (server action)
+      await sendContactAction({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        enquireAbout: enquireValue,
+        message: data.message,
+      });
+
+      // 4️⃣ Success UI
+      setIsSubmitted(true);
       reset();
       setEnquireValue("");
-    }, 5000);
+      recaptchaRef.current?.reset(); // 🟢 clear captcha
+
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Submit error:", error);
+    }
   };
 
   const options = [
@@ -327,6 +365,12 @@ export default function ContactForm() {
                   </p>
                 )}
               </div>
+
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                ref={recaptchaRef}
+                className="mb-4"
+              />
 
               <motion.div
                 variants={moveUp(0.6)}
