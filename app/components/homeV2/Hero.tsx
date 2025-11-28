@@ -33,65 +33,65 @@ interface HeroProps {
   data: BannerSection;
 }
 
-const CustomPagination: React.FC<CustomPaginationProps> = ({
-  currentSlide,
-  totalSlides,
-  onSlideChange,
-  // locations,
-}) => {
-  return (
-    <div className="flex flex-col items-end space-y-6">
-      {/* Progress Line with Counter */}
-      <div className="relative flex items-center">
-        {/* Counter Badge */}
-        <div className="inline-flex items-center backdrop-blur-[7px] border border-white/20 rounded-full px-2 xl:px-[14px]">
-          <span className="text-white font-base leading-[1.8125] font-inter font-light">
-            {currentSlide + 1}
-          </span>
-          <span className="text-mdgray mx-2">-</span>
-          <span className="text-mdgray font-base leading-[1.8125] font-inter">
-            {String(totalSlides).padStart(2, "0")}
-          </span>
-        </div>
+// const CustomPagination: React.FC<CustomPaginationProps> = ({
+//   currentSlide,
+//   totalSlides,
+//   onSlideChange,
+//   // locations,
+// }) => {
+//   return (
+//     <div className="flex flex-col items-end space-y-6">
+//       {/* Progress Line with Counter */}
+//       <div className="relative flex items-center">
+//         {/* Counter Badge */}
+//         <div className="inline-flex items-center backdrop-blur-[7px] border border-white/20 rounded-full px-2 xl:px-[14px]">
+//           <span className="text-white font-base leading-[1.8125] font-inter font-light">
+//             {currentSlide + 1}
+//           </span>
+//           <span className="text-mdgray mx-2">-</span>
+//           <span className="text-mdgray font-base leading-[1.8125] font-inter">
+//             {String(totalSlides).padStart(2, "0")}
+//           </span>
+//         </div>
 
-        {/* Slide Indicator Lines */}
-        <div className="flex">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => onSlideChange(index)}
-              className={`w-12 xl:w-[67px] h-[1px] transition-all duration-300 ${
-                index === currentSlide
-                  ? "bg-primary"
-                  : "bg-white/30 hover:bg-white/50"
-              }`}
-            />
-          ))}
-        </div>
-      </div>
+//         {/* Slide Indicator Lines */}
+//         <div className="flex">
+//           {Array.from({ length: totalSlides }).map((_, index) => (
+//             <button
+//               key={index}
+//               onClick={() => onSlideChange(index)}
+//               className={`w-12 xl:w-[67px] h-[1px] transition-all duration-300 ${
+//                 index === currentSlide
+//                   ? "bg-primary"
+//                   : "bg-white/30 hover:bg-white/50"
+//               }`}
+//             />
+//           ))}
+//         </div>
+//       </div>
 
-      {/* Location Navigation */}
-      {/* <div className="hidden space-x-6">
-        {locations.map((location, index) => (
-          <button
-            key={location}
-            onClick={() => onSlideChange(index)}
-            className={`text-sm xl:text-base transition-all duration-300 relative font-inter ${
-              index === currentSlide
-                ? "text-white font-[700]"
-                : "text-mdgray hover:text-white/80 font-light"
-            }`}
-          >
-            {location}
-            {index === currentSlide && (
-              <div className="absolute -bottom-1 left-0 w-full h-[1px]" />
-            )}
-          </button>
-        ))}
-      </div> */}
-    </div>
-  );
-};
+//       {/* Location Navigation */}
+//       {/* <div className="hidden space-x-6">
+//         {locations.map((location, index) => (
+//           <button
+//             key={location}
+//             onClick={() => onSlideChange(index)}
+//             className={`text-sm xl:text-base transition-all duration-300 relative font-inter ${
+//               index === currentSlide
+//                 ? "text-white font-[700]"
+//                 : "text-mdgray hover:text-white/80 font-light"
+//             }`}
+//           >
+//             {location}
+//             {index === currentSlide && (
+//               <div className="absolute -bottom-1 left-0 w-full h-[1px]" />
+//             )}
+//           </button>
+//         ))}
+//       </div> */}
+//     </div>
+//   );
+// };
 
 const Hero = ({ data }: HeroProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -303,17 +303,17 @@ const Hero = ({ data }: HeroProps) => {
                           </div>
                         </motion.div>
                       </div>
-                      <div className="relative z-10 ml-auto xl:ml-0">
-                        {/* <h3 className="text-[1.5rem] xl:text-90 leading-[1] text-white font-light mb-5 xl:mb-[23px] text-right">{item.location}</h3> */}
-                        <div>
+                      {/* <div className="relative z-10 ml-auto xl:ml-0"> */}
+                      {/* <h3 className="text-[1.5rem] xl:text-90 leading-[1] text-white font-light mb-5 xl:mb-[23px] text-right">{item.location}</h3> */}
+                      {/* <div>
                           <CustomPagination
                             currentSlide={activeIndex}
                             totalSlides={data.items.length}
                             onSlideChange={handleSlideChange}
                             // locations={data.items.map((item) => item.title)}
                           />
-                        </div>
-                      </div>
+                        </div> */}
+                      {/* </div> */}
                     </div>
                   </div>
                 </div>
