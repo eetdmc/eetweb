@@ -22,12 +22,12 @@ import { motion, Variants } from "motion/react";
 import { moveUp } from "../motionVarients";
 import type { BannerSection } from "./type";
 // Custom Pagination Component matching the exact design
-interface CustomPaginationProps {
-  currentSlide: number;
-  totalSlides: number;
-  onSlideChange: (index: number) => void;
-  // locations: string[];
-}
+// interface CustomPaginationProps {
+//   currentSlide: number;
+//   totalSlides: number;
+//   onSlideChange: (index: number) => void;
+//   // locations: string[];
+// }
 
 interface HeroProps {
   data: BannerSection;
@@ -167,12 +167,12 @@ const Hero = ({ data }: HeroProps) => {
     });
   }, []);
 
-  const handleSlideChange = (index: number) => {
-    setActiveIndex(index);
-    if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
-    }
-  };
+  // const handleSlideChange = (index: number) => {
+  //   setActiveIndex(index);
+  //   if (swiperRef.current) {
+  //     swiperRef.current.slideTo(index);
+  //   }
+  // };
 
   const handleSwiperSlideChange = (swiper: SwiperType) => {
     setActiveIndex(swiper.realIndex);
