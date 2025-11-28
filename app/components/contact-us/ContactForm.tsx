@@ -1,11 +1,13 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "motion/react";
 import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { moveUp } from "../motionVarients";
 import { Listbox, Transition } from "@headlessui/react";
 import { sendContactAction } from "@/lib/mail/contactAction";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface FormData {
   name: string;
@@ -16,6 +18,7 @@ interface FormData {
 }
 
 export default function ContactForm() {
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [enquireValue, setEnquireValue] = useState("");
   const {
@@ -27,7 +30,14 @@ export default function ContactForm() {
 
   const onSubmit = async (data: FormData) => {
     try {
-      //  Save to DB
+      // 1️⃣ Check ReCAPTCHA (client-side only)
+      const captchaToken = recaptchaRef.current?.getValue();
+      if (!captchaToken) {
+        alert("Please complete the captcha verification");
+        return;
+      }
+
+      // 2️⃣ Save to DB
       const res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,7 +52,7 @@ export default function ContactForm() {
         return;
       }
 
-      // Send email through Resend server action
+      // 3️⃣ Send email through Resend (server action)
       await sendContactAction({
         name: data.name,
         phone: data.phone,
@@ -51,10 +61,11 @@ export default function ContactForm() {
         message: data.message,
       });
 
-      // UI Success State
+      // 4️⃣ Success UI
       setIsSubmitted(true);
       reset();
       setEnquireValue("");
+      recaptchaRef.current?.reset(); // 🟢 clear captcha
 
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
@@ -354,6 +365,12 @@ export default function ContactForm() {
                   </p>
                 )}
               </div>
+
+              <ReCAPTCHA
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                ref={recaptchaRef}
+                className="mb-4"
+              />
 
               <motion.div
                 variants={moveUp(0.6)}
