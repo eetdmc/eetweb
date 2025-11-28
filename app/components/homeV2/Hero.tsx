@@ -17,7 +17,7 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 // import PrimaryBtn from "../common/PrimaryBtn";
 import Link from "next/link";
-import { assets } from "@/public/assets";
+// import { assets } from "@/public/assets";
 import { motion, Variants } from "motion/react";
 import { moveUp } from "../motionVarients";
 import type { BannerSection } from "./type";
