@@ -215,7 +215,7 @@ useEffect(() => {
                     >
                       <Link href={"#"}>Facebook</Link>
                     </motion.li>
-                    <motion.li
+                    {/* <motion.li
                       variants={moveUp(0.8)}
                       initial="hidden"
                       whileInView="show"
@@ -223,7 +223,7 @@ useEffect(() => {
                       className="text-19 leading-lhtext-19 font-[200] text-white hover:text-white/70 transition-colors duration-300"
                     >
                       <Link href={"#"}>X</Link>
-                    </motion.li>
+                    </motion.li> */}
                   </ul>
                 </div>
               </div>
