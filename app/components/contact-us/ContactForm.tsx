@@ -5,6 +5,7 @@ import { Fragment, useState } from "react";
 import { useForm } from "react-hook-form";
 import { moveUp } from "../motionVarients";
 import { Listbox, Transition } from "@headlessui/react";
+import { sendContactAction } from "@/lib/mail/contactAction";
 
 interface FormData {
   name: string;
@@ -24,15 +25,41 @@ export default function ContactForm() {
     reset,
   } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log("Form data:", data);
-    setIsSubmitted(true);
+  const onSubmit = async (data: FormData) => {
+    try {
+      //  Save to DB
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...data,
+          enquireAbout: enquireValue,
+        }),
+      });
 
-    setTimeout(() => {
-      setIsSubmitted(false);
+      if (!res.ok) {
+        console.error("Failed to save enquiry");
+        return;
+      }
+
+      // Send email through Resend server action
+      await sendContactAction({
+        name: data.name,
+        phone: data.phone,
+        email: data.email,
+        enquireAbout: enquireValue,
+        message: data.message,
+      });
+
+      // UI Success State
+      setIsSubmitted(true);
       reset();
       setEnquireValue("");
-    }, 5000);
+
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      console.error("Submit error:", error);
+    }
   };
 
   const options = [
