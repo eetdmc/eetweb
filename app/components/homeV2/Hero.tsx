@@ -17,7 +17,7 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 // import PrimaryBtn from "../common/PrimaryBtn";
 import Link from "next/link";
-import { assets } from "@/public/assets";
+// import { assets } from "@/public/assets";
 import { motion, Variants } from "motion/react";
 import { moveUp } from "../motionVarients";
 import type { BannerSection } from "./type";
@@ -239,7 +239,11 @@ const Hero = ({ data }: HeroProps) => {
                   <div className="flex flex-col justify-end h-full pb-10 xl:pb-21 pt-25 xl:pt-0 ">
                     <div className="flex flex-wrap justify-between items-end">
                       <div className="w-full h-fit gap-10 xl:gap-0 xl:h-full xl:max-w-[calc(30%+10px)] flex flex-col  justify-end  pb-10 xl:pb-0">
-                        <h2
+                        <motion.h2
+                          variants={moveUp(0.3)}
+                          initial="hidden"
+                          whileInView="show"
+                          viewport={{ once: true, amount: 0.2 }}
                           className="text-[3rem] xl:text-60 2xl:text-65 leading-[1] xl:leading-[65px] text-white xl:text-black font-[300] mb-0 xl:mb-[70px] slide-title "
                           style={{ perspective: "1000px" }}
                         >
@@ -264,12 +268,13 @@ const Hero = ({ data }: HeroProps) => {
                                 "\u00A0"}
                             </span>
                           ))}
-                        </h2>
+                        </motion.h2>
                         <motion.div
-                          variants={moveUp(0.3)}
+                          variants={moveUp(0.5)}
                           initial="hidden"
-                          animate={activeIndex === index ? "show" : "hidden"}
-                          viewport={{ once: false, amount: "all" }}
+                          // animate={activeIndex === index ? "show" : "hidden"}
+                          whileInView="show"
+                          viewport={{ once: true, amount: 0.2 }}
                           className="flex items-center relative group/main overflow-hidden w-fit"
                         >
                           <Link
@@ -282,8 +287,7 @@ const Hero = ({ data }: HeroProps) => {
                             </span>
                           </Link>
                           {/* Arrow container */}
-                          <div className="hidden bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px]  items-center justify-center relative overflow-hidden">
-                            {/* First arrow (default) */}
+                          {/* <div className="hidden bg-primary rounded-full w-8 h-8 xl:w-[44px] xl:h-[44px]  items-center justify-center relative overflow-hidden">
                             <Image
                               src={assets.arrowTopRight}
                               alt="Arrow"
@@ -291,8 +295,6 @@ const Hero = ({ data }: HeroProps) => {
                               height={20}
                               className="w-4 h-4 xl:w-[16px] xl:h-[16px] object-contain  absolute transition-all duration-400 ease-in-out group-hover/main:translate-x-2 group-hover/main:-translate-y-2 opacity-100 group-hover/main:opacity-0"
                             />
-
-                            {/* Second arrow (enters on hover) */}
                             <Image
                               src={assets.arrowTopRight}
                               alt="Arrow"
@@ -300,7 +302,7 @@ const Hero = ({ data }: HeroProps) => {
                               height={20}
                               className="w-4 h-4 xl:w-[16px] xl:h-[16px] object-contain absolute translate-x-[-1rem] translate-y-[1rem] opacity-0 transition-all duration-400 ease-in-out group-hover/main:translate-x-0 group-hover/main:translate-y-0 group-hover/main:opacity-100"
                             />
-                          </div>
+                          </div> */}
                         </motion.div>
                       </div>
                       {/* <div className="relative z-10 ml-auto xl:ml-0"> */}
