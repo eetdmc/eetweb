@@ -35,8 +35,8 @@ const SevenEmirates = ({ heading, items }: Props) => {
     setActiveIndex(index);
   };
 
-  const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex === items.length - 1;
+  // const isPrevDisabled = activeIndex === 0;
+  // const isNextDisabled = activeIndex === items.length - 1;
 
   return (
     <motion.div
@@ -70,7 +70,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
 "
         >
           {/* LEFT ARROW */}
-          <button
+          {/* <button
             onClick={() => !isPrevDisabled && swiperRef.current?.slidePrev()}
             disabled={isPrevDisabled}
             className={`
@@ -90,10 +90,10 @@ const SevenEmirates = ({ heading, items }: Props) => {
               height={24}
               className="w-[32px] h-[18px] md:w-[40px] md:h-[24px]"
             />
-          </button>
+          </button> */}
 
           {/* RIGHT ARROW */}
-          <button
+          {/* <button
             onClick={() => !isNextDisabled && swiperRef.current?.slideNext()}
             disabled={isNextDisabled}
             className={`
@@ -113,7 +113,7 @@ const SevenEmirates = ({ heading, items }: Props) => {
               height={24}
               className="w-[32px] h-[18px] md:w-[40px] md:h-[24px]"
             />
-          </button>
+          </button> */}
 
           {/* SWIPER */}
           <Swiper
