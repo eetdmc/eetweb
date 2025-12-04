@@ -35,8 +35,8 @@ const SevenEmirates = ({ heading, items }: Props) => {
     setActiveIndex(index);
   };
 
-  const isPrevDisabled = activeIndex === 0;
-  const isNextDisabled = activeIndex === items.length - 1;
+  // const isPrevDisabled = activeIndex === 0;
+  // const isNextDisabled = activeIndex === items.length - 1;
 
   return (
     <motion.div
