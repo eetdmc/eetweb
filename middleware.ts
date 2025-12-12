@@ -30,8 +30,16 @@ export async function middleware(request: NextRequest) {
 
   // 🔹 2. If user is on a protected route and no valid token → redirect to login
   if (isProtectedRoute) {
+     const noCacheHeaders = {
+    "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate",
+    Pragma: "no-cache",
+    Expires: "0",
+    "Surrogate-Control": "no-store",
+  };
     if (!token) {
-      return NextResponse.redirect(new URL("/admin/login", request.url));
+      const res = NextResponse.redirect(new URL("/admin/login", request.url));
+    Object.entries(noCacheHeaders).forEach(([k, v]) => res.headers.set(k, v));
+    return res;
     }
 
     try {
