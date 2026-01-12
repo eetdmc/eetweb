@@ -21,7 +21,7 @@ import Link from "next/link";
 import { motion, Variants } from "motion/react";
 import { moveUp } from "../motionVarients";
 import type { BannerSection } from "./type";
-import HomeOfferPopup from "./HomeOfferPopup";
+import HomeOfferPopupV2 from "./HomeOfferPopupV2";
 // Custom Pagination Component matching the exact design
 // interface CustomPaginationProps {
 //   currentSlide: number;
@@ -335,7 +335,7 @@ const Hero = ({ data }: HeroProps) => {
                     </Swiper>
                 </div>
             </section>
-            {showPopup && <HomeOfferPopup onClose={() => setShowPopup(false)} />}
+            {showPopup && <HomeOfferPopupV2 onClose={() => setShowPopup(false)} />}
         </>
     );
 };
