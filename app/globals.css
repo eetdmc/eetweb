@@ -32,6 +32,7 @@
   --text-60: clamp(1.5rem, 4vw + 0.1em, 60px);
   --text-55: clamp(1.5rem, 5vw + 0.1em, 55px);
   --text-50: clamp(1.5rem, 5vw + 0.1em, 50px);
+  --text-42: clamp(1.2rem, 5vw + 0.1em, 42px);
   --text-40: clamp(1.1rem, 5vw + 0.1em, 40px);
   --text-30: clamp(1rem, 3vw + 0.1em, 30px);
   --text-34: clamp(1rem, 3vw + 0.1em, 34px);
@@ -78,6 +79,7 @@
   --text-55: var(--text-55);
   --text-30: var(--text-30);
   --text-34: var(--text-34);
+  --text-42: var(--text-42);
   --text-40: var(--text-40);
   --text-19: var(--text-19);
   --text-14: var(--text-14);
@@ -915,4 +917,19 @@ body {
   transition:
     transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
     opacity 0.4s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 300ms ease-out forwards;
 }
