@@ -21,7 +21,7 @@ import Link from "next/link";
 import { motion, Variants } from "motion/react";
 import { moveUp } from "../motionVarients";
 import type { BannerSection } from "./type";
-// import HomeOfferPopupV2 from "./HomeOfferPopupV2";
+import HomeOfferPopupV2 from "./HomeOfferPopupV2";
 // Custom Pagination Component matching the exact design
 // interface CustomPaginationProps {
 //   currentSlide: number;
@@ -101,15 +101,15 @@ const Hero = ({ data }: HeroProps) => {
     const imageRefs = useRef<HTMLImageElement[]>([]);
     const titleRefs = useRef<HTMLHeadingElement[]>([]);
     titleRefs.current = [];
-    // const [showPopup, setShowPopup] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
 
-    // useEffect(() => {
-    //     const timer = setTimeout(() => {
-    //         setShowPopup(true);
-    //     }, 2000); // 2 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowPopup(true);
+        }, 2000); // 2 seconds
 
-    //     return () => clearTimeout(timer);
-    // }, []);
+        return () => clearTimeout(timer);
+    }, []);
 
     // const containerVariants: Variants = {
     //   hidden: { opacity: 0 },
@@ -335,7 +335,7 @@ const Hero = ({ data }: HeroProps) => {
                     </Swiper>
                 </div>
             </section>
-            {/* {showPopup && <HomeOfferPopupV2 onClose={() => setShowPopup(false)} />} */}
+            {showPopup && <HomeOfferPopupV2 onClose={() => setShowPopup(false)} />}
         </>
     );
 };
