@@ -48,9 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.variable} ${manrope.variable} ${sourceSerif.variable} ${funnelDisplay.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${manrope.variable} ${sourceSerif.variable} ${funnelDisplay.variable} antialiased`}>
         <Header />
         <main className="min-h-screen">{children}</main>
         <Footer />
