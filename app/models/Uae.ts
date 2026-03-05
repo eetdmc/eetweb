@@ -1,105 +1,136 @@
 import mongoose from "mongoose";
 
 const uaeSchema = new mongoose.Schema({
-    metaTitle:{
-        type:String,
-        required:true
+  metaTitle: {
+    type: String,
+  },
+  metaDescription: {
+    type: String,
+  },
+  firstSection: {
+    location: {
+      type: String,
     },
-    metaDescription:{
-        type:String,
-        required:true
+    mainTitle: {
+      type: String,
     },
-    firstSection:{
-        mainTitle:{
-            type:String,
-            required:true
-        },
-        subTitle:{
-            type:String,
-            required:true
-        },
-        description:{
-            type:String,
-            required:true
-        },
-        firstImage:{
-            type:String,
-            required:true
-        },
-        firstImageAlt:{
-            type:String,
-        },
-        secondImage:{
-            type:String,
-            required:true
-        },
-        secondImageAlt:{
-            type:String,
-        },
+    subTitle: {
+      type: String,
     },
-    secondSection:{
-        title:{
-            type:String,
-            required:true
-        },
-        description:{
-            type:String,
-            required:true
-        },
+    description: {
+      type: String,
     },
-    thirdSection:{
-        title:{
-            type:String,
-            required:true
-        },
-        items:[{
-            image:{
-                type:String,
-                required:true
-            },
-            imageAlt:{
-                type:String,
-            },
-            title:{
-                type:String,
-                required:true
-            },
-        }]
+    firstVideo: {
+      type: String,
     },
-    fourthSection:{
-        title:{
-            type:String,
-            required:true
-        },
-        items:[{
-            image:{
-                type:String,
-                required:true
-            },
-            imageAlt:{
-                type:String,
-            },
-        }],
+    firstVideoPoster: {
+      type: String,
     },
-    fifthSection:{
-        title:{
-            type:String,
-            required:true
+    secondVideo: {
+      type: String,
+    },
+    secondVideoPoster: {
+      type: String,
+    },
+    slug: {
+      type: String,
+    },
+  },
+  secondSection: {
+    title: {
+      type: String,
+    },
+    description: {
+      type: String,
+    },
+  },
+  destinationSection: {
+    title: {
+      type: String,
+    },
+    items: [
+      {
+        image: {
+          type: String,
         },
-        items:[{
-            image:{
-                type:String,
-                required:true
-            },
-            imageAlt:{
-                type:String,
-            },
-            title:{
-                type:String,
-                required:true
-            },
-        }]
-    }
-})
+        imageAlt: {
+          type: String,
+        },
+        title: {
+          type: String,
+        },
+        description: {
+          type: String,
+        },
+      },
+    ],
+  },
+  thirdSection: {
+    title: {
+      type: String,
+    },
+    items: [
+      {
+        image: {
+          type: String,
+        },
+        imageAlt: {
+          type: String,
+        },
+        title: {
+          type: String,
+        },
+      },
+    ],
+  },
+  fourthSection: {
+    title: {
+      type: String,
+    },
+    items: [
+      {
+        image: {
+          type: String,
+        },
+        imageAlt: {
+          type: String,
+        },
+      },
+    ],
+  },
+  fifthSection: {
+    title: {
+      type: String,
+    },
+    items: [
+      {
+        image: {
+          type: String,
+        },
+        imageAlt: {
+          type: String,
+        },
+        title: {
+          type: String,
+        },
+      },
+    ],
+  },
+  sixthSection: {
+    destinationCount: {
+      type: Number,
+    },
+    homeImage: {
+      type: String,
+    },
+    mainDestinations: [
+      {
+        title: {
+          type: String,
+        },
+      },
+    ],
+  },
+});
 
 export default mongoose.models.UAE || mongoose.model("UAE", uaeSchema);

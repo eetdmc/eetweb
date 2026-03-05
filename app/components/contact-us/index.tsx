@@ -1,14 +1,16 @@
 import Main from "./Main";
 import LetsConnect from "./LetsConnect";
 import GMap from "./GMap";
-const Index = () => {
-  return ( 
+import { ContactData } from "./type";
+
+const Index = ({ data }: { data: ContactData["data"] }) => {
+  return (
     <>
-    <Main/>
-    <LetsConnect/>
-    <GMap/>
+      <Main data={data.firstSection} />
+      <LetsConnect />
+      <GMap />
     </>
-   );
-}
- 
+  );
+};
+
 export default Index;

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { commonData } from "./data";
 import NavBar from "./NavBar";
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
 
   // Sticky effect after 400px
@@ -34,20 +34,25 @@ const Header = () => {
 
   return (
     <header
-      className={`w-full py-3 xl:py-7 bg-cover pm-noise transition-all duration-300 ${isSticky ? "" : "relative"
-        }`}
+      className={`w-full py-3 xl:py-7 2xl:pt-[35px] 2xl:pb-[37px] bg-cover pm-noise transition-all duration-300 ${
+        isSticky ? "" : "relative"
+      }`}
     >
       <div className="container">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image src={commonData.headerData.logo} alt="Logo" width={200} height={200} className="w-20 xl:w-[105px] h-auto object-contain" />
+            <Image
+              src={commonData.headerData.logo}
+              alt="Logo"
+              width={200}
+              height={200}
+              className="w-20 xl:w-[105px] h-auto object-contain"
+            />
           </Link>
           <NavBar />
         </div>
       </div>
-
-
     </header>
   );
 };

@@ -9,4 +9,18 @@ import footerImg from "./images/footer.jpg";
 import arrowDown from "./images/icons/arrow-down.svg";
 import quoteUp from "./images/home/testimonials/quote-up.svg";
 import quoteDown from "./images/home/testimonials/quote-down.svg";
-export const assets = { logo, user, pattern1, arrowTopRight, arrowPrimary, pmArrowLeft, pmArrowRight, footerImg, arrowDown, quoteUp, quoteDown };
+import arrowRightTopAngled from "./images/icons/arrow-right-top-angled.svg";
+export const assets = {
+  logo,
+  user,
+  pattern1,
+  arrowTopRight,
+  arrowPrimary,
+  pmArrowLeft,
+  pmArrowRight,
+  footerImg,
+  arrowDown,
+  quoteUp,
+  quoteDown,
+  arrowRightTopAngled,
+};

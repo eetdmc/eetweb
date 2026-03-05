@@ -1,5 +1,3 @@
-import { easeInOut, easeOut } from "framer-motion";
-
 // Custom smooth easing curves
 const smoothEase: [number, number, number, number] = [0.25, 0.1, 0.25, 1]; // Smoother version of ease-in-out
 const butterSmooth: [number, number, number, number] = [0.33, 1, 0.68, 1]; // Extra smooth with a gentle bounce feel
@@ -27,6 +25,20 @@ export const moveUp = (delay: number = 0) => ({
     },
   },
 });
+
+export const moveUpfourty = (delay: number = 0) => ({
+  hidden: { opacity: 0, y: 40 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: delay,
+      duration: 0.8, // Slightly faster
+      ease: silkyEase,
+    },
+  },
+});
+
 
 export const moveDown = (delay: number = 0) => ({
   hidden: { opacity: 0, y: -60 },
