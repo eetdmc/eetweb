@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import Header from "./components/commonV2/Header";
 import Footer from "./components/commonV2/Footer";
 import "./globals.css";
