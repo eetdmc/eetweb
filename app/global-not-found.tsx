@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+import Header from "./components/commonV2/Header";
+import Footer from "./components/commonV2/Footer";
 import "./globals.css";
 
 export const metadata = {
@@ -10,12 +13,13 @@ export default function GlobalNotFound() {
   return (
     <html lang="en">
       <body className="antialiased">
-        <section className="pm-noise relative min-h-screen overflow-hidden py-8 md:py-16 xl:py-20">
-          <div className="pointer-events-none absolute left-[-100px] top-[-90px] h-64 w-64 rounded-full bg-primary/15 blur-3xl" />
-          <div className="pointer-events-none absolute bottom-[-120px] right-[-100px] h-72 w-72 rounded-full bg-primary-light/20 blur-3xl" />
+        <Header />
+        <section className="pm-noise relative min-h-screen overflow-hidden py-8 md:pb-16 xl:py-20 ">
+          {/* <div className="pointer-events-none absolute left-[-100px] top-[-90px] h-64 w-64 rounded-full bg-primary/15 blur-3xl" /> */}
+          {/* <div className="pointer-events-none absolute bottom-[-120px] right-[-100px] h-72 w-72 rounded-full bg-primary-light/20 blur-3xl" /> */}
 
           <div className="container relative z-10">
-            <div className="sec-noise mx-auto max-w-[1140px] rounded-[30px] border border-primary-light/35 bg-white/75 p-6 sm:p-10 xl:p-14">
+            <div className=" mx-auto max-w-[1140px] ">
               {/* <div className="mx-auto flex w-fit items-center gap-3 rounded-full border border-primary-light/40 bg-white px-4 py-2">
                 <span className="font-inter text-14 uppercase tracking-[0.14em] text-primary">
                   Error 404
@@ -48,12 +52,17 @@ export default function GlobalNotFound() {
                 </h1>
               </div>
 
+             
+
               <h2 className="mt-4 text-center text-50 md:text-60 leading-[1] text-forground-two font-[320]"> We can&apos;t find this page </h2>
-              <p className="mx-auto mt-4 max-w-[58ch] text-center font-inter text-19 leading-lhtext-19 font-[300] text-lggray">
+              <p className="mx-auto mt-4  max-w-[58ch] text-center font-inter text-19 leading-lhtext-19 font-[300] text-lggray">
                 The link may be outdated or the page has moved. Use the main
                 routes below to get back on track.
               </p>
 
+                {/* <div className="mt-2 flex justify-center">
+                  <Image src="/assets/images/logo.svg" alt="EET Logo" width={130} height={130} className="h-auto w-[90px] sm:w-[110px] xl:w-[130px]" priority />
+                </div> */}
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
                 <Link
                   href="/"
@@ -75,7 +84,7 @@ export default function GlobalNotFound() {
                 </Link>
               </div>
 
-              <div className="mt-10 grid gap-3 md:grid-cols-3">
+              {/* <div className="mt-10 grid gap-3 md:grid-cols-3">
                 <Link
                   href="/about-us"
                   className="block rounded-xl border border-primary-light/30 bg-white px-4 py-4 text-center text-19 leading-[1.3] font-[300] text-forground-two transition-colors duration-300 hover:bg-primary hover:text-white"
@@ -94,7 +103,7 @@ export default function GlobalNotFound() {
                 >
                   Contact Us
                 </Link>
-              </div>
+              </div> */}
 
               <p className="mt-8 text-center font-inter text-16 font-[300] text-lggray">
                 Need help now?{" "}
@@ -108,6 +117,7 @@ export default function GlobalNotFound() {
             </div>
           </div>
         </section>
+        <Footer />  
       </body>
     </html>
   );
