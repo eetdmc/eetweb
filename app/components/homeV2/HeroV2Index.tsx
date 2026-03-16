@@ -189,7 +189,7 @@ const Hero = ({ data }: HeroProps) => {
     };
     return (
         <>
-            <section className="w-full h-[calc(100vh-100px)] md:h-[50vh] xl:h-[calc(100vh-130px)] max-w-[1920px] mx-auto overflow-hidden max-h-[706px] pm-noise relative">
+            <section className="w-full h-[calc(100vh-100px)] md:h-[50vh] xl:h-[calc(100vh-130px)] overflow-hidden max-h-[706px] pm-noise relative">
                 {data.items.map((item, i) => (
                     <div
                         className="w-full  xl:w-[calc(66%-10px)] 3xl:w-[1218px]  h-full absolute right-0 top-0 z-0 overflow-hidden"
